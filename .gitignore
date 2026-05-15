@@ -6,6 +6,9 @@ dist/
 # generated static search index
 pagefind/
 
+
+refrence/
+
 # dependencies
 node_modules/
 

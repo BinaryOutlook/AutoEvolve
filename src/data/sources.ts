@@ -73,7 +73,7 @@ export const sources: Source[] = [
     title: 'Vehicle Safety Technologies',
     organization: 'National Highway Traffic Safety Administration',
     type: 'government',
-    url: 'https://www.nhtsa.gov/equipment/vehicle-safety-technologies',
+    url: 'https://www.nhtsa.gov/vehicle-safety',
     accessedDate: '2026-05-15',
     supports: ['Safety technology context', 'driver assistance terminology'],
   },
