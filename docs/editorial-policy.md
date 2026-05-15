@@ -13,3 +13,7 @@ AutoEvolve documents automotive technology history through neutral, source-backe
 ## Vehicle Examples
 
 Vehicle pages must answer what broader technology the vehicle illustrates. They should not include star ratings, purchase advice, used-market pricing, or subjective driving impressions.
+
+## Era Pages
+
+Era pages should help readers understand chronology without flattening every region or manufacturer into the same path. Include historical context, representative cars, prominent manufacturer design choices, engineering changes, and unresolved constraints. Vehicle examples should illustrate broader technical shifts rather than serve as recommendations.

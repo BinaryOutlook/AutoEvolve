@@ -8,8 +8,12 @@ test('home page exposes the core archive navigation', async ({ page }) => {
       name: /How vehicles became modern mobility systems/i,
     }),
   ).toBeVisible();
-  await expect(page.getByRole('link', { name: 'Timeline', exact: true })).toBeVisible();
-  await expect(page.getByRole('link', { name: 'Technologies', exact: true })).toBeVisible();
+  await expect(
+    page.getByRole('link', { name: 'Timeline', exact: true }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole('link', { name: 'Technologies', exact: true }),
+  ).toBeVisible();
 });
 
 test('timeline filtering hides unrelated milestone types', async ({ page }) => {
@@ -24,6 +28,24 @@ test('timeline filtering hides unrelated milestone types', async ({ page }) => {
       name: 'Mass-market hybrid vehicles enter public use',
     }),
   ).toBeHidden();
+});
+
+test('eras page presents the archive as a chronological timeline', async ({
+  page,
+}) => {
+  await page.goto('/eras/');
+  await expect(
+    page.getByRole('heading', { name: 'A Scrollable Technical Spine' }),
+  ).toBeVisible();
+  await expect(page.locator('.era-timeline')).toBeVisible();
+  await expect(
+    page.getByRole('link', { name: /Early Self-Propelled Mobility/i }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole('link', {
+      name: /Software-Defined and Connected Vehicles/i,
+    }),
+  ).toBeVisible();
 });
 
 test('technology pages render sources and related links', async ({ page }) => {

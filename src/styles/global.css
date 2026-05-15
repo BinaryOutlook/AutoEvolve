@@ -234,6 +234,195 @@ svg {
   font-size: 0.9rem;
 }
 
+.era-flow {
+  padding-bottom: 2rem;
+}
+
+.era-flow__heading {
+  align-items: flex-start;
+  margin-top: 1rem;
+}
+
+.era-flow__heading p {
+  color: var(--color-muted);
+  margin: 0;
+  max-width: 48ch;
+}
+
+.era-timeline {
+  list-style: none;
+  margin: 2rem 0 0;
+  padding: 2rem 0 4rem;
+  position: relative;
+}
+
+.era-timeline::before {
+  background: linear-gradient(
+    180deg,
+    var(--color-accent),
+    var(--color-brand-2) 42%,
+    var(--color-accent-2)
+  );
+  border-radius: 999px;
+  bottom: 1.25rem;
+  content: '';
+  left: 50%;
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  width: 3px;
+}
+
+.era-timeline::after {
+  border-left: 0.5rem solid transparent;
+  border-right: 0.5rem solid transparent;
+  border-top: 0.85rem solid var(--color-accent-2);
+  bottom: 0.55rem;
+  content: '';
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+}
+
+.era-moment {
+  align-items: center;
+  display: grid;
+  gap: 0;
+  grid-template-columns: minmax(0, 1fr) 5rem minmax(0, 1fr);
+  min-height: 13rem;
+  position: relative;
+}
+
+.era-moment::before {
+  background: var(--color-surface);
+  border: 3px solid var(--color-accent);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 0.45rem var(--color-bg),
+    0 0.35rem 1rem rgb(23 33 31 / 0.14);
+  content: '';
+  grid-column: 2;
+  height: 1rem;
+  justify-self: center;
+  position: relative;
+  width: 1rem;
+  z-index: 1;
+}
+
+.era-moment::after {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-border),
+    transparent
+  );
+  content: '';
+  height: 2px;
+  position: absolute;
+  top: 50%;
+  width: 2.25rem;
+}
+
+.era-moment--left::after {
+  left: calc(50% - 2.75rem);
+}
+
+.era-moment--right::after {
+  left: calc(50% + 0.5rem);
+}
+
+.era-moment__card {
+  background:
+    linear-gradient(135deg, rgb(255 253 248 / 0.98), rgb(236 228 212 / 0.56)),
+    var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  box-shadow: var(--shadow-subtle);
+  color: var(--color-text);
+  display: block;
+  padding: 1.1rem;
+  position: relative;
+  text-decoration: none;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.era-moment__card::before {
+  background: var(--color-brand-2);
+  border-radius: 999px;
+  content: '';
+  inset: 1rem auto 1rem 0;
+  position: absolute;
+  width: 4px;
+}
+
+.era-moment__card:hover {
+  border-color: var(--color-accent);
+  box-shadow: 0 0.6rem 1.4rem rgb(23 33 31 / 0.12);
+  color: var(--color-text);
+  transform: translateY(-3px);
+}
+
+.era-moment--left .era-moment__card {
+  grid-column: 1;
+}
+
+.era-moment--right .era-moment__card {
+  grid-column: 3;
+}
+
+.era-moment__head {
+  align-items: center;
+  display: flex;
+  gap: 0.75rem;
+  justify-content: space-between;
+}
+
+.era-moment__range,
+.era-moment__index {
+  color: var(--color-accent);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.era-moment__index {
+  color: var(--color-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.era-moment h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.45rem, 2.5vw, 2rem);
+  line-height: 1.08;
+  margin: 0.45rem 0 0.5rem;
+}
+
+.era-moment p {
+  color: var(--color-muted);
+  margin: 0;
+}
+
+.era-moment__themes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  list-style: none;
+  margin: 0.9rem 0 0;
+  padding: 0;
+}
+
+.era-moment__themes li {
+  background: rgb(36 93 104 / 0.1);
+  border: 1px solid rgb(36 93 104 / 0.24);
+  border-radius: 999px;
+  color: var(--color-brand);
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.25rem 0.5rem;
+}
+
 .article-shell {
   padding-top: 3rem;
 }
@@ -494,5 +683,69 @@ svg {
 
   .powertrain-map svg {
     min-width: 760px;
+  }
+}
+
+@media (max-width: 760px) {
+  .era-flow__heading {
+    display: block;
+  }
+
+  .era-flow__heading p {
+    margin-top: 0.75rem;
+  }
+
+  .era-timeline {
+    margin-top: 1.25rem;
+    padding-left: 1.6rem;
+  }
+
+  .era-timeline::before,
+  .era-timeline::after {
+    left: 0.5rem;
+  }
+
+  .era-moment {
+    display: block;
+    min-height: 0;
+    padding: 0 0 1.2rem 1.2rem;
+  }
+
+  .era-moment::before {
+    height: 0.9rem;
+    left: -1.58rem;
+    position: absolute;
+    top: 1.35rem;
+    width: 0.9rem;
+  }
+
+  .era-moment::after,
+  .era-moment--left::after,
+  .era-moment--right::after {
+    left: -0.8rem;
+    top: 1.85rem;
+    width: 1.2rem;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .era-moment {
+      animation: era-moment-rise linear both;
+      animation-range: entry 0% cover 28%;
+      animation-timeline: view();
+    }
+
+    @keyframes era-moment-rise {
+      from {
+        opacity: 0.78;
+        transform: translateY(1.5rem);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
   }
 }

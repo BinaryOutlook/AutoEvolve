@@ -8,13 +8,13 @@ The project follows the implementation brief in [start_brief.md](start_brief.md)
 
 ## Current Version
 
-| Field                | Value                                                                                                |
-| -------------------- | ---------------------------------------------------------------------------------------------------- |
-| Project stage        | `0.01` initial MVP                                                                                   |
-| Primary goal         | Build a deployable educational archive with credible seed content and a maintainable content workflow. |
-| Product stance       | Historical, technical, neutral, and evidence-led.                                                    |
+| Field                | Value                                                                                                                            |
+| -------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| Project stage        | `0.01` initial MVP                                                                                                               |
+| Primary goal         | Build a deployable educational archive with credible seed content and a maintainable content workflow.                           |
+| Product stance       | Historical, technical, neutral, and evidence-led.                                                                                |
 | Architecture stance  | Static-first Astro site, Git-backed content, typed schemas, generated search, and no backend until the workflow truly needs one. |
-| Documentation stance | README and `AGENTS.md` stay current with every meaningful change; deeper editorial rules live under `docs/`. |
+| Documentation stance | README and `AGENTS.md` stay current with every meaningful change; deeper editorial rules live under `docs/`.                     |
 
 For this stage, the operating equation is:
 
@@ -69,16 +69,16 @@ Use `npm run test:e2e` when routes, navigation, search behavior, or browser-visi
 
 ## Project Structure
 
-| Path                                                   | Purpose                                                                                              |
-| ------------------------------------------------------ | ---------------------------------------------------------------------------------------------------- |
-| [src/pages/](src/pages/)                               | Astro routes for home, timeline, eras, technologies, vehicles, controversies, glossary, sources, about, and search. |
-| [src/content/](src/content/)                           | Markdown and MDX content collections for eras, technologies, vehicles, and controversies.            |
-| [src/data/](src/data/)                                 | Structured source, glossary, and timeline data.                                                      |
-| [src/components/](src/components/)                     | Shared UI components for cards, headers, source lists, maps, and linked lists.                       |
-| [src/layouts/](src/layouts/)                           | Base and article layout shells.                                                                      |
-| [docs/](docs/)                                         | Current editorial, source, and contribution guidance.                                                |
-| [scripts/](scripts/)                                   | Project validation scripts for content and language rules.                                           |
-| [tests/](tests/)                                       | Unit and end-to-end tests.                                                                           |
+| Path                                                   | Purpose                                                                                                                  |
+| ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
+| [src/pages/](src/pages/)                               | Astro routes for home, timeline, eras, technologies, vehicles, controversies, glossary, sources, about, and search.      |
+| [src/content/](src/content/)                           | Markdown and MDX content collections for eras, technologies, vehicles, and controversies.                                |
+| [src/data/](src/data/)                                 | Structured source, glossary, and timeline data.                                                                          |
+| [src/components/](src/components/)                     | Shared UI components for cards, headers, source lists, maps, and linked lists.                                           |
+| [src/layouts/](src/layouts/)                           | Base and article layout shells.                                                                                          |
+| [docs/](docs/)                                         | Current editorial, source, and contribution guidance.                                                                    |
+| [scripts/](scripts/)                                   | Project validation scripts for content and language rules.                                                               |
+| [tests/](tests/)                                       | Unit and end-to-end tests.                                                                                               |
 | [refrence/Future Roadmap/](refrence/Future%20Roadmap/) | Imported reference workflow for roadmap-style documentation. Treat this as inspiration, not this project’s active queue. |
 
 ## Documentation Map

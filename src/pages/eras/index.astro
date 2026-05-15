@@ -1,5 +1,4 @@
 ---
-import ContentCard from '@components/ContentCard.astro';
 import BaseLayout from '@layouts/BaseLayout.astro';
 import { entrySlug, getPublicEntries, pathFor } from '@lib/collections';
 
@@ -18,16 +17,50 @@ const eras = await getPublicEntries('eras');
       technologies changed everywhere at the same moment.
     </p>
   </section>
-  <section class="page-section content-grid" aria-label="Era list">
-    {
-      eras.map((entry) => (
-        <ContentCard
-          href={pathFor('eras', entrySlug(entry))}
-          title={entry.data.title}
-          summary={entry.data.summary}
-          meta={entry.data.dateRange}
-        />
-      ))
-    }
+  <section class="page-section era-flow" aria-labelledby="era-flow-title">
+    <div class="section-heading era-flow__heading">
+      <div>
+        <p class="eyebrow">Era Sequence</p>
+        <h2 id="era-flow-title">A Scrollable Technical Spine</h2>
+      </div>
+      <p>
+        Follow the archive downward from experimental propulsion to connected
+        vehicle platforms, with each stop linking into its full era page.
+      </p>
+    </div>
+    <ol class="era-timeline">
+      {
+        eras.map((entry, index) => (
+          <li
+            class:list={[
+              'era-moment',
+              index % 2 === 0 ? 'era-moment--left' : 'era-moment--right',
+            ]}
+          >
+            <a
+              class="era-moment__card"
+              href={pathFor('eras', entrySlug(entry))}
+            >
+              <div class="era-moment__head">
+                <span class="era-moment__range">{entry.data.dateRange}</span>
+                <span class="era-moment__index">
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+              </div>
+              <h2>{entry.data.title}</h2>
+              <p>{entry.data.summary}</p>
+              <ul
+                class="era-moment__themes"
+                aria-label={`Key themes for ${entry.data.title}`}
+              >
+                {entry.data.keyThemes.slice(0, 4).map((theme) => (
+                  <li>{theme}</li>
+                ))}
+              </ul>
+            </a>
+          </li>
+        ))
+      }
+    </ol>
   </section>
 </BaseLayout>
