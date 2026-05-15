@@ -344,6 +344,99 @@ export const sources: Source[] = [
     ],
   },
   {
+    id: 'tesla-model-s-deliveries-2012',
+    title: 'Tesla Model S Customer Deliveries Release',
+    organization: 'Tesla Investor Relations',
+    type: 'manufacturer',
+    url: 'https://ir.tesla.com/press-release/tesla-motors-begin-customer-deliveries-model-s-june-22nd',
+    accessedDate: '2026-05-16',
+    supports: [
+      '2012 Tesla Model S delivery timing',
+      'purpose-built battery electric sedan packaging context',
+    ],
+    notes:
+      'Used for launch timing and vehicle architecture context; marketing claims are not treated as independent conclusions.',
+  },
+  {
+    id: 'tesla-supercharger-launch-2012',
+    title: 'Tesla Supercharger Network Launch Release',
+    organization: 'Tesla Investor Relations',
+    type: 'manufacturer',
+    url: 'https://ir.tesla.com/press-release/tesla-motors-launches-revolutionary-supercharger-enabling',
+    accessedDate: '2026-05-16',
+    supports: [
+      'initial 2012 Supercharger network context',
+      'connection between Model S and dedicated DC fast charging',
+    ],
+    notes:
+      'Used for infrastructure timing and system context; promotional framing is avoided in article text.',
+  },
+  {
+    id: 'byd-yuan-plus-singapore-2022',
+    title: 'BYD and E-Auto Will Debut Yuan Plus in Singapore in 2022',
+    organization: 'BYD USA',
+    type: 'manufacturer',
+    url: 'https://en.byd.com/news/byd-and-e-auto-will-debut-yuan-plus-in-singapore-in-2022/',
+    accessedDate: '2026-05-16',
+    supports: [
+      'Yuan Plus 2022 market introduction context',
+      'BYD passenger-vehicle expansion beyond China',
+    ],
+  },
+  {
+    id: 'byd-atto3-eu',
+    title: 'BYD ATTO 3 Product Page',
+    organization: 'BYD Europe',
+    type: 'manufacturer',
+    url: 'https://www.byd.com/eu/electric-cars/atto3.html',
+    accessedDate: '2026-05-16',
+    supports: [
+      'BYD Atto 3 e-Platform 3.0 context',
+      'Blade Battery and LFP vehicle packaging statements',
+    ],
+    notes:
+      'Used for manufacturer-stated platform and battery details, not for subjective product claims.',
+  },
+  {
+    id: 'byd-e-platform-3',
+    title: 'BYD e-Platform 3.0',
+    organization: 'BYD Europe',
+    type: 'manufacturer',
+    url: 'https://www.byd.com/eu/technology/byd-e-platform-3',
+    accessedDate: '2026-05-16',
+    supports: [
+      'BYD e-Platform 3.0 integration context',
+      'BYD vertical integration description',
+      'Blade Battery and cell-to-body platform explanation',
+    ],
+    notes:
+      'Used for platform architecture description while avoiding manufacturer marketing language.',
+  },
+  {
+    id: 'iea-global-ev-outlook-2025-executive-summary',
+    title: 'Global EV Outlook 2025: Executive Summary',
+    organization: 'International Energy Agency',
+    type: 'technical-reference',
+    url: 'https://www.iea.org/reports/global-ev-outlook-2025/executive-summary',
+    accessedDate: '2026-05-16',
+    supports: [
+      'China electric car production scale in 2024',
+      'battery cost and supply-chain integration context',
+    ],
+  },
+  {
+    id: 'iea-global-ev-outlook-2025-batteries',
+    title: 'Global EV Outlook 2025: Electric Vehicle Batteries',
+    organization: 'International Energy Agency',
+    type: 'technical-reference',
+    url: 'https://www.iea.org/reports/global-ev-outlook-2025/electric-vehicle-batteries',
+    accessedDate: '2026-05-16',
+    supports: [
+      'LFP battery market share context',
+      'China-centered battery production and chemistry trends',
+    ],
+  },
+  {
     id: 'hyundai-ioniq5-egmp',
     title: 'Hyundai IONIQ 5 E-GMP Platform Release',
     organization: 'Hyundai Motor Company',
@@ -354,6 +447,39 @@ export const sources: Source[] = [
       '800 V charging architecture example',
       'vehicle-to-load and dedicated EV platform context',
     ],
+  },
+  {
+    id: 'wikimedia-tesla-model-s-2012-image',
+    title: 'File:Tesla Model S (2012) IMG 3200.jpg',
+    organization: 'Wikimedia Commons',
+    type: 'technical-reference',
+    url: 'https://commons.wikimedia.org/wiki/File:Tesla_Model_S_(2012)_IMG_3200.jpg',
+    accessedDate: '2026-05-16',
+    supports: ['Image attribution and license record for Tesla Model S page'],
+    notes:
+      'Creator: Alexander Migl. License: Creative Commons Attribution-Share Alike 4.0 International. Local file resized for site delivery.',
+  },
+  {
+    id: 'wikimedia-byd-atto3-image',
+    title: 'File:BYD Atto 3 1X7A6495.jpg',
+    organization: 'Wikimedia Commons',
+    type: 'technical-reference',
+    url: 'https://commons.wikimedia.org/wiki/File:BYD_Atto_3_1X7A6495.jpg',
+    accessedDate: '2026-05-16',
+    supports: ['Image attribution and license record for BYD Atto 3 page'],
+    notes:
+      'Creator: Alexander Migl. License: Creative Commons Attribution-Share Alike 4.0 International. Local file resized for site delivery.',
+  },
+  {
+    id: 'wikimedia-hyundai-ioniq5-image',
+    title: 'File:Hyundai Ioniq 5.jpg',
+    organization: 'Wikimedia Commons',
+    type: 'technical-reference',
+    url: 'https://commons.wikimedia.org/wiki/File:Hyundai_Ioniq_5.jpg',
+    accessedDate: '2026-05-16',
+    supports: ['Image attribution and usage-basis record for Hyundai IONIQ 5 page'],
+    notes:
+      'Creator: TTTNIS. Usage basis: CC0 1.0 public domain dedication. Local file resized for site delivery.',
   },
   {
     id: 'mercedes-drive-pilot',
