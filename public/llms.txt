@@ -1,0 +1,15 @@
+# AutoEvolve
+
+AutoEvolve is a neutral educational archive documenting the evolution of automotive technology.
+
+Primary routes:
+
+- /timeline/
+- /eras/
+- /technologies/
+- /vehicles/
+- /controversies/
+- /glossary/
+- /sources/
+
+Editorial rule: vehicle models are examples of broader technical developments, not review subjects.
