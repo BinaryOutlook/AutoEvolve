@@ -20,7 +20,12 @@ const navItems = [
     <nav class="site-nav" aria-label="Primary navigation">
       {
         navItems.map((item) => (
-          <a href={item.href} class:list={{ 'is-active': Astro.url.pathname.startsWith(item.href) }}>
+          <a
+            href={item.href}
+            class:list={{
+              'is-active': Astro.url.pathname.startsWith(item.href),
+            }}
+          >
             {item.label}
           </a>
         ))

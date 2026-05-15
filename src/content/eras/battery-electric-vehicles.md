@@ -1,14 +1,27 @@
 ---
-title: "Battery Electric Vehicles"
-summary: "Lithium-ion battery packs, inverters, traction motors, and charging infrastructure supported a renewed battery-electric vehicle era."
-status: "published"
-lastReviewed: "2026-05-16"
-sources: ["start-brief", "doe-afdc-bev"]
-dateRange: "Late 2000s onward"
+title: 'Battery Electric Vehicles'
+summary: 'Lithium-ion battery packs, inverters, traction motors, and charging infrastructure supported a renewed battery-electric vehicle era.'
+status: 'published'
+lastReviewed: '2026-05-16'
+sources: ['start-brief', 'doe-afdc-bev']
+dateRange: 'Late 2000s onward'
 order: 90
-keyThemes: ["lithium-ion batteries", "inverters", "traction motors", "charging infrastructure", "thermal management"]
-relatedTechnologies: ["battery-electric-vehicle", "lithium-ion-battery", "ev-charging", "battery-management-system"]
-relatedVehicles: ["nissan-leaf"]
+keyThemes:
+  [
+    'lithium-ion batteries',
+    'inverters',
+    'traction motors',
+    'charging infrastructure',
+    'thermal management',
+  ]
+relatedTechnologies:
+  [
+    'battery-electric-vehicle',
+    'lithium-ion-battery',
+    'ev-charging',
+    'battery-management-system',
+  ]
+relatedVehicles: ['nissan-leaf']
 ---
 
 ## Historical Context

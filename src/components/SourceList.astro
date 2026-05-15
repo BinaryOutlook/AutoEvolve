@@ -6,7 +6,9 @@ type Props = {
 };
 
 const { sourceIds } = Astro.props;
-const resolvedSources = sourceIds.map((id) => getSourceById(id)).filter(Boolean);
+const resolvedSources = sourceIds
+  .map((id) => getSourceById(id))
+  .filter(Boolean);
 ---
 
 {

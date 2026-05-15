@@ -34,7 +34,10 @@ export const sources: Source[] = [
     type: 'government',
     url: 'https://afdc.energy.gov/vehicles/how-do-plug-in-hybrid-electric-cars-work',
     accessedDate: '2026-05-15',
-    supports: ['Plug-in hybrid operating modes', 'charging and dual-powertrain context'],
+    supports: [
+      'Plug-in hybrid operating modes',
+      'charging and dual-powertrain context',
+    ],
   },
   {
     id: 'doe-afdc-bev',
@@ -61,7 +64,10 @@ export const sources: Source[] = [
     type: 'government',
     url: 'https://www.epa.gov/vw/learn-about-volkswagen-violations',
     accessedDate: '2026-05-15',
-    supports: ['Volkswagen diesel emissions violation overview', 'defeat device context'],
+    supports: [
+      'Volkswagen diesel emissions violation overview',
+      'defeat device context',
+    ],
   },
   {
     id: 'nhtsa-safety-tech',
@@ -79,7 +85,11 @@ export const sources: Source[] = [
     type: 'project-documentation',
     url: '/project-brief/',
     accessedDate: '2026-05-16',
-    supports: ['Editorial policy', 'site architecture', 'implementation requirements'],
+    supports: [
+      'Editorial policy',
+      'site architecture',
+      'implementation requirements',
+    ],
   },
 ];
 

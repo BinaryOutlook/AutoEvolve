@@ -6,13 +6,16 @@ import { entrySlug, getPublicEntries, pathFor } from '@lib/collections';
 const eras = await getPublicEntries('eras');
 ---
 
-<BaseLayout title="Historical Eras" description="Chronological eras in automotive technology history.">
+<BaseLayout
+  title="Historical Eras"
+  description="Chronological eras in automotive technology history."
+>
   <section class="page-section page-hero">
     <p class="eyebrow">Chronology</p>
     <h1>Historical Eras</h1>
     <p>
-      These periods organize the technical story without implying that technologies changed everywhere at the same
-      moment.
+      These periods organize the technical story without implying that
+      technologies changed everywhere at the same moment.
     </p>
   </section>
   <section class="page-section content-grid" aria-label="Era list">

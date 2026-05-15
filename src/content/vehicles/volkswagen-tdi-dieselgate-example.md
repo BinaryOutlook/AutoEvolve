@@ -1,15 +1,21 @@
 ---
-title: "Volkswagen TDI Dieselgate Example"
-summary: "A vehicle group used to explain Dieselgate, diesel emissions control, engine software, and certification testing."
-status: "published"
-lastReviewed: "2026-05-16"
-sources: ["epa-vw-settlement", "epa-vw-violations", "start-brief"]
-manufacturer: "Volkswagen Group"
-productionPeriod: "Affected model years varied by market and regulatory filing"
-marketContext: "Passenger diesel vehicles involved in regulatory emissions proceedings"
-illustrates: ["software-controlled emissions behavior", "diesel NOx control", "defeat-device regulation"]
-relatedEras: ["modern-diesel-and-aftertreatment"]
-relatedTechnologies: ["diesel-engine", "engine-control-unit", "selective-catalytic-reduction"]
+title: 'Volkswagen TDI Dieselgate Example'
+summary: 'A vehicle group used to explain Dieselgate, diesel emissions control, engine software, and certification testing.'
+status: 'published'
+lastReviewed: '2026-05-16'
+sources: ['epa-vw-settlement', 'epa-vw-violations', 'start-brief']
+manufacturer: 'Volkswagen Group'
+productionPeriod: 'Affected model years varied by market and regulatory filing'
+marketContext: 'Passenger diesel vehicles involved in regulatory emissions proceedings'
+illustrates:
+  [
+    'software-controlled emissions behavior',
+    'diesel NOx control',
+    'defeat-device regulation',
+  ]
+relatedEras: ['modern-diesel-and-aftertreatment']
+relatedTechnologies:
+  ['diesel-engine', 'engine-control-unit', 'selective-catalytic-reduction']
 ---
 
 ## Why It Is Included

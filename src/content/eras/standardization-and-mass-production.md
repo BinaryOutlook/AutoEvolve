@@ -1,14 +1,21 @@
 ---
-title: "Standardization and Mass Production"
-summary: "The period when assembly methods, shared components, and durable mechanical systems expanded automobile availability."
-status: "published"
-lastReviewed: "2026-05-16"
-sources: ["start-brief"]
-dateRange: "1910s-1945"
+title: 'Standardization and Mass Production'
+summary: 'The period when assembly methods, shared components, and durable mechanical systems expanded automobile availability.'
+status: 'published'
+lastReviewed: '2026-05-16'
+sources: ['start-brief']
+dateRange: '1910s-1945'
 order: 30
-keyThemes: ["assembly-line production", "electric starting", "hydraulic braking", "synchromesh", "commercial diesel adoption"]
-relatedTechnologies: ["four-stroke-engine", "diesel-engine"]
-relatedVehicles: ["ford-model-t", "mercedes-benz-260-d"]
+keyThemes:
+  [
+    'assembly-line production',
+    'electric starting',
+    'hydraulic braking',
+    'synchromesh',
+    'commercial diesel adoption',
+  ]
+relatedTechnologies: ['four-stroke-engine', 'diesel-engine']
+relatedVehicles: ['ford-model-t', 'mercedes-benz-260-d']
 ---
 
 ## Historical Context

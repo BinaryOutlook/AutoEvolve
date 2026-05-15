@@ -1,13 +1,21 @@
 ---
-title: "Emissions, Fuel Economy, and Electronic Control"
-summary: "Regulation, fuel-economy pressure, sensors, catalytic converters, and electronic control changed the design logic of gasoline vehicles."
-status: "published"
-lastReviewed: "2026-05-16"
-sources: ["start-brief"]
-dateRange: "1970s-1990s"
+title: 'Emissions, Fuel Economy, and Electronic Control'
+summary: 'Regulation, fuel-economy pressure, sensors, catalytic converters, and electronic control changed the design logic of gasoline vehicles.'
+status: 'published'
+lastReviewed: '2026-05-16'
+sources: ['start-brief']
+dateRange: '1970s-1990s'
 order: 50
-keyThemes: ["catalytic converters", "oxygen sensors", "fuel injection", "engine control units", "on-board diagnostics"]
-relatedTechnologies: ["catalytic-converter", "fuel-injection", "engine-control-unit"]
+keyThemes:
+  [
+    'catalytic converters',
+    'oxygen sensors',
+    'fuel injection',
+    'engine control units',
+    'on-board diagnostics',
+  ]
+relatedTechnologies:
+  ['catalytic-converter', 'fuel-injection', 'engine-control-unit']
 relatedVehicles: []
 ---
 

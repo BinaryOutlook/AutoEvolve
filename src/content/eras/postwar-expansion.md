@@ -1,13 +1,20 @@
 ---
-title: "Postwar Expansion"
-summary: "High-volume global production, automatic transmissions, unibody structures, and highway-oriented vehicle engineering after World War II."
-status: "published"
-lastReviewed: "2026-05-16"
-sources: ["start-brief"]
-dateRange: "1945-early 1970s"
+title: 'Postwar Expansion'
+summary: 'High-volume global production, automatic transmissions, unibody structures, and highway-oriented vehicle engineering after World War II.'
+status: 'published'
+lastReviewed: '2026-05-16'
+sources: ['start-brief']
+dateRange: '1945-early 1970s'
 order: 40
-keyThemes: ["automatic transmissions", "unibody construction", "radial tires", "highway infrastructure", "consumer-scale engineering"]
-relatedTechnologies: ["four-stroke-engine"]
+keyThemes:
+  [
+    'automatic transmissions',
+    'unibody construction',
+    'radial tires',
+    'highway infrastructure',
+    'consumer-scale engineering',
+  ]
+relatedTechnologies: ['four-stroke-engine']
 relatedVehicles: []
 ---
 

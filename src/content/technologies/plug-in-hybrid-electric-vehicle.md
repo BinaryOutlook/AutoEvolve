@@ -1,13 +1,14 @@
 ---
-title: "Plug-In Hybrid Electric Vehicle"
-summary: "A hybrid vehicle with a traction battery that can be charged from an external electrical source."
-status: "published"
-lastReviewed: "2026-05-16"
-sources: ["start-brief", "doe-afdc-phev"]
-category: "electric-drive"
-eras: ["plug-in-hybrids"]
-relatedTechnologies: ["hybrid-electric-vehicle", "ev-charging", "battery-management-system"]
-relatedVehicles: ["chevrolet-volt"]
+title: 'Plug-In Hybrid Electric Vehicle'
+summary: 'A hybrid vehicle with a traction battery that can be charged from an external electrical source.'
+status: 'published'
+lastReviewed: '2026-05-16'
+sources: ['start-brief', 'doe-afdc-phev']
+category: 'electric-drive'
+eras: ['plug-in-hybrids']
+relatedTechnologies:
+  ['hybrid-electric-vehicle', 'ev-charging', 'battery-management-system']
+relatedVehicles: ['chevrolet-volt']
 ---
 
 ## Definition

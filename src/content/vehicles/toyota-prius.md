@@ -1,15 +1,25 @@
 ---
-title: "Toyota Prius"
-summary: "An example of power-split hybrid commercialization and the integration of regenerative braking, motor-generators, and control software."
-status: "published"
-lastReviewed: "2026-05-16"
-sources: ["start-brief", "doe-afdc-hybrid"]
-manufacturer: "Toyota"
-productionPeriod: "1997 onward"
-marketContext: "Mass-production hybrid passenger vehicle"
-illustrates: ["power-split hybrid architecture", "regenerative braking", "battery buffering"]
-relatedEras: ["hybridization"]
-relatedTechnologies: ["hybrid-electric-vehicle", "regenerative-braking", "battery-management-system"]
+title: 'Toyota Prius'
+summary: 'An example of power-split hybrid commercialization and the integration of regenerative braking, motor-generators, and control software.'
+status: 'published'
+lastReviewed: '2026-05-16'
+sources: ['start-brief', 'doe-afdc-hybrid']
+manufacturer: 'Toyota'
+productionPeriod: '1997 onward'
+marketContext: 'Mass-production hybrid passenger vehicle'
+illustrates:
+  [
+    'power-split hybrid architecture',
+    'regenerative braking',
+    'battery buffering',
+  ]
+relatedEras: ['hybridization']
+relatedTechnologies:
+  [
+    'hybrid-electric-vehicle',
+    'regenerative-braking',
+    'battery-management-system',
+  ]
 ---
 
 ## Why It Is Included

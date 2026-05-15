@@ -1,14 +1,21 @@
 ---
-title: "Birth of the Practical Automobile"
-summary: "The period when small internal combustion engines, vehicle packaging, and repeatable manufacturing began converging into practical road vehicles."
-status: "published"
-lastReviewed: "2026-05-16"
-sources: ["start-brief"]
-dateRange: "1880s-1910s"
+title: 'Birth of the Practical Automobile'
+summary: 'The period when small internal combustion engines, vehicle packaging, and repeatable manufacturing began converging into practical road vehicles.'
+status: 'published'
+lastReviewed: '2026-05-16'
+sources: ['start-brief']
+dateRange: '1880s-1910s'
 order: 20
-keyThemes: ["four-stroke gasoline engines", "carburetion", "ignition", "early transmissions", "driver-control standardization"]
-relatedTechnologies: ["four-stroke-engine", "carburetor"]
-relatedVehicles: ["benz-patent-motorwagen", "ford-model-t"]
+keyThemes:
+  [
+    'four-stroke gasoline engines',
+    'carburetion',
+    'ignition',
+    'early transmissions',
+    'driver-control standardization',
+  ]
+relatedTechnologies: ['four-stroke-engine', 'carburetor']
+relatedVehicles: ['benz-patent-motorwagen', 'ford-model-t']
 ---
 
 ## Historical Context

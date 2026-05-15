@@ -1,13 +1,23 @@
 ---
-title: "EV Charging"
-summary: "The hardware, software, standards, and infrastructure used to transfer electrical energy into plug-in vehicle batteries."
-status: "published"
-lastReviewed: "2026-05-16"
-sources: ["start-brief", "doe-afdc-bev", "doe-afdc-phev"]
-category: "electric-drive"
-eras: ["plug-in-hybrids", "battery-electric-vehicles", "software-defined-connected-vehicles"]
-relatedTechnologies: ["battery-electric-vehicle", "plug-in-hybrid-electric-vehicle", "battery-management-system"]
-relatedVehicles: ["chevrolet-volt", "nissan-leaf"]
+title: 'EV Charging'
+summary: 'The hardware, software, standards, and infrastructure used to transfer electrical energy into plug-in vehicle batteries.'
+status: 'published'
+lastReviewed: '2026-05-16'
+sources: ['start-brief', 'doe-afdc-bev', 'doe-afdc-phev']
+category: 'electric-drive'
+eras:
+  [
+    'plug-in-hybrids',
+    'battery-electric-vehicles',
+    'software-defined-connected-vehicles',
+  ]
+relatedTechnologies:
+  [
+    'battery-electric-vehicle',
+    'plug-in-hybrid-electric-vehicle',
+    'battery-management-system',
+  ]
+relatedVehicles: ['chevrolet-volt', 'nissan-leaf']
 ---
 
 ## Definition

@@ -5,7 +5,10 @@ import { render } from 'astro:content';
 
 export async function getStaticPaths() {
   const eras = await getPublicEntries('eras');
-  return eras.map((entry) => ({ params: { slug: entrySlug(entry) }, props: { entry } }));
+  return eras.map((entry) => ({
+    params: { slug: entrySlug(entry) },
+    props: { entry },
+  }));
 }
 
 const { entry } = Astro.props;
@@ -21,8 +24,16 @@ const { Content } = await render(entry);
   sourceIds={entry.data.sources}
   metaItems={[entry.data.dateRange]}
   linkSections={[
-    { title: 'Related Technologies', basePath: '/technologies/', items: entry.data.relatedTechnologies },
-    { title: 'Vehicle Examples', basePath: '/vehicles/', items: entry.data.relatedVehicles },
+    {
+      title: 'Related Technologies',
+      basePath: '/technologies/',
+      items: entry.data.relatedTechnologies,
+    },
+    {
+      title: 'Vehicle Examples',
+      basePath: '/vehicles/',
+      items: entry.data.relatedVehicles,
+    },
   ]}
 >
   <Content />

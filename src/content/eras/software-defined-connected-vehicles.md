@@ -1,13 +1,21 @@
 ---
-title: "Software-Defined and Connected Vehicles"
-summary: "Domain controllers, OTA updates, driver assistance, high-voltage platforms, and charging networks made software a primary vehicle system."
-status: "published"
-lastReviewed: "2026-05-16"
-sources: ["start-brief", "nhtsa-safety-tech"]
-dateRange: "2020s onward"
+title: 'Software-Defined and Connected Vehicles'
+summary: 'Domain controllers, OTA updates, driver assistance, high-voltage platforms, and charging networks made software a primary vehicle system.'
+status: 'published'
+lastReviewed: '2026-05-16'
+sources: ['start-brief', 'nhtsa-safety-tech']
+dateRange: '2020s onward'
 order: 100
-keyThemes: ["domain controllers", "over-the-air updates", "ADAS", "800 V architectures", "bidirectional charging"]
-relatedTechnologies: ["battery-electric-vehicle", "ev-charging", "engine-control-unit"]
+keyThemes:
+  [
+    'domain controllers',
+    'over-the-air updates',
+    'ADAS',
+    '800 V architectures',
+    'bidirectional charging',
+  ]
+relatedTechnologies:
+  ['battery-electric-vehicle', 'ev-charging', 'engine-control-unit']
 relatedVehicles: []
 ---
 

@@ -1,14 +1,26 @@
 ---
-title: "Modern Diesel and Emissions Aftertreatment"
-summary: "Turbocharging, high-pressure injection, particulate filters, SCR, and emissions compliance reshaped diesel passenger and commercial vehicles."
-status: "published"
-lastReviewed: "2026-05-16"
-sources: ["start-brief", "epa-vw-settlement", "epa-vw-violations"]
-dateRange: "1990s-2010s"
+title: 'Modern Diesel and Emissions Aftertreatment'
+summary: 'Turbocharging, high-pressure injection, particulate filters, SCR, and emissions compliance reshaped diesel passenger and commercial vehicles.'
+status: 'published'
+lastReviewed: '2026-05-16'
+sources: ['start-brief', 'epa-vw-settlement', 'epa-vw-violations']
+dateRange: '1990s-2010s'
 order: 60
-keyThemes: ["common-rail injection", "turbocharged diesel", "NOx control", "particulate filters", "Dieselgate"]
-relatedTechnologies: ["diesel-engine", "common-rail-diesel-injection", "selective-catalytic-reduction"]
-relatedVehicles: ["volkswagen-tdi-dieselgate-example"]
+keyThemes:
+  [
+    'common-rail injection',
+    'turbocharged diesel',
+    'NOx control',
+    'particulate filters',
+    'Dieselgate',
+  ]
+relatedTechnologies:
+  [
+    'diesel-engine',
+    'common-rail-diesel-injection',
+    'selective-catalytic-reduction',
+  ]
+relatedVehicles: ['volkswagen-tdi-dieselgate-example']
 ---
 
 ## Historical Context

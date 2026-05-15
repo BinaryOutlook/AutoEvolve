@@ -1,13 +1,14 @@
 ---
-title: "Selective Catalytic Reduction"
-summary: "A diesel aftertreatment process that uses a reductant and catalyst to convert NOx into nitrogen and water."
-status: "published"
-lastReviewed: "2026-05-16"
-sources: ["start-brief", "epa-vw-settlement"]
-category: "emissions"
-eras: ["modern-diesel-and-aftertreatment"]
-relatedTechnologies: ["diesel-engine", "engine-control-unit", "common-rail-diesel-injection"]
-relatedVehicles: ["volkswagen-tdi-dieselgate-example"]
+title: 'Selective Catalytic Reduction'
+summary: 'A diesel aftertreatment process that uses a reductant and catalyst to convert NOx into nitrogen and water.'
+status: 'published'
+lastReviewed: '2026-05-16'
+sources: ['start-brief', 'epa-vw-settlement']
+category: 'emissions'
+eras: ['modern-diesel-and-aftertreatment']
+relatedTechnologies:
+  ['diesel-engine', 'engine-control-unit', 'common-rail-diesel-injection']
+relatedVehicles: ['volkswagen-tdi-dieselgate-example']
 ---
 
 ## Definition

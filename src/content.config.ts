@@ -2,7 +2,14 @@ import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
 
-const statusSchema = z.enum(['stub', 'draft', 'source-review', 'technical-review', 'published', 'needs-update']);
+const statusSchema = z.enum([
+  'stub',
+  'draft',
+  'source-review',
+  'technical-review',
+  'published',
+  'needs-update',
+]);
 const sourceListSchema = z.array(z.string()).default([]);
 const stringListSchema = z.array(z.string()).default([]);
 
@@ -26,7 +33,10 @@ const eras = defineCollection({
 });
 
 const technologies = defineCollection({
-  loader: glob({ base: './src/content/technologies', pattern: '**/*.{md,mdx}' }),
+  loader: glob({
+    base: './src/content/technologies',
+    pattern: '**/*.{md,mdx}',
+  }),
   schema: baseArticleSchema.extend({
     category: z.enum([
       'propulsion',
@@ -57,7 +67,10 @@ const vehicles = defineCollection({
 });
 
 const controversies = defineCollection({
-  loader: glob({ base: './src/content/controversies', pattern: '**/*.{md,mdx}' }),
+  loader: glob({
+    base: './src/content/controversies',
+    pattern: '**/*.{md,mdx}',
+  }),
   schema: baseArticleSchema.extend({
     dateRange: z.string(),
     affectedTechnologies: stringListSchema,

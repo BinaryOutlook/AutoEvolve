@@ -26,7 +26,10 @@ export const milestones: Milestone[] = [
     type: 'invention',
     summary:
       'Small internal combustion engines, lightweight frames, steering, and drivetrain packaging began converging into practical road vehicles.',
-    links: ['/eras/birth-of-practical-automobile/', '/vehicles/benz-patent-motorwagen/'],
+    links: [
+      '/eras/birth-of-practical-automobile/',
+      '/vehicles/benz-patent-motorwagen/',
+    ],
     technologies: ['four-stroke-engine'],
     vehicles: ['benz-patent-motorwagen'],
     sources: ['start-brief'],
@@ -38,7 +41,10 @@ export const milestones: Milestone[] = [
     type: 'manufacturing',
     summary:
       'Assembly-line production and standardization changed the scale, repairability, and public availability of automobiles.',
-    links: ['/eras/standardization-and-mass-production/', '/vehicles/ford-model-t/'],
+    links: [
+      '/eras/standardization-and-mass-production/',
+      '/vehicles/ford-model-t/',
+    ],
     technologies: ['four-stroke-engine'],
     vehicles: ['ford-model-t'],
     sources: ['start-brief'],
@@ -50,8 +56,15 @@ export const milestones: Milestone[] = [
     type: 'regulation',
     summary:
       'Emissions and fuel-economy pressure accelerated adoption of catalytic converters, sensors, and electronic control units.',
-    links: ['/eras/emissions-and-electronic-control/', '/technologies/catalytic-converter/'],
-    technologies: ['catalytic-converter', 'engine-control-unit', 'fuel-injection'],
+    links: [
+      '/eras/emissions-and-electronic-control/',
+      '/technologies/catalytic-converter/',
+    ],
+    technologies: [
+      'catalytic-converter',
+      'engine-control-unit',
+      'fuel-injection',
+    ],
     vehicles: [],
     sources: ['start-brief'],
   },
@@ -62,7 +75,11 @@ export const milestones: Milestone[] = [
     type: 'commercialization',
     summary:
       'Hybrid systems combined combustion engines, electric machines, batteries, and control software to recover braking energy and reduce fuel use.',
-    links: ['/eras/hybridization/', '/technologies/hybrid-electric-vehicle/', '/vehicles/toyota-prius/'],
+    links: [
+      '/eras/hybridization/',
+      '/technologies/hybrid-electric-vehicle/',
+      '/vehicles/toyota-prius/',
+    ],
     technologies: ['hybrid-electric-vehicle', 'regenerative-braking'],
     vehicles: ['toyota-prius'],
     sources: ['doe-afdc-hybrid'],
@@ -74,8 +91,15 @@ export const milestones: Milestone[] = [
     type: 'controversy',
     summary:
       'U.S. regulators identified defeat-device behavior in certain Volkswagen diesel vehicles, making software-controlled emissions compliance a major public issue.',
-    links: ['/controversies/dieselgate/', '/vehicles/volkswagen-tdi-dieselgate-example/'],
-    technologies: ['diesel-engine', 'selective-catalytic-reduction', 'engine-control-unit'],
+    links: [
+      '/controversies/dieselgate/',
+      '/vehicles/volkswagen-tdi-dieselgate-example/',
+    ],
+    technologies: [
+      'diesel-engine',
+      'selective-catalytic-reduction',
+      'engine-control-unit',
+    ],
     vehicles: ['volkswagen-tdi-dieselgate-example'],
     sources: ['epa-vw-violations', 'epa-vw-settlement'],
   },
@@ -86,8 +110,16 @@ export const milestones: Milestone[] = [
     type: 'commercialization',
     summary:
       'Lithium-ion battery packs, inverters, traction motors, and charging networks supported a new generation of battery electric vehicles.',
-    links: ['/eras/battery-electric-vehicles/', '/technologies/battery-electric-vehicle/', '/vehicles/nissan-leaf/'],
-    technologies: ['battery-electric-vehicle', 'lithium-ion-battery', 'ev-charging'],
+    links: [
+      '/eras/battery-electric-vehicles/',
+      '/technologies/battery-electric-vehicle/',
+      '/vehicles/nissan-leaf/',
+    ],
+    technologies: [
+      'battery-electric-vehicle',
+      'lithium-ion-battery',
+      'ev-charging',
+    ],
     vehicles: ['nissan-leaf'],
     sources: ['doe-afdc-bev'],
   },

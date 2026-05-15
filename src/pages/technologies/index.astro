@@ -1,19 +1,28 @@
 ---
 import ContentCard from '@components/ContentCard.astro';
 import BaseLayout from '@layouts/BaseLayout.astro';
-import { categoryLabel, entrySlug, getPublicEntries, pathFor } from '@lib/collections';
+import {
+  categoryLabel,
+  entrySlug,
+  getPublicEntries,
+  pathFor,
+} from '@lib/collections';
 
 const technologies = await getPublicEntries('technologies');
 const groups = Map.groupBy(technologies, (entry) => entry.data.category);
 ---
 
-<BaseLayout title="Technologies" description="Automotive technology explainers grouped by system.">
+<BaseLayout
+  title="Technologies"
+  description="Automotive technology explainers grouped by system."
+>
   <section class="page-section page-hero">
     <p class="eyebrow">Systems and components</p>
     <h1>Technologies</h1>
     <p>
-      Browse explanations by propulsion, emissions, fuel systems, electric drive, and vehicle software. Each page
-      connects a component to historical context.
+      Browse explanations by propulsion, emissions, fuel systems, electric
+      drive, and vehicle software. Each page connects a component to historical
+      context.
     </p>
   </section>
   {

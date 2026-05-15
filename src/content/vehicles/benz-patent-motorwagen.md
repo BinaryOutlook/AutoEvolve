@@ -1,15 +1,16 @@
 ---
-title: "Benz Patent-Motorwagen"
-summary: "An example of early gasoline automobile packaging, combining engine, frame, steering, and drivetrain into a self-propelled road vehicle."
-status: "published"
-lastReviewed: "2026-05-16"
-sources: ["start-brief"]
-manufacturer: "Benz & Cie."
-productionPeriod: "1880s"
-marketContext: "Early European automobile experimentation"
-illustrates: ["early gasoline vehicle integration", "four-stroke engine packaging"]
-relatedEras: ["birth-of-practical-automobile"]
-relatedTechnologies: ["four-stroke-engine"]
+title: 'Benz Patent-Motorwagen'
+summary: 'An example of early gasoline automobile packaging, combining engine, frame, steering, and drivetrain into a self-propelled road vehicle.'
+status: 'published'
+lastReviewed: '2026-05-16'
+sources: ['start-brief']
+manufacturer: 'Benz & Cie.'
+productionPeriod: '1880s'
+marketContext: 'Early European automobile experimentation'
+illustrates:
+  ['early gasoline vehicle integration', 'four-stroke engine packaging']
+relatedEras: ['birth-of-practical-automobile']
+relatedTechnologies: ['four-stroke-engine']
 ---
 
 ## Why It Is Included

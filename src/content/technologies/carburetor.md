@@ -1,13 +1,18 @@
 ---
-title: "Carburetor"
-summary: "A mechanical fuel-metering device that mixes gasoline with intake air before electronic fuel injection became dominant."
-status: "published"
-lastReviewed: "2026-05-16"
-sources: ["start-brief"]
-category: "engine-subsystem"
-eras: ["birth-of-practical-automobile", "standardization-and-mass-production", "postwar-expansion"]
-relatedTechnologies: ["four-stroke-engine", "fuel-injection"]
-relatedVehicles: ["ford-model-t"]
+title: 'Carburetor'
+summary: 'A mechanical fuel-metering device that mixes gasoline with intake air before electronic fuel injection became dominant.'
+status: 'published'
+lastReviewed: '2026-05-16'
+sources: ['start-brief']
+category: 'engine-subsystem'
+eras:
+  [
+    'birth-of-practical-automobile',
+    'standardization-and-mass-production',
+    'postwar-expansion',
+  ]
+relatedTechnologies: ['four-stroke-engine', 'fuel-injection']
+relatedVehicles: ['ford-model-t']
 ---
 
 ## Definition

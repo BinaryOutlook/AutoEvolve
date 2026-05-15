@@ -1,15 +1,16 @@
 ---
-title: "Mercedes-Benz 260 D"
-summary: "An example of early diesel passenger-car application and the adaptation of compression ignition beyond commercial vehicles."
-status: "published"
-lastReviewed: "2026-05-16"
-sources: ["start-brief"]
-manufacturer: "Mercedes-Benz"
-productionPeriod: "1930s"
-marketContext: "Early diesel passenger-car development in Europe"
-illustrates: ["compression ignition in passenger cars", "diesel fuel economy context"]
-relatedEras: ["standardization-and-mass-production"]
-relatedTechnologies: ["diesel-engine"]
+title: 'Mercedes-Benz 260 D'
+summary: 'An example of early diesel passenger-car application and the adaptation of compression ignition beyond commercial vehicles.'
+status: 'published'
+lastReviewed: '2026-05-16'
+sources: ['start-brief']
+manufacturer: 'Mercedes-Benz'
+productionPeriod: '1930s'
+marketContext: 'Early diesel passenger-car development in Europe'
+illustrates:
+  ['compression ignition in passenger cars', 'diesel fuel economy context']
+relatedEras: ['standardization-and-mass-production']
+relatedTechnologies: ['diesel-engine']
 ---
 
 ## Why It Is Included

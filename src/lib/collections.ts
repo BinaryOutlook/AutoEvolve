@@ -1,9 +1,18 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
 
-export type ArchiveCollection = 'eras' | 'technologies' | 'vehicles' | 'controversies';
+export type ArchiveCollection =
+  | 'eras'
+  | 'technologies'
+  | 'vehicles'
+  | 'controversies';
 export type ArchiveEntry<T extends ArchiveCollection> = CollectionEntry<T>;
 
-const publicStatuses = new Set(['published', 'source-review', 'technical-review', 'needs-update']);
+const publicStatuses = new Set([
+  'published',
+  'source-review',
+  'technical-review',
+  'needs-update',
+]);
 
 export function entrySlug(entry: { id: string }) {
   return entry.id.replace(/\.mdx?$/, '').replace(/\/index$/, '');
@@ -16,8 +25,12 @@ export function titleFromSlug(slug: string) {
     .join(' ');
 }
 
-export async function getPublicEntries<T extends ArchiveCollection>(collection: T) {
-  const entries = await getCollection(collection, ({ data }) => publicStatuses.has(data.status));
+export async function getPublicEntries<T extends ArchiveCollection>(
+  collection: T,
+) {
+  const entries = await getCollection(collection, ({ data }) =>
+    publicStatuses.has(data.status),
+  );
 
   return entries.sort((a, b) => {
     if ('order' in a.data && 'order' in b.data) {

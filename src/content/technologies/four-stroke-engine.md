@@ -1,13 +1,18 @@
 ---
-title: "Four-Stroke Engine"
-summary: "A piston engine cycle using intake, compression, power, and exhaust strokes to convert fuel energy into mechanical work."
-status: "published"
-lastReviewed: "2026-05-16"
-sources: ["start-brief"]
-category: "propulsion"
-eras: ["birth-of-practical-automobile", "standardization-and-mass-production", "postwar-expansion"]
-relatedTechnologies: ["carburetor", "fuel-injection", "engine-control-unit"]
-relatedVehicles: ["benz-patent-motorwagen", "ford-model-t"]
+title: 'Four-Stroke Engine'
+summary: 'A piston engine cycle using intake, compression, power, and exhaust strokes to convert fuel energy into mechanical work.'
+status: 'published'
+lastReviewed: '2026-05-16'
+sources: ['start-brief']
+category: 'propulsion'
+eras:
+  [
+    'birth-of-practical-automobile',
+    'standardization-and-mass-production',
+    'postwar-expansion',
+  ]
+relatedTechnologies: ['carburetor', 'fuel-injection', 'engine-control-unit']
+relatedVehicles: ['benz-patent-motorwagen', 'ford-model-t']
 ---
 
 ## Definition

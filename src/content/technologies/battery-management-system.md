@@ -1,13 +1,19 @@
 ---
-title: "Battery Management System"
-summary: "Electronics and software that monitor, protect, balance, and estimate the state of a traction battery pack."
-status: "published"
-lastReviewed: "2026-05-16"
-sources: ["start-brief", "doe-afdc-bev"]
-category: "electric-drive"
-eras: ["plug-in-hybrids", "battery-electric-vehicles", "software-defined-connected-vehicles"]
-relatedTechnologies: ["lithium-ion-battery", "ev-charging", "battery-electric-vehicle"]
-relatedVehicles: ["chevrolet-volt", "nissan-leaf"]
+title: 'Battery Management System'
+summary: 'Electronics and software that monitor, protect, balance, and estimate the state of a traction battery pack.'
+status: 'published'
+lastReviewed: '2026-05-16'
+sources: ['start-brief', 'doe-afdc-bev']
+category: 'electric-drive'
+eras:
+  [
+    'plug-in-hybrids',
+    'battery-electric-vehicles',
+    'software-defined-connected-vehicles',
+  ]
+relatedTechnologies:
+  ['lithium-ion-battery', 'ev-charging', 'battery-electric-vehicle']
+relatedVehicles: ['chevrolet-volt', 'nissan-leaf']
 ---
 
 ## Definition

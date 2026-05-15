@@ -1,13 +1,19 @@
 ---
-title: "Engine Control Unit"
-summary: "A vehicle computer that coordinates engine fuel, ignition, boost, diagnostics, and emissions behavior through sensors and calibration."
-status: "published"
-lastReviewed: "2026-05-16"
-sources: ["start-brief", "epa-vw-violations"]
-category: "software-diagnostics"
-eras: ["emissions-and-electronic-control", "modern-diesel-and-aftertreatment", "software-defined-connected-vehicles"]
-relatedTechnologies: ["fuel-injection", "catalytic-converter", "selective-catalytic-reduction"]
-relatedVehicles: ["volkswagen-tdi-dieselgate-example"]
+title: 'Engine Control Unit'
+summary: 'A vehicle computer that coordinates engine fuel, ignition, boost, diagnostics, and emissions behavior through sensors and calibration.'
+status: 'published'
+lastReviewed: '2026-05-16'
+sources: ['start-brief', 'epa-vw-violations']
+category: 'software-diagnostics'
+eras:
+  [
+    'emissions-and-electronic-control',
+    'modern-diesel-and-aftertreatment',
+    'software-defined-connected-vehicles',
+  ]
+relatedTechnologies:
+  ['fuel-injection', 'catalytic-converter', 'selective-catalytic-reduction']
+relatedVehicles: ['volkswagen-tdi-dieselgate-example']
 ---
 
 ## Definition

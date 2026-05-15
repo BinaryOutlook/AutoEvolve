@@ -1,13 +1,19 @@
 ---
-title: "Diesel Engine"
-summary: "A compression-ignition engine that uses high compression temperature to ignite fuel injected into hot air."
-status: "published"
-lastReviewed: "2026-05-16"
-sources: ["start-brief", "epa-vw-violations"]
-category: "propulsion"
-eras: ["standardization-and-mass-production", "modern-diesel-and-aftertreatment"]
-relatedTechnologies: ["common-rail-diesel-injection", "selective-catalytic-reduction", "engine-control-unit"]
-relatedVehicles: ["mercedes-benz-260-d", "volkswagen-tdi-dieselgate-example"]
+title: 'Diesel Engine'
+summary: 'A compression-ignition engine that uses high compression temperature to ignite fuel injected into hot air.'
+status: 'published'
+lastReviewed: '2026-05-16'
+sources: ['start-brief', 'epa-vw-violations']
+category: 'propulsion'
+eras:
+  ['standardization-and-mass-production', 'modern-diesel-and-aftertreatment']
+relatedTechnologies:
+  [
+    'common-rail-diesel-injection',
+    'selective-catalytic-reduction',
+    'engine-control-unit',
+  ]
+relatedVehicles: ['mercedes-benz-260-d', 'volkswagen-tdi-dieselgate-example']
 ---
 
 ## Definition

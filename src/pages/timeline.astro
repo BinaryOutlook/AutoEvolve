@@ -2,16 +2,22 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 import { milestones } from '@data/milestones';
 
-const types = Array.from(new Set(milestones.map((milestone) => milestone.type))).sort();
+const types = Array.from(
+  new Set(milestones.map((milestone) => milestone.type)),
+).sort();
 ---
 
-<BaseLayout title="Timeline" description="A filterable timeline of automotive technology milestones.">
+<BaseLayout
+  title="Timeline"
+  description="A filterable timeline of automotive technology milestones."
+>
   <section class="page-section page-hero">
     <p class="eyebrow">Milestones</p>
     <h1>Timeline</h1>
     <p>
-      Browse selected events by type. Dates may represent invention, commercialization, regulation, infrastructure, or
-      controversy, which are different kinds of historical change.
+      Browse selected events by type. Dates may represent invention,
+      commercialization, regulation, infrastructure, or controversy, which are
+      different kinds of historical change.
     </p>
   </section>
 
@@ -19,7 +25,13 @@ const types = Array.from(new Set(milestones.map((milestone) => milestone.type)))
     <h2 id="timeline-heading">Milestone Filters</h2>
     <nav class="timeline-controls" aria-label="Timeline filters">
       <a href="/timeline/" data-filter="all" class="is-active">All</a>
-      {types.map((type) => <a href={`/timeline/?type=${type}`} data-filter={type}>{type}</a>)}
+      {
+        types.map((type) => (
+          <a href={`/timeline/?type=${type}`} data-filter={type}>
+            {type}
+          </a>
+        ))
+      }
     </nav>
 
     <ol class="timeline-list">

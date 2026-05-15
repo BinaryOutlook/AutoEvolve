@@ -1,13 +1,18 @@
 ---
-title: "Regenerative Braking"
+title: 'Regenerative Braking'
 summary: "A braking strategy that uses an electric machine as a generator to recover part of a vehicle's kinetic energy."
-status: "published"
-lastReviewed: "2026-05-16"
-sources: ["start-brief", "doe-afdc-hybrid", "doe-afdc-bev"]
-category: "electric-drive"
-eras: ["hybridization", "battery-electric-vehicles"]
-relatedTechnologies: ["hybrid-electric-vehicle", "battery-electric-vehicle", "battery-management-system"]
-relatedVehicles: ["toyota-prius", "nissan-leaf"]
+status: 'published'
+lastReviewed: '2026-05-16'
+sources: ['start-brief', 'doe-afdc-hybrid', 'doe-afdc-bev']
+category: 'electric-drive'
+eras: ['hybridization', 'battery-electric-vehicles']
+relatedTechnologies:
+  [
+    'hybrid-electric-vehicle',
+    'battery-electric-vehicle',
+    'battery-management-system',
+  ]
+relatedVehicles: ['toyota-prius', 'nissan-leaf']
 ---
 
 ## Definition

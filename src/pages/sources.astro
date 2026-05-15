@@ -3,13 +3,17 @@ import { sources } from '@data/sources';
 import BaseLayout from '@layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Sources" description="Source library and citation policy for AutoEvolve.">
+<BaseLayout
+  title="Sources"
+  description="Source library and citation policy for AutoEvolve."
+>
   <section class="page-section page-hero">
     <p class="eyebrow">Evidence</p>
     <h1>Sources</h1>
     <p>
-      AutoEvolve prioritizes official, technical, academic, and archival references. Manufacturer material may support
-      dates or specifications, but marketing claims should not become independent conclusions.
+      AutoEvolve prioritizes official, technical, academic, and archival
+      references. Manufacturer material may support dates or specifications, but
+      marketing claims should not become independent conclusions.
     </p>
   </section>
   <section class="page-section">
@@ -18,7 +22,9 @@ import BaseLayout from '@layouts/BaseLayout.astro';
         sources.map((source) => (
           <article class="content-card">
             <p class="eyebrow">{source.type}</p>
-            <h3><a href={source.url}>{source.title}</a></h3>
+            <h3>
+              <a href={source.url}>{source.title}</a>
+            </h3>
             <p>{source.organization}</p>
             <p>Accessed {source.accessedDate}</p>
           </article>
