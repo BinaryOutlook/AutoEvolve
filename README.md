@@ -1,6 +1,30 @@
 # AutoEvolve
 
-AutoEvolve is a static-first educational website for documenting the evolution of automotive technology. It follows the implementation brief in [start_brief.md](start_brief.md): neutral editorial tone, source-backed technical explanations, vehicle models as examples of broader systems, and free-hosting-friendly architecture.
+AutoEvolve is a static-first educational website that documents the evolution of automotive technology: early self-propelled vehicles, internal-combustion systems, diesel and emissions controls, hybrids, plug-in hybrids, battery-electric platforms, and the software-defined vehicles now reshaping mobility.
+
+The project starts at version `0.01`: a blank-slate MVP stage focused on making the archive useful, verifiable, and easy to extend. The durable rule is simple: every meaningful update should keep the product, documentation, and maintenance workflow moving together instead of letting the code outrun the explanation.
+
+The project follows the implementation brief in [start_brief.md](start_brief.md): neutral editorial tone, source-backed technical explanations, vehicle models as examples of broader systems, and architecture that remains friendly to free static hosting.
+
+## Current Version
+
+| Field                | Value                                                                                                |
+| -------------------- | ---------------------------------------------------------------------------------------------------- |
+| Project stage        | `0.01` initial MVP                                                                                   |
+| Primary goal         | Build a deployable educational archive with credible seed content and a maintainable content workflow. |
+| Product stance       | Historical, technical, neutral, and evidence-led.                                                    |
+| Architecture stance  | Static-first Astro site, Git-backed content, typed schemas, generated search, and no backend until the workflow truly needs one. |
+| Documentation stance | README and `AGENTS.md` stay current with every meaningful change; deeper editorial rules live under `docs/`. |
+
+For this stage, the operating equation is:
+
+$$
+\text{MVP Readiness} =
+\frac{\text{Useful Content} \times \text{Source Quality} \times \text{Navigability}}
+{\text{Maintenance Burden} + \text{Editorial Drift}}
+$$
+
+If source quality or navigability is low, the project is not ready just because pages render.
 
 ## Tech Stack
 
@@ -10,6 +34,15 @@ AutoEvolve is a static-first educational website for documenting the evolution o
 - Zod-backed schemas through Astro content collections.
 - Vitest and Playwright for verification.
 - ESLint, Prettier, and markdownlint for project hygiene.
+
+## Quick Start
+
+```bash
+npm install
+npm run dev
+```
+
+The development server prints the local URL, usually `http://localhost:4321`.
 
 ## Commands
 
@@ -24,6 +57,77 @@ AutoEvolve is a static-first educational website for documenting the evolution o
 | `npm run test`     | Run unit tests.                                                                 |
 | `npm run test:e2e` | Run Playwright end-to-end tests.                                                |
 
+Before submitting meaningful changes, run:
+
+```bash
+npm run lint
+npm run test
+npm run build
+```
+
+Use `npm run test:e2e` when routes, navigation, search behavior, or browser-visible layout change.
+
+## Project Structure
+
+| Path                                                   | Purpose                                                                                              |
+| ------------------------------------------------------ | ---------------------------------------------------------------------------------------------------- |
+| [src/pages/](src/pages/)                               | Astro routes for home, timeline, eras, technologies, vehicles, controversies, glossary, sources, about, and search. |
+| [src/content/](src/content/)                           | Markdown and MDX content collections for eras, technologies, vehicles, and controversies.            |
+| [src/data/](src/data/)                                 | Structured source, glossary, and timeline data.                                                      |
+| [src/components/](src/components/)                     | Shared UI components for cards, headers, source lists, maps, and linked lists.                       |
+| [src/layouts/](src/layouts/)                           | Base and article layout shells.                                                                      |
+| [docs/](docs/)                                         | Current editorial, source, and contribution guidance.                                                |
+| [scripts/](scripts/)                                   | Project validation scripts for content and language rules.                                           |
+| [tests/](tests/)                                       | Unit and end-to-end tests.                                                                           |
+| [refrence/Future Roadmap/](refrence/Future%20Roadmap/) | Imported reference workflow for roadmap-style documentation. Treat this as inspiration, not this project’s active queue. |
+
+## Documentation Map
+
+| Document                                                 | Authority                                                                                  |
+| -------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| [README.md](README.md)                                   | Current project overview, commands, version status, structure, and maintenance wayfinding. |
+| [AGENTS.md](AGENTS.md)                                   | Agent operating rules for documentation, implementation, and future planning.              |
+| [start_brief.md](start_brief.md)                         | Durable product brief for mission, scope, routes, content model, and editorial posture.    |
+| [docs/editorial-policy.md](docs/editorial-policy.md)     | Editorial neutrality, vehicle-example boundaries, and tone.                                |
+| [docs/source-style-guide.md](docs/source-style-guide.md) | Source hierarchy, citation metadata, and support rules.                                    |
+| [docs/contribution-guide.md](docs/contribution-guide.md) | Local setup and pre-submission checks.                                                     |
+
+Keep documentation current in the same pass as code whenever a change affects commands, routes, content schemas, editorial rules, product scope, or architecture.
+
+## Editorial Standard
+
+AutoEvolve should explain automotive systems before discussing vehicle examples. Vehicle pages are not reviews; they are case studies showing how a broader technology entered production, changed over time, or exposed tradeoffs.
+
+Use specific sources for specific claims. Regulatory records support regulatory history. Manufacturer material may support dates or specifications, but marketing claims need context. When a topic is recent or unsettled, mark it with a clear last-reviewed date.
+
+Technical pages may use short equations when they clarify a system. For example, power can be introduced as:
+
+$$
+P = T \omega
+$$
+
+where \(P\) is power, \(T\) is torque, and \(\omega\) is angular speed.
+
+## Planning Workflow
+
+The imported reference folder uses a controlled roadmap queue before GitHub issues. AutoEvolve should follow that design trend as complexity grows:
+
+```text
+idea or request
+-> clarify value, scope, risks, and affected docs
+-> decide whether it is small enough to implement directly
+-> for larger work, create or update a scoped planning note before implementation
+-> implement in a focused change
+-> run checks
+-> update docs in the same pass
+```
+
+Small changes can be handled directly. Larger changes, such as new sections, route families, schema changes, major visual redesigns, content workflow changes, or backend decisions, should get a short planning packet before implementation. That packet should capture scope, non-goals, acceptance criteria, test plan, documentation impact, and rollback path.
+
+The first version is `0.01`; future versioned planning should preserve that style and avoid treating loose ideas as active work before they are scoped.
+
 ## Project Status
 
 The repository is being built incrementally from the brief. The first implementation target is a deployable static MVP with core page templates, seed content, timeline browsing, static search, contribution guidance, and automated quality checks.
+
+Current docs are expected to describe the present state. If a feature, command, route, or workflow changes, update the relevant document before considering the work complete.
