@@ -12,18 +12,18 @@ The recommended implementation is a static-first content website built with open
 
 These assumptions should guide implementation unless the project owner later revises them:
 
-| Area | Assumption |
-|---|---|
-| Primary format | Public educational website, not a private app. |
-| Initial language | English. Internationalization may be added later. |
-| Content ownership | Original explanatory writing with cited references. |
-| Editorial stance | Neutral, evidence-led, and non-promotional. |
-| Vehicle coverage | Vehicles are examples of broader technologies, not review subjects. |
-| Hosting target | Free static hosting for the first release. |
-| Backend scope | No backend required for the MVP unless submissions, accounts, or structured admin tools are added. |
-| Monetization | None in the first release. Avoid ads that may weaken perceived neutrality. |
-| User accounts | Not required for the public MVP. |
-| Data persistence | Git-backed Markdown and JSON first; database later if content workflow requires it. |
+| Area              | Assumption                                                                                         |
+| ----------------- | -------------------------------------------------------------------------------------------------- |
+| Primary format    | Public educational website, not a private app.                                                     |
+| Initial language  | English. Internationalization may be added later.                                                  |
+| Content ownership | Original explanatory writing with cited references.                                                |
+| Editorial stance  | Neutral, evidence-led, and non-promotional.                                                        |
+| Vehicle coverage  | Vehicles are examples of broader technologies, not review subjects.                                |
+| Hosting target    | Free static hosting for the first release.                                                         |
+| Backend scope     | No backend required for the MVP unless submissions, accounts, or structured admin tools are added. |
+| Monetization      | None in the first release. Avoid ads that may weaken perceived neutrality.                         |
+| User accounts     | Not required for the public MVP.                                                                   |
+| Data persistence  | Git-backed Markdown and JSON first; database later if content workflow requires it.                |
 
 ## 3. Website Purpose and Mission
 
@@ -71,21 +71,21 @@ The project is successful when:
 
 ### 5.1 Primary Readers
 
-| Audience | Needs |
-|---|---|
-| Students | Clear explanations, timelines, definitions, and source links for assignments or self-study. |
-| Automotive hobbyists | Technical context beyond model trivia or brand-centered storytelling. |
-| General readers | An approachable path into engineering history without assuming specialist knowledge. |
-| Educators | Neutral pages that can support lessons about engines, electrification, regulation, and mobility. |
-| Early-stage researchers | Curated starting points for deeper reading. |
+| Audience                | Needs                                                                                            |
+| ----------------------- | ------------------------------------------------------------------------------------------------ |
+| Students                | Clear explanations, timelines, definitions, and source links for assignments or self-study.      |
+| Automotive hobbyists    | Technical context beyond model trivia or brand-centered storytelling.                            |
+| General readers         | An approachable path into engineering history without assuming specialist knowledge.             |
+| Educators               | Neutral pages that can support lessons about engines, electrification, regulation, and mobility. |
+| Early-stage researchers | Curated starting points for deeper reading.                                                      |
 
 ### 5.2 Secondary Readers
 
-| Audience | Needs |
-|---|---|
-| Web developers contributing to the site | Clear content schemas, page templates, contribution rules, and quality checks. |
-| Museums or local history groups | Reusable summaries and references for public education. |
-| Policy-curious readers | Context about emissions, safety, fuel economy, and electrification without advocacy framing. |
+| Audience                                | Needs                                                                                        |
+| --------------------------------------- | -------------------------------------------------------------------------------------------- |
+| Web developers contributing to the site | Clear content schemas, page templates, contribution rules, and quality checks.               |
+| Museums or local history groups         | Reusable summaries and references for public education.                                      |
+| Policy-curious readers                  | Context about emissions, safety, fuel economy, and electrification without advocacy framing. |
 
 ### 5.3 Reader Journeys
 
@@ -191,8 +191,8 @@ $$
 Where:
 
 - \(\eta\) is efficiency.
-- \(W_\text{out}\) is useful work output.
-- \(Q_\text{in}\) is heat energy supplied by the fuel.
+- \(W\_\text{out}\) is useful work output.
+- \(Q\_\text{in}\) is heat energy supplied by the fuel.
 
 Battery energy capacity can be introduced with:
 
@@ -234,22 +234,22 @@ The main navigation should be simple and content-led:
 
 Recommended routes:
 
-| Route | Purpose |
-|---|---|
-| `/` | Overview, mission, featured timeline entry points, latest added pages. |
-| `/timeline/` | Interactive chronological map of milestones. |
-| `/eras/` | Index of historical eras. |
-| `/eras/[slug]/` | Era detail page. |
-| `/technologies/` | Technology index grouped by powertrain, chassis, safety, emissions, and software. |
-| `/technologies/[slug]/` | Deep technical explainer for one technology or component. |
-| `/vehicles/` | Index of example vehicles, filtered by era and technology. |
-| `/vehicles/[slug]/` | Example page focused on what the vehicle illustrates. |
-| `/controversies/` | Index of historical controversies and regulatory case studies. |
-| `/controversies/[slug]/` | Neutral case study, such as Dieselgate. |
-| `/glossary/` | Definitions of technical terms. |
-| `/sources/` | Source library and citation policy. |
-| `/about/` | Mission, editorial policy, contribution policy, and project status. |
-| `/search/` | Search interface if search is not embedded in the header. |
+| Route                    | Purpose                                                                           |
+| ------------------------ | --------------------------------------------------------------------------------- |
+| `/`                      | Overview, mission, featured timeline entry points, latest added pages.            |
+| `/timeline/`             | Interactive chronological map of milestones.                                      |
+| `/eras/`                 | Index of historical eras.                                                         |
+| `/eras/[slug]/`          | Era detail page.                                                                  |
+| `/technologies/`         | Technology index grouped by powertrain, chassis, safety, emissions, and software. |
+| `/technologies/[slug]/`  | Deep technical explainer for one technology or component.                         |
+| `/vehicles/`             | Index of example vehicles, filtered by era and technology.                        |
+| `/vehicles/[slug]/`      | Example page focused on what the vehicle illustrates.                             |
+| `/controversies/`        | Index of historical controversies and regulatory case studies.                    |
+| `/controversies/[slug]/` | Neutral case study, such as Dieselgate.                                           |
+| `/glossary/`             | Definitions of technical terms.                                                   |
+| `/sources/`              | Source library and citation policy.                                               |
+| `/about/`                | Mission, editorial policy, contribution policy, and project status.               |
+| `/search/`               | Search interface if search is not embedded in the header.                         |
 
 ### 7.3 Home Page Requirements
 
@@ -727,23 +727,23 @@ Every vehicle page should answer:
 
 This list is not exhaustive and should not be framed as a ranking.
 
-| Vehicle | Use as Example Of |
-|---|---|
-| Benz Patent-Motorwagen | Early gasoline automobile integration. |
-| Ford Model T | Mass production, standardization, maintainability. |
-| Detroit Electric or similar early EV | Early battery-electric urban mobility. |
-| Mercedes-Benz 260 D | Early diesel passenger-car application. |
-| Citroen Traction Avant | Front-wheel drive and unitized body concepts. |
-| Oldsmobile Hydra-Matic-equipped models | Early mass-market automatic transmission. |
-| Toyota Prius | Power-split hybrid commercialization. |
-| Honda Insight | Early lightweight hybrid design. |
-| GM EV1 | Late-20th-century battery-electric development and infrastructure limits. |
-| Chevrolet Volt | Plug-in hybrid and range-extended architecture. |
-| Nissan Leaf | Mass-market battery electric vehicle. |
-| Tesla Roadster | Lithium-ion battery pack use in a modern EV sports car. |
-| Tesla Model S | Long-range EV architecture, power electronics, software integration. |
-| Volkswagen TDI models affected by Dieselgate | Diesel emissions control, software, and regulation. |
-| BYD plug-in and battery-electric models | Battery integration and electrified platform strategy. |
+| Vehicle                                      | Use as Example Of                                                         |
+| -------------------------------------------- | ------------------------------------------------------------------------- |
+| Benz Patent-Motorwagen                       | Early gasoline automobile integration.                                    |
+| Ford Model T                                 | Mass production, standardization, maintainability.                        |
+| Detroit Electric or similar early EV         | Early battery-electric urban mobility.                                    |
+| Mercedes-Benz 260 D                          | Early diesel passenger-car application.                                   |
+| Citroen Traction Avant                       | Front-wheel drive and unitized body concepts.                             |
+| Oldsmobile Hydra-Matic-equipped models       | Early mass-market automatic transmission.                                 |
+| Toyota Prius                                 | Power-split hybrid commercialization.                                     |
+| Honda Insight                                | Early lightweight hybrid design.                                          |
+| GM EV1                                       | Late-20th-century battery-electric development and infrastructure limits. |
+| Chevrolet Volt                               | Plug-in hybrid and range-extended architecture.                           |
+| Nissan Leaf                                  | Mass-market battery electric vehicle.                                     |
+| Tesla Roadster                               | Lithium-ion battery pack use in a modern EV sports car.                   |
+| Tesla Model S                                | Long-range EV architecture, power electronics, software integration.      |
+| Volkswagen TDI models affected by Dieselgate | Diesel emissions control, software, and regulation.                       |
+| BYD plug-in and battery-electric models      | Battery integration and electrified platform strategy.                    |
 
 ### 10.5 Vehicle Content Rules
 
@@ -768,46 +768,46 @@ Do not:
 
 The site should define these content types:
 
-| Content Type | Description |
-|---|---|
-| Era | A period of automotive technology history. |
-| Technology | A specific system, component, process, or architecture. |
-| Vehicle Example | A vehicle used to illustrate a technology or era. |
-| Milestone | A dated event used in the timeline. |
-| Controversy | A structured case study involving technical, legal, or regulatory conflict. |
-| Glossary Term | Short definition of a technical term. |
-| Source | Bibliographic or web reference. |
-| Diagram | Reusable visual explanation linked to technologies. |
+| Content Type    | Description                                                                 |
+| --------------- | --------------------------------------------------------------------------- |
+| Era             | A period of automotive technology history.                                  |
+| Technology      | A specific system, component, process, or architecture.                     |
+| Vehicle Example | A vehicle used to illustrate a technology or era.                           |
+| Milestone       | A dated event used in the timeline.                                         |
+| Controversy     | A structured case study involving technical, legal, or regulatory conflict. |
+| Glossary Term   | Short definition of a technical term.                                       |
+| Source          | Bibliographic or web reference.                                             |
+| Diagram         | Reusable visual explanation linked to technologies.                         |
 
 ### 11.2 Recommended Frontmatter Schema
 
 Each Markdown or MDX article should use typed frontmatter.
 
 ```yaml
-title: "Common-Rail Diesel Injection"
-slug: "common-rail-diesel-injection"
-contentType: "technology"
-summary: "A high-pressure diesel fuel injection architecture that separates pressure generation from injection timing."
-status: "draft"
+title: 'Common-Rail Diesel Injection'
+slug: 'common-rail-diesel-injection'
+contentType: 'technology'
+summary: 'A high-pressure diesel fuel injection architecture that separates pressure generation from injection timing.'
+status: 'draft'
 era:
-  - "modern-diesel-and-aftertreatment"
+  - 'modern-diesel-and-aftertreatment'
 technologyCategory:
-  - "fuel-systems"
-  - "diesel"
+  - 'fuel-systems'
+  - 'diesel'
 relatedTechnologies:
-  - "diesel-engine"
-  - "turbocharging"
-  - "exhaust-gas-recirculation"
-  - "diesel-particulate-filter"
+  - 'diesel-engine'
+  - 'turbocharging'
+  - 'exhaust-gas-recirculation'
+  - 'diesel-particulate-filter'
 relatedVehicles:
-  - "volkswagen-tdi-dieselgate-example"
+  - 'volkswagen-tdi-dieselgate-example'
 milestones:
-  - "common-rail-commercialization"
-lastReviewed: "2026-05-15"
-readingLevel: "general-technical"
+  - 'common-rail-commercialization'
+lastReviewed: '2026-05-15'
+readingLevel: 'general-technical'
 sources:
-  - "source-id-001"
-  - "source-id-002"
+  - 'source-id-001'
+  - 'source-id-002'
 editorialFlags:
   requiresLegalReview: false
   fastMovingTopic: false
@@ -839,19 +839,19 @@ Sources may be stored in `src/data/sources.json` or a `sources` content collecti
 ### 11.4 Milestone Schema
 
 ```yaml
-title: "Toyota Prius launches in Japan"
-slug: "toyota-prius-japan-launch"
-date: "1997"
-datePrecision: "year"
-type: "commercialization"
+title: 'Toyota Prius launches in Japan'
+slug: 'toyota-prius-japan-launch'
+date: '1997'
+datePrecision: 'year'
+type: 'commercialization'
 technologies:
-  - "power-split-hybrid"
-  - "regenerative-braking"
+  - 'power-split-hybrid'
+  - 'regenerative-braking'
 vehicles:
-  - "toyota-prius"
-summary: "Commercial launch of a mass-produced hybrid passenger car using a power-split hybrid system."
+  - 'toyota-prius'
+summary: 'Commercial launch of a mass-produced hybrid passenger car using a power-split hybrid system.'
 sources:
-  - "source-id-prius-launch"
+  - 'source-id-prius-launch'
 ```
 
 ### 11.5 Relationship Rules
@@ -886,13 +886,13 @@ Astro is well-suited because most pages are documents, not application screens. 
 
 ### 12.2 Alternative Frontend Options
 
-| Option | Best For | Notes |
-|---|---|---|
-| Astro | Content-rich educational site with selective interactivity. | Recommended. |
-| Eleventy | Very simple static site with Markdown-first workflow. | Strong low-complexity option. |
-| Docusaurus | Documentation-style site with sidebars and versioning. | Good if the site feels more like a technical manual. |
-| MkDocs Material | Documentation-heavy site with Python workflow. | Excellent for a student familiar with Python. |
-| Next.js static export | If future app-like behavior is expected. | More complexity than needed for the MVP. |
+| Option                | Best For                                                    | Notes                                                |
+| --------------------- | ----------------------------------------------------------- | ---------------------------------------------------- |
+| Astro                 | Content-rich educational site with selective interactivity. | Recommended.                                         |
+| Eleventy              | Very simple static site with Markdown-first workflow.       | Strong low-complexity option.                        |
+| Docusaurus            | Documentation-style site with sidebars and versioning.      | Good if the site feels more like a technical manual. |
+| MkDocs Material       | Documentation-heavy site with Python workflow.              | Excellent for a student familiar with Python.        |
+| Next.js static export | If future app-like behavior is expected.                    | More complexity than needed for the MVP.             |
 
 ### 12.3 Layout System
 
@@ -912,22 +912,22 @@ Avoid heavy decorative cards, oversized hero sections, and visual clutter. The s
 
 Build these reusable components:
 
-| Component | Purpose |
-|---|---|
-| `SiteHeader` | Navigation, search entry, mobile menu. |
-| `SiteFooter` | About links, source policy, repository link. |
-| `ArticleLayout` | Standard content page wrapper. |
-| `EraHeader` | Era summary, date range, key themes. |
-| `TechnologyHeader` | Technology definition, category, related systems. |
-| `Timeline` | Filterable chronological milestones. |
-| `TimelineItem` | Single dated milestone. |
-| `SourceList` | Sources and further reading. |
-| `GlossaryTooltip` | Short term definitions with accessible fallback. |
-| `RelatedLinks` | Generated links to related pages. |
+| Component            | Purpose                                                  |
+| -------------------- | -------------------------------------------------------- |
+| `SiteHeader`         | Navigation, search entry, mobile menu.                   |
+| `SiteFooter`         | About links, source policy, repository link.             |
+| `ArticleLayout`      | Standard content page wrapper.                           |
+| `EraHeader`          | Era summary, date range, key themes.                     |
+| `TechnologyHeader`   | Technology definition, category, related systems.        |
+| `Timeline`           | Filterable chronological milestones.                     |
+| `TimelineItem`       | Single dated milestone.                                  |
+| `SourceList`         | Sources and further reading.                             |
+| `GlossaryTooltip`    | Short term definitions with accessible fallback.         |
+| `RelatedLinks`       | Generated links to related pages.                        |
 | `VehicleExampleCard` | Compact vehicle example summary without review language. |
-| `SystemDiagram` | Reusable diagram wrapper with caption and alt text. |
-| `CitationBadge` | Inline link to a source note where appropriate. |
-| `StatusBanner` | Draft, needs review, or fast-moving topic notice. |
+| `SystemDiagram`      | Reusable diagram wrapper with caption and alt text.      |
+| `CitationBadge`      | Inline link to a source note where appropriate.          |
+| `StatusBanner`       | Draft, needs review, or fast-moving topic notice.        |
 
 ### 12.5 Timeline Interaction
 
@@ -993,14 +993,14 @@ Requirements:
 
 Set these initial budgets:
 
-| Metric | Target |
-|---|---|
-| Lighthouse Performance | 90 or higher on key pages. |
-| Lighthouse Accessibility | 95 or higher. |
-| Largest Contentful Paint | Under 2.5 seconds on a simulated mid-tier mobile connection. |
-| Cumulative Layout Shift | Under 0.1. |
+| Metric                      | Target                                                                  |
+| --------------------------- | ----------------------------------------------------------------------- |
+| Lighthouse Performance      | 90 or higher on key pages.                                              |
+| Lighthouse Accessibility    | 95 or higher.                                                           |
+| Largest Contentful Paint    | Under 2.5 seconds on a simulated mid-tier mobile connection.            |
+| Cumulative Layout Shift     | Under 0.1.                                                              |
 | JavaScript per article page | Keep minimal; target under 100 KB compressed for non-interactive pages. |
-| Image format | Use AVIF or WebP where possible, with fallbacks when needed. |
+| Image format                | Use AVIF or WebP where possible, with fallbacks when needed.            |
 
 ## 13. Backend and Data Strategy
 
@@ -1129,13 +1129,13 @@ Public APIs should be read-only unless moderation is implemented.
 
 Possible content editing workflows:
 
-| CMS/Workflow | Fit |
-|---|---|
-| GitHub web editor | Best for a solo developer or student. Free and transparent. |
-| Decap CMS | Useful for Git-backed editing through a browser. Requires setup and auth decisions. |
-| TinaCMS | Useful if visual editing is important. More setup complexity. |
+| CMS/Workflow             | Fit                                                                                  |
+| ------------------------ | ------------------------------------------------------------------------------------ |
+| GitHub web editor        | Best for a solo developer or student. Free and transparent.                          |
+| Decap CMS                | Useful for Git-backed editing through a browser. Requires setup and auth decisions.  |
+| TinaCMS                  | Useful if visual editing is important. More setup complexity.                        |
 | Supabase admin dashboard | Useful for structured source or submission tables, not ideal for long-form articles. |
-| No CMS | Best MVP option if the maintainer is comfortable editing Markdown. |
+| No CMS                   | Best MVP option if the maintainer is comfortable editing Markdown.                   |
 
 Recommendation: Start with Git-backed Markdown. Add a CMS later only if non-technical contributors need editing access.
 
@@ -1143,29 +1143,29 @@ Recommendation: Start with Git-backed Markdown. Add a CMS later only if non-tech
 
 ### 14.1 Preferred MVP Stack
 
-| Layer | Recommendation | Reason |
-|---|---|---|
-| Framework | Astro | Static-first, content collections, selective interactivity. |
-| Language | TypeScript | Safer schemas, clearer data transformations. |
-| Content | Markdown/MDX | Easy to author, review, diff, and version. |
-| Styling | CSS modules or Tailwind CSS | Fast development with consistent design tokens. |
-| Search | Pagefind | Static search without a hosted search service. |
-| Validation | Zod with Astro content collections | Prevents incomplete metadata. |
-| Testing | Vitest and Playwright | Unit tests for data logic, browser tests for key pages. |
-| Linting | ESLint, Prettier, markdownlint | Consistent code and content formatting. |
-| Hosting | GitHub Pages, Netlify, or Vercel | Free static hosting options. |
-| Optional backend | Supabase | Hosted PostgreSQL and auth if submissions or admin features are added. |
+| Layer            | Recommendation                     | Reason                                                                 |
+| ---------------- | ---------------------------------- | ---------------------------------------------------------------------- |
+| Framework        | Astro                              | Static-first, content collections, selective interactivity.            |
+| Language         | TypeScript                         | Safer schemas, clearer data transformations.                           |
+| Content          | Markdown/MDX                       | Easy to author, review, diff, and version.                             |
+| Styling          | CSS modules or Tailwind CSS        | Fast development with consistent design tokens.                        |
+| Search           | Pagefind                           | Static search without a hosted search service.                         |
+| Validation       | Zod with Astro content collections | Prevents incomplete metadata.                                          |
+| Testing          | Vitest and Playwright              | Unit tests for data logic, browser tests for key pages.                |
+| Linting          | ESLint, Prettier, markdownlint     | Consistent code and content formatting.                                |
+| Hosting          | GitHub Pages, Netlify, or Vercel   | Free static hosting options.                                           |
+| Optional backend | Supabase                           | Hosted PostgreSQL and auth if submissions or admin features are added. |
 
 ### 14.2 Platform Notes as of 2026-05-15
 
 Free-tier details can change. Verify official pricing before launch.
 
-| Platform | Use in This Project | Notes |
-|---|---|---|
-| GitHub Pages | Static hosting from a repository. | Official GitHub documentation describes it as static hosting for HTML, CSS, and JavaScript files from a repository. |
-| Vercel Hobby | Static hosting, previews, and optional serverless functions for personal projects. | Official documentation describes the Hobby plan as free for personal and small-scale applications, with usage limits. |
-| Netlify Free | Static hosting, deploy previews, forms/functions depending on current limits. | Official pricing lists a free plan with deployment and monthly usage credits. |
-| Supabase Free | Optional database, auth, and storage for prototype features. | Official pricing lists a free plan suitable for simple projects, with resource limits and inactivity behavior. |
+| Platform      | Use in This Project                                                                | Notes                                                                                                                 |
+| ------------- | ---------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| GitHub Pages  | Static hosting from a repository.                                                  | Official GitHub documentation describes it as static hosting for HTML, CSS, and JavaScript files from a repository.   |
+| Vercel Hobby  | Static hosting, previews, and optional serverless functions for personal projects. | Official documentation describes the Hobby plan as free for personal and small-scale applications, with usage limits. |
+| Netlify Free  | Static hosting, deploy previews, forms/functions depending on current limits.      | Official pricing lists a free plan with deployment and monthly usage credits.                                         |
+| Supabase Free | Optional database, auth, and storage for prototype features.                       | Official pricing lists a free plan suitable for simple projects, with resource limits and inactivity behavior.        |
 
 ### 14.3 Suggested Package Scripts
 
@@ -1398,15 +1398,15 @@ Rules:
 Every diagram should have:
 
 ```yaml
-title: "Battery electric vehicle power flow"
-file: "/diagrams/bev-power-flow.svg"
-alt: "Diagram showing a traction battery connected to an inverter, motor, reduction gear, and wheels."
-caption: "Simplified energy flow in a battery electric vehicle."
-license: "Original site diagram"
+title: 'Battery electric vehicle power flow'
+file: '/diagrams/bev-power-flow.svg'
+alt: 'Diagram showing a traction battery connected to an inverter, motor, reduction gear, and wheels.'
+caption: 'Simplified energy flow in a battery electric vehicle.'
+license: 'Original site diagram'
 relatedTechnologies:
-  - "battery-electric-drive"
-  - "inverter"
-  - "traction-motor"
+  - 'battery-electric-drive'
+  - 'inverter'
+  - 'traction-motor'
 ```
 
 ## 19. Backend Feature Roadmap
@@ -1806,13 +1806,13 @@ Supabase should be treated as optional infrastructure, not a requirement for the
 
 ### 25.1 Contributor Roles
 
-| Role | Responsibilities |
-|---|---|
-| Maintainer | Reviews content, merges changes, manages releases. |
-| Research contributor | Suggests sources, corrections, or new topics. |
-| Technical reviewer | Checks engineering explanations and diagrams. |
-| Copy editor | Improves clarity while preserving neutrality. |
-| Developer | Maintains templates, schemas, tests, and deployment. |
+| Role                 | Responsibilities                                     |
+| -------------------- | ---------------------------------------------------- |
+| Maintainer           | Reviews content, merges changes, manages releases.   |
+| Research contributor | Suggests sources, corrections, or new topics.        |
+| Technical reviewer   | Checks engineering explanations and diagrams.        |
+| Copy editor          | Improves clarity while preserving neutrality.        |
+| Developer            | Maintains templates, schemas, tests, and deployment. |
 
 ### 25.2 Contribution Rules
 
@@ -1830,6 +1830,7 @@ Contributors should:
 
 ```markdown
 ## Content
+
 - [ ] Page uses the correct template.
 - [ ] Sources are included.
 - [ ] Claims are neutral and specific.
@@ -1837,6 +1838,7 @@ Contributors should:
 - [ ] Glossary links are added where helpful.
 
 ## Technical
+
 - [ ] `npm run build` passes.
 - [ ] `npm run lint` passes.
 - [ ] New routes are reachable.
@@ -1920,36 +1922,47 @@ Potential later pages:
 # Dieselgate
 
 ## Summary
+
 Short neutral summary of the emissions controversy.
 
 ## Why This Case Matters Technically
+
 Explain diesel emissions control, software, and regulatory testing.
 
 ## Timeline
+
 Chronological events with sources.
 
 ## Diesel Combustion and NOx Formation
+
 Explain lean combustion, temperature, and NOx.
 
 ## Emissions Control Systems
+
 Explain EGR, DPF, SCR, and lean NOx traps.
 
 ## Certification Testing and Real-World Operation
+
 Explain why test cycles exist and why real-world testing matters.
 
 ## Defeat Devices and Software Control
+
 Explain the regulatory concept and the software dimension.
 
 ## Legal and Regulatory Outcomes
+
 Summarize documented settlements and regulatory responses.
 
 ## Broader Historical Significance
+
 Discuss effects on diesel passenger cars, testing, trust, and software oversight.
 
 ## Related Technologies
+
 Links.
 
 ## Sources and Further Reading
+
 Sources.
 ```
 
@@ -1959,46 +1972,55 @@ Sources.
 # Battery Electric Vehicle
 
 ## Definition
+
 Explain BEV as a vehicle propelled by electric traction motors using stored electrical energy.
 
 ## Historical Background
+
 Cover early EVs, decline relative to gasoline vehicles, late-20th-century experiments, lithium-ion era.
 
 ## How It Works
+
 Explain battery, inverter, motor, reduction drive, charger, DC/DC converter, and thermal management.
 
 ## Energy Flow
+
 Use equations and a diagram.
 
 ## Components
+
 Component table.
 
 ## Engineering Tradeoffs
+
 Discuss energy density, charging time, thermal control, cost, mass, and infrastructure.
 
 ## Example Vehicles
+
 Use examples as architecture references only.
 
 ## Related Technologies
+
 Links.
 
 ## Sources and Further Reading
+
 Sources.
 ```
 
 ## 29. Risks and Mitigations
 
-| Risk | Impact | Mitigation |
-|---|---|---|
-| Scope creep | Site becomes too large to finish. | Ship a static MVP with limited pages first. |
-| Brand bias | Weakens educational neutrality. | Enforce editorial rules and language checks. |
-| Inaccurate technical explanations | Misleads readers. | Use source review and technical review. |
-| Copyright issues | Legal and ethical risk. | Use original diagrams and licensed images only. |
-| Free-tier limits change | Deployment or backend cost surprise. | Verify platform terms before deployment and keep static fallback. |
-| Recent EV information becomes outdated | Readers receive stale context. | Mark fast-moving pages with last-reviewed dates. |
-| Controversy pages become opinionated | Undermines mission. | Use structured templates and official sources. |
-| Search quality is poor | Readers cannot find topics. | Use tags, summaries, and static search tuning. |
-| Maintenance burden | Project stalls. | Keep architecture simple and Git-backed. |
+| Risk                                   | Impact                               | Mitigation                                                        |
+| -------------------------------------- | ------------------------------------ | ----------------------------------------------------------------- |
+| Scope creep                            | Site becomes too large to finish.    | Ship a static MVP with limited pages first.                       |
+| Brand bias                             | Weakens educational neutrality.      | Enforce editorial rules and language checks.                      |
+| Inaccurate technical explanations      | Misleads readers.                    | Use source review and technical review.                           |
+| Copyright issues                       | Legal and ethical risk.              | Use original diagrams and licensed images only.                   |
+| Free-tier limits change                | Deployment or backend cost surprise. | Verify platform terms before deployment and keep static fallback. |
+| Recent EV information becomes outdated | Readers receive stale context.       | Mark fast-moving pages with last-reviewed dates.                  |
+| Controversy pages become opinionated   | Undermines mission.                  | Use structured templates and official sources.                    |
+| Search quality is poor                 | Readers cannot find topics.          | Use tags, summaries, and static search tuning.                    |
+| Maintenance burden                     | Project stalls.                      | Keep architecture simple and Git-backed.                          |
 
 ## 30. Definition of Done for First Public Release
 
