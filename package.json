@@ -21,7 +21,10 @@
   "dependencies": {
     "@astrojs/mdx": "^5.0.6",
     "astro": "^6.3.3",
+    "katex": "^0.16.46",
     "pagefind": "^1.5.2",
+    "rehype-katex": "^7.0.1",
+    "remark-math": "^6.0.0",
     "zod": "^4.4.3"
   },
   "devDependencies": {
