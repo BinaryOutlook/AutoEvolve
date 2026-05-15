@@ -3,7 +3,7 @@ title: 'Catalytic Converter'
 summary: 'An exhaust aftertreatment device that uses catalyst materials to convert selected pollutants into less harmful compounds.'
 status: 'published'
 lastReviewed: '2026-05-16'
-sources: ['start-brief']
+sources: []
 category: 'emissions'
 eras: ['emissions-and-electronic-control']
 relatedTechnologies:

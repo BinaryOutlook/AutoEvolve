@@ -3,7 +3,7 @@ title: 'Nissan Leaf'
 summary: 'An example of mass-market battery electric vehicle packaging using a lithium-ion traction battery and electric drive.'
 status: 'published'
 lastReviewed: '2026-05-16'
-sources: ['start-brief', 'doe-afdc-bev']
+sources: ['doe-afdc-bev']
 manufacturer: 'Nissan'
 productionPeriod: '2010 onward'
 marketContext: 'Mass-market battery electric passenger vehicle'

@@ -3,7 +3,7 @@ title: 'Chevrolet Volt'
 summary: 'An example of plug-in hybrid architecture using external charging, a larger battery, and gasoline-supported extended driving.'
 status: 'published'
 lastReviewed: '2026-05-16'
-sources: ['start-brief', 'doe-afdc-phev']
+sources: ['doe-afdc-phev']
 manufacturer: 'General Motors'
 productionPeriod: '2010-2019'
 marketContext: 'Plug-in hybrid and extended-range electric-drive development'

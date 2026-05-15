@@ -3,8 +3,7 @@ export type SourceType =
   | 'technical-reference'
   | 'manufacturer'
   | 'museum'
-  | 'academic'
-  | 'project-documentation';
+  | 'academic';
 
 export type Source = {
   id: string;
@@ -77,19 +76,6 @@ export const sources: Source[] = [
     url: 'https://www.nhtsa.gov/equipment/vehicle-safety-technologies',
     accessedDate: '2026-05-15',
     supports: ['Safety technology context', 'driver assistance terminology'],
-  },
-  {
-    id: 'start-brief',
-    title: 'Technical Brief: Automotive Technology Evolution Website',
-    organization: 'AutoEvolve project',
-    type: 'project-documentation',
-    url: '/project-brief/',
-    accessedDate: '2026-05-16',
-    supports: [
-      'Editorial policy',
-      'site architecture',
-      'implementation requirements',
-    ],
   },
 ];
 

@@ -3,7 +3,7 @@ title: 'Modern Diesel and Emissions Aftertreatment'
 summary: 'Turbocharging, high-pressure injection, particulate filters, SCR, and emissions compliance reshaped diesel passenger and commercial vehicles.'
 status: 'published'
 lastReviewed: '2026-05-16'
-sources: ['start-brief', 'epa-vw-settlement', 'epa-vw-violations']
+sources: ['epa-vw-settlement', 'epa-vw-violations']
 dateRange: '1990s-2010s'
 order: 60
 keyThemes:

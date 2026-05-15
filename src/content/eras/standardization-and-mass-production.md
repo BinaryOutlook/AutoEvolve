@@ -3,7 +3,7 @@ title: 'Standardization and Mass Production'
 summary: 'The period when assembly methods, shared components, and durable mechanical systems expanded automobile availability.'
 status: 'published'
 lastReviewed: '2026-05-16'
-sources: ['start-brief']
+sources: []
 dateRange: '1910s-1945'
 order: 30
 keyThemes:

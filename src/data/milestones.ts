@@ -32,7 +32,7 @@ export const milestones: Milestone[] = [
     ],
     technologies: ['four-stroke-engine'],
     vehicles: ['benz-patent-motorwagen'],
-    sources: ['start-brief'],
+    sources: [],
   },
   {
     title: 'High-volume automotive manufacturing expands',
@@ -47,7 +47,7 @@ export const milestones: Milestone[] = [
     ],
     technologies: ['four-stroke-engine'],
     vehicles: ['ford-model-t'],
-    sources: ['start-brief'],
+    sources: [],
   },
   {
     title: 'Electronic fuel and emissions control become central',
@@ -66,7 +66,7 @@ export const milestones: Milestone[] = [
       'fuel-injection',
     ],
     vehicles: [],
-    sources: ['start-brief'],
+    sources: [],
   },
   {
     title: 'Mass-market hybrid vehicles enter public use',

@@ -3,7 +3,7 @@ title: 'Hybrid Electric Vehicle'
 summary: 'A vehicle architecture combining a combustion engine, electric machine, battery, and control strategy for propulsion.'
 status: 'published'
 lastReviewed: '2026-05-16'
-sources: ['start-brief', 'doe-afdc-hybrid']
+sources: ['doe-afdc-hybrid']
 category: 'electric-drive'
 eras: ['hybridization']
 relatedTechnologies:

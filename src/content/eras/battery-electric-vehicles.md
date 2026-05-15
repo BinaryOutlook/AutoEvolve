@@ -3,7 +3,7 @@ title: 'Battery Electric Vehicles'
 summary: 'Lithium-ion battery packs, inverters, traction motors, and charging infrastructure supported a renewed battery-electric vehicle era.'
 status: 'published'
 lastReviewed: '2026-05-16'
-sources: ['start-brief', 'doe-afdc-bev']
+sources: ['doe-afdc-bev']
 dateRange: 'Late 2000s onward'
 order: 90
 keyThemes:

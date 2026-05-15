@@ -3,7 +3,7 @@ title: 'Volkswagen TDI Dieselgate Example'
 summary: 'A vehicle group used to explain Dieselgate, diesel emissions control, engine software, and certification testing.'
 status: 'published'
 lastReviewed: '2026-05-16'
-sources: ['epa-vw-settlement', 'epa-vw-violations', 'start-brief']
+sources: ['epa-vw-settlement', 'epa-vw-violations']
 manufacturer: 'Volkswagen Group'
 productionPeriod: 'Affected model years varied by market and regulatory filing'
 marketContext: 'Passenger diesel vehicles involved in regulatory emissions proceedings'

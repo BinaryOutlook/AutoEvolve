@@ -3,7 +3,7 @@ title: 'Carburetor'
 summary: 'A mechanical fuel-metering device that mixes gasoline with intake air before electronic fuel injection became dominant.'
 status: 'published'
 lastReviewed: '2026-05-16'
-sources: ['start-brief']
+sources: []
 category: 'engine-subsystem'
 eras:
   [

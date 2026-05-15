@@ -3,7 +3,7 @@ title: 'Dieselgate'
 summary: 'A technical and regulatory case study involving diesel emissions controls, engine software, certification testing, and defeat-device findings.'
 status: 'published'
 lastReviewed: '2026-05-16'
-sources: ['epa-vw-settlement', 'epa-vw-violations', 'start-brief']
+sources: ['epa-vw-settlement', 'epa-vw-violations']
 dateRange: '2015 onward'
 affectedTechnologies:
   [

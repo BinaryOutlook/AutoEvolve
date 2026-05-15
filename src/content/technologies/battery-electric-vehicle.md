@@ -3,7 +3,7 @@ title: 'Battery Electric Vehicle'
 summary: 'A vehicle propelled by electric traction motors using energy stored in a rechargeable traction battery.'
 status: 'published'
 lastReviewed: '2026-05-16'
-sources: ['start-brief', 'doe-afdc-bev']
+sources: ['doe-afdc-bev']
 category: 'electric-drive'
 eras: ['battery-electric-vehicles', 'software-defined-connected-vehicles']
 relatedTechnologies:

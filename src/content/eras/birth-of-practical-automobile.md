@@ -3,7 +3,7 @@ title: 'Birth of the Practical Automobile'
 summary: 'The period when small internal combustion engines, vehicle packaging, and repeatable manufacturing began converging into practical road vehicles.'
 status: 'published'
 lastReviewed: '2026-05-16'
-sources: ['start-brief']
+sources: []
 dateRange: '1880s-1910s'
 order: 20
 keyThemes:

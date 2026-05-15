@@ -3,7 +3,7 @@ title: 'Benz Patent-Motorwagen'
 summary: 'An example of early gasoline automobile packaging, combining engine, frame, steering, and drivetrain into a self-propelled road vehicle.'
 status: 'published'
 lastReviewed: '2026-05-16'
-sources: ['start-brief']
+sources: []
 manufacturer: 'Benz & Cie.'
 productionPeriod: '1880s'
 marketContext: 'Early European automobile experimentation'

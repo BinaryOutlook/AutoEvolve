@@ -3,7 +3,7 @@ title: 'Four-Stroke Engine'
 summary: 'A piston engine cycle using intake, compression, power, and exhaust strokes to convert fuel energy into mechanical work.'
 status: 'published'
 lastReviewed: '2026-05-16'
-sources: ['start-brief']
+sources: []
 category: 'propulsion'
 eras:
   [

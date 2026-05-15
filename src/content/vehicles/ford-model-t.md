@@ -3,7 +3,7 @@ title: 'Ford Model T'
 summary: 'An example of mass production, standardization, maintainability, and the widening public availability of automobiles.'
 status: 'published'
 lastReviewed: '2026-05-16'
-sources: ['start-brief']
+sources: []
 manufacturer: 'Ford Motor Company'
 productionPeriod: '1908-1927'
 marketContext: 'High-volume automobile production in the United States'

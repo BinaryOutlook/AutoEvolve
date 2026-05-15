@@ -3,7 +3,7 @@ title: 'Plug-In Hybrids'
 summary: 'Plug-in hybrids expanded hybrid architecture with external charging, larger batteries, and electric-first operating strategies.'
 status: 'published'
 lastReviewed: '2026-05-16'
-sources: ['start-brief', 'doe-afdc-phev']
+sources: ['doe-afdc-phev']
 dateRange: 'Late 2000s-2020s'
 order: 80
 keyThemes:

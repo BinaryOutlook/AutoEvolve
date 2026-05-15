@@ -3,7 +3,7 @@ title: 'Lithium-Ion Battery'
 summary: 'A rechargeable battery family that enabled modern electric-drive vehicles through relatively high energy density and power capability.'
 status: 'published'
 lastReviewed: '2026-05-16'
-sources: ['start-brief', 'doe-afdc-bev']
+sources: ['doe-afdc-bev']
 category: 'fuel-energy'
 eras: ['battery-electric-vehicles', 'plug-in-hybrids']
 relatedTechnologies:

@@ -3,7 +3,7 @@ title: 'Emissions, Fuel Economy, and Electronic Control'
 summary: 'Regulation, fuel-economy pressure, sensors, catalytic converters, and electronic control changed the design logic of gasoline vehicles.'
 status: 'published'
 lastReviewed: '2026-05-16'
-sources: ['start-brief']
+sources: []
 dateRange: '1970s-1990s'
 order: 50
 keyThemes:

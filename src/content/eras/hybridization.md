@@ -3,7 +3,7 @@ title: 'Hybridization'
 summary: 'Hybrid vehicles linked combustion engines, electric machines, batteries, regenerative braking, and control software into integrated powertrains.'
 status: 'published'
 lastReviewed: '2026-05-16'
-sources: ['start-brief', 'doe-afdc-hybrid']
+sources: ['doe-afdc-hybrid']
 dateRange: 'Late 1990s-2010s'
 order: 70
 keyThemes:

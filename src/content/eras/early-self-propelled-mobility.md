@@ -3,7 +3,7 @@ title: 'Early Self-Propelled Mobility'
 summary: 'Steam, electric, and early internal-combustion experiments before the practical automobile became a repeatable product.'
 status: 'published'
 lastReviewed: '2026-05-16'
-sources: ['start-brief']
+sources: []
 dateRange: 'Pre-1880s'
 order: 10
 keyThemes:

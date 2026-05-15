@@ -3,7 +3,7 @@ title: 'Fuel Injection'
 summary: 'Fuel delivery systems that meter fuel through injectors, enabling more precise control than carburetion.'
 status: 'published'
 lastReviewed: '2026-05-16'
-sources: ['start-brief']
+sources: []
 category: 'engine-subsystem'
 eras: ['emissions-and-electronic-control', 'modern-diesel-and-aftertreatment']
 relatedTechnologies:

@@ -3,7 +3,7 @@ title: 'Software-Defined and Connected Vehicles'
 summary: 'Domain controllers, OTA updates, driver assistance, high-voltage platforms, and charging networks made software a primary vehicle system.'
 status: 'published'
 lastReviewed: '2026-05-16'
-sources: ['start-brief', 'nhtsa-safety-tech']
+sources: ['nhtsa-safety-tech']
 dateRange: '2020s onward'
 order: 100
 keyThemes:

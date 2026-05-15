@@ -3,7 +3,7 @@ title: 'Common-Rail Diesel Injection'
 summary: 'A diesel fuel system that stores high-pressure fuel in a shared rail so injection timing and pressure can be controlled more flexibly.'
 status: 'published'
 lastReviewed: '2026-05-16'
-sources: ['start-brief']
+sources: []
 category: 'engine-subsystem'
 eras: ['modern-diesel-and-aftertreatment']
 relatedTechnologies:
