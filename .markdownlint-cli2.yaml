@@ -1,0 +1,14 @@
+globs:
+  - '**/*.md'
+  - '**/*.mdx'
+ignores:
+  - 'node_modules/**'
+  - 'dist/**'
+  - '.astro/**'
+  - 'coverage/**'
+  - 'playwright-report/**'
+  - 'test-results/**'
+config:
+  MD013: false
+  MD033: false
+  MD041: false
