@@ -2,7 +2,7 @@
 
 ## Preferred Sources
 
-Use official technical, regulatory, academic, archival, or manufacturer technical material where possible. Manufacturer material can support dates and specifications, but marketing language should not be repeated as independent fact.
+Use official technical, regulatory, court, academic, archival, or manufacturer technical material where possible. Manufacturer material can support dates, specifications, and company admissions, but marketing language should not be repeated as independent fact. Reputable journalism may be used as supplemental context for contemporary public reaction or reporting gaps that primary records do not cover.
 
 ## Required Metadata
 
@@ -18,3 +18,5 @@ Each source record should include:
 ## Citation Rule
 
 Use a source only for what it can reasonably support. A regulatory document can support enforcement history; it should not be stretched into a general claim about every vehicle using a similar technology.
+
+For controversies, keep source roles distinct: regulator findings, court findings, company-commissioned investigations, and journalism are related evidence streams, not interchangeable authorities.

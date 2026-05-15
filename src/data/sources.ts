@@ -1,9 +1,11 @@
 export type SourceType =
   | 'government'
+  | 'court'
   | 'technical-reference'
   | 'manufacturer'
   | 'museum'
-  | 'academic';
+  | 'academic'
+  | 'journalism';
 
 export type Source = {
   id: string;
@@ -67,6 +69,365 @@ export const sources: Source[] = [
       'Volkswagen diesel emissions violation overview',
       'defeat device context',
     ],
+  },
+  {
+    id: 'doj-vw-criminal-sentencing-2017',
+    title:
+      'Volkswagen AG Sentenced in Connection with Conspiracy to Cheat U.S. Emissions Tests',
+    organization: 'U.S. Department of Justice',
+    type: 'government',
+    url: 'https://www.justice.gov/opa/pr/volkswagen-ag-sentenced-connection-conspiracy-cheat-us-emissions-tests',
+    accessedDate: '2026-05-16',
+    supports: [
+      'Volkswagen criminal plea and sentencing context',
+      'Dieselgate criminal enforcement consequences',
+    ],
+  },
+  {
+    id: 'icct-vw-real-world-emissions-2014',
+    title: 'Real-World Exhaust Emissions from Modern Diesel Cars',
+    organization: 'International Council on Clean Transportation',
+    type: 'technical-reference',
+    url: 'https://theicct.org/sites/default/files/publications/ICCT_PEMS-study_diesel-cars_20141010.pdf',
+    accessedDate: '2026-05-16',
+    supports: [
+      'pre-enforcement real-world diesel NOx testing context',
+      'portable emissions measurement evidence that informed regulator attention',
+    ],
+  },
+  {
+    id: 'nhtsa-ford-pinto-recall-1978',
+    title: 'NHTSA Recall Campaign 78V143000',
+    organization: 'National Highway Traffic Safety Administration',
+    type: 'government',
+    url: 'https://api.nhtsa.gov/recalls/campaignNumber?campaignNumber=78V143000',
+    accessedDate: '2026-05-16',
+    supports: [
+      '1978 Ford Pinto and Mercury Bobcat fuel-system recall details',
+      'fuel filler pipe and fuel tank shield remedy description',
+    ],
+  },
+  {
+    id: 'california-court-grimshaw-ford-1981',
+    title: 'Grimshaw v. Ford Motor Co.',
+    organization: 'California Court of Appeal via Justia',
+    type: 'court',
+    url: 'https://law.justia.com/cases/california/court-of-appeal/3d/119/757.html',
+    accessedDate: '2026-05-16',
+    supports: [
+      'civil litigation findings and appellate review of the Pinto case',
+      'court-record context for design knowledge and punitive damages',
+    ],
+  },
+  {
+    id: 'business-history-pinto-safety-regulation',
+    title:
+      'The Ford Pinto Case and the Development of Auto Safety Regulations, 1893-1978',
+    organization: 'Business and Economic History',
+    type: 'academic',
+    url: 'https://www.jstor.org/stable/23703151',
+    accessedDate: '2026-05-16',
+    supports: [
+      'historical interpretation of Pinto safety regulation',
+      'context for public controversy and NHTSA investigation timing',
+    ],
+  },
+  {
+    id: 'nhtsa-gm-ignition-consent-order-2014',
+    title: 'TQ14-001 General Motors Consent Order',
+    organization: 'National Highway Traffic Safety Administration',
+    type: 'government',
+    url: 'https://www.nhtsa.gov/sites/nhtsa.gov/files/2021-11/TQ14-001-General-Motors-Consent-Order-5-6-2014-tag.pdf',
+    accessedDate: '2026-05-16',
+    supports: [
+      'NHTSA enforcement response to GM ignition switch recall timing',
+      'civil penalty and reporting obligations',
+    ],
+  },
+  {
+    id: 'doj-gm-ignition-deferred-prosecution-2015',
+    title:
+      'Manhattan U.S. Attorney Announces Criminal Charges Against General Motors and Deferred Prosecution Agreement',
+    organization: 'U.S. Department of Justice',
+    type: 'government',
+    url: 'https://www.justice.gov/usao-sdny/pr/manhattan-us-attorney-announces-criminal-charges-against-general-motors-and-deferred',
+    accessedDate: '2026-05-16',
+    supports: [
+      'GM deferred-prosecution agreement context',
+      'DOJ allegations about disclosure of low-torque ignition switch defect',
+    ],
+  },
+  {
+    id: 'gm-valukas-ignition-switch-report-2014',
+    title:
+      'Report to Board of Directors of General Motors Company Regarding Ignition Switch Recalls',
+    organization: 'General Motors / Jenner & Block, archived by NHTSA',
+    type: 'manufacturer',
+    url: 'https://www.nhtsa.gov/document/report-board-directors-general-motors-company-regarding-ignition-switch-recalls',
+    accessedDate: '2026-05-16',
+    supports: [
+      'GM-commissioned internal investigation findings',
+      'organizational escalation and defect-decision process context',
+    ],
+    notes:
+      'Company-commissioned investigation; used for GM internal chronology and findings while preserving regulator and DOJ findings separately.',
+  },
+  {
+    id: 'nhtsa-takata-recall-spotlight',
+    title: 'Takata Air Bag Recall Spotlight',
+    organization: 'National Highway Traffic Safety Administration',
+    type: 'government',
+    url: 'https://www.nhtsa.gov/equipment/takata-recall-spotlight',
+    accessedDate: '2026-05-16',
+    supports: [
+      'Takata recall scope and owner remedy context',
+      'risk factors involving age, heat, and humidity',
+    ],
+  },
+  {
+    id: 'nhtsa-takata-coordinated-remedy-2015',
+    title: 'Takata Coordinated Remedy Order',
+    organization: 'National Highway Traffic Safety Administration',
+    type: 'government',
+    url: 'https://www.nhtsa.gov/document/takata-coordinated-remedy-order',
+    accessedDate: '2026-05-16',
+    supports: [
+      'coordinated Takata remedy schedule',
+      'risk-based recall prioritization across manufacturers',
+    ],
+  },
+  {
+    id: 'doj-takata-plea-2017',
+    title:
+      'Takata Corporation Agrees to Plead Guilty and Pay $1 Billion in Criminal Penalties for Airbag Scheme',
+    organization: 'U.S. Department of Justice',
+    type: 'government',
+    url: 'https://www.justice.gov/opa/pr/takata-corporation-agrees-plead-guilty-and-pay-1-billion-criminal-penalties-airbag-scheme',
+    accessedDate: '2026-05-16',
+    supports: [
+      'Takata wire-fraud plea context',
+      'DOJ findings about falsified and manipulated inflator test data',
+    ],
+  },
+  {
+    id: 'dot-nhtsa-nasa-toyota-unintended-acceleration-2011',
+    title:
+      'U.S. Department of Transportation Releases Results from NHTSA-NASA Study of Unintended Acceleration in Toyota Vehicles',
+    organization: 'U.S. Department of Transportation',
+    type: 'government',
+    url: 'https://www.transportation.gov/briefing-room/us-department-transportation-releases-results-nhtsa-nasa-study-unintended-acceleration',
+    accessedDate: '2026-05-16',
+    supports: [
+      'DOT summary of NHTSA-NASA unintended-acceleration study',
+      'public finding that no electronic cause for high-speed events was found',
+    ],
+  },
+  {
+    id: 'nasa-toyota-unintended-acceleration-report-2011',
+    title:
+      'Toyota Unintended Acceleration Investigation: Technical Support to NHTSA',
+    organization: 'NASA Engineering and Safety Center',
+    type: 'government',
+    url: 'https://www.nhtsa.gov/document/appendix-tech-support-nhtsa-reported-toyota-motor-corporation-unintended-acceleration',
+    accessedDate: '2026-05-16',
+    supports: [
+      'NASA technical assessment of Toyota electronic throttle control systems',
+      'software and electromagnetic-interference review context',
+    ],
+  },
+  {
+    id: 'doj-toyota-unintended-acceleration-dpa-2014',
+    title:
+      'Manhattan U.S. Attorney Announces Criminal Charge Against Toyota Motor Corporation and Deferred Prosecution Agreement',
+    organization: 'U.S. Department of Justice',
+    type: 'government',
+    url: 'https://www.justice.gov/usao-sdny/pr/manhattan-us-attorney-announces-criminal-charge-against-toyota-motor-corporation-and',
+    accessedDate: '2026-05-16',
+    supports: [
+      'Toyota deferred-prosecution agreement context',
+      'DOJ allegations about floor-mat entrapment and sticky-pedal communications',
+    ],
+  },
+  {
+    id: 'mitsubishi-improper-fuel-consumption-testing-2016',
+    title:
+      'Improper Conduct in Fuel Consumption Testing on Products Manufactured by Mitsubishi Motors Corporation',
+    organization: 'Mitsubishi Motors Corporation',
+    type: 'manufacturer',
+    url: 'https://www.mitsubishi-motors.com/jp/publish/pressrelease_en/corporate/2016/news/detailg420.html',
+    accessedDate: '2026-05-16',
+    supports: [
+      'Mitsubishi disclosure of improper fuel-consumption testing',
+      'Japanese MLIT certification data context',
+    ],
+  },
+  {
+    id: 'mitsubishi-special-investigation-fuel-consumption-2016',
+    title:
+      'Special Investigation Committee Report on Fuel Consumption Testing Issues',
+    organization: 'Mitsubishi Motors Corporation',
+    type: 'manufacturer',
+    url: 'https://www.mitsubishi-motors.com/content/dam/com/ir_jp/pdf/irnews/2016/20160802-01.pdf',
+    accessedDate: '2026-05-16',
+    supports: [
+      'special investigation findings on Mitsubishi fuel-consumption testing',
+      'internal governance and testing-process causes',
+    ],
+    notes:
+      'Japanese-language company investigation report; article wording relies on the company record without treating it as independent regulator analysis.',
+  },
+  {
+    id: 'mitsubishi-annual-report-fuel-economy-2016',
+    title: 'Annual Report 2016',
+    organization: 'Mitsubishi Motors Corporation',
+    type: 'manufacturer',
+    url: 'https://www.mitsubishi-motors.com/content/dam/com/ir_en/pdf/anual/2016/annual2016.pdf',
+    accessedDate: '2026-05-16',
+    supports: [
+      'financial and governance consequences of Mitsubishi fuel-economy issue',
+      'company-reported corrective action context',
+    ],
+  },
+  {
+    id: 'nissan-final-inspection-issue-2017',
+    title:
+      "Regarding Nonconforming Final Vehicle Inspection at Nissan's Plants in Japan",
+    organization: 'Nissan Motor Corporation',
+    type: 'manufacturer',
+    url: 'https://www.nissan-global.com/EN/SUSTAINABILITY/SOCIAL/QUALITY/VEHICLE_INSPECTIONS/',
+    accessedDate: '2026-05-16',
+    supports: [
+      'Nissan final-inspection issue chronology',
+      'company countermeasures and links to official disclosures',
+    ],
+  },
+  {
+    id: 'nissan-final-inspection-investigation-summary-2017',
+    title:
+      'Report Summary of Final Vehicle Inspection Issue at Plants in Japan',
+    organization: 'Nissan Motor Corporation',
+    type: 'manufacturer',
+    url: 'https://global.nissannews.com/en/releases/171117-02-e',
+    accessedDate: '2026-05-16',
+    supports: [
+      'Nissan investigation summary for unauthorized final inspections',
+      'causes and recurrence-prevention measures',
+    ],
+  },
+  {
+    id: 'nissan-emissions-fuel-economy-measurement-2018',
+    title:
+      'Report on Conformity of Production Sampling Test Data for Emissions/Fuel Consumption at Nissan',
+    organization: 'Nissan Motor Corporation',
+    type: 'manufacturer',
+    url: 'https://www.nissan-global.com/PDF/180709_report-e.pdf',
+    accessedDate: '2026-05-16',
+    supports: [
+      'Nissan 2018 emissions and fuel-consumption measurement disclosure',
+      'altered measurement values and nonconforming test-environment context',
+    ],
+  },
+  {
+    id: 'subaru-completion-inspection-announcement-2017',
+    title:
+      'Statement Concerning Findings of Internal Investigation on Final Inspection of Subaru-Made Vehicles',
+    organization: 'Subaru Corporation',
+    type: 'manufacturer',
+    url: 'https://www.subaru.co.jp/press/file/uploads/news-en/en2017_1027_1.pdf',
+    accessedDate: '2026-05-16',
+    supports: [
+      'Subaru 2017 completion-inspection disclosure',
+      'Japanese-market final inspection authorization context',
+    ],
+  },
+  {
+    id: 'subaru-completion-inspection-investigation-report-2017',
+    title:
+      'Investigation Report on Inappropriate Final Vehicle Inspections at Subaru',
+    organization: 'Subaru Corporation',
+    type: 'manufacturer',
+    url: 'https://www.subaru.co.jp/press/file/uploads/news-en/en2017_1219_1-2.pdf',
+    accessedDate: '2026-05-16',
+    supports: [
+      'Subaru 2017 investigation findings and countermeasures',
+      'training, certification, and audit-control causes',
+    ],
+  },
+  {
+    id: 'subaru-emissions-fuel-economy-investigation-2018',
+    title:
+      "Reinvestigation of the Measurement of Fuel Economy and Emissions during Final Vehicle Inspections at Subaru's Gunma Manufacturing Division",
+    organization: 'Subaru Corporation',
+    type: 'manufacturer',
+    url: 'https://www.subaru.co.jp/press/news-en/2018_06_05_5921/',
+    accessedDate: '2026-05-16',
+    supports: [
+      'Subaru emissions and fuel-economy measurement issues',
+      'sampling inspection and measurement-procedure context',
+    ],
+  },
+  {
+    id: 'carb-zero-emission-vehicle-regulation-history',
+    title: 'Zero-emission Vehicle Regulation',
+    organization: 'California Air Resources Board',
+    type: 'government',
+    url: 'https://ww2.arb.ca.gov/our-work/programs/zero-emission-vehicle-program/about',
+    accessedDate: '2026-05-16',
+    supports: [
+      'California ZEV regulation history',
+      '1990s regulatory context for early battery-electric programs',
+    ],
+  },
+  {
+    id: 'cbs-gm-pulls-plug-ev1-2003',
+    title: 'GM Pulls Plug on Electric Car',
+    organization: 'CBS News',
+    type: 'journalism',
+    url: 'https://www.cbsnews.com/news/gm-pulls-plug-on-electric-car/',
+    accessedDate: '2026-05-16',
+    supports: [
+      'contemporary reporting on EV1 lease returns',
+      'public controversy around ending the EV1 program',
+    ],
+  },
+  {
+    id: 'justia-us-v-delorean-1983',
+    title: 'United States v. DeLorean',
+    organization:
+      'United States District Court for the Central District of California via Justia',
+    type: 'court',
+    url: 'https://law.justia.com/cases/federal/district-courts/FSupp/561/797/1894920/',
+    accessedDate: '2026-05-16',
+    supports: [
+      'federal criminal case procedural context',
+      'court-record distinction between prosecution proceedings and vehicle engineering',
+    ],
+  },
+  {
+    id: 'washington-post-delorean-acquitted-1984',
+    title: 'DeLorean Acquitted of All Eight Charges in Drug-Scheme Trial',
+    organization: 'The Washington Post',
+    type: 'journalism',
+    url: 'https://www.washingtonpost.com/archive/politics/1984/08/17/delorean-acquitted-of-all-eight-charges-in-drug-scheme-trial/3a2de886-9c81-468f-80ff-386f4e527201/',
+    accessedDate: '2026-05-16',
+    supports: [
+      'contemporary reporting on John DeLorean acquittal',
+      'trial outcome and entrapment-defense context',
+    ],
+  },
+  {
+    id: 'delorean-museum-company-history',
+    title: 'DeLorean Museum',
+    organization: 'DeLorean Museum',
+    type: 'museum',
+    url: 'https://www.deloreanmuseum.org/',
+    accessedDate: '2026-05-16',
+    supports: [
+      'DeLorean preservation and company-history context',
+      'archival framing for the DMC-12 business story',
+    ],
+    notes:
+      'Preservation source used only for company-history context, not for independent legal conclusions.',
   },
   {
     id: 'nhtsa-safety-tech',
@@ -477,7 +838,9 @@ export const sources: Source[] = [
     type: 'technical-reference',
     url: 'https://commons.wikimedia.org/wiki/File:Hyundai_Ioniq_5.jpg',
     accessedDate: '2026-05-16',
-    supports: ['Image attribution and usage-basis record for Hyundai IONIQ 5 page'],
+    supports: [
+      'Image attribution and usage-basis record for Hyundai IONIQ 5 page',
+    ],
     notes:
       'Creator: TTTNIS. Usage basis: CC0 1.0 public domain dedication. Local file resized for site delivery.',
   },

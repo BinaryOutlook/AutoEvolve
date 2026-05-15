@@ -53,8 +53,10 @@ const featuredTechnologies = technologies.filter((entry) =>
       />
       <ContentCard
         href="/controversies/"
-        title={`${controversies.length} Case Study`}
-        summary="Dieselgate and future controversy pages framed through technical and regulatory context."
+        title={`${controversies.length} Case ${
+          controversies.length === 1 ? 'Study' : 'Studies'
+        }`}
+        summary="Controversy pages framed through technical, procedural, and regulatory context."
       />
     </div>
   </section>
