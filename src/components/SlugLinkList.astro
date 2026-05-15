@@ -1,0 +1,26 @@
+---
+import { titleFromSlug } from '@lib/collections';
+
+type Props = {
+  title: string;
+  basePath: string;
+  items: string[];
+};
+
+const { title, basePath, items } = Astro.props;
+---
+
+{
+  items.length > 0 && (
+    <section class="link-list" aria-label={title}>
+      <h2>{title}</h2>
+      <ul>
+        {items.map((item) => (
+          <li>
+            <a href={`${basePath}${item}/`}>{titleFromSlug(item)}</a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )
+}

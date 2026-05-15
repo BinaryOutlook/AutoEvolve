@@ -1,0 +1,30 @@
+---
+import ContentCard from '@components/ContentCard.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { entrySlug, getPublicEntries, pathFor } from '@lib/collections';
+
+const controversies = await getPublicEntries('controversies');
+---
+
+<BaseLayout title="Controversies" description="Technical and regulatory automotive controversy case studies.">
+  <section class="page-section page-hero">
+    <p class="eyebrow">Case studies</p>
+    <h1>Controversies</h1>
+    <p>
+      Controversy pages focus on documented events, technical background, regulatory context, and historical
+      implications.
+    </p>
+  </section>
+  <section class="page-section content-grid" aria-label="Controversy list">
+    {
+      controversies.map((entry) => (
+        <ContentCard
+          href={pathFor('controversies', entrySlug(entry))}
+          title={entry.data.title}
+          summary={entry.data.summary}
+          meta={entry.data.dateRange}
+        />
+      ))
+    }
+  </section>
+</BaseLayout>

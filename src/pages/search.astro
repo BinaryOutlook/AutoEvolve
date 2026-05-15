@@ -1,0 +1,26 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Search" description="Search AutoEvolve content.">
+  <section class="page-section page-hero">
+    <p class="eyebrow">Find content</p>
+    <h1>Search</h1>
+    <p>Search technology pages, eras, vehicle examples, controversies, glossary terms, and source records.</p>
+  </section>
+  <section class="page-section">
+    <div class="search-shell">
+      <div id="search"></div>
+      <noscript>Search requires JavaScript after the site is built. Browse eras or technologies if scripting is unavailable.</noscript>
+    </div>
+  </section>
+  <link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
+  <script is:inline src="/pagefind/pagefind-ui.js"></script>
+  <script is:inline>
+    window.addEventListener('DOMContentLoaded', () => {
+      if (window.PagefindUI) {
+        new window.PagefindUI({ element: '#search', showSubResults: true, showImages: false });
+      }
+    });
+  </script>
+</BaseLayout>

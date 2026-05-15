@@ -1,0 +1,29 @@
+---
+import ArticleLayout from '@layouts/ArticleLayout.astro';
+import { entrySlug, getPublicEntries } from '@lib/collections';
+import { render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const controversies = await getPublicEntries('controversies');
+  return controversies.map((entry) => ({ params: { slug: entrySlug(entry) }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<ArticleLayout
+  title={entry.data.title}
+  summary={entry.data.summary}
+  eyebrow="Controversy"
+  status={entry.data.status}
+  lastReviewed={entry.data.lastReviewed}
+  sourceIds={entry.data.sources}
+  metaItems={[entry.data.dateRange, entry.data.regulatoryContext]}
+  linkSections={[
+    { title: 'Affected Technologies', basePath: '/technologies/', items: entry.data.affectedTechnologies },
+    { title: 'Vehicle Examples', basePath: '/vehicles/', items: entry.data.relatedVehicles },
+  ]}
+>
+  <Content />
+</ArticleLayout>

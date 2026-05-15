@@ -77,7 +77,7 @@ export const sources: Source[] = [
     title: 'Technical Brief: Automotive Technology Evolution Website',
     organization: 'AutoEvolve project',
     type: 'project-documentation',
-    url: '/start_brief.md',
+    url: '/project-brief/',
     accessedDate: '2026-05-16',
     supports: ['Editorial policy', 'site architecture', 'implementation requirements'],
   },

@@ -1,0 +1,52 @@
+<figure class="powertrain-map" aria-labelledby="powertrain-map-title">
+  <svg viewBox="0 0 860 280" role="img" aria-describedby="powertrain-map-desc">
+    <title id="powertrain-map-title">Automotive technology evolution map</title>
+    <desc id="powertrain-map-desc">
+      A simplified diagram linking piston engines, fuel systems, emissions control, hybrids, plug-in hybrids, and
+      battery electric vehicles across time.
+    </desc>
+    <defs>
+      <marker id="arrow" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+        <path d="M0,0 L0,6 L8,3 z" fill="currentColor"></path>
+      </marker>
+    </defs>
+    <g class="map-line">
+      <path d="M115 90 H310 H500 H720" marker-end="url(#arrow)"></path>
+      <path d="M310 90 C360 150 430 170 500 190" marker-end="url(#arrow)"></path>
+      <path d="M500 190 H720" marker-end="url(#arrow)"></path>
+    </g>
+    <g class="map-node map-node--engine">
+      <rect x="40" y="52" width="150" height="76" rx="8"></rect>
+      <text x="115" y="83">Piston engines</text>
+      <text x="115" y="106">steam, gasoline, diesel</text>
+    </g>
+    <g class="map-node map-node--control">
+      <rect x="235" y="52" width="150" height="76" rx="8"></rect>
+      <text x="310" y="83">Fuel and control</text>
+      <text x="310" y="106">carburetors to ECUs</text>
+    </g>
+    <g class="map-node map-node--emissions">
+      <rect x="425" y="52" width="150" height="76" rx="8"></rect>
+      <text x="500" y="83">Emissions systems</text>
+      <text x="500" y="106">catalysts, SCR, OBD</text>
+    </g>
+    <g class="map-node map-node--software">
+      <rect x="650" y="52" width="150" height="76" rx="8"></rect>
+      <text x="725" y="83">Software-defined</text>
+      <text x="725" y="106">networks and updates</text>
+    </g>
+    <g class="map-node map-node--hybrid">
+      <rect x="425" y="152" width="150" height="76" rx="8"></rect>
+      <text x="500" y="183">Hybrid systems</text>
+      <text x="500" y="206">motors and batteries</text>
+    </g>
+    <g class="map-node map-node--ev">
+      <rect x="650" y="152" width="150" height="76" rx="8"></rect>
+      <text x="725" y="183">Battery electric</text>
+      <text x="725" y="206">packs, motors, charging</text>
+    </g>
+  </svg>
+  <figcaption>
+    A simplified reading map. The site treats these branches as overlapping developments, not a single straight line.
+  </figcaption>
+</figure>

@@ -1,0 +1,31 @@
+---
+import ContentCard from '@components/ContentCard.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { entrySlug, getPublicEntries, pathFor } from '@lib/collections';
+
+const vehicles = await getPublicEntries('vehicles');
+---
+
+<BaseLayout title="Vehicle Examples" description="Vehicle examples used to explain broader automotive technologies.">
+  <section class="page-section page-hero">
+    <p class="eyebrow">Examples, not reviews</p>
+    <h1>Vehicle Examples</h1>
+    <p>
+      These pages use selected models to explain technology history. They avoid rankings, purchasing advice, and
+      subjective review language.
+    </p>
+  </section>
+  <section class="page-section content-grid" aria-label="Vehicle example list">
+    {
+      vehicles.map((entry) => (
+        <ContentCard
+          href={pathFor('vehicles', entrySlug(entry))}
+          title={entry.data.title}
+          summary={entry.data.summary}
+          eyebrow={entry.data.manufacturer}
+          meta={entry.data.productionPeriod}
+        />
+      ))
+    }
+  </section>
+</BaseLayout>

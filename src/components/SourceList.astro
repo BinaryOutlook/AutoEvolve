@@ -1,0 +1,28 @@
+---
+import { getSourceById } from '@data/sources';
+
+type Props = {
+  sourceIds: string[];
+};
+
+const { sourceIds } = Astro.props;
+const resolvedSources = sourceIds.map((id) => getSourceById(id)).filter(Boolean);
+---
+
+{
+  resolvedSources.length > 0 && (
+    <section class="source-list" aria-labelledby="sources-heading">
+      <h2 id="sources-heading">Sources and Further Reading</h2>
+      <ol>
+        {resolvedSources.map((source) => (
+          <li>
+            <a href={source!.url}>{source!.title}</a>
+            <span> {source!.organization}. </span>
+            <span>Accessed {source!.accessedDate}.</span>
+            {source!.notes && <p>{source!.notes}</p>}
+          </li>
+        ))}
+      </ol>
+    </section>
+  )
+}

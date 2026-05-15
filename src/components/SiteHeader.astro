@@ -1,0 +1,31 @@
+---
+const navItems = [
+  { href: '/timeline/', label: 'Timeline' },
+  { href: '/eras/', label: 'Eras' },
+  { href: '/technologies/', label: 'Technologies' },
+  { href: '/vehicles/', label: 'Vehicles' },
+  { href: '/controversies/', label: 'Controversies' },
+  { href: '/glossary/', label: 'Glossary' },
+  { href: '/sources/', label: 'Sources' },
+];
+---
+
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="brand" href="/" aria-label="AutoEvolve home">
+      <span class="brand__mark" aria-hidden="true">AE</span>
+      <span class="brand__text">AutoEvolve</span>
+    </a>
+    <nav class="site-nav" aria-label="Primary navigation">
+      {
+        navItems.map((item) => (
+          <a href={item.href} class:list={{ 'is-active': Astro.url.pathname.startsWith(item.href) }}>
+            {item.label}
+          </a>
+        ))
+      }
+      <a class="site-nav__search" href="/search/">Search</a>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,38 @@
+---
+import ContentCard from '@components/ContentCard.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { categoryLabel, entrySlug, getPublicEntries, pathFor } from '@lib/collections';
+
+const technologies = await getPublicEntries('technologies');
+const groups = Map.groupBy(technologies, (entry) => entry.data.category);
+---
+
+<BaseLayout title="Technologies" description="Automotive technology explainers grouped by system.">
+  <section class="page-section page-hero">
+    <p class="eyebrow">Systems and components</p>
+    <h1>Technologies</h1>
+    <p>
+      Browse explanations by propulsion, emissions, fuel systems, electric drive, and vehicle software. Each page
+      connects a component to historical context.
+    </p>
+  </section>
+  {
+    Array.from(groups.entries()).map(([category, entries]) => (
+      <section class="page-section" aria-labelledby={`category-${category}`}>
+        <div class="section-heading">
+          <h2 id={`category-${category}`}>{categoryLabel(category)}</h2>
+        </div>
+        <div class="content-grid">
+          {entries.map((entry) => (
+            <ContentCard
+              href={pathFor('technologies', entrySlug(entry))}
+              title={entry.data.title}
+              summary={entry.data.summary}
+              eyebrow="Technology"
+            />
+          ))}
+        </div>
+      </section>
+    ))
+  }
+</BaseLayout>

@@ -1,0 +1,61 @@
+---
+import SourceList from '@components/SourceList.astro';
+import SlugLinkList from '@components/SlugLinkList.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
+
+type LinkSection = {
+  title: string;
+  basePath: string;
+  items: string[];
+};
+
+type Props = {
+  title: string;
+  summary: string;
+  eyebrow: string;
+  status: string;
+  lastReviewed: string;
+  sourceIds: string[];
+  metaItems?: string[];
+  linkSections?: LinkSection[];
+};
+
+const { title, summary, eyebrow, status, lastReviewed, sourceIds, metaItems = [], linkSections = [] } = Astro.props;
+---
+
+<BaseLayout title={title} description={summary}>
+  <article class="article-shell">
+    <header class="article-header">
+      <p class="eyebrow">{eyebrow}</p>
+      <h1>{title}</h1>
+      <p class="lede">{summary}</p>
+      <dl class="article-meta">
+        <div>
+          <dt>Status</dt>
+          <dd>{status}</dd>
+        </div>
+        <div>
+          <dt>Last reviewed</dt>
+          <dd>{lastReviewed}</dd>
+        </div>
+        {
+          metaItems.map((item) => (
+            <div>
+              <dt>Context</dt>
+              <dd>{item}</dd>
+            </div>
+          ))
+        }
+      </dl>
+    </header>
+    <div class="article-grid">
+      <div class="article-content">
+        <slot />
+        <SourceList sourceIds={sourceIds} />
+      </div>
+      <aside class="article-aside" aria-label="Related content">
+        {linkSections.map((section) => <SlugLinkList {...section} />)}
+      </aside>
+    </div>
+  </article>
+</BaseLayout>

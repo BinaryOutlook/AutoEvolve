@@ -1,21 +1,60 @@
 ---
+import ContentCard from '@components/ContentCard.astro';
+import PowertrainMap from '@components/PowertrainMap.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { entrySlug, getPublicEntries, pathFor } from '@lib/collections';
 
+const eras = await getPublicEntries('eras');
+const technologies = await getPublicEntries('technologies');
+const vehicles = await getPublicEntries('vehicles');
+const controversies = await getPublicEntries('controversies');
+
+const featuredTechnologies = technologies.filter((entry) =>
+  ['four-stroke-engine', 'diesel-engine', 'hybrid-electric-vehicle', 'battery-electric-vehicle'].includes(
+    entrySlug(entry),
+  ),
+);
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>AutoEvolve</title>
-  </head>
-  <body>
-    <main>
-      <h1>AutoEvolve</h1>
-      <p>
-        A neutral technical archive for the evolution of automotive technology.
-      </p>
-    </main>
-  </body>
-</html>
+<BaseLayout title="AutoEvolve">
+  <section class="page-section page-hero">
+    <p class="eyebrow">Automotive technology history</p>
+    <h1>How vehicles became modern mobility systems.</h1>
+    <p>
+      AutoEvolve is a neutral educational archive for tracing engines, emissions systems, hybrid architectures,
+      batteries, software, and charging infrastructure across automotive history.
+    </p>
+    <PowertrainMap />
+  </section>
+
+  <section class="page-section" aria-labelledby="archive-overview">
+    <div class="section-heading">
+      <h2 id="archive-overview">Archive Overview</h2>
+    </div>
+    <div class="content-grid">
+      <ContentCard href="/eras/" title={`${eras.length} Eras`} summary="Chronological periods from early self-propelled vehicles to software-defined electrified mobility." />
+      <ContentCard href="/technologies/" title={`${technologies.length} Technologies`} summary="System-level explainers for propulsion, emissions, fuel, electric drive, diagnostics, and control." />
+      <ContentCard href="/vehicles/" title={`${vehicles.length} Vehicle Examples`} summary="Selected models used only to illustrate broader engineering developments." />
+      <ContentCard href="/controversies/" title={`${controversies.length} Case Study`} summary="Dieselgate and future controversy pages framed through technical and regulatory context." />
+    </div>
+  </section>
+
+  <section class="page-section" aria-labelledby="starting-points">
+    <div class="section-heading">
+      <h2 id="starting-points">Starting Points</h2>
+      <a href="/timeline/">Open timeline</a>
+    </div>
+    <div class="content-grid">
+      {
+        featuredTechnologies.map((entry) => (
+          <ContentCard
+            href={pathFor('technologies', entrySlug(entry))}
+            title={entry.data.title}
+            summary={entry.data.summary}
+            eyebrow="Technology"
+          />
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>

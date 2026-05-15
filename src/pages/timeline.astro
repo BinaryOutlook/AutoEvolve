@@ -1,0 +1,62 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { milestones } from '@data/milestones';
+
+const types = Array.from(new Set(milestones.map((milestone) => milestone.type))).sort();
+---
+
+<BaseLayout title="Timeline" description="A filterable timeline of automotive technology milestones.">
+  <section class="page-section page-hero">
+    <p class="eyebrow">Milestones</p>
+    <h1>Timeline</h1>
+    <p>
+      Browse selected events by type. Dates may represent invention, commercialization, regulation, infrastructure, or
+      controversy, which are different kinds of historical change.
+    </p>
+  </section>
+
+  <section class="page-section" aria-labelledby="timeline-heading">
+    <h2 id="timeline-heading">Milestone Filters</h2>
+    <nav class="timeline-controls" aria-label="Timeline filters">
+      <a href="/timeline/" data-filter="all" class="is-active">All</a>
+      {types.map((type) => <a href={`/timeline/?type=${type}`} data-filter={type}>{type}</a>)}
+    </nav>
+
+    <ol class="timeline-list">
+      {
+        milestones.map((milestone) => (
+          <li class="timeline-item" data-type={milestone.type}>
+            <time>{milestone.date}</time>
+            <h2>{milestone.title}</h2>
+            <p>{milestone.summary}</p>
+            <p>
+              {milestone.links.map((href, index) => (
+                <>
+                  <a href={href}>Related page {index + 1}</a>
+                  {index < milestone.links.length - 1 ? ' · ' : ''}
+                </>
+              ))}
+            </p>
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+
+  <script is:inline>
+    const params = new URLSearchParams(window.location.search);
+    const activeType = params.get('type') || 'all';
+    const filterLinks = document.querySelectorAll('[data-filter]');
+    const items = document.querySelectorAll('.timeline-item');
+
+    filterLinks.forEach((link) => {
+      const isActive = link.dataset.filter === activeType;
+      link.classList.toggle('is-active', isActive);
+      link.setAttribute('aria-current', isActive ? 'page' : 'false');
+    });
+
+    items.forEach((item) => {
+      item.hidden = activeType !== 'all' && item.dataset.type !== activeType;
+    });
+  </script>
+</BaseLayout>

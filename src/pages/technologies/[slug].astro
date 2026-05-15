@@ -1,0 +1,30 @@
+---
+import ArticleLayout from '@layouts/ArticleLayout.astro';
+import { categoryLabel, entrySlug, getPublicEntries } from '@lib/collections';
+import { render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const technologies = await getPublicEntries('technologies');
+  return technologies.map((entry) => ({ params: { slug: entrySlug(entry) }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<ArticleLayout
+  title={entry.data.title}
+  summary={entry.data.summary}
+  eyebrow={categoryLabel(entry.data.category)}
+  status={entry.data.status}
+  lastReviewed={entry.data.lastReviewed}
+  sourceIds={entry.data.sources}
+  metaItems={[]}
+  linkSections={[
+    { title: 'Related Eras', basePath: '/eras/', items: entry.data.eras },
+    { title: 'Related Technologies', basePath: '/technologies/', items: entry.data.relatedTechnologies },
+    { title: 'Vehicle Examples', basePath: '/vehicles/', items: entry.data.relatedVehicles },
+  ]}
+>
+  <Content />
+</ArticleLayout>
