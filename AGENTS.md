@@ -1,6 +1,6 @@
 # AutoEvolve Agent Notes
 
-Please keep documentation current as part of normal project maintenance. AutoEvolve is starting from version `0.01`, so this repository should stay easy to understand while the MVP is still taking shape.
+Please keep documentation current as part of normal project maintenance. AutoEvolve is labeled `0.2`, so this repository should stay easy to understand while the expanded MVP keeps taking shape.
 
 ## Project Identity
 
@@ -28,14 +28,15 @@ The main documentation layers are:
 - `docs/source-style-guide.md`: source hierarchy, citation metadata, and source-use rules.
 - `docs/contribution-guide.md`: local setup and verification expectations.
 
-## Version 0.01 Baseline
+## Version 0.2 Baseline
 
-Treat `0.01` as the initial MVP stage. The goal is a deployable, source-backed archive with clear navigation, seed content, static search, and maintainable contribution rules.
+Treat `0.2` as the expanded MVP content release. The goal is a deployable, source-backed archive with clear navigation, static search, maintainable contribution rules, eras as the chronological structure, broader technology guides, controversy case studies, and vehicle examples with attributed images.
 
 Prioritize:
 
 - static-first pages that work without a backend
 - typed content collections and predictable frontmatter
+- era pages as the primary chronological structure
 - neutral explanations of systems before vehicle examples
 - citations for specific historical, technical, numerical, legal, and regulatory claims
 - simple routes and reusable components over speculative platform features
