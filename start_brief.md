@@ -95,7 +95,7 @@ The website should support these common journeys:
 2. A reader starts with "What was Dieselgate?" and lands on a controversy page that explains diesel emissions controls, laboratory testing, defeat devices, regulatory timelines, and downstream effects.
 3. A reader starts with "Why did hybrids matter before EVs became common?" and lands on an era page that explains regenerative braking, motor-generators, battery sizing, and control strategies.
 4. A reader starts with a vehicle model and learns why that model is historically relevant without being pulled into a review, ranking, or fan narrative.
-5. A student browses a timeline and follows links from early piston engines to gasoline engines, diesel engines, hybrids, plug-in hybrids, and battery electric vehicles.
+5. A student browses the eras chronology and follows links from early piston engines to gasoline engines, diesel engines, hybrids, plug-in hybrids, and battery electric vehicles.
 
 ## 6. Editorial Tone and Content Principles
 
@@ -221,7 +221,6 @@ This helps readers understand why tires, drag, road grade, accessories, and rege
 The main navigation should be simple and content-led:
 
 - Home
-- Timeline
 - Eras
 - Technologies
 - Vehicles as Examples
@@ -236,8 +235,7 @@ Recommended routes:
 
 | Route                    | Purpose                                                                           |
 | ------------------------ | --------------------------------------------------------------------------------- |
-| `/`                      | Overview, mission, featured timeline entry points, latest added pages.            |
-| `/timeline/`             | Interactive chronological map of milestones.                                      |
+| `/`                      | Overview, mission, featured era entry points, latest added pages.                 |
 | `/eras/`                 | Index of historical eras.                                                         |
 | `/eras/[slug]/`          | Era detail page.                                                                  |
 | `/technologies/`         | Technology index grouped by powertrain, chassis, safety, emissions, and software. |
@@ -256,7 +254,7 @@ Recommended routes:
 The home page should immediately communicate that this is an educational automotive technology history site. It should include:
 
 - A concise mission statement.
-- A prominent timeline entry point.
+- A prominent era chronology entry point.
 - Links to major eras.
 - Links to core technology clusters.
 - A short explanation of the editorial approach.
@@ -265,17 +263,16 @@ The home page should immediately communicate that this is an educational automot
 
 Avoid a marketing-style hero page. The first screen should make the archive usable, not merely decorative.
 
-### 7.4 Timeline Page Requirements
+### 7.4 Era Chronology Requirements
 
-The timeline should support:
+The eras index is the primary chronological structure. It should support:
 
-- Chronological browsing.
-- Filters by technology type, such as engine, emissions, safety, electric drive, fuel system, charging, manufacturing, and regulation.
-- Entries that link to era pages, technology pages, vehicle examples, or controversy pages.
+- Chronological browsing by historical era.
+- Era entries that link to detail pages, technology pages, vehicle examples, or controversy pages where appropriate.
 - Approximate dates when exact dates are contested or unnecessary.
 - Clear distinction between invention, commercialization, regulation, and mass adoption.
 
-Timeline entries should not imply that a technology became universal at the moment it was invented.
+Era chronology should not imply that a technology became universal at the moment it was invented.
 
 ### 7.5 Era Page Template
 
@@ -773,7 +770,6 @@ The site should define these content types:
 | Era             | A period of automotive technology history.                                  |
 | Technology      | A specific system, component, process, or architecture.                     |
 | Vehicle Example | A vehicle used to illustrate a technology or era.                           |
-| Milestone       | A dated event used in the timeline.                                         |
 | Controversy     | A structured case study involving technical, legal, or regulatory conflict. |
 | Glossary Term   | Short definition of a technical term.                                       |
 | Source          | Bibliographic or web reference.                                             |
@@ -801,8 +797,6 @@ relatedTechnologies:
   - 'diesel-particulate-filter'
 relatedVehicles:
   - 'volkswagen-tdi-dieselgate-example'
-milestones:
-  - 'common-rail-commercialization'
 lastReviewed: '2026-05-15'
 readingLevel: 'general-technical'
 sources:
@@ -836,25 +830,7 @@ Sources may be stored in `src/data/sources.json` or a `sources` content collecti
 }
 ```
 
-### 11.4 Milestone Schema
-
-```yaml
-title: 'Toyota Prius launches in Japan'
-slug: 'toyota-prius-japan-launch'
-date: '1997'
-datePrecision: 'year'
-type: 'commercialization'
-technologies:
-  - 'power-split-hybrid'
-  - 'regenerative-braking'
-vehicles:
-  - 'toyota-prius'
-summary: 'Commercial launch of a mass-produced hybrid passenger car using a power-split hybrid system.'
-sources:
-  - 'source-id-prius-launch'
-```
-
-### 11.5 Relationship Rules
+### 11.4 Relationship Rules
 
 The content graph should support:
 
@@ -863,7 +839,6 @@ The content graph should support:
 - Technology to vehicle examples.
 - Technology to glossary terms.
 - Controversy to technologies.
-- Milestone to era, technology, and vehicle pages.
 - Source to every page it supports.
 
 The site should generate "related reading" automatically from these relationships where practical.
@@ -882,7 +857,7 @@ Use a content-first static site generator. Recommended stack:
 - CSS modules, vanilla CSS, or a restrained utility framework such as Tailwind CSS.
 - Minimal client-side JavaScript.
 
-Astro is well-suited because most pages are documents, not application screens. It can render static pages by default while allowing small interactive components for search, timeline filters, diagrams, or comparison tools.
+Astro is well-suited because most pages are documents, not application screens. It can render static pages by default while allowing small interactive components for search, era chronology, diagrams, or comparison tools.
 
 ### 12.2 Alternative Frontend Options
 
@@ -918,9 +893,8 @@ Build these reusable components:
 | `SiteFooter`         | About links, source policy, repository link.             |
 | `ArticleLayout`      | Standard content page wrapper.                           |
 | `EraHeader`          | Era summary, date range, key themes.                     |
+| `EraTimeline`        | Chronological era index or section spine.                |
 | `TechnologyHeader`   | Technology definition, category, related systems.        |
-| `Timeline`           | Filterable chronological milestones.                     |
-| `TimelineItem`       | Single dated milestone.                                  |
 | `SourceList`         | Sources and further reading.                             |
 | `GlossaryTooltip`    | Short term definitions with accessible fallback.         |
 | `RelatedLinks`       | Generated links to related pages.                        |
@@ -929,15 +903,13 @@ Build these reusable components:
 | `CitationBadge`      | Inline link to a source note where appropriate.          |
 | `StatusBanner`       | Draft, needs review, or fast-moving topic notice.        |
 
-### 12.5 Timeline Interaction
+### 12.5 Era Chronology Interaction
 
-The timeline should be accessible without requiring pointer precision. Requirements:
+The era chronology should be accessible without requiring pointer precision. Requirements:
 
-- Keyboard-navigable filters.
 - Plain list fallback if JavaScript fails.
-- Date labels visible to screen readers.
-- Clear color and text labels for event types.
-- Filters stored in URL search parameters, such as `/timeline/?type=emissions`.
+- Date ranges visible to screen readers.
+- Clear color and text labels for major era themes.
 - No reliance on color alone.
 
 ### 12.6 Search
@@ -1120,7 +1092,6 @@ For a backend version:
 
 - `GET /api/search-index` if dynamic search is needed.
 - `POST /api/submissions` for corrections or source suggestions.
-- `GET /api/timeline` if timeline data moves to the database.
 - `GET /api/sources/:id` for source detail overlays.
 
 Public APIs should be read-only unless moderation is implemented.
@@ -1218,7 +1189,6 @@ npx astro add tailwind
 ├── src/
 │   ├── components/
 │   │   ├── article/
-│   │   ├── timeline/
 │   │   ├── navigation/
 │   │   └── diagrams/
 │   ├── content/
@@ -1228,17 +1198,14 @@ npx astro add tailwind
 │   │   ├── controversies/
 │   │   └── glossary/
 │   ├── data/
-│   │   ├── sources.json
-│   │   └── milestones.json
+│   │   └── sources.json
 │   ├── layouts/
 │   ├── lib/
 │   │   ├── content.ts
 │   │   ├── citations.ts
-│   │   ├── timeline.ts
 │   │   └── schema.ts
 │   ├── pages/
 │   │   ├── index.astro
-│   │   ├── timeline.astro
 │   │   ├── eras/
 │   │   ├── technologies/
 │   │   ├── vehicles/
@@ -1326,7 +1293,7 @@ The Dieselgate page should explain:
 - How software can alter emissions-control behavior.
 - Why real-world emissions testing became more prominent after the scandal.
 
-### 17.2 Required Timeline Points
+### 17.2 Required Case Chronology Points
 
 The page should include:
 
@@ -1416,7 +1383,6 @@ relatedTechnologies:
 Build:
 
 - Home page.
-- Timeline.
 - Era pages.
 - Technology index.
 - Ten to fifteen technology pages.
@@ -1433,7 +1399,6 @@ No database is required.
 Build:
 
 - Generated relationship graph.
-- More advanced timeline filters.
 - Source completeness reports.
 - Content status dashboard generated at build time.
 - Link checker in CI.
@@ -1483,7 +1448,7 @@ Implement:
 Test:
 
 - Citation rendering.
-- Timeline sorting.
+- Era order sorting.
 - Date precision handling.
 - Related-content generation.
 - Source completeness validation.
@@ -1496,7 +1461,7 @@ Use Playwright to test:
 
 - Home page loads.
 - Main navigation works on desktop and mobile.
-- Timeline filters update results.
+- Era chronology renders in order.
 - Search returns relevant pages.
 - Era pages render related technologies.
 - Technology pages render sources.
@@ -1694,23 +1659,20 @@ Acceptance criteria:
 
 - Every page has sources.
 - Every page has related links.
-- Dieselgate page includes timeline, technical background, regulatory context, and sources.
+- Dieselgate page includes chronology, technical background, regulatory context, and sources.
 - No article uses subjective ranking language.
 
-### 23.4 Phase 3: Search and Timeline
+### 23.4 Phase 3: Search and Era Chronology
 
 Tasks:
 
-- Add milestone data.
-- Build timeline UI.
-- Add filters.
+- Strengthen era chronology entry points.
 - Add static search.
 - Add no-results states.
 
 Acceptance criteria:
 
-- Timeline entries sort correctly.
-- Filters are keyboard accessible.
+- Era entries sort correctly.
 - Search works after production build.
 - Search result pages identify content type.
 
@@ -1798,7 +1760,7 @@ Best when:
 
 - The project needs persistent submissions.
 - The project needs an authenticated admin area.
-- Sources or milestones become easier to manage in relational tables.
+- Structured source catalogs or correction submissions become easier to manage in relational tables.
 
 Supabase should be treated as optional infrastructure, not a requirement for the first release.
 
@@ -1929,7 +1891,7 @@ Short neutral summary of the emissions controversy.
 
 Explain diesel emissions control, software, and regulatory testing.
 
-## Timeline
+## Chronology
 
 Chronological events with sources.
 
@@ -2035,7 +1997,7 @@ The first public release is done when:
 - Glossary contains at least thirty terms.
 - Every page has metadata and sources.
 - Static search works.
-- Timeline works with filters.
+- Eras provide usable chronological navigation.
 - Build, lint, and tests pass.
 - The site has an editorial policy page.
 - The site has a source policy page.

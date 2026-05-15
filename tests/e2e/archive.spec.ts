@@ -8,29 +8,21 @@ test('home page exposes the core archive navigation', async ({ page }) => {
       name: /How vehicles became modern mobility systems/i,
     }),
   ).toBeVisible();
+  await expect(page.locator('a[href="/timeline/"]')).toHaveCount(0);
   await expect(
-    page.getByRole('link', { name: 'Timeline', exact: true }),
+    page.getByRole('link', { name: 'Eras', exact: true }),
   ).toBeVisible();
   await expect(
     page.getByRole('link', { name: 'Technologies', exact: true }),
   ).toBeVisible();
 });
 
-test('timeline filtering hides unrelated milestone types', async ({ page }) => {
-  await page.goto('/timeline/?type=controversy');
-  await expect(
-    page.getByRole('heading', {
-      name: 'EPA issues Volkswagen diesel emissions notice',
-    }),
-  ).toBeVisible();
-  await expect(
-    page.getByRole('heading', {
-      name: 'Mass-market hybrid vehicles enter public use',
-    }),
-  ).toBeHidden();
+test('standalone timeline route is not generated', async ({ page }) => {
+  const response = await page.goto('/timeline/');
+  expect(response?.status()).toBe(404);
 });
 
-test('eras page presents the archive as a chronological timeline', async ({
+test('eras page presents the archive as a chronological spine', async ({
   page,
 }) => {
   await page.goto('/eras/');

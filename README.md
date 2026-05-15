@@ -71,9 +71,9 @@ Use `npm run test:e2e` when routes, navigation, search behavior, or browser-visi
 
 | Path                                                   | Purpose                                                                                                                  |
 | ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| [src/pages/](src/pages/)                               | Astro routes for home, timeline, eras, technologies, vehicles, controversies, glossary, sources, about, and search.      |
+| [src/pages/](src/pages/)                               | Astro routes for home, eras, technologies, vehicles, controversies, glossary, sources, about, and search.                |
 | [src/content/](src/content/)                           | Markdown and MDX content collections for eras, technologies, vehicles, and controversies.                                |
-| [src/data/](src/data/)                                 | Structured source, glossary, and timeline data.                                                                          |
+| [src/data/](src/data/)                                 | Structured source and glossary data.                                                                                     |
 | [src/components/](src/components/)                     | Shared UI components for cards, headers, source lists, maps, and linked lists.                                           |
 | [src/layouts/](src/layouts/)                           | Base and article layout shells.                                                                                          |
 | [docs/](docs/)                                         | Current editorial, source, and contribution guidance.                                                                    |
@@ -128,6 +128,6 @@ The first version is `0.01`; future versioned planning should preserve that styl
 
 ## Project Status
 
-The repository is being built incrementally from the brief. The first implementation target is a deployable static MVP with core page templates, seed content, timeline browsing, static search, contribution guidance, and automated quality checks.
+The repository is being built incrementally from the brief. The first implementation target is a deployable static MVP with core page templates, seed content, era-led chronology, static search, contribution guidance, and automated quality checks.
 
 Current docs are expected to describe the present state. If a feature, command, route, or workflow changes, update the relevant document before considering the work complete.

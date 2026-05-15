@@ -4,7 +4,6 @@ AutoEvolve is a neutral educational archive documenting the evolution of automot
 
 Primary routes:
 
-- /timeline/
 - /eras/
 - /technologies/
 - /vehicles/
