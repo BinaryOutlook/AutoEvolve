@@ -2,7 +2,7 @@
 
 AutoEvolve is a static-first educational website that documents the evolution of automotive technology: early self-propelled vehicles, internal-combustion systems, diesel and emissions controls, hybrids, plug-in hybrids, battery-electric platforms, and the software-defined vehicles now reshaping mobility.
 
-The project starts at version `0.01`: a blank-slate MVP stage focused on making the archive useful, verifiable, and easy to extend. The durable rule is simple: every meaningful update should keep the product, documentation, and maintenance workflow moving together instead of letting the code outrun the explanation.
+The current release is `0.2`: an expanded MVP content release with broader technology guides, controversy case studies, vehicle examples with attributed images, and eras as the chronological structure. The durable rule is simple: every meaningful update should keep the product, documentation, and maintenance workflow moving together instead of letting the code outrun the explanation.
 
 The project follows the implementation brief in [start_brief.md](start_brief.md): neutral editorial tone, source-backed technical explanations, vehicle models as examples of broader systems, and architecture that remains friendly to free static hosting.
 
@@ -10,13 +10,13 @@ The project follows the implementation brief in [start_brief.md](start_brief.md)
 
 | Field                | Value                                                                                                                            |
 | -------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| Project stage        | `0.01` initial MVP                                                                                                               |
-| Primary goal         | Build a deployable educational archive with credible seed content and a maintainable content workflow.                           |
+| Project stage        | `0.2` expanded MVP content release                                                                                               |
+| Primary goal         | Maintain a deployable educational archive with source-backed eras, technologies, controversies, and vehicle examples.            |
 | Product stance       | Historical, technical, neutral, and evidence-led.                                                                                |
 | Architecture stance  | Static-first Astro site, Git-backed content, typed schemas, generated search, and no backend until the workflow truly needs one. |
 | Documentation stance | README and `AGENTS.md` stay current with every meaningful change; deeper editorial rules live under `docs/`.                     |
 
-For this stage, the operating equation is:
+For this release stage, the operating equation is:
 
 $$
 \text{MVP Readiness} =
@@ -71,7 +71,7 @@ Use `npm run test:e2e` when routes, navigation, search behavior, or browser-visi
 
 | Path                                                   | Purpose                                                                                                                  |
 | ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| [src/pages/](src/pages/)                               | Astro routes for home, eras, technologies, vehicles, controversies, glossary, sources, about, and search.                |
+| [src/pages/](src/pages/)                               | Astro routes for home, era-led chronology, technologies, vehicles, controversies, glossary, sources, about, and search.  |
 | [src/content/](src/content/)                           | Markdown and MDX content collections for eras, technologies, vehicles, and controversies.                                |
 | [src/data/](src/data/)                                 | Structured source and glossary data.                                                                                     |
 | [src/components/](src/components/)                     | Shared UI components for cards, headers, source lists, maps, and linked lists.                                           |
@@ -85,7 +85,7 @@ Use `npm run test:e2e` when routes, navigation, search behavior, or browser-visi
 
 | Document                                                 | Authority                                                                                  |
 | -------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| [README.md](README.md)                                   | Current project overview, commands, version status, structure, and maintenance wayfinding. |
+| [README.md](README.md)                                   | Current v0.2 overview, commands, status, structure, and maintenance wayfinding.            |
 | [AGENTS.md](AGENTS.md)                                   | Agent operating rules for documentation, implementation, and future planning.              |
 | [start_brief.md](start_brief.md)                         | Durable product brief for mission, scope, routes, content model, and editorial posture.    |
 | [docs/editorial-policy.md](docs/editorial-policy.md)     | Editorial neutrality, vehicle-example boundaries, and tone.                                |
@@ -124,10 +124,10 @@ idea or request
 
 Small changes can be handled directly. Larger changes, such as new sections, route families, schema changes, major visual redesigns, content workflow changes, or backend decisions, should get a short planning packet before implementation. That packet should capture scope, non-goals, acceptance criteria, test plan, documentation impact, and rollback path.
 
-The first version is `0.01`; future versioned planning should preserve that style and avoid treating loose ideas as active work before they are scoped.
+Future versioned planning should preserve that scoped style and avoid treating loose ideas as active work before they are ready to build.
 
 ## Project Status
 
-The repository is being built incrementally from the brief. The first implementation target is a deployable static MVP with core page templates, seed content, era-led chronology, static search, contribution guidance, and automated quality checks.
+The repository is labeled `0.2` after the expanded MVP content pass. It now centers the chronology on eras, keeps static search and contribution guidance in place, and carries source-backed coverage across technologies, controversies, and vehicle examples.
 
 Current docs are expected to describe the present state. If a feature, command, route, or workflow changes, update the relevant document before considering the work complete.
