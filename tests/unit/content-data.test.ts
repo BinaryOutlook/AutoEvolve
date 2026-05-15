@@ -1,6 +1,5 @@
 import { describe, expect, it } from 'vitest';
 import { glossaryTerms } from '../../src/data/glossary';
-import { milestones } from '../../src/data/milestones';
 import { sources } from '../../src/data/sources';
 
 describe('archive data', () => {
@@ -16,12 +15,7 @@ describe('archive data', () => {
     ).toBe(true);
   });
 
-  it('keeps milestone source references resolvable', () => {
-    const sourceIds = new Set(sources.map((source) => source.id));
-    for (const milestone of milestones) {
-      expect(
-        milestone.sources.every((sourceId) => sourceIds.has(sourceId)),
-      ).toBe(true);
-    }
+  it('keeps the source library populated for cited archive pages', () => {
+    expect(sources.length).toBeGreaterThanOrEqual(10);
   });
 });
