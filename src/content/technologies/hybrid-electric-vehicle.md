@@ -34,7 +34,7 @@ $$
 E_\text{recovered} < \frac{1}{2}mv^2
 $$
 
-where \(m\) is vehicle mass and \(v\) is speed. The inequality matters because tires, motor limits, battery temperature, state of charge, and conversion losses prevent full recovery.
+where $m$ is vehicle mass and $v$ is speed. The inequality matters because tires, motor limits, battery temperature, state of charge, and conversion losses prevent full recovery.
 
 ## Main Architectures
 

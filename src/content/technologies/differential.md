@@ -27,7 +27,7 @@ $$
 \omega_\text{carrier} = \frac{\omega_\text{left} + \omega_\text{right}}{2}
 $$
 
-where \(\omega\) represents angular speed. This simplified relationship explains why one wheel can speed up while the other slows down in a corner.
+where $\omega$ represents angular speed. This simplified relationship explains why one wheel can speed up while the other slows down in a corner.
 
 ## How It Works
 

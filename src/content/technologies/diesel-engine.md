@@ -61,7 +61,7 @@ $$
 \eta = \frac{W_\text{out}}{Q_\text{in}}
 $$
 
-where \(\eta\) is thermal efficiency, \(W_\text{out}\) is useful work, and \(Q_\text{in}\) is fuel heat input. Real engines lose energy through exhaust heat, coolant heat, friction, pumping, and accessory loads.
+where $\eta$ is thermal efficiency, $W_\text{out}$ is useful work, and $Q_\text{in}$ is fuel heat input. Real engines lose energy through exhaust heat, coolant heat, friction, pumping, and accessory loads.
 
 ## Common Misconceptions
 

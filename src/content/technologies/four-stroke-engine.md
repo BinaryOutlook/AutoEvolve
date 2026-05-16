@@ -27,7 +27,7 @@ $$
 P = T \omega
 $$
 
-where \(P\) is power, \(T\) is torque, and \(\omega\) is angular speed.
+where $P$ is power, $T$ is torque, and $\omega$ is angular speed.
 
 ## Historical Role
 

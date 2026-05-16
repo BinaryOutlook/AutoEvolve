@@ -38,7 +38,7 @@ $$
 i_\text{CVT} \approx \frac{r_\text{out}}{r_\text{in}}
 $$
 
-where \(r_\text{in}\) and \(r_\text{out}\) are the effective belt radii at the input and output pulleys. Real CVTs also depend on belt clamping force, friction, torque capacity, hydraulic control, and thermal limits.
+where $r_\text{in}$ and $r_\text{out}$ are the effective belt radii at the input and output pulleys. Real CVTs also depend on belt clamping force, friction, torque capacity, hydraulic control, and thermal limits.
 
 ## Main Components
 
