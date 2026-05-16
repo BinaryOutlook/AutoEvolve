@@ -224,12 +224,12 @@ const mobileArrowId = `${idBase}-arrow-mobile`;
 
 const desktopStageGap = model.stages.length === 4 ? 36 : 70;
 const desktopStageWidth =
-  (880 - desktopStageGap * (model.stages.length - 1)) / model.stages.length;
-const desktopLabelLength = model.stages.length === 4 ? 18 : 26;
-const desktopDetailLength = model.stages.length === 4 ? 20 : 26;
+  (900 - desktopStageGap * (model.stages.length - 1)) / model.stages.length;
+const desktopLabelLength = model.stages.length === 4 ? 16 : 22;
+const desktopDetailLength = model.stages.length === 4 ? 18 : 24;
 const desktopStageNodes: DesktopStageNode[] = model.stages.map(
   (stage, index) => ({
-    x: 60 + index * (desktopStageWidth + desktopStageGap),
+    x: 50 + index * (desktopStageWidth + desktopStageGap),
     y: 86,
     width: desktopStageWidth,
     height: 142,
@@ -256,8 +256,8 @@ const mobileStageNodes: MobileStageNode[] = model.stages.map(
     y: 74 + index * mobileStagePitch,
     width: mobileStageWidth,
     height: mobileStageHeight,
-    labelLines: wrapLabel(stage.label, 27, 3),
-    detailLines: wrapLabel(stage.detail, 30, 2),
+    labelLines: wrapLabel(stage.label, 23, 3),
+    detailLines: wrapLabel(stage.detail, 28, 2),
     ...stage,
   }),
 );

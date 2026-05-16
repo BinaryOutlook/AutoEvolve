@@ -131,10 +131,14 @@ describe('visual helper data', () => {
     expect(
       wrapLabel(
         'U.S. Clean Air Act defeat-device enforcement, EPA and CARB proceedings',
-        26,
+        24,
         2,
       ),
-    ).toEqual(['U.S. Clean Air Act', 'defeat-device enforcement…']);
+    ).toEqual(['U.S. Clean Air Act', 'defeat-device enforceme…']);
+    expect(wrapLabel('Mercedes-Benz S-Class W116', 22, 3)).toEqual([
+      'Mercedes-Benz S-Class',
+      'W116',
+    ]);
   });
 
   it('converts metadata slugs and ids into readable labels', () => {
