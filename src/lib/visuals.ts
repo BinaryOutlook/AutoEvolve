@@ -1160,6 +1160,52 @@ export function compactLabel(label: string, maxLength = 30): string {
   return `${truncated}…`;
 }
 
+export function wrapLabel(
+  label: string,
+  maxLineLength = 28,
+  maxLines = 3,
+): string[] {
+  const words = label.split(/\s+/u).filter((word) => word.length > 0);
+
+  if (words.length === 0) {
+    return [''];
+  }
+
+  const lineLimit = Math.max(4, maxLineLength);
+  const lineCount = Math.max(1, maxLines);
+  const lines: string[] = [];
+
+  for (let index = 0; index < words.length; index += 1) {
+    const word = words[index] ?? '';
+    const currentLine = lines.at(-1);
+
+    if (currentLine === undefined) {
+      lines.push(compactLabel(word, lineLimit));
+      continue;
+    }
+
+    const candidate = `${currentLine} ${word}`;
+
+    if (candidate.length <= lineLimit) {
+      lines[lines.length - 1] = candidate;
+      continue;
+    }
+
+    if (lines.length < lineCount) {
+      lines.push(compactLabel(word, lineLimit));
+      continue;
+    }
+
+    lines[lines.length - 1] = compactLabel(
+      [currentLine, ...words.slice(index)].join(' '),
+      lineLimit,
+    );
+    break;
+  }
+
+  return lines;
+}
+
 export function labelFromSlug(slug: string): string {
   return slug
     .split('-')

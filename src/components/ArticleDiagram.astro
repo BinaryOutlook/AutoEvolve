@@ -1,10 +1,10 @@
 ---
 import {
-  compactLabel,
   labelFromSlug,
   pickVisualItems,
   technologyVisualForSlug,
   visualId,
+  wrapLabel,
 } from '@lib/visuals';
 
 type Stage = {
@@ -66,6 +66,24 @@ type ControversyProps = {
 
 type Props = EraProps | TechnologyProps | VehicleProps | ControversyProps;
 
+type DesktopStageNode = Stage & {
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+  labelLines: string[];
+  detailLines: string[];
+};
+
+type MobileStageNode = Stage & {
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+  labelLines: string[];
+  detailLines: string[];
+};
+
 const props = Astro.props;
 const articleDiagramCaption =
   "Original AutoEvolve diagram based on this page's metadata, content relationships, and cited-source context where present. No external image license is required.";
@@ -74,30 +92,6 @@ const technologyDiagramCaption =
 
 function tagsFromSlugs(items: readonly string[], fallback: readonly string[]) {
   return pickVisualItems(items, fallback, 5).map(labelFromSlug);
-}
-
-function wrapSvgText(label: string, maxLineLength: number): string[] {
-  const words = label.split(/\s+/u).filter((word) => word.length > 0);
-  const lines: string[] = [];
-
-  for (const word of words) {
-    const currentLine = lines.at(-1);
-
-    if (currentLine === undefined) {
-      lines.push(word);
-      continue;
-    }
-
-    const candidate = `${currentLine} ${word}`;
-
-    if (candidate.length <= maxLineLength || lines.length >= 2) {
-      lines[lines.length - 1] = candidate;
-    } else {
-      lines.push(word);
-    }
-  }
-
-  return lines.slice(0, 2).map((line) => compactLabel(line, maxLineLength + 4));
 }
 
 function buildVisualModel(visualProps: Props): VisualModel {
@@ -222,23 +216,55 @@ const model = buildVisualModel(props);
 const idBase = visualId(`${props.kind}-${props.title}`);
 const titleId = `${idBase}-title`;
 const descId = `${idBase}-desc`;
+const mobileTitleId = `${idBase}-mobile-title`;
+const mobileDescId = `${idBase}-mobile-desc`;
 const captionId = `${idBase}-caption`;
-const arrowId = `${idBase}-arrow`;
-const stageGap = model.stages.length === 4 ? 28 : 65;
-const stageWidth =
-  (664 - stageGap * (model.stages.length - 1)) / model.stages.length;
-const labelLineLength = model.stages.length === 4 ? 18 : 22;
-const stageNodes = model.stages.map((stage, index) => ({
-  x: 48 + index * (stageWidth + stageGap),
-  y: 74,
-  width: stageWidth,
-  labelLines: wrapSvgText(stage.label, labelLineLength),
-  ...stage,
-}));
-const railSegments = stageNodes.slice(0, -1).map((node, index) => ({
-  x1: node.x + node.width,
-  x2: stageNodes[index + 1]?.x ?? node.x + node.width,
-}));
+const desktopArrowId = `${idBase}-arrow-desktop`;
+const mobileArrowId = `${idBase}-arrow-mobile`;
+
+const desktopStageGap = model.stages.length === 4 ? 36 : 70;
+const desktopStageWidth =
+  (880 - desktopStageGap * (model.stages.length - 1)) / model.stages.length;
+const desktopLabelLength = model.stages.length === 4 ? 18 : 26;
+const desktopDetailLength = model.stages.length === 4 ? 22 : 32;
+const desktopStageNodes: DesktopStageNode[] = model.stages.map(
+  (stage, index) => ({
+    x: 60 + index * (desktopStageWidth + desktopStageGap),
+    y: 86,
+    width: desktopStageWidth,
+    height: 142,
+    labelLines: wrapLabel(stage.label, desktopLabelLength, 3),
+    detailLines: wrapLabel(stage.detail, desktopDetailLength, 2),
+    ...stage,
+  }),
+);
+const desktopRailSegments = desktopStageNodes
+  .slice(0, -1)
+  .map((node, index) => ({
+    x1: node.x + node.width,
+    x2: desktopStageNodes[index + 1]?.x ?? node.x + node.width,
+  }));
+const desktopGroundingLines = wrapLabel(model.grounding, 96, 2);
+
+const mobileStageX = 32;
+const mobileStageWidth = 296;
+const mobileStageHeight = 106;
+const mobileStagePitch = 134;
+const mobileStageNodes: MobileStageNode[] = model.stages.map(
+  (stage, index) => ({
+    x: mobileStageX,
+    y: 74 + index * mobileStagePitch,
+    width: mobileStageWidth,
+    height: mobileStageHeight,
+    labelLines: wrapLabel(stage.label, 27, 3),
+    detailLines: wrapLabel(stage.detail, 34, 2),
+    ...stage,
+  }),
+);
+const mobileGroundingLines = wrapLabel(model.grounding, 36, 3);
+const mobileGroundingY = 74 + model.stages.length * mobileStagePitch + 8;
+const mobileGroundingHeight = 32 + mobileGroundingLines.length * 16;
+const mobileViewBoxHeight = mobileGroundingY + mobileGroundingHeight + 24;
 ---
 
 <figure class={`archive-visual archive-visual--${props.kind}`}>
@@ -248,7 +274,8 @@ const railSegments = stageNodes.slice(0, -1).map((node, index) => ({
   </div>
   <div class="archive-visual__canvas">
     <svg
-      viewBox="0 0 760 300"
+      class="archive-visual__svg archive-visual__svg--desktop"
+      viewBox="0 0 1000 360"
       role="img"
       aria-labelledby={titleId}
       aria-describedby={descId}
@@ -257,7 +284,7 @@ const railSegments = stageNodes.slice(0, -1).map((node, index) => ({
       <desc id={descId}>{model.description}</desc>
       <defs>
         <marker
-          id={arrowId}
+          id={desktopArrowId}
           markerWidth="10"
           markerHeight="10"
           refX="8"
@@ -269,36 +296,23 @@ const railSegments = stageNodes.slice(0, -1).map((node, index) => ({
         </marker>
       </defs>
       {
-        railSegments.map((segment) => (
+        desktopRailSegments.map((segment) => (
           <path
             class="archive-visual__rail"
-            d={`M${segment.x1} 115 H${segment.x2}`}
-            marker-end={`url(#${arrowId})`}
+            d={`M${segment.x1} 157 H${segment.x2}`}
+            marker-end={`url(#${desktopArrowId})`}
           />
         ))
       }
       {
-        props.kind !== 'technology' && (
-          <path
-            class="archive-visual__feedback"
-            d="M625 174 C560 245 210 245 136 174"
-            marker-end={`url(#${arrowId})`}
-          />
-        )
-      }
-      <g class="archive-visual__grounding">
-        <rect x="70" y="218" width="620" height="44" rx="22"></rect>
-        <text x="380" y="246">{compactLabel(model.grounding, 78)}</text>
-      </g>
-      {
-        stageNodes.map((node, index) => (
+        desktopStageNodes.map((node, index) => (
           <g class="archive-visual__node">
             <rect
               x={node.x}
               y={node.y}
               width={node.width}
-              height="100"
-              rx="12"
+              height={node.height}
+              rx="14"
             />
             <circle cx={node.x + 24} cy={node.y + 25} r="12" />
             <text
@@ -311,7 +325,7 @@ const railSegments = stageNodes.slice(0, -1).map((node, index) => ({
             <text
               class="archive-visual__node-label"
               x={node.x + node.width / 2}
-              y={node.y + (node.labelLines.length > 1 ? 49 : 58)}
+              y={node.y + 62 - (node.labelLines.length - 1) * 8}
             >
               {node.labelLines.map((line, lineIndex) => (
                 <tspan
@@ -325,13 +339,134 @@ const railSegments = stageNodes.slice(0, -1).map((node, index) => ({
             <text
               class="archive-visual__node-detail"
               x={node.x + node.width / 2}
-              y={node.y + 88}
+              y={node.y + 114 - (node.detailLines.length - 1) * 7}
             >
-              {compactLabel(node.detail, 28)}
+              {node.detailLines.map((line, lineIndex) => (
+                <tspan
+                  x={node.x + node.width / 2}
+                  dy={lineIndex === 0 ? 0 : 14}
+                >
+                  {line}
+                </tspan>
+              ))}
             </text>
           </g>
         ))
       }
+      <g class="archive-visual__grounding">
+        <rect x="110" y="276" width="780" height="54" rx="27"></rect>
+        <text x="500" y={302 - (desktopGroundingLines.length - 1) * 7}>
+          {
+            desktopGroundingLines.map((line, lineIndex) => (
+              <tspan x="500" dy={lineIndex === 0 ? 0 : 15}>
+                {line}
+              </tspan>
+            ))
+          }
+        </text>
+      </g>
+    </svg>
+    <svg
+      class="archive-visual__svg archive-visual__svg--mobile"
+      viewBox={`0 0 360 ${mobileViewBoxHeight}`}
+      role="img"
+      aria-labelledby={mobileTitleId}
+      aria-describedby={mobileDescId}
+    >
+      <title id={mobileTitleId}>{model.heading}</title>
+      <desc id={mobileDescId}>{model.description}</desc>
+      <defs>
+        <marker
+          id={mobileArrowId}
+          markerWidth="10"
+          markerHeight="10"
+          refX="8"
+          refY="5"
+          orient="auto"
+          markerUnits="strokeWidth"
+        >
+          <path d="M0,0 L10,5 L0,10 z"></path>
+        </marker>
+      </defs>
+      {
+        mobileStageNodes.slice(0, -1).map((node, index) => {
+          const nextNode = mobileStageNodes[index + 1];
+          return (
+            nextNode !== undefined && (
+              <path
+                class="archive-visual__rail"
+                d={`M180 ${node.y + node.height} V${nextNode.y}`}
+                marker-end={`url(#${mobileArrowId})`}
+              />
+            )
+          );
+        })
+      }
+      {
+        mobileStageNodes.map((node, index) => (
+          <g class="archive-visual__node archive-visual__node--mobile">
+            <rect
+              x={node.x}
+              y={node.y}
+              width={node.width}
+              height={node.height}
+              rx="14"
+            />
+            <circle cx={node.x + 25} cy={node.y + 30} r="12" />
+            <text
+              class="archive-visual__node-index"
+              x={node.x + 25}
+              y={node.y + 35}
+            >
+              {index + 1}
+            </text>
+            <text
+              class="archive-visual__node-label archive-visual__node-label--mobile"
+              x={node.x + 52}
+              y={node.y + 31 - (node.labelLines.length - 1) * 7}
+            >
+              {node.labelLines.map((line, lineIndex) => (
+                <tspan x={node.x + 52} dy={lineIndex === 0 ? 0 : 15}>
+                  {line}
+                </tspan>
+              ))}
+            </text>
+            <text
+              class="archive-visual__node-detail archive-visual__node-detail--mobile"
+              x={node.x + 52}
+              y={node.y + 78 - (node.detailLines.length - 1) * 7}
+            >
+              {node.detailLines.map((line, lineIndex) => (
+                <tspan x={node.x + 52} dy={lineIndex === 0 ? 0 : 14}>
+                  {line}
+                </tspan>
+              ))}
+            </text>
+          </g>
+        ))
+      }
+      <g class="archive-visual__grounding">
+        <rect
+          x="32"
+          y={mobileGroundingY}
+          width="296"
+          height={mobileGroundingHeight}
+          rx="24"
+        >
+        </rect>
+        <text
+          x="180"
+          y={mobileGroundingY + 32 - (mobileGroundingLines.length - 1) * 7}
+        >
+          {
+            mobileGroundingLines.map((line, lineIndex) => (
+              <tspan x="180" dy={lineIndex === 0 ? 0 : 15}>
+                {line}
+              </tspan>
+            ))
+          }
+        </text>
+      </g>
     </svg>
   </div>
   <figcaption id={captionId}>{model.caption}</figcaption>

@@ -1,5 +1,7 @@
 import AxeBuilder from '@axe-core/playwright';
 import { expect, test } from '@playwright/test';
+import { readdirSync } from 'node:fs';
+import path from 'node:path';
 import type { Page, TestInfo } from '@playwright/test';
 
 const responsiveViewports = [
@@ -43,6 +45,27 @@ type VisualFigureMetric = {
   svgMetrics: VisualSvgMetric[];
 };
 
+type SvgBox = {
+  bottom: number;
+  height: number;
+  right: number;
+  width: number;
+  x: number;
+  y: number;
+};
+
+type SvgTextFitIssue = {
+  label: string;
+  message: string;
+  type: 'spill' | 'overlap';
+};
+
+type CaptionMetric = {
+  clientWidth: number;
+  scrollWidth: number;
+  text: string;
+};
+
 const visualCoverageRoutes = [
   '/',
   '/eras/',
@@ -58,6 +81,36 @@ const visualCoverageRoutes = [
   '/vehicles/toyota-prius/',
   '/controversies/dieselgate/',
 ] as const;
+
+function collectGeneratedRoutes(directory: string): string[] {
+  const routes: string[] = [];
+  const entries = readdirSync(directory, { withFileTypes: true });
+
+  for (const entry of entries) {
+    const fullPath = path.join(directory, entry.name);
+
+    if (entry.isDirectory()) {
+      if (entry.name !== 'pagefind') {
+        routes.push(...collectGeneratedRoutes(fullPath));
+      }
+
+      continue;
+    }
+
+    if (entry.name === 'index.html') {
+      const relativePath = path.relative(path.resolve('dist'), fullPath);
+      const routeDirectory = path.dirname(relativePath);
+
+      routes.push(
+        routeDirectory === '.'
+          ? '/'
+          : `/${routeDirectory.replaceAll(path.sep, '/')}/`,
+      );
+    }
+  }
+
+  return routes.sort();
+}
 
 async function waitForStableRendering(page: Page): Promise<void> {
   await page.evaluate(() => document.fonts.ready);
@@ -91,6 +144,175 @@ async function expectNoPageHorizontalOverflow(page: Page): Promise<void> {
   expect(overflow.bodyScrollWidth).toBeLessThanOrEqual(
     overflow.clientWidth + 1,
   );
+}
+
+async function expectVisibleSvgTextFits(page: Page): Promise<void> {
+  const issues = await page.evaluate<SvgTextFitIssue[]>(() => {
+    function isVisible(element: Element): boolean {
+      const rect = element.getBoundingClientRect();
+      const style = window.getComputedStyle(element);
+
+      return (
+        rect.width > 0 &&
+        rect.height > 0 &&
+        style.display !== 'none' &&
+        style.visibility !== 'hidden' &&
+        style.opacity !== '0'
+      );
+    }
+
+    function boxFor(element: SVGGraphicsElement): SvgBox {
+      const box = element.getBBox();
+
+      return {
+        bottom: box.y + box.height,
+        height: box.height,
+        right: box.x + box.width,
+        width: box.width,
+        x: box.x,
+        y: box.y,
+      };
+    }
+
+    function overlapFor(first: SvgBox, second: SvgBox): SvgBox | undefined {
+      const x = Math.max(first.x, second.x);
+      const y = Math.max(first.y, second.y);
+      const right = Math.min(first.right, second.right);
+      const bottom = Math.min(first.bottom, second.bottom);
+      const width = right - x;
+      const height = bottom - y;
+
+      if (width <= 0.5 || height <= 0.5) {
+        return undefined;
+      }
+
+      return { bottom, height, right, width, x, y };
+    }
+
+    const textFitIssues: SvgTextFitIssue[] = [];
+
+    for (const figure of document.querySelectorAll(
+      'figure.archive-visual, figure.powertrain-map',
+    )) {
+      for (const svg of figure.querySelectorAll('svg')) {
+        if (!isVisible(svg)) {
+          continue;
+        }
+
+        const viewBox = svg.viewBox.baseVal;
+        const textBoxes: {
+          box: SvgBox;
+          group: Element | null;
+          label: string;
+        }[] = [];
+
+        for (const text of svg.querySelectorAll<SVGTextElement>('text')) {
+          if (!isVisible(text)) {
+            continue;
+          }
+
+          const box = boxFor(text);
+          const label = text.textContent?.replace(/\s+/gu, ' ').trim() ?? '';
+          const outsideSvg =
+            box.x < viewBox.x - 0.5 ||
+            box.y < viewBox.y - 0.5 ||
+            box.right > viewBox.x + viewBox.width + 0.5 ||
+            box.bottom > viewBox.y + viewBox.height + 0.5;
+          const group = text.closest(
+            '.archive-visual__node, .archive-visual__stat-node, .archive-visual__grounding, .map-node',
+          );
+          const rect = group?.querySelector<SVGRectElement>('rect');
+
+          let spill = outsideSvg ? 1 : 0;
+
+          if (rect !== undefined && rect !== null && group !== null) {
+            const rectBox = boxFor(rect);
+            const horizontalPadding = group.classList.contains(
+              'archive-visual__grounding',
+            )
+              ? 10
+              : 8;
+            const verticalPadding = 4;
+
+            spill = Math.max(
+              spill,
+              rectBox.x + horizontalPadding - box.x,
+              box.right - (rectBox.right - horizontalPadding),
+              rectBox.y + verticalPadding - box.y,
+              box.bottom - (rectBox.bottom - verticalPadding),
+            );
+          }
+
+          if (spill > 0.5) {
+            textFitIssues.push({
+              label,
+              message: `SVG text spills outside its safe box by ${spill.toFixed(
+                1,
+              )} px: ${label}`,
+              type: 'spill',
+            });
+          }
+
+          textBoxes.push({ box, group, label });
+        }
+
+        for (
+          let firstIndex = 0;
+          firstIndex < textBoxes.length;
+          firstIndex += 1
+        ) {
+          for (
+            let secondIndex = firstIndex + 1;
+            secondIndex < textBoxes.length;
+            secondIndex += 1
+          ) {
+            const first = textBoxes[firstIndex];
+            const second = textBoxes[secondIndex];
+
+            if (first === undefined || second === undefined) {
+              continue;
+            }
+
+            const overlap = overlapFor(first.box, second.box);
+
+            if (overlap === undefined) {
+              continue;
+            }
+
+            if (first.group !== second.group) {
+              textFitIssues.push({
+                label: `${first.label} | ${second.label}`,
+                message: `SVG labels overlap by ${overlap.width.toFixed(
+                  1,
+                )}×${overlap.height.toFixed(1)} px: ${first.label} / ${
+                  second.label
+                }`,
+                type: 'overlap',
+              });
+            }
+          }
+        }
+      }
+    }
+
+    return textFitIssues;
+  });
+
+  expect(issues).toEqual([]);
+}
+
+async function expectFigureCaptionsReadable(page: Page): Promise<void> {
+  const overflowingCaptions = await page.evaluate<CaptionMetric[]>(() =>
+    Array.from(document.querySelectorAll<HTMLElement>('figcaption'))
+      .map((caption) => ({
+        clientWidth: caption.clientWidth,
+        scrollWidth: caption.scrollWidth,
+        text: caption.textContent?.replace(/\s+/gu, ' ').trim() ?? '',
+      }))
+      .filter((caption) => caption.scrollWidth > caption.clientWidth + 1),
+  );
+
+  expect(overflowingCaptions).toEqual([]);
 }
 
 async function expectAccessibleOriginalVisual(page: Page): Promise<void> {
@@ -362,6 +584,40 @@ test('representative routes render accessible original visuals without page over
       await waitForStableRendering(page);
       await expectAccessibleOriginalVisual(page);
       await expectNoPageHorizontalOverflow(page);
+    }
+  }
+});
+
+test('all generated routes avoid page overflow and visible SVG text collisions', async ({
+  page,
+}, testInfo) => {
+  test.setTimeout(180_000);
+
+  const generatedRoutes = collectGeneratedRoutes(path.resolve('dist'));
+
+  expect(generatedRoutes.length).toBeGreaterThanOrEqual(100);
+
+  await testInfo.attach('generated-route-visual-coverage.json', {
+    body: JSON.stringify(
+      {
+        routes: generatedRoutes,
+        viewports: responsiveViewports,
+      },
+      null,
+      2,
+    ),
+    contentType: 'application/json',
+  });
+
+  for (const viewport of responsiveViewports) {
+    await page.setViewportSize(viewport);
+
+    for (const route of generatedRoutes) {
+      await page.goto(route);
+      await waitForStableRendering(page);
+      await expectNoPageHorizontalOverflow(page);
+      await expectVisibleSvgTextFits(page);
+      await expectFigureCaptionsReadable(page);
     }
   }
 });
