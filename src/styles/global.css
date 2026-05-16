@@ -244,6 +244,82 @@ div {
   font-size: 0.9rem;
 }
 
+.technology-toc {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  box-shadow: var(--shadow-subtle);
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.4fr);
+  margin: 0 auto 1rem;
+  max-width: 1180px;
+  padding: clamp(1rem, 3vw, 1.35rem);
+}
+
+.technology-toc h2,
+.technology-toc h3 {
+  line-height: 1.2;
+  margin: 0;
+}
+
+.technology-toc h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.35rem, 2.6vw, 2rem);
+}
+
+.technology-toc h3 {
+  font-size: 0.96rem;
+}
+
+.technology-toc p:not(.eyebrow) {
+  color: var(--color-muted);
+  margin: 0.55rem 0 0;
+  max-width: 52ch;
+}
+
+.technology-toc__columns {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.technology-toc ul {
+  display: grid;
+  gap: 0.45rem;
+  list-style: none;
+  margin: 0.75rem 0 0;
+  padding: 0;
+}
+
+.technology-toc a {
+  align-items: center;
+  background: #f3ecdf;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  color: var(--color-text);
+  display: flex;
+  gap: 0.7rem;
+  justify-content: space-between;
+  padding: 0.62rem 0.75rem;
+  text-decoration: none;
+}
+
+.technology-toc a:hover {
+  border-color: var(--color-accent);
+  color: var(--color-brand);
+}
+
+.technology-toc a span:first-child {
+  font-weight: 800;
+}
+
+.technology-toc a span:last-child {
+  color: var(--color-muted);
+  font-size: 0.82rem;
+  white-space: nowrap;
+}
+
 .era-flow {
   padding-bottom: 2rem;
 }
@@ -499,6 +575,28 @@ div {
 
 .article-content p {
   max-width: 74ch;
+}
+
+.article-content p:has(> img) {
+  max-width: 100%;
+}
+
+.article-content img {
+  background: var(--color-surface-strong);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  box-shadow: var(--shadow-subtle);
+  display: block;
+  height: auto;
+  margin: 1.25rem 0 0.4rem;
+  max-width: 100%;
+}
+
+.article-content p:has(> em:first-child:last-child) {
+  color: var(--color-muted);
+  font-size: 0.92rem;
+  margin-top: 0.35rem;
+  max-width: 86ch;
 }
 
 .article-content p:has(.katex-display) {
@@ -818,6 +916,21 @@ div {
 }
 
 @media (max-width: 860px) {
+  .technology-toc,
+  .technology-toc__columns {
+    display: block;
+  }
+
+  .technology-toc__columns section + section {
+    margin-top: 1rem;
+  }
+
+  .technology-toc a {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
   .site-header__inner,
   .site-footer__inner,
   .article-grid {

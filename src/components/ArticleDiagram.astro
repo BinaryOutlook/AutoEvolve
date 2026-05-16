@@ -3,7 +3,7 @@ import {
   compactLabel,
   labelFromSlug,
   pickVisualItems,
-  technologyVisualForCategory,
+  technologyVisualForSlug,
   visualId,
 } from '@lib/visuals';
 
@@ -16,9 +16,10 @@ type VisualModel = {
   eyebrow: string;
   heading: string;
   description: string;
-  stages: readonly [Stage, Stage, Stage];
+  stages: readonly Stage[];
   tags: string[];
   caption: string;
+  grounding: string;
 };
 
 type EraProps = {
@@ -35,6 +36,7 @@ type TechnologyProps = {
   kind: 'technology';
   title: string;
   summary: string;
+  slug: string;
   category: string;
   eras: readonly string[];
   relatedTechnologies: readonly string[];
@@ -67,9 +69,35 @@ type Props = EraProps | TechnologyProps | VehicleProps | ControversyProps;
 const props = Astro.props;
 const articleDiagramCaption =
   "Original AutoEvolve diagram based on this page's metadata, content relationships, and cited-source context where present. No external image license is required.";
+const technologyDiagramCaption =
+  'Original AutoEvolve diagram: mechanism map curated for this technology page from the article topic and source-backed technical context. No external image license is required.';
 
 function tagsFromSlugs(items: readonly string[], fallback: readonly string[]) {
   return pickVisualItems(items, fallback, 5).map(labelFromSlug);
+}
+
+function wrapSvgText(label: string, maxLineLength: number): string[] {
+  const words = label.split(/\s+/u).filter((word) => word.length > 0);
+  const lines: string[] = [];
+
+  for (const word of words) {
+    const currentLine = lines.at(-1);
+
+    if (currentLine === undefined) {
+      lines.push(word);
+      continue;
+    }
+
+    const candidate = `${currentLine} ${word}`;
+
+    if (candidate.length <= maxLineLength || lines.length >= 2) {
+      lines[lines.length - 1] = candidate;
+    } else {
+      lines.push(word);
+    }
+  }
+
+  return lines.slice(0, 2).map((line) => compactLabel(line, maxLineLength + 4));
 }
 
 function buildVisualModel(visualProps: Props): VisualModel {
@@ -104,29 +132,23 @@ function buildVisualModel(visualProps: Props): VisualModel {
         ],
         tags: [...themes, ...relatedSystems].slice(0, 6),
         caption: articleDiagramCaption,
+        grounding:
+          'Chronology, themes, and links orient the reader before the article text.',
       };
     }
     case 'technology': {
-      const blueprint = technologyVisualForCategory(visualProps.category);
-      const relatedSystems = tagsFromSlugs(visualProps.relatedTechnologies, [
-        visualProps.category,
-      ]);
+      const blueprint = technologyVisualForSlug(visualProps.slug);
 
       return {
         eyebrow: blueprint.theme,
-        heading: `${visualProps.title} system map`,
-        description: `${visualProps.title} is shown as a three-step ${blueprint.theme.toLowerCase()} using its technology category, related eras, related technologies, and vehicle-example metadata. ${blueprint.focus}`,
-        stages: [
-          { label: blueprint.flow[0], detail: 'Input or boundary' },
-          { label: blueprint.flow[1], detail: visualProps.title },
-          { label: blueprint.flow[2], detail: 'Vehicle context' },
-        ],
-        tags: [
-          ...visualProps.eras.map(labelFromSlug),
-          ...relatedSystems,
-          ...visualProps.relatedVehicles.map(labelFromSlug),
-        ].slice(0, 6),
-        caption: articleDiagramCaption,
+        heading: `${visualProps.title} mechanism map`,
+        description: `${visualProps.title} is shown with curated, page-specific mechanism stages: ${blueprint.stages
+          .map((stage) => `${stage.label} (${stage.detail})`)
+          .join(' to ')}. ${blueprint.focus}`,
+        stages: blueprint.stages,
+        tags: blueprint.stages.map((stage) => stage.label),
+        caption: technologyDiagramCaption,
+        grounding: blueprint.grounding,
       };
     }
     case 'vehicle': {
@@ -156,6 +178,8 @@ function buildVisualModel(visualProps: Props): VisualModel {
           ...visualProps.relatedTechnologies.map(labelFromSlug),
         ].slice(0, 6),
         caption: articleDiagramCaption,
+        grounding:
+          'The vehicle visual keeps the example tied to the technology it illustrates.',
       };
     }
     case 'controversy': {
@@ -183,6 +207,8 @@ function buildVisualModel(visualProps: Props): VisualModel {
           ...visualProps.relatedVehicles.map(labelFromSlug),
         ].slice(0, 6),
         caption: articleDiagramCaption,
+        grounding:
+          'The case flow separates timing, affected systems, and the regulatory record.',
       };
     }
     default: {
@@ -198,11 +224,21 @@ const titleId = `${idBase}-title`;
 const descId = `${idBase}-desc`;
 const captionId = `${idBase}-caption`;
 const arrowId = `${idBase}-arrow`;
-const stageNodes = [
-  { x: 48, y: 74, width: 178, ...model.stages[0] },
-  { x: 291, y: 74, width: 178, ...model.stages[1] },
-  { x: 534, y: 74, width: 178, ...model.stages[2] },
-] as const;
+const stageGap = model.stages.length === 4 ? 28 : 65;
+const stageWidth =
+  (664 - stageGap * (model.stages.length - 1)) / model.stages.length;
+const labelLineLength = model.stages.length === 4 ? 18 : 22;
+const stageNodes = model.stages.map((stage, index) => ({
+  x: 48 + index * (stageWidth + stageGap),
+  y: 74,
+  width: stageWidth,
+  labelLines: wrapSvgText(stage.label, labelLineLength),
+  ...stage,
+}));
+const railSegments = stageNodes.slice(0, -1).map((node, index) => ({
+  x1: node.x + node.width,
+  x2: stageNodes[index + 1]?.x ?? node.x + node.width,
+}));
 ---
 
 <figure class={`archive-visual archive-visual--${props.kind}`}>
@@ -232,19 +268,27 @@ const stageNodes = [
           <path d="M0,0 L10,5 L0,10 z"></path>
         </marker>
       </defs>
-      <path
-        class="archive-visual__rail"
-        d="M226 115 H291 M469 115 H534"
-        marker-end={`url(#${arrowId})`}></path>
-      <path
-        class="archive-visual__feedback"
-        d="M625 174 C560 245 210 245 136 174"
-        marker-end={`url(#${arrowId})`}></path>
+      {
+        railSegments.map((segment) => (
+          <path
+            class="archive-visual__rail"
+            d={`M${segment.x1} 115 H${segment.x2}`}
+            marker-end={`url(#${arrowId})`}
+          />
+        ))
+      }
+      {
+        props.kind !== 'technology' && (
+          <path
+            class="archive-visual__feedback"
+            d="M625 174 C560 245 210 245 136 174"
+            marker-end={`url(#${arrowId})`}
+          />
+        )
+      }
       <g class="archive-visual__grounding">
         <rect x="70" y="218" width="620" height="44" rx="22"></rect>
-        <text x="380" y="246"
-          >Metadata links keep the diagram explanatory, not decorative</text
-        >
+        <text x="380" y="246">{compactLabel(model.grounding, 78)}</text>
       </g>
       {
         stageNodes.map((node, index) => (
@@ -267,16 +311,23 @@ const stageNodes = [
             <text
               class="archive-visual__node-label"
               x={node.x + node.width / 2}
-              y={node.y + 54}
+              y={node.y + (node.labelLines.length > 1 ? 49 : 58)}
             >
-              {compactLabel(node.label, 24)}
+              {node.labelLines.map((line, lineIndex) => (
+                <tspan
+                  x={node.x + node.width / 2}
+                  dy={lineIndex === 0 ? 0 : 16}
+                >
+                  {line}
+                </tspan>
+              ))}
             </text>
             <text
               class="archive-visual__node-detail"
               x={node.x + node.width / 2}
-              y={node.y + 78}
+              y={node.y + 88}
             >
-              {compactLabel(node.detail, 30)}
+              {compactLabel(node.detail, 28)}
             </text>
           </g>
         ))
@@ -286,7 +337,7 @@ const stageNodes = [
   <figcaption id={captionId}>{model.caption}</figcaption>
   <ul
     class="archive-visual__tags"
-    aria-label="Metadata represented in this diagram"
+    aria-label="Concept labels represented in this diagram"
   >
     {model.tags.map((tag) => <li>{tag}</li>)}
   </ul>

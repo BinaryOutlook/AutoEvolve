@@ -1,32 +1,110 @@
+import { readdirSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
 import { describe, expect, it } from 'vitest';
 import {
   compactLabel,
   labelFromSlug,
   pickVisualItems,
-  technologyVisualForCategory,
+  technologyVisualForSlug,
+  technologyVisuals,
   visualId,
 } from '../../src/lib/visuals';
 
-describe('visual helper data', () => {
-  it('maps technology categories to educational diagram flows', () => {
-    const electricDrive = technologyVisualForCategory('electric-drive');
+const technologyContentDirectory = fileURLToPath(
+  new URL('../../src/content/technologies/', import.meta.url),
+);
 
-    expect(electricDrive.flow).toEqual([
-      'Stored electricity',
-      'Power electronics',
-      'Motor and charging loop',
-    ]);
-    expect(electricDrive.theme).toBe('Electric-drive energy path');
+const technologyPageSlugs = readdirSync(technologyContentDirectory)
+  .filter((fileName) => fileName.endsWith('.md'))
+  .map((fileName) => fileName.replace(/\.md$/u, ''))
+  .sort();
+
+const genericStageLabels = new Set([
+  'Inputs and constraints',
+  'System mechanism',
+  'Vehicle-level effect',
+  'Stored energy',
+  'Prime mover',
+  'Wheel torque',
+  'Mechanical signal',
+  'Control or actuation',
+  'Combustion behavior',
+]);
+
+describe('visual helper data', () => {
+  it('has curated technology visual config for every published technology page', () => {
+    const configuredSlugs = Object.keys(technologyVisuals).sort();
+
+    expect(configuredSlugs).toEqual(technologyPageSlugs);
   });
 
-  it('falls back to a neutral systems flow for unknown categories', () => {
-    const fallback = technologyVisualForCategory('future-category');
+  it('keeps technology visuals mechanism-specific instead of generic metadata fallbacks', () => {
+    for (const [slug, visual] of Object.entries(technologyVisuals)) {
+      expect(visual.theme, slug).not.toMatch(
+        /metadata|generic|system mechanism/i,
+      );
+      expect(visual.focus, slug).not.toMatch(/metadata|generic/i);
+      expect(visual.grounding, slug).not.toMatch(/metadata|generic/i);
+      expect(visual.stages.length, slug).toBeGreaterThanOrEqual(3);
+      expect(visual.stages.length, slug).toBeLessThanOrEqual(4);
 
-    expect(fallback.flow).toEqual([
-      'Inputs and constraints',
-      'System mechanism',
-      'Vehicle-level effect',
+      const stageLabels = visual.stages.map((stage) => stage.label);
+      expect(new Set(stageLabels).size, slug).toBe(stageLabels.length);
+
+      for (const stage of visual.stages) {
+        expect(stage.label.length, slug).toBeGreaterThan(3);
+        expect(stage.detail.length, slug).toBeGreaterThan(3);
+        expect(genericStageLabels.has(stage.label), slug).toBe(false);
+      }
+    }
+  });
+
+  it('uses explicit mechanism flows for representative audited technologies', () => {
+    expect(
+      technologyVisualForSlug('turbocharger').stages.map(
+        (stage) => stage.label,
+      ),
+    ).toEqual([
+      'Exhaust gas',
+      'Turbine wheel',
+      'Compressor wheel',
+      'Denser intake air',
     ]);
+    expect(
+      technologyVisualForSlug('diesel-particulate-filter').stages.map(
+        (stage) => stage.label,
+      ),
+    ).toEqual([
+      'Soot-laden exhaust',
+      'Porous wall capture',
+      'Pressure and temperature monitoring',
+      'Regeneration burn-off',
+    ]);
+    expect(
+      technologyVisualForSlug('adaptive-cruise-control').stages.map(
+        (stage) => stage.label,
+      ),
+    ).toEqual([
+      'Radar or camera sensing',
+      'Following gap logic',
+      'Throttle and brake request',
+    ]);
+    expect(
+      technologyVisualForSlug('power-inverter').stages.map(
+        (stage) => stage.label,
+      ),
+    ).toEqual([
+      'Battery DC bus',
+      'Switching semiconductors',
+      'Controlled AC phases',
+      'Motor torque or regen DC',
+    ]);
+  });
+
+  it('throws instead of silently rendering a technology page without curated visual config', () => {
+    expect(() => technologyVisualForSlug('future-category')).toThrow(
+      /Missing curated technology visual config/u,
+    );
   });
 
   it('keeps visible labels compact without hiding short labels', () => {

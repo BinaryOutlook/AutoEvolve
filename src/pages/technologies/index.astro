@@ -12,6 +12,21 @@ import {
 const technologies = await getPublicEntries('technologies');
 const groups = Map.groupBy(technologies, (entry) => entry.data.category);
 const groupEntries = Array.from(groups.entries());
+const technologyBySlug = new Map(
+  technologies.map((entry) => [entrySlug(entry), entry]),
+);
+const priorityTechnologySlugs = [
+  'turbocharger',
+  'diesel-particulate-filter',
+  'on-board-diagnostics',
+  'power-inverter',
+  'anti-lock-braking-system',
+  'electronic-stability-control',
+  'controller-area-network',
+] as const;
+const priorityTechnologies = priorityTechnologySlugs
+  .map((slug) => technologyBySlug.get(slug))
+  .filter((entry) => entry !== undefined);
 const technologyVisualItems = groupEntries
   .slice(0, 4)
   .map(([category, entries]) => ({
@@ -41,6 +56,48 @@ const technologyVisualItems = groupEntries
       items={technologyVisualItems}
     />
   </section>
+  <nav class="technology-toc" aria-labelledby="technology-toc-title">
+    <div>
+      <p class="eyebrow">Jump nav</p>
+      <h2 id="technology-toc-title">Find a system quickly</h2>
+      <p>
+        Use these links to jump to a technology family or open one of the
+        high-priority mechanism pages used during visual audits.
+      </p>
+    </div>
+    <div class="technology-toc__columns">
+      <section aria-labelledby="technology-toc-categories">
+        <h3 id="technology-toc-categories">Categories</h3>
+        <ul>
+          {
+            groupEntries.map(([category, entries]) => (
+              <li>
+                <a href={`#category-${category}`}>
+                  <span>{categoryLabel(category)}</span>
+                  <span>{entries.length} guides</span>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+      <section aria-labelledby="technology-toc-priority">
+        <h3 id="technology-toc-priority">Audited mechanism pages</h3>
+        <ul>
+          {
+            priorityTechnologies.map((entry) => (
+              <li>
+                <a href={pathFor('technologies', entrySlug(entry))}>
+                  <span>{entry.data.title}</span>
+                  <span>{categoryLabel(entry.data.category)}</span>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+    </div>
+  </nav>
   {
     groupEntries.map(([category, entries]) => (
       <section class="page-section" aria-labelledby={`category-${category}`}>
