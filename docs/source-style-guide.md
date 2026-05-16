@@ -25,4 +25,6 @@ For controversies, keep source roles distinct: regulator findings, court finding
 
 Original AutoEvolve diagrams can be based on page metadata, collection relationships, and cited-source context where present. Their captions should identify them as original diagrams, so no external image license is required.
 
-If an externally sourced image or figure is added, record the creator or rights holder, source URL, license or reuse basis, caption, and alt text near the content that uses it. Do not use an image to imply a claim that the listed sources do not support.
+Technology detail pages are stricter: each published technology slug needs an explicit curated visual configuration in `src/lib/visuals.ts`. Do not use a category-wide or silent fallback for technology pages. The visual labels should describe the page's mechanism, signal path, material flow, or control loop directly—for example, exhaust gas to turbine to compressor for a turbocharger, soot capture to monitoring to regeneration for a diesel particulate filter, or sensors to following-gap logic to throttle and brake requests for adaptive cruise control.
+
+If an externally sourced image or figure is added, record the creator or rights holder, source URL, license or reuse basis, caption, and alt text near the content that uses it. Add a matching source record when the image is part of a page's source list. Do not use an image to imply a claim that the listed sources do not support.

@@ -366,6 +366,115 @@ test('representative routes render accessible original visuals without page over
   }
 });
 
+test('representative visual audit pages have relevant labels, captions, and no overflow', async ({
+  page,
+}, testInfo) => {
+  const auditedTechnologies = [
+    {
+      route: '/technologies/turbocharger/',
+      screenshot: 'audit-tech-turbocharger',
+      labels: ['Exhaust gas', 'Turbine wheel', 'Compressor wheel'],
+    },
+    {
+      route: '/technologies/diesel-particulate-filter/',
+      screenshot: 'audit-tech-dpf',
+      labels: ['Soot-laden exhaust', 'Pressure and temperature monitoring'],
+    },
+    {
+      route: '/technologies/on-board-diagnostics/',
+      screenshot: 'audit-tech-obd',
+      labels: ['Fault-code storage', 'Scan-tool service signal'],
+    },
+    {
+      route: '/technologies/power-inverter/',
+      screenshot: 'audit-tech-power-inverter',
+      labels: ['Battery DC bus', 'Controlled AC phases'],
+    },
+    {
+      route: '/technologies/anti-lock-braking-system/',
+      screenshot: 'audit-tech-abs',
+      labels: ['Wheel-speed sensors', 'Brake-pressure modulation'],
+    },
+    {
+      route: '/technologies/electronic-stability-control/',
+      screenshot: 'audit-tech-esc',
+      labels: ['Yaw-rate comparison', 'Individual brake or torque request'],
+    },
+    {
+      route: '/technologies/controller-area-network/',
+      screenshot: 'audit-tech-can',
+      labels: ['Framed CAN messages', 'Shared two-wire bus'],
+    },
+  ] as const;
+
+  for (const viewport of responsiveViewports) {
+    await page.setViewportSize(viewport);
+
+    await page.goto('/technologies/');
+    await waitForStableRendering(page);
+    await expectNoPageHorizontalOverflow(page);
+    await expect(
+      page.getByRole('navigation', { name: /find a system quickly/i }),
+    ).toBeVisible();
+    await expect(
+      page.getByRole('link', { name: 'Turbocharger', exact: true }),
+    ).toBeVisible();
+    await captureLayoutScreenshot(
+      page,
+      testInfo,
+      `audit-technologies-index-${viewport.name}`,
+    );
+
+    for (const technology of auditedTechnologies) {
+      await page.goto(technology.route);
+      await waitForStableRendering(page);
+      await expectNoPageHorizontalOverflow(page);
+      await expectAccessibleOriginalVisual(page);
+
+      const firstFigureText = await page
+        .locator('figure')
+        .first()
+        .textContent();
+      const svgDescription = await page
+        .locator('figure svg desc')
+        .first()
+        .textContent();
+
+      expect(firstFigureText).toMatch(/curated for this technology page/i);
+      for (const label of technology.labels) {
+        expect(svgDescription).toContain(label);
+      }
+
+      await captureLayoutScreenshot(
+        page,
+        testInfo,
+        `${technology.screenshot}-${viewport.name}`,
+      );
+    }
+  }
+
+  await page.setViewportSize(responsiveViewports[0]);
+
+  await page.goto('/vehicles/toyota-prius/');
+  await waitForStableRendering(page);
+  await expectNoPageHorizontalOverflow(page);
+  await expect(
+    page.getByAltText(/First-generation Toyota Prius photographed/i),
+  ).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Benespit' })).toBeVisible();
+  await expect(page.getByText(/CC BY-SA 4\.0/i)).toBeVisible();
+  await captureLayoutScreenshot(page, testInfo, 'audit-vehicle-toyota-prius');
+
+  await page.goto('/controversies/dieselgate/');
+  await waitForStableRendering(page);
+  await expectNoPageHorizontalOverflow(page);
+  await expectAccessibleOriginalVisual(page);
+  await expect(
+    page.getByRole('heading', { name: 'Volkswagen Dieselgate', exact: true }),
+  ).toBeVisible();
+  await captureLayoutScreenshot(page, testInfo, 'audit-controversy-dieselgate');
+});
+
 test('technology pages render sources and related links', async ({ page }) => {
   await page.goto('/technologies/battery-electric-vehicle/');
   await expect(

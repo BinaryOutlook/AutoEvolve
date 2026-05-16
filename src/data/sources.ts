@@ -845,6 +845,17 @@ export const sources: Source[] = [
       'Creator: TTTNIS. Usage basis: CC0 1.0 public domain dedication. Local file resized for site delivery.',
   },
   {
+    id: 'wikimedia-toyota-prius-xw11-image',
+    title: 'File:1st Toyota Prius (XW11) front.jpg',
+    organization: 'Wikimedia Commons',
+    type: 'technical-reference',
+    url: 'https://commons.wikimedia.org/wiki/File:1st_Toyota_Prius_(XW11)_front.jpg',
+    accessedDate: '2026-05-16',
+    supports: ['Image attribution and license record for Toyota Prius page'],
+    notes:
+      'Creator: Benespit. License: Creative Commons Attribution-Share Alike 4.0 International. Local file copied for site delivery.',
+  },
+  {
     id: 'mercedes-drive-pilot',
     title: 'DRIVE PILOT Automated Driving',
     organization: 'Mercedes-Benz USA',
@@ -1670,8 +1681,10 @@ export const sources: Source[] = [
   },
   {
     id: 'dot-fhwa-nevi-standards-final-rule-2023',
-    title: 'National Electric Vehicle Infrastructure Standards and Requirements',
-    organization: 'U.S. Department of Transportation / Federal Highway Administration',
+    title:
+      'National Electric Vehicle Infrastructure Standards and Requirements',
+    organization:
+      'U.S. Department of Transportation / Federal Highway Administration',
     type: 'government',
     url: 'https://www.transportation.gov/regulations/federal-register-documents/2023-03500',
     accessedDate: '2026-05-16',
@@ -1721,7 +1734,8 @@ export const sources: Source[] = [
   },
   {
     id: 'bosch-abs-history',
-    title: "Safe Braking: Start of developing Bosch's anti-lock braking system ABS",
+    title:
+      "Safe Braking: Start of developing Bosch's anti-lock braking system ABS",
     organization: 'Bosch Global',
     type: 'manufacturer',
     url: 'https://www.bosch.com/stories/beginnings-of-abs/',
