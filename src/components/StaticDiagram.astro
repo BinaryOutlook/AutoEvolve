@@ -1,5 +1,5 @@
 ---
-import { compactLabel, visualId } from '@lib/visuals';
+import { visualId, wrapLabel } from '@lib/visuals';
 
 type VisualItem = {
   label: string;
@@ -16,6 +16,26 @@ type Props = {
   caption?: string;
 };
 
+type DesktopItem = VisualItem & {
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+  valueLines: string[];
+  labelLines: string[];
+  detailLines: string[];
+};
+
+type MobileItem = VisualItem & {
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+  valueLines: string[];
+  labelLines: string[];
+  detailLines: string[];
+};
+
 const {
   title,
   eyebrow,
@@ -27,6 +47,8 @@ const {
 const idBase = visualId(`${variant}-${title}`);
 const titleId = `${idBase}-title`;
 const descId = `${idBase}-desc`;
+const mobileTitleId = `${idBase}-mobile-title`;
+const mobileDescId = `${idBase}-mobile-desc`;
 const visibleItems = items.slice(0, 4);
 const fallbackItems =
   visibleItems.length > 0
@@ -38,12 +60,43 @@ const fallbackItems =
           detail: 'Educational reference',
         },
       ];
-const slotWidth = 700 / fallbackItems.length;
-const diagramItems = fallbackItems.map((item, index) => ({
+const desktopSlotWidth = 780 / fallbackItems.length;
+const desktopItems: DesktopItem[] = fallbackItems.map((item, index) => ({
   ...item,
-  x: 30 + index * slotWidth,
-  width: Math.min(150, slotWidth - 18),
+  x: 60 + index * desktopSlotWidth,
+  y: 50,
+  width: Math.min(184, desktopSlotWidth - 24),
+  height: 118,
+  valueLines: wrapLabel(item.value, 18, 1),
+  labelLines: wrapLabel(item.label, 20, 2),
+  detailLines: wrapLabel(item.detail ?? `Step ${index + 1}`, 24, 2),
 }));
+const desktopGroundingLines = wrapLabel(
+  'Static-first visual summary for scanning and orientation',
+  48,
+  3,
+);
+const desktopGroundingY = 210;
+const desktopGroundingHeight = 40 + desktopGroundingLines.length * 16;
+
+const mobileItems: MobileItem[] = fallbackItems.map((item, index) => ({
+  ...item,
+  x: 24,
+  y: 60 + index * 122,
+  width: 312,
+  height: 96,
+  valueLines: wrapLabel(item.value, 18, 1),
+  labelLines: wrapLabel(item.label, 26, 2),
+  detailLines: wrapLabel(item.detail ?? `Step ${index + 1}`, 34, 1),
+}));
+const mobileGroundingLines = wrapLabel(
+  'Static-first visual summary for scanning and orientation',
+  24,
+  4,
+);
+const mobileGroundingY = 60 + fallbackItems.length * 122 + 12;
+const mobileGroundingHeight = 44 + mobileGroundingLines.length * 16;
+const mobileViewBoxHeight = mobileGroundingY + mobileGroundingHeight + 24;
 ---
 
 <figure
@@ -55,54 +108,187 @@ const diagramItems = fallbackItems.map((item, index) => ({
   </div>
   <div class="archive-visual__canvas">
     <svg
-      viewBox="0 0 760 260"
+      class="archive-visual__svg archive-visual__svg--desktop"
+      viewBox="0 0 900 300"
       role="img"
       aria-labelledby={titleId}
       aria-describedby={descId}
     >
       <title id={titleId}>{title}</title>
       <desc id={descId}>{description}</desc>
-      <path class="archive-visual__spine" d="M70 134 H690"></path>
+      <path class="archive-visual__spine" d="M112 174 H788"></path>
       {
-        diagramItems.map((item, index) => (
+        desktopItems.map((item) => (
           <g class="archive-visual__stat-node">
             <line
               x1={item.x + item.width / 2}
-              y1="92"
+              y1={item.y + item.height}
               x2={item.x + item.width / 2}
-              y2="134"
+              y2="174"
             />
-            <circle cx={item.x + item.width / 2} cy="134" r="9" />
-            <rect x={item.x} y="34" width={item.width} height="92" rx="12" />
+            <circle cx={item.x + item.width / 2} cy="174" r="9" />
+            <rect
+              x={item.x}
+              y={item.y}
+              width={item.width}
+              height={item.height}
+              rx="14"
+            />
             <text
               class="archive-visual__stat-value"
               x={item.x + item.width / 2}
-              y="68"
+              y={item.y + 31}
             >
-              {compactLabel(item.value, 18)}
+              {item.valueLines.map((line, lineIndex) => (
+                <tspan
+                  x={item.x + item.width / 2}
+                  dy={lineIndex === 0 ? 0 : 18}
+                >
+                  {line}
+                </tspan>
+              ))}
             </text>
             <text
               class="archive-visual__stat-label"
               x={item.x + item.width / 2}
-              y="94"
+              y={item.y + 62 - (item.labelLines.length - 1) * 7}
             >
-              {compactLabel(item.label, 20)}
+              {item.labelLines.map((line, lineIndex) => (
+                <tspan
+                  x={item.x + item.width / 2}
+                  dy={lineIndex === 0 ? 0 : 14}
+                >
+                  {line}
+                </tspan>
+              ))}
             </text>
             <text
               class="archive-visual__stat-detail"
               x={item.x + item.width / 2}
-              y="114"
+              y={item.y + 98 - (item.detailLines.length - 1) * 6}
             >
-              {compactLabel(item.detail ?? `Step ${index + 1}`, 22)}
+              {item.detailLines.map((line, lineIndex) => (
+                <tspan
+                  x={item.x + item.width / 2}
+                  dy={lineIndex === 0 ? 0 : 13}
+                >
+                  {line}
+                </tspan>
+              ))}
             </text>
           </g>
         ))
       }
       <g class="archive-visual__grounding archive-visual__grounding--compact">
-        <rect x="106" y="178" width="548" height="44" rx="22"></rect>
-        <text x="380" y="206"
-          >Static-first visual summary for scanning and orientation</text
+        <rect
+          x="150"
+          y={desktopGroundingY}
+          width="600"
+          height={desktopGroundingHeight}
+          rx="23"
         >
+        </rect>
+        <text x="450" y={desktopGroundingY + 30}>
+          {
+            desktopGroundingLines.map((line, lineIndex) => (
+              <tspan x="450" dy={lineIndex === 0 ? 0 : 15}>
+                {line}
+              </tspan>
+            ))
+          }
+        </text>
+      </g>
+    </svg>
+    <svg
+      class="archive-visual__svg archive-visual__svg--mobile"
+      viewBox={`0 0 360 ${mobileViewBoxHeight}`}
+      role="img"
+      aria-labelledby={mobileTitleId}
+      aria-describedby={mobileDescId}
+    >
+      <title id={mobileTitleId}>{title}</title>
+      <desc id={mobileDescId}>{description}</desc>
+      <path
+        class="archive-visual__spine"
+        d={`M180 98 V${mobileGroundingY - 18}`}
+      >
+      </path>
+      {
+        mobileItems.map((item) => (
+          <g class="archive-visual__stat-node archive-visual__stat-node--mobile">
+            <rect
+              x={item.x}
+              y={item.y}
+              width={item.width}
+              height={item.height}
+              rx="14"
+            />
+            <text
+              class="archive-visual__stat-value"
+              x={item.x + item.width / 2}
+              y={item.y + 31}
+            >
+              {item.valueLines.map((line, lineIndex) => (
+                <tspan
+                  x={item.x + item.width / 2}
+                  dy={lineIndex === 0 ? 0 : 18}
+                >
+                  {line}
+                </tspan>
+              ))}
+            </text>
+            <text
+              class="archive-visual__stat-label"
+              x={item.x + item.width / 2}
+              y={item.y + 56 - (item.labelLines.length - 1) * 7}
+            >
+              {item.labelLines.map((line, lineIndex) => (
+                <tspan
+                  x={item.x + item.width / 2}
+                  dy={lineIndex === 0 ? 0 : 14}
+                >
+                  {line}
+                </tspan>
+              ))}
+            </text>
+            <text
+              class="archive-visual__stat-detail"
+              x={item.x + item.width / 2}
+              y={item.y + 80}
+            >
+              {item.detailLines.map((line, lineIndex) => (
+                <tspan
+                  x={item.x + item.width / 2}
+                  dy={lineIndex === 0 ? 0 : 13}
+                >
+                  {line}
+                </tspan>
+              ))}
+            </text>
+          </g>
+        ))
+      }
+      <g class="archive-visual__grounding archive-visual__grounding--compact">
+        <rect
+          x="32"
+          y={mobileGroundingY}
+          width="296"
+          height={mobileGroundingHeight}
+          rx="24"
+        >
+        </rect>
+        <text
+          x="180"
+          y={mobileGroundingY + 31}
+        >
+          {
+            mobileGroundingLines.map((line, lineIndex) => (
+              <tspan x="180" dy={lineIndex === 0 ? 0 : 15}>
+                {line}
+              </tspan>
+            ))
+          }
+        </text>
       </g>
     </svg>
   </div>

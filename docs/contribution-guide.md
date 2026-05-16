@@ -36,4 +36,6 @@ npm run test:e2e
 - Write inline equations as `$E = mc^2$` and block equations with `$$`
   fences so Astro's Markdown math pipeline renders them through KaTeX.
 - Run `npm run test:e2e` after layout or math changes; the suite captures
-  desktop and mobile screenshots in ignored Playwright output directories.
+  desktop and mobile screenshots in ignored Playwright output directories and
+  sweeps every generated route for page-level horizontal overflow, readable
+  figure captions, and SVG diagram text that stays inside visible node boxes.

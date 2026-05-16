@@ -8,6 +8,7 @@ import {
   technologyVisualForSlug,
   technologyVisuals,
   visualId,
+  wrapLabel,
 } from '../../src/lib/visuals';
 
 const technologyContentDirectory = fileURLToPath(
@@ -112,6 +113,43 @@ describe('visual helper data', () => {
     expect(compactLabel('software-defined-connected-vehicles', 18)).toBe(
       'software-defined…',
     );
+  });
+
+  it('wraps diagram labels into bounded readable SVG lines', () => {
+    expect(wrapLabel('Individual brake or torque request', 16, 3)).toEqual([
+      'Individual brake',
+      'or torque',
+      'request',
+    ]);
+    expect(
+      wrapLabel(
+        'Pressure and temperature monitoring keeps loading visible',
+        18,
+        2,
+      ),
+    ).toEqual(['Pressure and', 'temperature monit…']);
+    expect(
+      wrapLabel(
+        'U.S. Clean Air Act defeat-device enforcement, EPA and CARB proceedings',
+        24,
+        2,
+      ),
+    ).toEqual(['U.S. Clean Air Act', 'defeat-device enforceme…']);
+    expect(wrapLabel('Mercedes-Benz S-Class W116', 22, 3)).toEqual([
+      'Mercedes-Benz S-Class',
+      'W116',
+    ]);
+    expect(
+      wrapLabel(
+        'The transmission changes ratio by controlling couplings and gear elements, not by changing engine power alone.',
+        48,
+        4,
+      ),
+    ).toEqual([
+      'The transmission changes ratio by controlling',
+      'couplings and gear elements, not by changing',
+      'engine power alone.',
+    ]);
   });
 
   it('converts metadata slugs and ids into readable labels', () => {

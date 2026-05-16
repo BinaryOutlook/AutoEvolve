@@ -1,5 +1,6 @@
 <figure class="powertrain-map">
   <svg
+    class="powertrain-map__svg powertrain-map__svg--desktop"
     viewBox="0 0 860 280"
     role="img"
     aria-labelledby="powertrain-map-title"
@@ -13,7 +14,7 @@
     </desc>
     <defs>
       <marker
-        id="arrow"
+        id="powertrain-arrow-desktop"
         markerWidth="10"
         markerHeight="10"
         refX="7"
@@ -25,40 +26,112 @@
       </marker>
     </defs>
     <g class="map-line">
-      <path d="M115 90 H310 H500 H720" marker-end="url(#arrow)"></path>
-      <path d="M310 90 C360 150 430 170 500 190" marker-end="url(#arrow)"
+      <path
+        d="M115 90 H310 H500 H720"
+        marker-end="url(#powertrain-arrow-desktop)"></path>
+      <path
+        d="M310 90 C360 150 430 170 500 190"
+        marker-end="url(#powertrain-arrow-desktop)"></path>
+      <path d="M500 190 H720" marker-end="url(#powertrain-arrow-desktop)"
       ></path>
-      <path d="M500 190 H720" marker-end="url(#arrow)"></path>
     </g>
     <g class="map-node map-node--engine">
-      <rect x="40" y="52" width="150" height="76" rx="8"></rect>
+      <rect x="29" y="52" width="172" height="76" rx="8"></rect>
       <text x="115" y="83">Piston engines</text>
       <text x="115" y="106">steam, gasoline, diesel</text>
     </g>
     <g class="map-node map-node--control">
-      <rect x="235" y="52" width="150" height="76" rx="8"></rect>
+      <rect x="224" y="52" width="172" height="76" rx="8"></rect>
       <text x="310" y="83">Fuel and control</text>
       <text x="310" y="106">carburetors to ECUs</text>
     </g>
     <g class="map-node map-node--emissions">
-      <rect x="425" y="52" width="150" height="76" rx="8"></rect>
+      <rect x="414" y="52" width="172" height="76" rx="8"></rect>
       <text x="500" y="83">Emissions systems</text>
       <text x="500" y="106">catalysts, SCR, OBD</text>
     </g>
     <g class="map-node map-node--software">
-      <rect x="650" y="52" width="150" height="76" rx="8"></rect>
+      <rect x="639" y="52" width="172" height="76" rx="8"></rect>
       <text x="725" y="83">Software-defined</text>
       <text x="725" y="106">networks and updates</text>
     </g>
     <g class="map-node map-node--hybrid">
-      <rect x="425" y="152" width="150" height="76" rx="8"></rect>
+      <rect x="414" y="152" width="172" height="76" rx="8"></rect>
       <text x="500" y="183">Hybrid systems</text>
       <text x="500" y="206">motors and batteries</text>
     </g>
     <g class="map-node map-node--ev">
-      <rect x="650" y="152" width="150" height="76" rx="8"></rect>
+      <rect x="639" y="152" width="172" height="76" rx="8"></rect>
       <text x="725" y="183">Battery electric</text>
       <text x="725" y="206">packs, motors, charging</text>
+    </g>
+  </svg>
+  <svg
+    class="powertrain-map__svg powertrain-map__svg--mobile"
+    viewBox="0 0 360 690"
+    role="img"
+    aria-labelledby="powertrain-map-mobile-title"
+    aria-describedby="powertrain-map-mobile-desc"
+  >
+    <title id="powertrain-map-mobile-title">
+      Automotive technology evolution map
+    </title>
+    <desc id="powertrain-map-mobile-desc">
+      A simplified vertical diagram linking piston engines, fuel systems,
+      emissions control, hybrid systems, battery electric vehicles, and
+      software-defined control layers across time.
+    </desc>
+    <defs>
+      <marker
+        id="powertrain-arrow-mobile"
+        markerWidth="10"
+        markerHeight="10"
+        refX="7"
+        refY="3"
+        orient="auto"
+        markerUnits="strokeWidth"
+      >
+        <path d="M0,0 L0,6 L8,3 z" fill="currentColor"></path>
+      </marker>
+    </defs>
+    <g class="map-line">
+      <path d="M180 110 V168" marker-end="url(#powertrain-arrow-mobile)"></path>
+      <path d="M180 230 V288" marker-end="url(#powertrain-arrow-mobile)"></path>
+      <path d="M180 350 V408" marker-end="url(#powertrain-arrow-mobile)"></path>
+      <path d="M180 470 V528" marker-end="url(#powertrain-arrow-mobile)"></path>
+      <path
+        d="M180 350 C282 410 302 535 248 612"
+        marker-end="url(#powertrain-arrow-mobile)"></path>
+    </g>
+    <g class="map-node map-node--mobile map-node--engine">
+      <rect x="38" y="46" width="284" height="64" rx="10"></rect>
+      <text x="180" y="73">Piston engines</text>
+      <text x="180" y="96">steam, gasoline, diesel</text>
+    </g>
+    <g class="map-node map-node--mobile map-node--control">
+      <rect x="38" y="166" width="284" height="64" rx="10"></rect>
+      <text x="180" y="193">Fuel and control</text>
+      <text x="180" y="216">carburetors to ECUs</text>
+    </g>
+    <g class="map-node map-node--mobile map-node--emissions">
+      <rect x="38" y="286" width="284" height="64" rx="10"></rect>
+      <text x="180" y="313">Emissions systems</text>
+      <text x="180" y="336">catalysts, SCR, OBD</text>
+    </g>
+    <g class="map-node map-node--mobile map-node--hybrid">
+      <rect x="38" y="406" width="284" height="64" rx="10"></rect>
+      <text x="180" y="433">Hybrid systems</text>
+      <text x="180" y="456">motors and batteries</text>
+    </g>
+    <g class="map-node map-node--mobile map-node--ev">
+      <rect x="38" y="526" width="284" height="64" rx="10"></rect>
+      <text x="180" y="553">Battery electric</text>
+      <text x="180" y="576">packs, motors, charging</text>
+    </g>
+    <g class="map-node map-node--mobile map-node--software">
+      <rect x="38" y="612" width="284" height="64" rx="10"></rect>
+      <text x="180" y="639">Software-defined</text>
+      <text x="180" y="662">networks and updates</text>
     </g>
   </svg>
   <figcaption>
