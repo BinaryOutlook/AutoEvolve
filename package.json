@@ -13,6 +13,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "check": "astro check",
+    "typecheck": "astro check",
     "check:content": "node scripts/validate-content.mjs",
     "check:language": "node scripts/check-language.mjs",
     "lint": "eslint . && markdownlint-cli2 && npm run check:content && npm run check:language",
