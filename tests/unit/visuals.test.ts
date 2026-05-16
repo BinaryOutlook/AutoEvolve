@@ -128,6 +128,13 @@ describe('visual helper data', () => {
         2,
       ),
     ).toEqual(['Pressure and', 'temperature monit…']);
+    expect(
+      wrapLabel(
+        'U.S. Clean Air Act defeat-device enforcement, EPA and CARB proceedings',
+        26,
+        2,
+      ),
+    ).toEqual(['U.S. Clean Air Act', 'defeat-device enforcement…']);
   });
 
   it('converts metadata slugs and ids into readable labels', () => {
