@@ -31,6 +31,34 @@ type EraMarkerMetric = {
   markerWithinCard: boolean;
 };
 
+type VisualSvgMetric = {
+  hasDescription: boolean;
+  hasRole: boolean;
+  hasTitle: boolean;
+};
+
+type VisualFigureMetric = {
+  captionText: string;
+  hasCaption: boolean;
+  svgMetrics: VisualSvgMetric[];
+};
+
+const visualCoverageRoutes = [
+  '/',
+  '/eras/',
+  '/technologies/',
+  '/vehicles/',
+  '/controversies/',
+  '/glossary/',
+  '/sources/',
+  '/about/',
+  '/search/',
+  '/eras/emissions-and-electronic-control/',
+  '/technologies/battery-electric-vehicle/',
+  '/vehicles/toyota-prius/',
+  '/controversies/dieselgate/',
+] as const;
+
 async function waitForStableRendering(page: Page): Promise<void> {
   await page.evaluate(() => document.fonts.ready);
 }
@@ -63,6 +91,45 @@ async function expectNoPageHorizontalOverflow(page: Page): Promise<void> {
   expect(overflow.bodyScrollWidth).toBeLessThanOrEqual(
     overflow.clientWidth + 1,
   );
+}
+
+async function expectAccessibleOriginalVisual(page: Page): Promise<void> {
+  const figures = await page.evaluate<VisualFigureMetric[]>(() =>
+    Array.from(document.querySelectorAll('figure')).map((figure) => {
+      const captionText =
+        figure.querySelector('figcaption')?.textContent?.trim() ?? '';
+
+      return {
+        captionText,
+        hasCaption: captionText.length > 0,
+        svgMetrics: Array.from(figure.querySelectorAll('svg')).map((svg) => ({
+          hasDescription:
+            (svg.querySelector('desc')?.textContent?.trim().length ?? 0) > 0,
+          hasRole: svg.getAttribute('role') === 'img',
+          hasTitle:
+            (svg.querySelector('title')?.textContent?.trim().length ?? 0) > 0,
+        })),
+      };
+    }),
+  );
+
+  expect(figures.length).toBeGreaterThan(0);
+  expect(
+    figures.some(
+      (figure) =>
+        figure.hasCaption &&
+        /original autoevolve diagram/i.test(figure.captionText),
+    ),
+  ).toBe(true);
+
+  const svgMetrics = figures.flatMap((figure) => figure.svgMetrics);
+  expect(svgMetrics.length).toBeGreaterThan(0);
+
+  for (const svg of svgMetrics) {
+    expect(svg.hasRole).toBe(true);
+    expect(svg.hasTitle).toBe(true);
+    expect(svg.hasDescription).toBe(true);
+  }
 }
 
 async function captureLayoutScreenshot(
@@ -284,10 +351,28 @@ test('eras timeline markers align with cards and connector rails', async ({
   }
 });
 
+test('representative routes render accessible original visuals without page overflow', async ({
+  page,
+}) => {
+  for (const viewport of responsiveViewports) {
+    await page.setViewportSize(viewport);
+
+    for (const route of visualCoverageRoutes) {
+      await page.goto(route);
+      await waitForStableRendering(page);
+      await expectAccessibleOriginalVisual(page);
+      await expectNoPageHorizontalOverflow(page);
+    }
+  }
+});
+
 test('technology pages render sources and related links', async ({ page }) => {
   await page.goto('/technologies/battery-electric-vehicle/');
   await expect(
-    page.getByRole('heading', { name: 'Battery Electric Vehicle' }),
+    page.getByRole('heading', {
+      name: 'Battery Electric Vehicle',
+      exact: true,
+    }),
   ).toBeVisible();
   await expect(
     page.getByRole('heading', { name: 'Sources and Further Reading' }),

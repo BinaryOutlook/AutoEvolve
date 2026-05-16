@@ -1,5 +1,29 @@
 ---
+import StaticDiagram from '@components/StaticDiagram.astro';
 import BaseLayout from '@layouts/BaseLayout.astro';
+
+const aboutVisualItems = [
+  {
+    value: 'Systems',
+    label: 'Explain first',
+    detail: 'Mechanisms before examples',
+  },
+  {
+    value: 'Neutral',
+    label: 'Editorial frame',
+    detail: 'No rankings',
+  },
+  {
+    value: 'Sources',
+    label: 'Evidence led',
+    detail: 'Specific claims',
+  },
+  {
+    value: 'Static',
+    label: 'Maintenance',
+    detail: 'Git-backed archive',
+  },
+];
 ---
 
 <BaseLayout
@@ -14,6 +38,13 @@ import BaseLayout from '@layouts/BaseLayout.astro';
       neutral educational reference, not a vehicle review site or brand advocacy
       project.
     </p>
+    <StaticDiagram
+      variant="about"
+      eyebrow="Mission visual"
+      title="Editorial trust model"
+      description="A visual summary of AutoEvolve's editorial model: explain systems first, stay neutral, cite specific claims, and keep the static archive maintainable."
+      items={aboutVisualItems}
+    />
   </section>
 
   <section class="page-section article-content">

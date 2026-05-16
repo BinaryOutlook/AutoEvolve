@@ -1,4 +1,5 @@
 ---
+import ArticleDiagram from '@components/ArticleDiagram.astro';
 import ArticleLayout from '@layouts/ArticleLayout.astro';
 import { entrySlug, getPublicEntries } from '@lib/collections';
 import { render } from 'astro:content';
@@ -36,5 +37,14 @@ const { Content } = await render(entry);
     },
   ]}
 >
+  <ArticleDiagram
+    kind="controversy"
+    title={entry.data.title}
+    summary={entry.data.summary}
+    dateRange={entry.data.dateRange}
+    affectedTechnologies={entry.data.affectedTechnologies}
+    relatedVehicles={entry.data.relatedVehicles}
+    regulatoryContext={entry.data.regulatoryContext}
+  />
   <Content />
 </ArticleLayout>

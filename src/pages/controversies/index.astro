@@ -1,9 +1,38 @@
 ---
+import StaticDiagram from '@components/StaticDiagram.astro';
 import ContentCard from '@components/ContentCard.astro';
 import BaseLayout from '@layouts/BaseLayout.astro';
 import { entrySlug, getPublicEntries, pathFor } from '@lib/collections';
 
 const controversies = await getPublicEntries('controversies');
+const controversyVisualItems = [
+  {
+    value: String(controversies.length),
+    label: 'Case studies',
+    detail: 'Documented events',
+  },
+  {
+    value: String(
+      new Set(controversies.flatMap((entry) => entry.data.affectedTechnologies))
+        .size,
+    ),
+    label: 'Affected systems',
+    detail: 'Technical context',
+  },
+  {
+    value: String(
+      new Set(controversies.flatMap((entry) => entry.data.relatedVehicles))
+        .size,
+    ),
+    label: 'Vehicle links',
+    detail: 'Examples only',
+  },
+  {
+    value: 'Records',
+    label: 'Regulatory lens',
+    detail: 'Source-led framing',
+  },
+];
 ---
 
 <BaseLayout
@@ -17,6 +46,13 @@ const controversies = await getPublicEntries('controversies');
       Controversy pages focus on documented events, technical background,
       regulatory context, and historical implications.
     </p>
+    <StaticDiagram
+      variant="controversies"
+      eyebrow="Case-study visual"
+      title="Controversy evidence flow"
+      description="A visual summary of how controversy pages connect documented events, affected technologies, vehicle examples, and regulatory records."
+      items={controversyVisualItems}
+    />
   </section>
   <section class="page-section content-grid" aria-label="Controversy list">
     {

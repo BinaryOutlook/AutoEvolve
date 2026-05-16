@@ -1,0 +1,293 @@
+---
+import {
+  compactLabel,
+  labelFromSlug,
+  pickVisualItems,
+  technologyVisualForCategory,
+  visualId,
+} from '@lib/visuals';
+
+type Stage = {
+  label: string;
+  detail: string;
+};
+
+type VisualModel = {
+  eyebrow: string;
+  heading: string;
+  description: string;
+  stages: readonly [Stage, Stage, Stage];
+  tags: string[];
+  caption: string;
+};
+
+type EraProps = {
+  kind: 'era';
+  title: string;
+  summary: string;
+  dateRange: string;
+  keyThemes: readonly string[];
+  relatedTechnologies: readonly string[];
+  relatedVehicles: readonly string[];
+};
+
+type TechnologyProps = {
+  kind: 'technology';
+  title: string;
+  summary: string;
+  category: string;
+  eras: readonly string[];
+  relatedTechnologies: readonly string[];
+  relatedVehicles: readonly string[];
+};
+
+type VehicleProps = {
+  kind: 'vehicle';
+  title: string;
+  summary: string;
+  manufacturer: string;
+  productionPeriod: string;
+  marketContext: string;
+  illustrates: readonly string[];
+  relatedTechnologies: readonly string[];
+};
+
+type ControversyProps = {
+  kind: 'controversy';
+  title: string;
+  summary: string;
+  dateRange: string;
+  affectedTechnologies: readonly string[];
+  relatedVehicles: readonly string[];
+  regulatoryContext: string;
+};
+
+type Props = EraProps | TechnologyProps | VehicleProps | ControversyProps;
+
+const props = Astro.props;
+const articleDiagramCaption =
+  "Original AutoEvolve diagram based on this page's metadata, content relationships, and cited-source context where present. No external image license is required.";
+
+function tagsFromSlugs(items: readonly string[], fallback: readonly string[]) {
+  return pickVisualItems(items, fallback, 5).map(labelFromSlug);
+}
+
+function buildVisualModel(visualProps: Props): VisualModel {
+  switch (visualProps.kind) {
+    case 'era': {
+      const themes = pickVisualItems(
+        visualProps.keyThemes,
+        ['technical context', 'system transition'],
+        3,
+      );
+      const relatedSystems = tagsFromSlugs(visualProps.relatedTechnologies, [
+        'technology links',
+      ]);
+
+      return {
+        eyebrow: 'Era context panel',
+        heading: `${visualProps.title} at a glance`,
+        description: `${visualProps.title} is diagrammed as a chronological context panel from ${visualProps.dateRange}, with key themes and related systems drawn from the article metadata. ${visualProps.summary}`,
+        stages: [
+          {
+            label: visualProps.dateRange,
+            detail: 'Chronological boundary',
+          },
+          {
+            label: themes[0] ?? 'Technical shift',
+            detail: themes[1] ?? 'Adoption pressure',
+          },
+          {
+            label: themes[2] ?? 'Archive links',
+            detail: `${visualProps.relatedTechnologies.length} technologies · ${visualProps.relatedVehicles.length} vehicles`,
+          },
+        ],
+        tags: [...themes, ...relatedSystems].slice(0, 6),
+        caption: articleDiagramCaption,
+      };
+    }
+    case 'technology': {
+      const blueprint = technologyVisualForCategory(visualProps.category);
+      const relatedSystems = tagsFromSlugs(visualProps.relatedTechnologies, [
+        visualProps.category,
+      ]);
+
+      return {
+        eyebrow: blueprint.theme,
+        heading: `${visualProps.title} system map`,
+        description: `${visualProps.title} is shown as a three-step ${blueprint.theme.toLowerCase()} using its technology category, related eras, related technologies, and vehicle-example metadata. ${blueprint.focus}`,
+        stages: [
+          { label: blueprint.flow[0], detail: 'Input or boundary' },
+          { label: blueprint.flow[1], detail: visualProps.title },
+          { label: blueprint.flow[2], detail: 'Vehicle context' },
+        ],
+        tags: [
+          ...visualProps.eras.map(labelFromSlug),
+          ...relatedSystems,
+          ...visualProps.relatedVehicles.map(labelFromSlug),
+        ].slice(0, 6),
+        caption: articleDiagramCaption,
+      };
+    }
+    case 'vehicle': {
+      const illustratedSystems = pickVisualItems(
+        visualProps.illustrates,
+        visualProps.relatedTechnologies,
+        4,
+      );
+
+      return {
+        eyebrow: 'Vehicle example lens',
+        heading: `${visualProps.title} example card`,
+        description: `${visualProps.title} is shown as an example-first diagram connecting manufacturer, production period, market context, and the technologies the page uses it to illustrate. ${visualProps.summary}`,
+        stages: [
+          {
+            label: visualProps.manufacturer,
+            detail: visualProps.productionPeriod,
+          },
+          { label: visualProps.title, detail: visualProps.marketContext },
+          {
+            label: 'Technology illustrated',
+            detail: illustratedSystems[0] ?? 'System example',
+          },
+        ],
+        tags: [
+          ...illustratedSystems,
+          ...visualProps.relatedTechnologies.map(labelFromSlug),
+        ].slice(0, 6),
+        caption: articleDiagramCaption,
+      };
+    }
+    case 'controversy': {
+      const affectedSystems = tagsFromSlugs(visualProps.affectedTechnologies, [
+        'affected systems',
+      ]);
+
+      return {
+        eyebrow: 'Investigation flow',
+        heading: `${visualProps.title} evidence path`,
+        description: `${visualProps.title} is shown as a documented case flow from event timing, through affected technical systems, to regulatory context and related vehicle examples. ${visualProps.summary}`,
+        stages: [
+          { label: visualProps.dateRange, detail: 'Documented period' },
+          {
+            label: affectedSystems[0] ?? 'Affected systems',
+            detail: `${visualProps.affectedTechnologies.length} technology links`,
+          },
+          {
+            label: 'Regulatory record',
+            detail: visualProps.regulatoryContext,
+          },
+        ],
+        tags: [
+          ...affectedSystems,
+          ...visualProps.relatedVehicles.map(labelFromSlug),
+        ].slice(0, 6),
+        caption: articleDiagramCaption,
+      };
+    }
+    default: {
+      const exhaustiveCheck: never = visualProps;
+      throw new Error(`Unsupported article visual kind: ${exhaustiveCheck}`);
+    }
+  }
+}
+
+const model = buildVisualModel(props);
+const idBase = visualId(`${props.kind}-${props.title}`);
+const titleId = `${idBase}-title`;
+const descId = `${idBase}-desc`;
+const captionId = `${idBase}-caption`;
+const arrowId = `${idBase}-arrow`;
+const stageNodes = [
+  { x: 48, y: 74, width: 178, ...model.stages[0] },
+  { x: 291, y: 74, width: 178, ...model.stages[1] },
+  { x: 534, y: 74, width: 178, ...model.stages[2] },
+] as const;
+---
+
+<figure class={`archive-visual archive-visual--${props.kind}`}>
+  <div class="archive-visual__intro">
+    <p class="eyebrow">{model.eyebrow}</p>
+    <h2>{model.heading}</h2>
+  </div>
+  <div class="archive-visual__canvas">
+    <svg
+      viewBox="0 0 760 300"
+      role="img"
+      aria-labelledby={titleId}
+      aria-describedby={descId}
+    >
+      <title id={titleId}>{model.heading}</title>
+      <desc id={descId}>{model.description}</desc>
+      <defs>
+        <marker
+          id={arrowId}
+          markerWidth="10"
+          markerHeight="10"
+          refX="8"
+          refY="5"
+          orient="auto"
+          markerUnits="strokeWidth"
+        >
+          <path d="M0,0 L10,5 L0,10 z"></path>
+        </marker>
+      </defs>
+      <path
+        class="archive-visual__rail"
+        d="M226 115 H291 M469 115 H534"
+        marker-end={`url(#${arrowId})`}></path>
+      <path
+        class="archive-visual__feedback"
+        d="M625 174 C560 245 210 245 136 174"
+        marker-end={`url(#${arrowId})`}></path>
+      <g class="archive-visual__grounding">
+        <rect x="70" y="218" width="620" height="44" rx="22"></rect>
+        <text x="380" y="246"
+          >Metadata links keep the diagram explanatory, not decorative</text
+        >
+      </g>
+      {
+        stageNodes.map((node, index) => (
+          <g class="archive-visual__node">
+            <rect
+              x={node.x}
+              y={node.y}
+              width={node.width}
+              height="100"
+              rx="12"
+            />
+            <circle cx={node.x + 24} cy={node.y + 25} r="12" />
+            <text
+              class="archive-visual__node-index"
+              x={node.x + 24}
+              y={node.y + 30}
+            >
+              {index + 1}
+            </text>
+            <text
+              class="archive-visual__node-label"
+              x={node.x + node.width / 2}
+              y={node.y + 54}
+            >
+              {compactLabel(node.label, 24)}
+            </text>
+            <text
+              class="archive-visual__node-detail"
+              x={node.x + node.width / 2}
+              y={node.y + 78}
+            >
+              {compactLabel(node.detail, 30)}
+            </text>
+          </g>
+        ))
+      }
+    </svg>
+  </div>
+  <figcaption id={captionId}>{model.caption}</figcaption>
+  <ul
+    class="archive-visual__tags"
+    aria-label="Metadata represented in this diagram"
+  >
+    {model.tags.map((tag) => <li>{tag}</li>)}
+  </ul>
+</figure>
