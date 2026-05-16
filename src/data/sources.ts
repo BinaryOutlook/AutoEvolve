@@ -1630,6 +1630,245 @@ export const sources: Source[] = [
       'air-source heat pump replacement of resistive heating for cabin heating efficiency context',
     ],
   },
+
+  {
+    id: 'doe-afdc-electricity-stations',
+    title: 'Electric Vehicle Charging Stations',
+    organization: 'U.S. Department of Energy Alternative Fuels Data Center',
+    type: 'government',
+    url: 'https://afdc.energy.gov/fuels/electricity-stations',
+    accessedDate: '2026-05-16',
+    supports: [
+      'EV charging level and connector definitions',
+      'DC fast charging power and connector context',
+      'charging-time factors including internal charger capacity',
+    ],
+  },
+  {
+    id: 'charin-ccs-technology',
+    title: 'Technology',
+    organization: 'Charging Interface Initiative e.V. (CharIN)',
+    type: 'technical-reference',
+    url: 'https://www.charin.global/technology/',
+    accessedDate: '2026-05-16',
+    supports: [
+      'Combined Charging System architecture overview',
+      'CCS implementation guidance and standards relationship context',
+    ],
+  },
+  {
+    id: 'charin-ccs-specification',
+    title: 'CCS Specification',
+    organization: 'Charging Interface Initiative e.V. (CharIN)',
+    type: 'technical-reference',
+    url: 'https://www.charin.global/technology/ccs-specification/',
+    accessedDate: '2026-05-16',
+    supports: [
+      'CCS technical-document set context',
+      'implementation guide and design guide availability',
+    ],
+  },
+  {
+    id: 'dot-fhwa-nevi-standards-final-rule-2023',
+    title: 'National Electric Vehicle Infrastructure Standards and Requirements',
+    organization: 'U.S. Department of Transportation / Federal Highway Administration',
+    type: 'government',
+    url: 'https://www.transportation.gov/regulations/federal-register-documents/2023-03500',
+    accessedDate: '2026-05-16',
+    supports: [
+      'NEVI minimum standards and requirements final rule context',
+      'federally funded EV charging interoperability, data, network connectivity, and public-information requirements',
+    ],
+  },
+  {
+    id: 'doe-femp-bidirectional-charging-mobile-storage',
+    title: 'Bidirectional Charging and Electric Vehicles for Mobile Storage',
+    organization: 'U.S. Department of Energy Federal Energy Management Program',
+    type: 'government',
+    url: 'https://www.energy.gov/cmei/femp/bidirectional-charging-and-electric-vehicles-mobile-storage',
+    accessedDate: '2026-05-16',
+    supports: [
+      'bidirectional EV charging definition',
+      'vehicle-to-building and vehicle-to-grid use cases',
+      'resilience and demand-response context',
+    ],
+  },
+  {
+    id: 'nrel-electric-vehicle-grid-integration',
+    title: 'Electric Vehicle Grid Integration',
+    organization: 'National Renewable Energy Laboratory',
+    type: 'government',
+    url: 'https://www.nrel.gov/transportation/project-ev-grid-integration',
+    accessedDate: '2026-05-16',
+    supports: [
+      'EV and facility integration with the larger utility grid',
+      'charging-infrastructure grid-impact and control-solution context',
+    ],
+  },
+  {
+    id: 'iso-15118-1-2019',
+    title:
+      'ISO 15118-1:2019 Road vehicles — Vehicle to grid communication interface — Part 1: General information and use-case definition',
+    organization: 'International Organization for Standardization',
+    type: 'technical-reference',
+    url: 'https://www.iso.org/standard/69113.html',
+    accessedDate: '2026-05-16',
+    supports: [
+      'vehicle-to-grid communication interface scope',
+      'charging and discharging use cases between EV and supply equipment',
+      'identification, payment, cybersecurity, and load-levelling communication context',
+    ],
+  },
+  {
+    id: 'bosch-abs-history',
+    title: "Safe Braking: Start of developing Bosch's anti-lock braking system ABS",
+    organization: 'Bosch Global',
+    type: 'manufacturer',
+    url: 'https://www.bosch.com/stories/beginnings-of-abs/',
+    accessedDate: '2026-05-16',
+    supports: [
+      'Bosch ABS development history',
+      '1978 ABS 2 production-ready electronic ABS context',
+      'anti-lock braking mechanism and steering-control explanation',
+    ],
+    notes:
+      'Manufacturer history source; used for Bosch development chronology and system description, not independent safety-effectiveness claims.',
+  },
+  {
+    id: 'bosch-esp-history',
+    title: 'Preventing skidding: The Electronic Stability Program ESP®',
+    organization: 'Bosch Global',
+    type: 'manufacturer',
+    url: 'https://www.bosch.com/stories/the-electronic-stability-program-esp/',
+    accessedDate: '2026-05-16',
+    supports: [
+      'electronic stability program development context',
+      'relationship between ABS and stability control',
+      'yaw-rate and steering-angle comparison explanation',
+    ],
+    notes:
+      'Manufacturer history source; regulatory claims are supported separately by NHTSA records.',
+  },
+  {
+    id: 'nhtsa-fmvss-126-final-rule-2007',
+    title:
+      'Federal Motor Vehicle Safety Standards; Electronic Stability Control Systems; Controls and Displays',
+    organization: 'National Highway Traffic Safety Administration',
+    type: 'government',
+    url: 'https://www.nhtsa.gov/document/final-rule-federal-motor-vehicle-safety-standards-electronic-stability-control-systems-0',
+    accessedDate: '2026-05-16',
+    supports: [
+      'FMVSS No. 126 final rule context',
+      'ESC definition using automatic computer-controlled individual-wheel braking',
+      'light-vehicle ESC phase-in and regulatory history',
+    ],
+  },
+  {
+    id: 'nhtsa-fmvss-126-test-procedure-2011',
+    title:
+      'Laboratory Test Procedure for FMVSS 126 Electronic Stability Control Systems',
+    organization: 'National Highway Traffic Safety Administration',
+    type: 'government',
+    url: 'https://www.nhtsa.gov/document/laboratory-test-procedure-fmvss-126-03-electronic-stability-control-systems',
+    accessedDate: '2026-05-16',
+    supports: [
+      'FMVSS No. 126 compliance-test procedure context',
+      'ESC telltale, mode, stability, and lateral displacement testing context',
+    ],
+  },
+  {
+    id: 'nhtsa-driver-assistance-shoppers-guide-2018',
+    title: 'Vehicle Shopper’s Guide: Driver Assistance Technologies',
+    organization: 'National Highway Traffic Safety Administration',
+    type: 'government',
+    url: 'https://www.nhtsa.gov/document/driver-assistance-technologies-vehicle-shoppers-guide',
+    accessedDate: '2026-05-16',
+    supports: [
+      'adaptive cruise control definition',
+      'driver assistance technology boundaries',
+      'human-driver responsibility framing',
+    ],
+  },
+  {
+    id: 'nhtsa-automated-vehicle-safety',
+    title: 'Automated Vehicle Safety',
+    organization: 'National Highway Traffic Safety Administration',
+    type: 'government',
+    url: 'https://www.nhtsa.gov/vehicle-safety/automated-vehicles-safety',
+    accessedDate: '2026-05-16',
+    supports: [
+      'NHTSA automation-level framing',
+      'adaptive cruise control as Level 1 driver assistance example',
+      'driver attention and responsibility context',
+    ],
+  },
+  {
+    id: 'iihs-advanced-driver-assistance',
+    title: 'Advanced Driver Assistance',
+    organization: 'Insurance Institute for Highway Safety',
+    type: 'technical-reference',
+    url: 'https://www.iihs.org/research-areas/advanced-driver-assistance',
+    accessedDate: '2026-05-16',
+    supports: [
+      'adaptive cruise control and lane-centering automation-level distinctions',
+      'driver monitoring and engagement context for partial automation',
+    ],
+  },
+  {
+    id: 'bosch-acc-history',
+    title: 'A quarter of a century of ACC adaptive cruise control',
+    organization: 'Bosch Global',
+    type: 'manufacturer',
+    url: 'https://www.bosch.com/stories/beginnings-of-the-bosch-acc/',
+    accessedDate: '2026-05-16',
+    supports: [
+      'radar-based adaptive cruise control development history',
+      'ACC mechanism using vehicle detection, speed estimation, braking, and accelerating',
+      'sensor edge-case context from Bosch development history',
+    ],
+    notes:
+      'Manufacturer history source; used for Bosch ACC chronology and technical description while avoiding promotional conclusions.',
+  },
+  {
+    id: 'bosch-can-history',
+    title: 'Data network for the car: The Controller Area Network CAN',
+    organization: 'Bosch Global',
+    type: 'manufacturer',
+    url: 'https://www.bosch.com/stories/the-controller-area-network/',
+    accessedDate: '2026-05-16',
+    supports: [
+      'Bosch CAN development history',
+      'vehicle wiring and ECU communication context',
+      '1985 initial patent context',
+    ],
+    notes:
+      'Manufacturer history source; standards details are supported separately by ISO records.',
+  },
+  {
+    id: 'can-cia-can-history',
+    title: 'History of CAN technology',
+    organization: 'CAN in Automation (CiA)',
+    type: 'technical-reference',
+    url: 'https://www.can-cia.org/can-knowledge/history-of-can-technology',
+    accessedDate: '2026-05-16',
+    supports: [
+      '1986 SAE congress introduction of CAN',
+      'CAN technology historical timeline',
+    ],
+  },
+  {
+    id: 'iso-11898-1-2024',
+    title:
+      'ISO 11898-1:2024 Road vehicles — Controller area network (CAN) — Part 1: Data link layer and physical coding sublayer',
+    organization: 'International Organization for Standardization',
+    type: 'technical-reference',
+    url: 'https://www.iso.org/standard/86384.html',
+    accessedDate: '2026-05-16',
+    supports: [
+      'current ISO 11898-1 CAN data link layer and physical coding sublayer scope',
+      'CAN XL data field context and standards status',
+    ],
+  },
 ];
 
 export function getSourceById(id: string) {
