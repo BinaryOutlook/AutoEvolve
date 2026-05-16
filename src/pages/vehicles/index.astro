@@ -1,9 +1,38 @@
 ---
+import StaticDiagram from '@components/StaticDiagram.astro';
 import ContentCard from '@components/ContentCard.astro';
 import BaseLayout from '@layouts/BaseLayout.astro';
 import { entrySlug, getPublicEntries, pathFor } from '@lib/collections';
 
 const vehicles = await getPublicEntries('vehicles');
+const vehicleVisualItems = [
+  {
+    value: String(vehicles.length),
+    label: 'Examples',
+    detail: 'Not reviews',
+  },
+  {
+    value: String(
+      new Set(vehicles.map((entry) => entry.data.manufacturer)).size,
+    ),
+    label: 'Makers',
+    detail: 'Context only',
+  },
+  {
+    value: String(
+      new Set(vehicles.flatMap((entry) => entry.data.relatedTechnologies)).size,
+    ),
+    label: 'Technology links',
+    detail: 'Systems illustrated',
+  },
+  {
+    value: String(
+      new Set(vehicles.flatMap((entry) => entry.data.relatedEras)).size,
+    ),
+    label: 'Era links',
+    detail: 'Chronology anchors',
+  },
+];
 ---
 
 <BaseLayout
@@ -17,6 +46,13 @@ const vehicles = await getPublicEntries('vehicles');
       These pages use selected models to explain technology history. They avoid
       rankings, purchasing advice, and subjective review language.
     </p>
+    <StaticDiagram
+      variant="vehicles"
+      eyebrow="Example visual"
+      title="Vehicle example coverage"
+      description="A visual summary showing that vehicle pages are evidence-backed examples connected to eras and technologies rather than rankings or buyer guidance."
+      items={vehicleVisualItems}
+    />
   </section>
   <section class="page-section content-grid" aria-label="Vehicle example list">
     {

@@ -2,7 +2,7 @@
 
 AutoEvolve is a static-first educational website that documents the evolution of automotive technology: early self-propelled vehicles, internal-combustion systems, diesel and emissions controls, hybrids, plug-in hybrids, battery-electric platforms, and the software-defined vehicles now reshaping mobility.
 
-The current release is `0.2`: an expanded MVP content release with broader technology guides, controversy case studies, vehicle examples with attributed images, and eras as the chronological structure. The durable rule is simple: every meaningful update should keep the product, documentation, and maintenance workflow moving together instead of letting the code outrun the explanation.
+The current release is `0.2`: an expanded MVP content release with broader technology guides, controversy case studies, vehicle examples, accessible original diagrams, and eras as the chronological structure. The durable rule is simple: every meaningful update should keep the product, documentation, and maintenance workflow moving together instead of letting the code outrun the explanation.
 
 The project follows the implementation brief in [start_brief.md](start_brief.md): neutral editorial tone, source-backed technical explanations, vehicle models as examples of broader systems, and architecture that remains friendly to free static hosting.
 
@@ -32,6 +32,7 @@ If source quality or navigability is low, the project is not ready just because 
 - MDX and typed content collections for long-form articles.
 - Pagefind for generated static search.
 - Zod-backed schemas through Astro content collections.
+- Reusable accessible SVG figures for static-first visual explanations.
 - Vitest and Playwright for verification.
 - ESLint, Prettier, and markdownlint for project hygiene.
 
@@ -76,7 +77,7 @@ Use `npm run test:e2e` when routes, navigation, search behavior, or browser-visi
 | [src/pages/](src/pages/)                               | Astro routes for home, era-led chronology, technologies, vehicles, controversies, glossary, sources, about, and search.  |
 | [src/content/](src/content/)                           | Markdown and MDX content collections for eras, technologies, vehicles, and controversies.                                |
 | [src/data/](src/data/)                                 | Structured source and glossary data.                                                                                     |
-| [src/components/](src/components/)                     | Shared UI components for cards, headers, source lists, maps, and linked lists.                                           |
+| [src/components/](src/components/)                     | Shared UI components for cards, headers, source lists, maps, metadata diagrams, and linked lists.                        |
 | [src/layouts/](src/layouts/)                           | Base and article layout shells.                                                                                          |
 | [docs/](docs/)                                         | Current editorial, source, and contribution guidance.                                                                    |
 | [scripts/](scripts/)                                   | Project validation scripts for content and language rules.                                                               |
@@ -85,14 +86,14 @@ Use `npm run test:e2e` when routes, navigation, search behavior, or browser-visi
 
 ## Documentation Map
 
-| Document                                                 | Authority                                                                                  |
-| -------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| [README.md](README.md)                                   | Current v0.2 overview, commands, status, structure, and maintenance wayfinding.            |
-| [AGENTS.md](AGENTS.md)                                   | Agent operating rules for documentation, implementation, and future planning.              |
-| [start_brief.md](start_brief.md)                         | Durable product brief for mission, scope, routes, content model, and editorial posture.    |
-| [docs/editorial-policy.md](docs/editorial-policy.md)     | Editorial neutrality, vehicle-example boundaries, and tone.                                |
-| [docs/source-style-guide.md](docs/source-style-guide.md) | Source hierarchy, citation metadata, and support rules.                                    |
-| [docs/contribution-guide.md](docs/contribution-guide.md) | Local setup and pre-submission checks.                                                     |
+| Document                                                 | Authority                                                                               |
+| -------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| [README.md](README.md)                                   | Current v0.2 overview, commands, status, structure, and maintenance wayfinding.         |
+| [AGENTS.md](AGENTS.md)                                   | Agent operating rules for documentation, implementation, and future planning.           |
+| [start_brief.md](start_brief.md)                         | Durable product brief for mission, scope, routes, content model, and editorial posture. |
+| [docs/editorial-policy.md](docs/editorial-policy.md)     | Editorial neutrality, vehicle-example boundaries, and tone.                             |
+| [docs/source-style-guide.md](docs/source-style-guide.md) | Source hierarchy, citation metadata, and support rules.                                 |
+| [docs/contribution-guide.md](docs/contribution-guide.md) | Local setup and pre-submission checks.                                                  |
 
 Keep documentation current in the same pass as code whenever a change affects commands, routes, content schemas, editorial rules, product scope, or architecture.
 
@@ -100,7 +101,7 @@ Keep documentation current in the same pass as code whenever a change affects co
 
 AutoEvolve should explain automotive systems before discussing vehicle examples. Vehicle pages are not reviews; they are case studies showing how a broader technology entered production, changed over time, or exposed tradeoffs.
 
-Use specific sources for specific claims. Regulatory records support regulatory history. Manufacturer material may support dates or specifications, but marketing claims need context. When a topic is recent or unsettled, mark it with a clear last-reviewed date.
+Use specific sources for specific claims. Regulatory records support regulatory history. Manufacturer material may support dates or specifications, but marketing claims need context. When a topic is recent or unsettled, mark it with a clear last-reviewed date. Visuals should be educational: original AutoEvolve diagrams may be generated from page metadata and cited-source context; externally sourced images require captioned attribution and reuse details.
 
 Technical pages may use short equations when they clarify a system. For example, power can be introduced as:
 
@@ -130,6 +131,6 @@ Future versioned planning should preserve that scoped style and avoid treating l
 
 ## Project Status
 
-The repository is labeled `0.2` after the expanded MVP content pass. It now centers the chronology on eras, keeps static search and contribution guidance in place, and carries source-backed coverage across technologies, controversies, and vehicle examples.
+The repository is labeled `0.2` after the expanded MVP content pass. It now centers the chronology on eras, keeps static search and contribution guidance in place, carries source-backed coverage across technologies, controversies, and vehicle examples, and renders at least one educational visual artifact on each generated page.
 
 Current docs are expected to describe the present state. If a feature, command, route, or workflow changes, update the relevant document before considering the work complete.

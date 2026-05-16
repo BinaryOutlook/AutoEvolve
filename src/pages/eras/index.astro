@@ -1,8 +1,33 @@
 ---
+import StaticDiagram from '@components/StaticDiagram.astro';
 import BaseLayout from '@layouts/BaseLayout.astro';
 import { entrySlug, getPublicEntries, pathFor } from '@lib/collections';
 
 const eras = await getPublicEntries('eras');
+const eraVisualItems = [
+  {
+    value: String(eras.length),
+    label: 'Published eras',
+    detail: 'Chronology spine',
+  },
+  {
+    value: eras[0]?.data.dateRange ?? 'Start',
+    label: 'Opening period',
+    detail: eras[0]?.data.title ?? 'Early mobility',
+  },
+  {
+    value: eras.at(-1)?.data.dateRange ?? 'Now',
+    label: 'Latest period',
+    detail: eras.at(-1)?.data.title ?? 'Connected systems',
+  },
+  {
+    value: String(
+      new Set(eras.flatMap((entry) => entry.data.relatedTechnologies)).size,
+    ),
+    label: 'Technology links',
+    detail: 'Cross-page context',
+  },
+];
 ---
 
 <BaseLayout
@@ -16,6 +41,13 @@ const eras = await getPublicEntries('eras');
       These periods organize the technical story without implying that
       technologies changed everywhere at the same moment.
     </p>
+    <StaticDiagram
+      variant="eras"
+      eyebrow="Chronology visual"
+      title="Era coverage map"
+      description="A compact visual summary of the eras route, including the number of published eras, opening and latest periods, and cross-linked technology records."
+      items={eraVisualItems}
+    />
   </section>
   <section class="page-section era-flow" aria-labelledby="era-flow-title">
     <div class="section-heading era-flow__heading">

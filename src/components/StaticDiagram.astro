@@ -1,0 +1,110 @@
+---
+import { compactLabel, visualId } from '@lib/visuals';
+
+type VisualItem = {
+  label: string;
+  value: string;
+  detail?: string;
+};
+
+type Props = {
+  title: string;
+  eyebrow: string;
+  description: string;
+  items: readonly VisualItem[];
+  variant?: string;
+  caption?: string;
+};
+
+const {
+  title,
+  eyebrow,
+  description,
+  items,
+  variant = 'static',
+  caption = 'Original AutoEvolve diagram based on route metadata and archive records. No external image license is required.',
+} = Astro.props;
+const idBase = visualId(`${variant}-${title}`);
+const titleId = `${idBase}-title`;
+const descId = `${idBase}-desc`;
+const visibleItems = items.slice(0, 4);
+const fallbackItems =
+  visibleItems.length > 0
+    ? visibleItems
+    : [
+        {
+          label: 'Archive context',
+          value: 'Static',
+          detail: 'Educational reference',
+        },
+      ];
+const slotWidth = 700 / fallbackItems.length;
+const diagramItems = fallbackItems.map((item, index) => ({
+  ...item,
+  x: 30 + index * slotWidth,
+  width: Math.min(150, slotWidth - 18),
+}));
+---
+
+<figure
+  class={`archive-visual archive-visual--static archive-visual--${variant}`}
+>
+  <div class="archive-visual__intro">
+    <p class="eyebrow">{eyebrow}</p>
+    <h2>{title}</h2>
+  </div>
+  <div class="archive-visual__canvas">
+    <svg
+      viewBox="0 0 760 260"
+      role="img"
+      aria-labelledby={titleId}
+      aria-describedby={descId}
+    >
+      <title id={titleId}>{title}</title>
+      <desc id={descId}>{description}</desc>
+      <path class="archive-visual__spine" d="M70 134 H690"></path>
+      {
+        diagramItems.map((item, index) => (
+          <g class="archive-visual__stat-node">
+            <line
+              x1={item.x + item.width / 2}
+              y1="92"
+              x2={item.x + item.width / 2}
+              y2="134"
+            />
+            <circle cx={item.x + item.width / 2} cy="134" r="9" />
+            <rect x={item.x} y="34" width={item.width} height="92" rx="12" />
+            <text
+              class="archive-visual__stat-value"
+              x={item.x + item.width / 2}
+              y="68"
+            >
+              {compactLabel(item.value, 18)}
+            </text>
+            <text
+              class="archive-visual__stat-label"
+              x={item.x + item.width / 2}
+              y="94"
+            >
+              {compactLabel(item.label, 20)}
+            </text>
+            <text
+              class="archive-visual__stat-detail"
+              x={item.x + item.width / 2}
+              y="114"
+            >
+              {compactLabel(item.detail ?? `Step ${index + 1}`, 22)}
+            </text>
+          </g>
+        ))
+      }
+      <g class="archive-visual__grounding archive-visual__grounding--compact">
+        <rect x="106" y="178" width="548" height="44" rx="22"></rect>
+        <text x="380" y="206"
+          >Static-first visual summary for scanning and orientation</text
+        >
+      </g>
+    </svg>
+  </div>
+  <figcaption>{caption}</figcaption>
+</figure>
