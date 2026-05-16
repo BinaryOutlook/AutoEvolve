@@ -46,20 +46,22 @@ The development server prints the local URL, usually `http://localhost:4321`.
 
 ## Commands
 
-| Command            | Action                                                                          |
-| ------------------ | ------------------------------------------------------------------------------- |
-| `npm run dev`      | Start the local development server.                                             |
-| `npm run build`    | Run Astro type/content checks, build the site, and generate the Pagefind index. |
-| `npm run preview`  | Preview the production build locally.                                           |
-| `npm run check`    | Run Astro checks without building.                                              |
-| `npm run lint`     | Run ESLint and markdownlint.                                                    |
-| `npm run format`   | Format project files with Prettier.                                             |
-| `npm run test`     | Run unit tests.                                                                 |
-| `npm run test:e2e` | Run Playwright end-to-end tests.                                                |
+| Command             | Action                                                                          |
+| ------------------- | ------------------------------------------------------------------------------- |
+| `npm run dev`       | Start the local development server.                                             |
+| `npm run build`     | Run Astro type/content checks, build the site, and generate the Pagefind index. |
+| `npm run preview`   | Preview the production build locally.                                           |
+| `npm run check`     | Run Astro checks without building.                                              |
+| `npm run typecheck` | Run Astro type and content checks without building.                             |
+| `npm run lint`      | Run ESLint and markdownlint.                                                    |
+| `npm run format`    | Format project files with Prettier.                                             |
+| `npm run test`      | Run unit tests.                                                                 |
+| `npm run test:e2e`  | Run Playwright end-to-end tests.                                                |
 
 Before submitting meaningful changes, run:
 
 ```bash
+npm run typecheck
 npm run lint
 npm run test
 npm run build
