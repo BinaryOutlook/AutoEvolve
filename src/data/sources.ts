@@ -1431,6 +1431,205 @@ export const sources: Source[] = [
     notes:
       'Supplier historical source; used for chronology and system context, not independent evaluation.',
   },
+  {
+    id: 'doe-afdc-electric-batteries',
+    title: 'Batteries for Electric Vehicles',
+    organization: 'U.S. Department of Energy Alternative Fuels Data Center',
+    type: 'government',
+    url: 'https://afdc.energy.gov/vehicles/electric-batteries',
+    accessedDate: '2026-05-16',
+    supports: [
+      'lithium-ion, nickel-metal hydride, and lead-acid battery comparison',
+      'electric-drive vehicle energy storage context',
+      'battery recycling and second-use context',
+    ],
+  },
+  {
+    id: 'doe-vto-batteries',
+    title: 'Batteries',
+    organization: 'U.S. Department of Energy Vehicle Technologies Office',
+    type: 'government',
+    url: 'https://www.energy.gov/cmei/vehicles/batteries',
+    accessedDate: '2026-05-16',
+    supports: [
+      'Vehicle Technologies Office battery research goals',
+      'nickel-metal hydride battery role in first-generation hybrids',
+      'battery performance, cost, durability, and abuse-tolerance framing',
+    ],
+  },
+  {
+    id: 'doe-next-generation-batteries',
+    title: 'Breaking It Down: Next-Generation Batteries',
+    organization:
+      'U.S. Department of Energy Advanced Materials and Manufacturing Technologies Office',
+    type: 'government',
+    url: 'https://www.energy.gov/cmei/ammto/breaking-it-down-next-generation-batteries',
+    accessedDate: '2026-05-16',
+    supports: [
+      'solid-state battery basic construction and potential benefits',
+      'next-generation battery manufacturing and application context',
+    ],
+  },
+  {
+    id: 'doe-solid-state-flow-manufacturing-2023',
+    title:
+      'Department of Energy Announces $16 Million to Boost Domestic Capabilities in Solid-State and Flow Battery Manufacturing',
+    organization:
+      'U.S. Department of Energy Advanced Materials and Manufacturing Technologies Office',
+    type: 'government',
+    url: 'https://www.energy.gov/cmei/ammto/articles/department-energy-announces-16-million-boost-domestic-capabilities-solid-state',
+    accessedDate: '2026-05-16',
+    supports: [
+      'solid-state battery manufacturing scale-up barriers',
+      'large-format solid-state cell production and commercialization context',
+    ],
+    notes:
+      'Funding announcement used for manufacturing-readiness context, not as proof of broad production adoption.',
+  },
+  {
+    id: 'doe-vto-electric-drive-systems',
+    title: 'Electric Drive Systems Research and Development',
+    organization: 'U.S. Department of Energy Vehicle Technologies Office',
+    type: 'government',
+    url: 'https://www.energy.gov/cmei/vehicles/electric-drive-systems-research-and-development',
+    accessedDate: '2026-05-16',
+    supports: [
+      'electric motor, inverter, boost converter, and onboard charger roles',
+      'electric-drive cost, weight, volume, efficiency, reliability, and integration priorities',
+    ],
+  },
+  {
+    id: 'doe-vto-power-electronics-rd',
+    title: 'Power Electronics Research and Development',
+    organization: 'U.S. Department of Energy Vehicle Technologies Office',
+    type: 'government',
+    url: 'https://www.energy.gov/cmei/vehicles/power-electronics-research-and-development',
+    accessedDate: '2026-05-16',
+    supports: [
+      'inverter role converting battery DC to motor AC',
+      'DC/DC converter and onboard charger context',
+      'wide-bandgap power electronics and thermal packaging constraints',
+    ],
+  },
+  {
+    id: 'doe-vto-electric-motors-rd',
+    title: 'Electric Motors Research and Development',
+    organization: 'U.S. Department of Energy Vehicle Technologies Office',
+    type: 'government',
+    url: 'https://www.energy.gov/cmei/vehicles/electric-motors-research-and-development',
+    accessedDate: '2026-05-16',
+    supports: [
+      'electric motor rotor and stator basics',
+      'internal permanent magnet motor advantages and rare-earth constraints',
+      'induction motor reliability, starting torque, efficiency, and power-density tradeoffs',
+    ],
+  },
+  {
+    id: 'epa-2022-2025-ldv-ghg-tsd-mild-hybrids',
+    title:
+      'Proposed Determination on the Appropriateness of the Model Year 2022-2025 Light-Duty Vehicle Greenhouse Gas Emissions Standards under the Midterm Evaluation: Technical Support Document',
+    organization: 'U.S. Environmental Protection Agency',
+    type: 'government',
+    url: 'https://nepis.epa.gov/Exe/ZyPURL.cgi?Dockey=P100Q3L4.TXT',
+    accessedDate: '2026-05-16',
+    supports: [
+      'mild hybrid functions including limited launch assist, regeneration, and stop-start capability',
+      'belt integrated, crank integrated, and transmission integrated starter-generator architecture context',
+    ],
+  },
+  {
+    id: 'sae-bisg-mild-hybrid-2014',
+    title:
+      'Specification and Design of a Switched Reluctance 48 V Belt Integrated Starter Generator (B-ISG) for Mild Hybrid Passenger Car Applications',
+    organization: 'SAE International',
+    type: 'technical-reference',
+    url: 'https://saemobilus.sae.org/papers/specification-design-a-switched-reluctance-48-v-belt-integrated-starter-generator-b-isg-mild-hybrid-passenger-car-applications-2014-01-1890',
+    accessedDate: '2026-05-16',
+    supports: [
+      '48 V belt integrated starter generator passenger-car design context',
+      'mild hybrid architecture variation and commonality tradeoffs',
+    ],
+    notes:
+      'SAE abstract and citation page used for high-level technical context; detailed paper content may require access.',
+  },
+  {
+    id: 'ornl-axial-flux-ev-comparison-2023',
+    title:
+      'A Comparison of Outer Rotor Radial and Axial Flux Machines for Application in Electric Vehicles',
+    organization: 'Oak Ridge National Laboratory',
+    type: 'academic',
+    url: 'https://www.ornl.gov/publication/comparison-outer-rotor-radial-and-axial-flux-machines-application-electric-vehicles',
+    accessedDate: '2026-05-16',
+    supports: [
+      'axial flux and radial flux machine comparison for electric vehicles',
+      'high-torque low-weight candidate framing for axial flux machines',
+    ],
+  },
+  {
+    id: 'ornl-axial-flux-review-2023',
+    title: 'A Review of Axial Flux Permanent Magnet Machine Technology',
+    organization: 'Oak Ridge National Laboratory',
+    type: 'academic',
+    url: 'https://impact.ornl.gov/en/publications/a-review-of-axial-flux-permanent-magnet-machine-technology',
+    accessedDate: '2026-05-16',
+    supports: [
+      'axial flux permanent magnet machine geometry and application context',
+      'manufacturing, sizing, flux weakening, and thermal-management research issues',
+    ],
+  },
+  {
+    id: 'nrel-edv-thermal-management',
+    title: 'Electric-Drive Vehicle Thermal Management',
+    organization: 'National Renewable Energy Laboratory',
+    type: 'government',
+    url: 'https://www.nrel.gov/transportation/electric-drive-vehicle-thermal-management',
+    accessedDate: '2026-05-16',
+    supports: [
+      'electric-drive vehicle cabin and component thermal-load context',
+      'range impact from climate-control energy use',
+      'benefits of combining thermal-management loops in electrified vehicles',
+    ],
+  },
+  {
+    id: 'doe-vto-thermal-control-system-integration',
+    title: 'Thermal Control & System Integration',
+    organization: 'U.S. Department of Energy Vehicle Technologies Office',
+    type: 'government',
+    url: 'https://www.energy.gov/cmei/vehicles/thermal-control-system-integration',
+    accessedDate: '2026-05-16',
+    supports: [
+      'power electronics and electric machine thermal-control requirements',
+      'dedicated coolant loops and higher-temperature coolant research context',
+      'integrated inverter and motor system thermal-management goals',
+    ],
+  },
+  {
+    id: 'doe-bev-cold-ambient-performance-2024',
+    title:
+      'Program Record: Impact of Cold Ambient Temperatures and Extreme Conditions on Electric Vehicles',
+    organization: 'U.S. Department of Energy Vehicle Technologies Office',
+    type: 'government',
+    url: 'https://www.energy.gov/sites/default/files/2024-10/Impact_of_Cold_Ambient_Temperature_on_BEV_Performance_v15_TechEditFinal_12Sep2024__0.pdf',
+    accessedDate: '2026-05-16',
+    supports: [
+      'battery and cabin thermal-management effects on cold-weather BEV range',
+      'heat pump efficiency and extreme-cold limitations',
+      'preconditioning and battery heater context',
+    ],
+  },
+  {
+    id: 'nrel-ev-heat-pump-frost-2021',
+    title:
+      'Superhydrophobic Heat Exchangers Delay Frost Formation and Enhance Efficency of Electric Vehicle Heat Pumps',
+    organization: 'National Renewable Energy Laboratory',
+    type: 'academic',
+    url: 'https://research-hub.nrel.gov/en/publications/superhydrophobic-heat-exchangers-delay-frost-formation-and-enhanc/',
+    accessedDate: '2026-05-16',
+    supports: [
+      'automotive heat pump frost and defrosting constraints',
+      'air-source heat pump replacement of resistive heating for cabin heating efficiency context',
+    ],
+  },
 ];
 
 export function getSourceById(id: string) {
