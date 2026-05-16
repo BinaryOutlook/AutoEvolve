@@ -27,6 +27,7 @@ body {
   color: var(--color-text);
   font-family: var(--font-sans);
   line-height: 1.6;
+  min-width: 0;
 }
 
 a {
@@ -42,6 +43,16 @@ a:hover {
 img,
 svg {
   max-width: 100%;
+}
+
+main,
+section,
+article,
+aside,
+header,
+footer,
+div {
+  min-width: 0;
 }
 
 :focus-visible {
@@ -74,8 +85,7 @@ svg {
 
 .site-header__inner,
 .site-footer__inner,
-.page-section,
-.article-shell {
+.page-section {
   margin: 0 auto;
   max-width: 1180px;
   padding: 0 1.25rem;
@@ -301,10 +311,11 @@ svg {
     0 0 0 0.45rem var(--color-bg),
     0 0.35rem 1rem rgb(23 33 31 / 0.14);
   content: '';
-  grid-column: 2;
   height: 1rem;
-  justify-self: center;
-  position: relative;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
   width: 1rem;
   z-index: 1;
 }
@@ -424,6 +435,10 @@ svg {
 }
 
 .article-shell {
+  margin: 0 auto;
+  max-width: 1280px;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
   padding-top: 3rem;
 }
 
@@ -462,12 +477,15 @@ svg {
   display: grid;
   gap: 2rem;
   grid-template-columns: minmax(0, 1fr) 300px;
+  min-width: 0;
 }
 
 .article-content {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: 8px;
+  min-width: 0;
+  overflow-wrap: break-word;
   padding: min(6vw, 2.2rem);
 }
 
@@ -483,9 +501,44 @@ svg {
   max-width: 74ch;
 }
 
+.article-content p:has(.katex-display) {
+  max-width: 100%;
+}
+
+.article-content .katex-display {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.2rem 0 0.45rem;
+  text-align: left;
+  -webkit-overflow-scrolling: touch;
+}
+
+.article-content p .katex,
+.article-content li .katex,
+.article-content td .katex {
+  display: inline-block;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  vertical-align: -0.2em;
+  -webkit-overflow-scrolling: touch;
+}
+
+.article-content .katex-display > .katex {
+  display: block;
+  max-width: none;
+  min-width: 100%;
+  overflow: visible;
+  text-align: center;
+  vertical-align: baseline;
+  width: max-content;
+}
+
 .article-content table {
   border-collapse: collapse;
   display: block;
+  max-width: 100%;
   overflow-x: auto;
   width: 100%;
 }
@@ -638,34 +691,35 @@ svg {
 
   .era-timeline {
     margin-top: 1.25rem;
-    padding-left: 1.6rem;
+    padding-left: 0;
   }
 
   .era-timeline::before,
   .era-timeline::after {
-    left: 0.5rem;
+    left: 0.625rem;
   }
 
   .era-moment {
     display: block;
     min-height: 0;
-    padding: 0 0 1.2rem 1.2rem;
+    padding: 0 0 1.2rem 2.75rem;
   }
 
   .era-moment::before {
     height: 0.9rem;
-    left: -1.58rem;
+    left: 0.625rem;
     position: absolute;
-    top: 1.35rem;
+    top: 2rem;
+    transform: translate(-50%, -50%);
     width: 0.9rem;
   }
 
   .era-moment::after,
   .era-moment--left::after,
   .era-moment--right::after {
-    left: -0.8rem;
-    top: 1.85rem;
-    width: 1.2rem;
+    left: 0.625rem;
+    top: 2rem;
+    width: 2.125rem;
   }
 }
 

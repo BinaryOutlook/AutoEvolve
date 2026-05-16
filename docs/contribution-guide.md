@@ -31,3 +31,7 @@ npm run test:e2e
 - Link vehicle examples to technologies and eras.
 - Avoid review-style language.
 - Keep controversy pages chronological, technical, and regulatory.
+- Write inline equations as `$E = mc^2$` and block equations with `$$`
+  fences so Astro's Markdown math pipeline renders them through KaTeX.
+- Run `npm run test:e2e` after layout or math changes; the suite captures
+  desktop and mobile screenshots in ignored Playwright output directories.

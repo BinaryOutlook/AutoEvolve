@@ -39,7 +39,7 @@ $$
 P = T\omega
 $$
 
-where \(P\) is power, \(T\) is torque, and \(\omega\) is crankshaft angular speed.
+where $P$ is power, $T$ is torque, and $\omega$ is crankshaft angular speed.
 
 ## How It Works
 

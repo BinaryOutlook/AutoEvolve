@@ -31,7 +31,7 @@ $$
 i = \frac{\omega_\text{in}}{\omega_\text{out}}
 $$
 
-where \(i\) is the gear ratio, \(\omega_\text{in}\) is input-shaft angular speed, and \(\omega_\text{out}\) is output-shaft angular speed. A lower road gear has a larger ratio, multiplying torque at the driveline while requiring higher engine speed for a given road speed.
+where $i$ is the gear ratio, $\omega_\text{in}$ is input-shaft angular speed, and $\omega_\text{out}$ is output-shaft angular speed. A lower road gear has a larger ratio, multiplying torque at the driveline while requiring higher engine speed for a given road speed.
 
 ## How It Works
 

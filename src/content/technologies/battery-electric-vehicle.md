@@ -35,7 +35,7 @@ $$
 E = VQ
 $$
 
-where \(E\) is energy, \(V\) is voltage, and \(Q\) is charge capacity. Real usable energy is lower than the theoretical pack value because the battery management system reserves margins for durability, safety, and performance.
+where $E$ is energy, $V$ is voltage, and $Q$ is charge capacity. Real usable energy is lower than the theoretical pack value because the battery management system reserves margins for durability, safety, and performance.
 
 ## Main Components
 
