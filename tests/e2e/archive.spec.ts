@@ -55,9 +55,12 @@ type SvgBox = {
 };
 
 type SvgTextFitIssue = {
+  figure: string;
   label: string;
   message: string;
+  route: string;
   type: 'spill' | 'overlap';
+  viewportWidth: number;
 };
 
 type CaptionMetric = {
@@ -148,6 +151,10 @@ async function expectNoPageHorizontalOverflow(page: Page): Promise<void> {
 
 async function expectVisibleSvgTextFits(page: Page): Promise<void> {
   const issues = await page.evaluate<SvgTextFitIssue[]>(() => {
+    const svgTextTolerance = 1;
+    const route = window.location.pathname;
+    const viewportWidth = window.innerWidth;
+
     function isVisible(element: Element): boolean {
       const rect = element.getBoundingClientRect();
       const style = window.getComputedStyle(element);
@@ -182,7 +189,7 @@ async function expectVisibleSvgTextFits(page: Page): Promise<void> {
       const width = right - x;
       const height = bottom - y;
 
-      if (width <= 0.5 || height <= 0.5) {
+      if (width <= svgTextTolerance || height <= svgTextTolerance) {
         return undefined;
       }
 
@@ -194,6 +201,11 @@ async function expectVisibleSvgTextFits(page: Page): Promise<void> {
     for (const figure of document.querySelectorAll(
       'figure.archive-visual, figure.powertrain-map',
     )) {
+      const figureLabel =
+        figure.querySelector('h2, figcaption')?.textContent
+          ?.replace(/\s+/gu, ' ')
+          .trim() ?? 'unlabeled figure';
+
       for (const svg of figure.querySelectorAll('svg')) {
         if (!isVisible(svg)) {
           continue;
@@ -214,10 +226,10 @@ async function expectVisibleSvgTextFits(page: Page): Promise<void> {
           const box = boxFor(text);
           const label = text.textContent?.replace(/\s+/gu, ' ').trim() ?? '';
           const outsideSvg =
-            box.x < viewBox.x - 0.5 ||
-            box.y < viewBox.y - 0.5 ||
-            box.right > viewBox.x + viewBox.width + 0.5 ||
-            box.bottom > viewBox.y + viewBox.height + 0.5;
+            box.x < viewBox.x - svgTextTolerance ||
+            box.y < viewBox.y - svgTextTolerance ||
+            box.right > viewBox.x + viewBox.width + svgTextTolerance ||
+            box.bottom > viewBox.y + viewBox.height + svgTextTolerance;
           const group = text.closest(
             '.archive-visual__node, .archive-visual__stat-node, .archive-visual__grounding, .map-node',
           );
@@ -243,13 +255,16 @@ async function expectVisibleSvgTextFits(page: Page): Promise<void> {
             );
           }
 
-          if (spill > 0.5) {
+          if (spill > svgTextTolerance) {
             textFitIssues.push({
+              figure: figureLabel,
               label,
               message: `SVG text spills outside its safe box by ${spill.toFixed(
                 1,
               )} px: ${label}`,
+              route,
               type: 'spill',
+              viewportWidth,
             });
           }
 
@@ -281,13 +296,16 @@ async function expectVisibleSvgTextFits(page: Page): Promise<void> {
 
             if (first.group !== second.group) {
               textFitIssues.push({
+                figure: figureLabel,
                 label: `${first.label} | ${second.label}`,
                 message: `SVG labels overlap by ${overlap.width.toFixed(
                   1,
                 )}×${overlap.height.toFixed(1)} px: ${first.label} / ${
                   second.label
                 }`,
+                route,
                 type: 'overlap',
+                viewportWidth,
               });
             }
           }

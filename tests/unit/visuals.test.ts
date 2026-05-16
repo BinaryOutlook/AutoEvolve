@@ -139,6 +139,17 @@ describe('visual helper data', () => {
       'Mercedes-Benz S-Class',
       'W116',
     ]);
+    expect(
+      wrapLabel(
+        'The transmission changes ratio by controlling couplings and gear elements, not by changing engine power alone.',
+        48,
+        4,
+      ),
+    ).toEqual([
+      'The transmission changes ratio by controlling',
+      'couplings and gear elements, not by changing',
+      'engine power alone.',
+    ]);
   });
 
   it('converts metadata slugs and ids into readable labels', () => {

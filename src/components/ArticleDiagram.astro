@@ -244,7 +244,9 @@ const desktopRailSegments = desktopStageNodes
     x1: node.x + node.width,
     x2: desktopStageNodes[index + 1]?.x ?? node.x + node.width,
   }));
-const desktopGroundingLines = wrapLabel(model.grounding, 96, 2);
+const desktopGroundingLines = wrapLabel(model.grounding, 48, 4);
+const desktopGroundingY = 248;
+const desktopGroundingHeight = 40 + desktopGroundingLines.length * 16;
 
 const mobileStageX = 32;
 const mobileStageWidth = 296;
@@ -261,9 +263,9 @@ const mobileStageNodes: MobileStageNode[] = model.stages.map(
     ...stage,
   }),
 );
-const mobileGroundingLines = wrapLabel(model.grounding, 36, 3);
+const mobileGroundingLines = wrapLabel(model.grounding, 24, 6);
 const mobileGroundingY = 74 + model.stages.length * mobileStagePitch + 8;
-const mobileGroundingHeight = 32 + mobileGroundingLines.length * 16;
+const mobileGroundingHeight = 44 + mobileGroundingLines.length * 16;
 const mobileViewBoxHeight = mobileGroundingY + mobileGroundingHeight + 24;
 ---
 
@@ -354,8 +356,18 @@ const mobileViewBoxHeight = mobileGroundingY + mobileGroundingHeight + 24;
         ))
       }
       <g class="archive-visual__grounding">
-        <rect x="110" y="276" width="780" height="54" rx="27"></rect>
-        <text x="500" y={302 - (desktopGroundingLines.length - 1) * 7}>
+        <rect
+          x="90"
+          y={desktopGroundingY}
+          width="820"
+          height={desktopGroundingHeight}
+          rx="27"
+        >
+        </rect>
+        <text
+          x="500"
+          y={desktopGroundingY + 30}
+        >
           {
             desktopGroundingLines.map((line, lineIndex) => (
               <tspan x="500" dy={lineIndex === 0 ? 0 : 15}>
@@ -456,7 +468,7 @@ const mobileViewBoxHeight = mobileGroundingY + mobileGroundingHeight + 24;
         </rect>
         <text
           x="180"
-          y={mobileGroundingY + 32 - (mobileGroundingLines.length - 1) * 7}
+          y={mobileGroundingY + 31}
         >
           {
             mobileGroundingLines.map((line, lineIndex) => (

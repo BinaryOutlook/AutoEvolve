@@ -73,9 +73,11 @@ const desktopItems: DesktopItem[] = fallbackItems.map((item, index) => ({
 }));
 const desktopGroundingLines = wrapLabel(
   'Static-first visual summary for scanning and orientation',
-  72,
-  2,
+  48,
+  3,
 );
+const desktopGroundingY = 210;
+const desktopGroundingHeight = 40 + desktopGroundingLines.length * 16;
 
 const mobileItems: MobileItem[] = fallbackItems.map((item, index) => ({
   ...item,
@@ -89,11 +91,11 @@ const mobileItems: MobileItem[] = fallbackItems.map((item, index) => ({
 }));
 const mobileGroundingLines = wrapLabel(
   'Static-first visual summary for scanning and orientation',
-  36,
-  2,
+  24,
+  4,
 );
 const mobileGroundingY = 60 + fallbackItems.length * 122 + 12;
-const mobileGroundingHeight = 32 + mobileGroundingLines.length * 16;
+const mobileGroundingHeight = 44 + mobileGroundingLines.length * 16;
 const mobileViewBoxHeight = mobileGroundingY + mobileGroundingHeight + 24;
 ---
 
@@ -178,8 +180,15 @@ const mobileViewBoxHeight = mobileGroundingY + mobileGroundingHeight + 24;
         ))
       }
       <g class="archive-visual__grounding archive-visual__grounding--compact">
-        <rect x="172" y="220" width="556" height="46" rx="23"></rect>
-        <text x="450" y={246 - (desktopGroundingLines.length - 1) * 7}>
+        <rect
+          x="150"
+          y={desktopGroundingY}
+          width="600"
+          height={desktopGroundingHeight}
+          rx="23"
+        >
+        </rect>
+        <text x="450" y={desktopGroundingY + 30}>
           {
             desktopGroundingLines.map((line, lineIndex) => (
               <tspan x="450" dy={lineIndex === 0 ? 0 : 15}>
@@ -270,7 +279,7 @@ const mobileViewBoxHeight = mobileGroundingY + mobileGroundingHeight + 24;
         </rect>
         <text
           x="180"
-          y={mobileGroundingY + 24 - (mobileGroundingLines.length - 1) * 7}
+          y={mobileGroundingY + 31}
         >
           {
             mobileGroundingLines.map((line, lineIndex) => (
