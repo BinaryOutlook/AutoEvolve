@@ -1869,6 +1869,230 @@ export const sources: Source[] = [
       'CAN XL data field context and standards status',
     ],
   },
+  {
+    id: 'epa-dpf-operation-maintenance',
+    title:
+      'Technical Bulletin: Diesel Particulate Filter Operation and Maintenance',
+    organization: 'U.S. Environmental Protection Agency',
+    type: 'government',
+    url: 'https://www.epa.gov/sites/default/files/2016-03/documents/420f10027.pdf',
+    accessedDate: '2026-05-16',
+    supports: [
+      'diesel particulate filter soot trapping and regeneration overview',
+      'backpressure monitoring, ash buildup, and periodic cleaning context',
+    ],
+  },
+  {
+    id: 'doe-afdc-diesel-vehicle',
+    title: 'How Do Diesel Vehicles Work?',
+    organization: 'U.S. Department of Energy Alternative Fuels Data Center',
+    type: 'government',
+    url: 'https://afdc.energy.gov/vehicles/how-do-diesel-cars-work',
+    accessedDate: '2026-05-16',
+    supports: [
+      'light-duty diesel vehicle component overview',
+      'diesel aftertreatment path including DPF, diesel oxidation catalyst, DEF, and SCR',
+    ],
+  },
+  {
+    id: 'bosch-lambda-sensor-history',
+    title: 'Sensing the Adequate Mixture - The Bosch Lambda Sensor',
+    organization: 'Bosch Global',
+    type: 'manufacturer',
+    url: 'https://www.bosch.com/stories/40-years-of-bosch-lambda-sensor/',
+    accessedDate: '2026-05-16',
+    supports: [
+      'Bosch lambda sensor development and 1976 series-production context',
+      'relationship between lambda sensing and three-way catalyst operation',
+    ],
+    notes:
+      'Manufacturer history source; used for Bosch development chronology and technology framing, not for independent emissions-performance claims.',
+  },
+  {
+    id: 'bosch-switching-lambda-sensor',
+    title: 'Switching-Type Lambda Sensor',
+    organization: 'Bosch Mobility',
+    type: 'manufacturer',
+    url: 'https://www.bosch-mobility.com/en/solutions/sensors/switching-type-lambda-sensor/',
+    accessedDate: '2026-05-16',
+    supports: [
+      'oxygen-content measurement for engine-control air-fuel feedback',
+      'stoichiometric switching behavior and OBD/emissions-control context',
+    ],
+  },
+  {
+    id: 'carb-obd-ii-fact-sheet',
+    title: 'On-Board Diagnostic II (OBD II) Systems Fact Sheet',
+    organization: 'California Air Resources Board',
+    type: 'government',
+    url: 'https://ww2.arb.ca.gov/resources/fact-sheets/board-diagnostic-ii-obd-ii-systems-fact-sheet',
+    accessedDate: '2026-05-16',
+    supports: [
+      'OBD II purpose and hardware/software monitoring explanation',
+      'malfunction indicator lamp and repair-information context',
+    ],
+  },
+  {
+    id: 'epa-obd-final-rule-1998',
+    title:
+      'Final Rule for Control of Air Pollution From Motor Vehicles and New Motor Vehicle Engines; Modification of Federal Onboard Diagnostic Regulations',
+    organization: 'U.S. Environmental Protection Agency',
+    type: 'government',
+    url: 'https://www.epa.gov/regulations-emissions-vehicles-and-engines/final-rule-control-air-pollution-motor-vehicles-and-new',
+    accessedDate: '2026-05-16',
+    supports: [
+      'federal OBD rule harmonization with California OBD II requirements',
+      'emission-control system evaluation and federal certification context',
+    ],
+  },
+  {
+    id: 'carb-in-use-compliance-testing',
+    title: 'In-Use Compliance Testing',
+    organization: 'California Air Resources Board',
+    type: 'government',
+    url: 'https://ww2.arb.ca.gov/overview-use-compliance-testing',
+    accessedDate: '2026-05-16',
+    supports: [
+      'in-use emissions compliance context',
+      'regulatory link between certification, monitored operation, and field performance',
+    ],
+  },
+  {
+    id: 'bosch-hotfilm-air-mass-meter',
+    title: 'Hot-Film Air-Mass Meter',
+    organization: 'Bosch Mobility',
+    type: 'manufacturer',
+    url: 'https://www.bosch-mobility.com/en/solutions/sensors/hotfilm-airflow-sensor/',
+    accessedDate: '2026-05-16',
+    supports: [
+      'hot-film air-mass measurement principle',
+      'relationship between measured air mass, fuel quantity, and engine-control input',
+    ],
+  },
+  {
+    id: 'sae-engine-mass-air-flow-meter-1976',
+    title: 'An Engine Mass Air Flow Meter',
+    organization: 'SAE International',
+    type: 'technical-reference',
+    url: 'https://doi.org/10.4271/760017',
+    accessedDate: '2026-05-16',
+    supports: [
+      '1970s technical context for engine mass-air-flow measurement',
+      'historical placement of air-mass sensing in electronic engine control',
+    ],
+  },
+  {
+    id: 'sae-automotive-engine-control-sensor-1978',
+    title:
+      'A Worldwide Overview of Automotive Engine Control Sensor Technology',
+    organization: 'SAE International',
+    type: 'technical-reference',
+    url: 'https://doi.org/10.4271/780207',
+    accessedDate: '2026-05-16',
+    supports: [
+      'engine-control sensor categories including mass air flow and oxygen sensing',
+      'late-1970s sensor-development context for electronic engine management',
+    ],
+  },
+  {
+    id: 'bosch-knock-sensor',
+    title: 'Knock Sensor',
+    organization: 'Bosch Mobility',
+    type: 'manufacturer',
+    url: 'https://www.bosch-mobility.com/en/solutions/sensors/knock-sensor',
+    accessedDate: '2026-05-16',
+    supports: [
+      'piezoelectric knock-sensor structure-borne noise measurement principle',
+      'ECU ignition-timing response to knocking signals',
+    ],
+  },
+  {
+    id: 'sae-knock-detector-boost-control-1980',
+    title: 'Knock Detector System Controlling Turbocharger Boost Pressure',
+    organization: 'SAE International',
+    type: 'technical-reference',
+    url: 'https://doi.org/10.4271/800833',
+    accessedDate: '2026-05-16',
+    supports: [
+      'Saab turbocharged-engine knock detector and boost-control example',
+      'historical use of knock feedback to manage charge pressure',
+    ],
+  },
+  {
+    id: 'sae-combustion-knock-sensing-1990',
+    title: 'Combustion Knock Sensing: Sensor Selection and Application Issues',
+    organization: 'SAE International',
+    type: 'technical-reference',
+    url: 'https://doi.org/10.4271/900488',
+    accessedDate: '2026-05-16',
+    supports: [
+      'knock-sensor selection, placement, and application pitfalls',
+      'production knock-sensing methodology and vibration-sensing context',
+    ],
+  },
+  {
+    id: 'bosch-electronic-throttle-valve',
+    title:
+      'Electronic Throttle Valve for Passenger Cars and Light Commercial Vehicles',
+    organization: 'Bosch Mobility',
+    type: 'manufacturer',
+    url: 'https://www.bosch-mobility.com/en/solutions/air-management/electronic-throttle-valve/',
+    accessedDate: '2026-05-16',
+    supports: [
+      'electronic throttle-valve actuator and position-feedback architecture',
+      'air-mass regulation and torque-influencing system inputs',
+    ],
+  },
+  {
+    id: 'bosch-accelerator-pedal-module',
+    title: 'Accelerator-Pedal Module',
+    organization: 'Bosch Mobility',
+    type: 'manufacturer',
+    url: 'https://www.bosch-mobility.com/en/solutions/air-management/accelerator-pedal-module/',
+    accessedDate: '2026-05-16',
+    supports: [
+      'accelerator-pedal position sensing as driver torque-request input',
+      'pedal module sensor construction and engine-management signal role',
+    ],
+  },
+  {
+    id: 'sae-electronic-throttle-control-1991',
+    title:
+      'The Development of an Automotive Drive-By-Wire Throttle System as a Research Tool',
+    organization: 'SAE International',
+    type: 'technical-reference',
+    url: 'https://doi.org/10.4271/910081',
+    accessedDate: '2026-05-16',
+    supports: [
+      'early automotive drive-by-wire throttle research architecture',
+      'pedal demand mapping, throttle-position control, and safety-circuit context',
+    ],
+  },
+  {
+    id: 'nhtsa-toyota-etc-technical-assessment',
+    title:
+      'Technical Assessment of Toyota Electronic Throttle Control (ETC) Systems',
+    organization: 'National Highway Traffic Safety Administration',
+    type: 'government',
+    url: 'https://static.nhtsa.gov/odi/inv/2014/INRP-DP14003-61485.pdf',
+    accessedDate: '2026-05-16',
+    supports: [
+      'electronic throttle control safety assessment context',
+      'NHTSA-NASA review framework for unintended-acceleration investigations',
+    ],
+  },
+  {
+    id: 'doe-afdc-idle-reduction-research',
+    title: 'Idle Reduction Research and Development',
+    organization: 'U.S. Department of Energy Alternative Fuels Data Center',
+    type: 'government',
+    url: 'https://afdc.energy.gov/conserve/idle-reduction-research',
+    accessedDate: '2026-05-16',
+    supports: [
+      'idling versus stopping-and-restarting fuel and emissions context',
+      'starter and battery wear considerations for idle reduction',
+    ],
+  },
 ];
 
 export function getSourceById(id: string) {
