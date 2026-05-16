@@ -1240,6 +1240,197 @@ export const sources: Source[] = [
       'unbuilt successor project context',
     ],
   },
+
+  {
+    id: 'epa-nhtsa-2017-2025-technical-assessment',
+    title:
+      'Draft Technical Assessment Report: Midterm Evaluation of Light-Duty Vehicle Greenhouse Gas Emission Standards and Corporate Average Fuel Economy Standards for Model Years 2022-2025',
+    organization:
+      'U.S. Environmental Protection Agency, National Highway Traffic Safety Administration, and California Air Resources Board',
+    type: 'government',
+    url: 'https://www.epa.gov/sites/production/files/2016-10/documents/ldv-ghg-tar.pdf',
+    accessedDate: '2026-05-16',
+    supports: [
+      'technical definitions for variable valve timing, variable valve lift, gasoline direct injection, turbocharging and downsizing, and cooled EGR',
+      'regulatory technology-assessment context for gasoline engine efficiency packages',
+    ],
+  },
+  {
+    id: 'doe-vto-advanced-combustion-strategies',
+    title: 'Advanced Combustion Strategies',
+    organization: 'U.S. Department of Energy Vehicle Technologies Office',
+    type: 'government',
+    url: 'https://www.energy.gov/cmei/vehicles/advanced-combustion-strategies',
+    accessedDate: '2026-05-16',
+    supports: [
+      'lean-burn and dilute gasoline combustion mechanisms',
+      'EGR role in lowering combustion temperature and NOx formation',
+      'direct injection and port fuel injection context for gasoline combustion strategies',
+    ],
+  },
+  {
+    id: 'doe-vto-energy-recovery-exhaust-materials',
+    title:
+      'Materials for Energy Recovery Systems and Controlling Exhaust Gases',
+    organization: 'U.S. Department of Energy Vehicle Technologies Office',
+    type: 'government',
+    url: 'https://www.energy.gov/cmei/vehicles/materials-energy-recovery-systems-and-controlling-exhaust-gases',
+    accessedDate: '2026-05-16',
+    supports: [
+      'turbocharger use of exhaust energy otherwise lost as heat',
+      'thermal tradeoffs between efficient engines and exhaust aftertreatment',
+    ],
+  },
+  {
+    id: 'doe-vto-emission-control',
+    title: 'Emission Control',
+    organization: 'U.S. Department of Energy Vehicle Technologies Office',
+    type: 'government',
+    url: 'https://www.energy.gov/cmei/vehicles/emission-control',
+    accessedDate: '2026-05-16',
+    supports: [
+      'regulated exhaust pollutant context for combustion technologies',
+      'particulate-filter and lean direct-injection gasoline aftertreatment challenges',
+    ],
+  },
+  {
+    id: 'cummins-how-turbocharger-works',
+    title: 'How a Turbocharger Works',
+    organization: 'Cummins Inc.',
+    type: 'manufacturer',
+    url: 'https://www.cummins.com/en-na/components/turbochargers/how-a-turbocharger-works',
+    accessedDate: '2026-05-16',
+    supports: [
+      'turbocharger turbine and compressor mechanism',
+      'compressed intake-air role in engine power and efficiency',
+    ],
+    notes:
+      'Manufacturer technical explainer; used for component mechanism, not product preference.',
+  },
+  {
+    id: 'eaton-tvs-supercharger-overview',
+    title: 'TVS Technology Overview',
+    organization: 'Eaton',
+    type: 'manufacturer',
+    url: 'https://www.eaton.com/ca/en-gb/products/engine-solutions/superchargers/tvs-overview.html',
+    accessedDate: '2026-05-16',
+    supports: [
+      'supercharger airflow control independent of exhaust energy',
+      'modern Roots-type supercharger technology context',
+    ],
+    notes:
+      'Manufacturer technical source; product claims are paraphrased cautiously and not used as rankings.',
+  },
+  {
+    id: 'eaton-tvs-performance-automotive',
+    title: 'Supercharger Boosting for High Performance Automotive Applications',
+    organization: 'Eaton',
+    type: 'manufacturer',
+    url: 'https://www.eaton.com/us/en-us/products/engine-solutions/superchargers/TVS-technology-applications/tvs-performance-automotive.html',
+    accessedDate: '2026-05-16',
+    supports: [
+      'automotive supercharger response and pressure-ratio context',
+      'compound boosting context using turbochargers and superchargers together',
+    ],
+    notes:
+      'Manufacturer technical source; used for mechanism and packaging context while avoiding promotional language.',
+  },
+  {
+    id: 'sae-application-superchargers-automotive-1928',
+    title: 'The Application of Superchargers to Automotive Vehicles',
+    organization: 'SAE International',
+    type: 'technical-reference',
+    url: 'https://saemobilus.sae.org/papers/application-superchargers-automotive-vehicles-280040',
+    accessedDate: '2026-05-16',
+    supports: [
+      'early automotive discussion of supercharging and engine downsizing tradeoffs',
+      'historical context for supercharger use only when additional power is required',
+    ],
+  },
+  {
+    id: 'toyota-vvti-1995',
+    title: 'Toyota Develops New VVT-i Engine Technology',
+    organization: 'Toyota Motor Corporation',
+    type: 'manufacturer',
+    url: 'https://global.toyota/en/detail/7893162',
+    accessedDate: '2026-05-16',
+    supports: [
+      'VVT-i historical introduction and mechanism',
+      'intake valve timing, valve overlap, pumping-loss, and emissions-control context',
+    ],
+    notes:
+      'Manufacturer technical release; used for Toyota system history and mechanism, not comparative claims.',
+  },
+  {
+    id: 'toyota-valvematic-2007',
+    title: 'Toyota Develops Next-generation Engine Valve Mechanism',
+    organization: 'Toyota Motor Corporation',
+    type: 'manufacturer',
+    url: 'https://global.toyota/en/detail/279298',
+    accessedDate: '2026-05-16',
+    supports: [
+      'Valvematic variable valve lift mechanism context',
+      'air-intake control through valve lift and timing rather than only throttle position',
+    ],
+    notes:
+      'Manufacturer technical release; used for mechanism and timing context, not product evaluation.',
+  },
+  {
+    id: 'honda-b16a-vtec-technology',
+    title:
+      "B16A: Honda's Innovative Engine with VTEC World-First Variable Valve Timing and Lift Technology",
+    organization: 'Honda Motor Co., Ltd.',
+    type: 'manufacturer',
+    url: 'https://global.honda/en/tech/engine/car/B16A_integra_vtec/',
+    accessedDate: '2026-05-16',
+    supports: [
+      'VTEC variable valve timing and lift mechanism',
+      'cam-profile switching and representative 1989 production context',
+    ],
+    notes:
+      'Manufacturer technical history; used for mechanism and chronology while avoiding promotional framing.',
+  },
+  {
+    id: 'bosch-gasoline-port-fuel-injection',
+    title: 'Gasoline Port Fuel Injection',
+    organization: 'Bosch Mobility',
+    type: 'manufacturer',
+    url: 'https://www.bosch-mobility.com/en/solutions/powertrain/gasoline/gasoline-port-fuel-injection/',
+    accessedDate: '2026-05-16',
+    supports: [
+      'port fuel injection mixture formation in the intake manifold',
+      'fuel rail, injector, ECU, air-management, ignition, and lambda-control components',
+    ],
+    notes:
+      'Supplier technical source; used for system description, not market preference.',
+  },
+  {
+    id: 'doe-fotw-gdi-2021',
+    title:
+      'FOTW #1178: Gasoline Direct Injection was Installed on 55% of all Light-Duty Vehicles Produced in 2020',
+    organization: 'U.S. Department of Energy Vehicle Technologies Office',
+    type: 'government',
+    url: 'https://www.energy.gov/cmei/vehicles/articles/fotw-1178-march-22-2021-gasoline-direct-injection-was-installed-55-all-light',
+    accessedDate: '2026-05-16',
+    supports: [
+      'gasoline direct injection definition and light-duty production adoption context',
+      'GDI first broad market appearance and 2020 adoption share based on EPA Automotive Trends data',
+    ],
+  },
+  {
+    id: 'bosch-di-motronic-2000',
+    title: 'Gasoline Direct Injection System (DI-Motronic), 2000',
+    organization: 'Bosch Media Service',
+    type: 'manufacturer',
+    url: 'https://www.bosch-presse.de/pressportal/de/en/gasoline-direct-injection-system-di-motronic-2000-60556.html',
+    accessedDate: '2026-05-16',
+    supports: [
+      'Bosch gasoline direct injection historical context',
+      'Mercedes-Benz 300 SL direct-injection reference and 2000 DI-Motronic context',
+    ],
+    notes:
+      'Supplier historical source; used for chronology and system context, not independent evaluation.',
+  },
 ];
 
 export function getSourceById(id: string) {
