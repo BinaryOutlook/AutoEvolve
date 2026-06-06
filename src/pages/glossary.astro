@@ -1,30 +1,8 @@
 ---
-import StaticDiagram from '@components/StaticDiagram.astro';
+import SourcedMediaPanel from '@components/SourcedMediaPanel.astro';
 import { glossaryTerms } from '@data/glossary';
 import BaseLayout from '@layouts/BaseLayout.astro';
-
-const glossaryVisualItems = [
-  {
-    value: String(glossaryTerms.length),
-    label: 'Terms',
-    detail: 'Concise definitions',
-  },
-  {
-    value: 'Systems',
-    label: 'Vocabulary lens',
-    detail: 'Technical reading',
-  },
-  {
-    value: 'Links',
-    label: 'Article support',
-    detail: 'Shared language',
-  },
-  {
-    value: 'Neutral',
-    label: 'Tone guardrail',
-    detail: 'No hype terms',
-  },
-];
+import { mediaAssets } from '@lib/media';
 ---
 
 <BaseLayout
@@ -35,12 +13,17 @@ const glossaryVisualItems = [
     <p class="eyebrow">Definitions</p>
     <h1>Glossary</h1>
     <p>Short definitions for technical terms used across the archive.</p>
-    <StaticDiagram
-      variant="glossary"
-      eyebrow="Definition visual"
-      title="Glossary reading map"
-      description="A visual summary of the glossary route, showing how concise definitions support technical reading across the archive."
-      items={glossaryVisualItems}
+    <SourcedMediaPanel
+      asset={mediaAssets.electricCutaway}
+      eyebrow="Vocabulary reference"
+      title="Definitions stay attached to components"
+      description="Glossary terms support technical reading across powertrains, fuel systems, controls, emissions hardware, and electric-drive articles."
+      facts={[
+        { label: 'Terms', value: String(glossaryTerms.length) },
+        { label: 'Use', value: 'Shared technical language' },
+        { label: 'Tone', value: 'Concise, neutral definitions' },
+      ]}
+      tags={['Definitions', 'Control Loops', 'Energy Paths']}
     />
   </section>
   <section class="page-section glossary-list" aria-label="Glossary terms">

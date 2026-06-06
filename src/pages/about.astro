@@ -1,29 +1,7 @@
 ---
-import StaticDiagram from '@components/StaticDiagram.astro';
+import SourcedMediaPanel from '@components/SourcedMediaPanel.astro';
 import BaseLayout from '@layouts/BaseLayout.astro';
-
-const aboutVisualItems = [
-  {
-    value: 'Systems',
-    label: 'Explain first',
-    detail: 'Mechanisms before examples',
-  },
-  {
-    value: 'Neutral',
-    label: 'Editorial frame',
-    detail: 'No rankings',
-  },
-  {
-    value: 'Sources',
-    label: 'Evidence led',
-    detail: 'Specific claims',
-  },
-  {
-    value: 'Static',
-    label: 'Maintenance',
-    detail: 'Git-backed archive',
-  },
-];
+import { mediaAssets } from '@lib/media';
 ---
 
 <BaseLayout
@@ -38,12 +16,17 @@ const aboutVisualItems = [
       neutral educational reference, not a vehicle review site or brand advocacy
       project.
     </p>
-    <StaticDiagram
-      variant="about"
-      eyebrow="Mission visual"
-      title="Editorial trust model"
-      description="A visual summary of AutoEvolve's editorial model: explain systems first, stay neutral, cite specific claims, and keep the static archive maintainable."
-      items={aboutVisualItems}
+    <SourcedMediaPanel
+      asset={mediaAssets.gasolineCutaway}
+      eyebrow="Editorial reference"
+      title="Trust starts with physical systems"
+      description="AutoEvolve uses real systems, visible sources, and restrained interpretation to keep technical history useful without drifting into rankings or advocacy."
+      facts={[
+        { label: 'Frame', value: 'Systems before examples' },
+        { label: 'Tone', value: 'Neutral and source-led' },
+        { label: 'Publishing model', value: 'Static archive' },
+      ]}
+      tags={['Editorial Trust', 'Technical Clarity', 'No Rankings']}
     />
   </section>
 

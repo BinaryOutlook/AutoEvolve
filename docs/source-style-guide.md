@@ -23,8 +23,8 @@ For controversies, keep source roles distinct: regulator findings, court finding
 
 ## Visual Source and Attribution Rules
 
-Original AutoEvolve diagrams can be based on page metadata, collection relationships, and cited-source context where present. Their captions should identify them as original diagrams, so no external image license is required.
+Current v1 pages use sourced reference images instead of generated system diagrams. The shared registry in `src/lib/media.ts` records local image paths, alt text, captions, source URLs, original-file URLs where available, and reuse notes.
 
-Technology detail pages are stricter: each published technology slug needs an explicit curated visual configuration in `src/lib/visuals.ts`. Do not use a category-wide or silent fallback for technology pages. The visual labels should describe the page's mechanism, signal path, material flow, or control loop directly—for example, exhaust gas to turbine to compressor for a turbocharger, soot capture to monitoring to regeneration for a diesel particulate filter, or sensors to following-gap logic to throttle and brake requests for adaptive cruise control.
+Technology detail pages should show an appropriate system reference image based on the article's category, slug, and related systems. When a page needs a more specific image than the registry can infer, add a sourced asset to `src/lib/media.ts` rather than reviving metadata-generated diagrams or silently using decorative imagery.
 
 If an externally sourced image or figure is added, record the creator or rights holder, source URL, license or reuse basis, caption, and alt text near the content that uses it. Add a matching source record when the image is part of a page's source list. Do not use an image to imply a claim that the listed sources do not support.

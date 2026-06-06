@@ -32,10 +32,6 @@ relatedTechnologies:
 
 The Hyundai IONIQ 5 is included because it shows how a long-established manufacturer used a dedicated electric platform to change proportions, charging behavior, interior layout, and external power use at the same time. Its importance for this archive is not style, desirability, or price. It is a compact study in platform-level electrification.
 
-![White Hyundai IONIQ 5 photographed from a side-front angle in Japan.](/images/vehicles/hyundai-ioniq-5.jpg)
-
-*Caption: Hyundai IONIQ 5 photographed in Japan. Image source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Hyundai_Ioniq_5.jpg). Creator: [TTTNIS](https://commons.wikimedia.org/wiki/User:TTTNIS). License or usage basis: [CC0 1.0 public domain dedication](https://creativecommons.org/publicdomain/zero/1.0/). File resized for site delivery.*
-
 ## Technologies Illustrated
 
 IONIQ 5 illustrates the platform effect of electrification. Hyundai describes the vehicle as built on the Electric-Global Modular Platform, or E-GMP, with a long wheelbase, flat floor, battery-electric packaging, and a layout intended for battery electric vehicles rather than adapted from a combustion platform. This helps readers see why a BEV platform is a system decision, not just a battery capacity figure.

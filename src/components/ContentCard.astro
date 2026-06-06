@@ -5,21 +5,38 @@ type Props = {
   summary: string;
   eyebrow?: string;
   meta?: string;
+  imageAlt?: string;
+  imageSrc?: string;
 };
 
-const { href, title, summary, eyebrow, meta } = Astro.props;
+const { href, title, summary, eyebrow, meta, imageAlt, imageSrc } =
+  Astro.props;
 ---
 
 <article class="content-card">
-  <div class="content-card__body">
-    {eyebrow && <p class="eyebrow">{eyebrow}</p>}
-    <h3><a href={href}>{title}</a></h3>
-    <p>{summary}</p>
-  </div>
-  <footer class="content-card__footer">
-    {meta && <p class="content-card__meta">{meta}</p>}
-    <a class="content-card__action" href={href} aria-label={`Open ${title}`}>
-      Open
-    </a>
-  </footer>
+  <a
+    class:list={[
+      'content-card__anchor',
+      imageSrc && imageAlt && 'content-card__anchor--media',
+    ]}
+    href={href}
+  >
+    {
+      imageSrc && imageAlt && (
+        <img
+          class="content-card__thumb"
+          src={imageSrc}
+          alt={imageAlt}
+          loading="eager"
+          decoding="sync"
+        />
+      )
+    }
+    <span class="content-card__body">
+      {eyebrow && <span class="eyebrow">{eyebrow}</span>}
+      <span class="content-card__title">{title}</span>
+      <span class="content-card__summary">{summary}</span>
+    </span>
+    {meta && <span class="content-card__meta">{meta}</span>}
+  </a>
 </article>

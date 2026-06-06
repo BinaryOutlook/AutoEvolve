@@ -224,10 +224,10 @@ Interaction requirements:
 - Provide visible focus states.
 - Avoid hover-only information.
 - Keep labels readable on mobile.
-- Keep SVG or diagram text inside stable boxes.
+- Keep sourced media captions, tags, and metadata inside stable boxes.
 - Include links to related technology pages when corresponding slugs exist.
-- Do not present one architecture as universal; label the diagram as a composite
-  map of common systems.
+- Do not present one architecture as universal; label sourced cutaways and atlas
+  images as reference examples of common systems.
 
 ### 5.3 Expandable Card Pattern
 
@@ -295,7 +295,7 @@ reader before they commit to long-form reading.
 
 - Preserve existing generated routes and content collection rendering.
 - Add richer article preface using the shared `ArticleLayout`.
-- Keep `ArticleDiagram` or its successor visually aligned with the v1 system.
+- Keep `SourcedMediaPanel` visually aligned with the v1 system.
 - Add side rail or below-content related links that remain readable on mobile.
 
 ### 6.4 `/eras/` And `/eras/[slug]/`
@@ -585,8 +585,8 @@ Acceptance criteria:
 Files:
 
 - `src/layouts/ArticleLayout.astro`
-- `src/components/ArticleDiagram.astro`
-- `src/components/StaticDiagram.astro`
+- `src/components/SourcedMediaPanel.astro`
+- `src/lib/media.ts`
 - `src/pages/technologies/index.astro`
 - other route indexes as needed
 
@@ -652,7 +652,7 @@ The browser audit should include:
 - at least one controversy detail page
 - no horizontal overflow
 - visible focus outlines
-- no unreadable diagram labels
+- no unreadable media captions or attribution text
 
 ## 11. Subagent Workflow
 

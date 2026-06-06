@@ -1,29 +1,7 @@
 ---
-import StaticDiagram from '@components/StaticDiagram.astro';
+import SourcedMediaPanel from '@components/SourcedMediaPanel.astro';
 import BaseLayout from '@layouts/BaseLayout.astro';
-
-const searchVisualItems = [
-  {
-    value: 'Content',
-    label: 'Markdown records',
-    detail: 'Collections and data',
-  },
-  {
-    value: 'Build',
-    label: 'Pagefind index',
-    detail: 'Generated static files',
-  },
-  {
-    value: 'Search',
-    label: 'Browser UI',
-    detail: 'No backend query',
-  },
-  {
-    value: 'Browse',
-    label: 'Fallback path',
-    detail: 'Links still work',
-  },
-];
+import { mediaAssets } from '@lib/media';
 ---
 
 <BaseLayout title="Search" description="Search AutoEvolve content.">
@@ -34,12 +12,17 @@ const searchVisualItems = [
       Search technology pages, eras, vehicle examples, controversies, glossary
       terms, and source records.
     </p>
-    <StaticDiagram
-      variant="search"
-      eyebrow="Search visual"
-      title="Static search flow"
-      description="A visual summary of the search route, showing how built content becomes a static Pagefind index and browser-based search interface."
-      items={searchVisualItems}
+    <SourcedMediaPanel
+      asset={mediaAssets.hybridCutaway}
+      eyebrow="Search reference"
+      title="Search returns records, not recommendations"
+      description="The static index helps readers find technologies, eras, examples, controversies, terms, and source records without changing the archive into a ranking engine."
+      facts={[
+        { label: 'Index', value: 'Pagefind static files' },
+        { label: 'Query', value: 'Browser-side search' },
+        { label: 'Fallback', value: 'Browse routes remain available' },
+      ]}
+      tags={['Static Search', 'Browseable Archive', 'No Backend']}
     />
   </section>
   <section class="page-section">

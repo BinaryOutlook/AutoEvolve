@@ -35,10 +35,6 @@ relatedTechnologies:
 
 The BYD Atto 3, also sold as the Yuan Plus in some markets, is included because it turns the archive toward a global EV transition centered on China as well as North America, Europe, Japan, and Korea. It is not here as a crossover recommendation. It is here because one vehicle can introduce readers to BYD's battery origins, LFP chemistry strategy, e-Platform 3.0, and the industrial scale behind Chinese EV exports.
 
-![White BYD Atto 3 photographed from a front-left view in Stuttgart-Vaihingen.](/images/vehicles/byd-atto-3.jpg)
-
-*Caption: BYD Atto 3 photographed in Stuttgart-Vaihingen. Image source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:BYD_Atto_3_1X7A6495.jpg). Creator: [Alexander Migl](https://commons.wikimedia.org/wiki/User:Alexander-93). License: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). File resized for site delivery.*
-
 ## Technologies Illustrated
 
 The Atto 3 / Yuan Plus illustrates how battery chemistry and vehicle architecture are linked. BYD describes the Atto 3 as using e-Platform 3.0 and the Blade Battery, while its platform material emphasizes integration of the battery, electric drive, thermal systems, and electronic architecture. The broader lesson is that a battery is not only an energy container. It shapes floor height, crash structure, cooling, charging behavior, manufacturing flow, and cost targets.

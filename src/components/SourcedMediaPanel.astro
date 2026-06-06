@@ -1,0 +1,72 @@
+---
+import type { SourcedMediaAsset } from '@lib/media';
+
+type Fact = {
+  label: string;
+  value: string;
+};
+
+type Props = {
+  asset: SourcedMediaAsset;
+  title: string;
+  description: string;
+  eyebrow?: string;
+  facts?: Fact[];
+  tags?: string[];
+};
+
+const {
+  asset,
+  title,
+  description,
+  eyebrow = 'Sourced reference',
+  facts = [],
+  tags = [],
+} = Astro.props;
+---
+
+<figure class="sourced-media">
+  <div class="sourced-media__copy">
+    <p class="eyebrow">{eyebrow}</p>
+    <h2>{title}</h2>
+    <p>{description}</p>
+    {
+      tags.length > 0 && (
+        <ul class="sourced-media__tags" aria-label="Media context tags">
+          {tags.map((tag) => (
+            <li>{tag}</li>
+          ))}
+        </ul>
+      )
+    }
+  </div>
+  <div class="sourced-media__image">
+    <img src={asset.src} alt={asset.alt} loading="lazy" decoding="async" />
+  </div>
+  <figcaption>
+    <span>{asset.caption}</span>
+    <span>
+      Source: <a href={asset.sourceUrl}>{asset.sourceLabel}</a>.
+      {asset.originalUrl && (
+        <>
+          {' '}
+          Original image: <a href={asset.originalUrl}>source file</a>.
+        </>
+      )}
+      {' '}
+      {asset.rights}
+    </span>
+  </figcaption>
+  {
+    facts.length > 0 && (
+      <dl class="sourced-media__facts" aria-label="Reference facts">
+        {facts.map((fact) => (
+          <div>
+            <dt>{fact.label}</dt>
+            <dd>{fact.value}</dd>
+          </div>
+        ))}
+      </dl>
+    )
+  }
+</figure>

@@ -34,10 +34,6 @@ relatedTechnologies:
 
 The Tesla Model S is included because it made the modern battery-electric vehicle visible as a whole-vehicle architecture, not merely as an engine swap. Its historical value is in the system boundary: battery pack, body structure, electric drive, thermal management, touchscreen-centered controls, software updates, and a charging network were presented as one linked product environment.
 
-![Black 2012 Tesla Model S photographed from a front three-quarter view in Stuttgart.](/images/vehicles/tesla-model-s-2012.jpg)
-
-*Caption: Tesla Model S (2012) photographed in Stuttgart. Image source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Tesla_Model_S_(2012)_IMG_3200.jpg). Creator: [Alexander Migl](https://commons.wikimedia.org/wiki/User:Alexander-93). License: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). File resized for site delivery.*
-
 ## Technologies Illustrated
 
 The Model S helps explain floor-mounted battery packaging. Placing the traction battery below the passenger compartment changed the design problem: the pack became a structural, crash, thermal, and service-planning concern rather than a box placed where a fuel tank had been. The vehicle also illustrates how BEVs concentrate control work in the battery management system, inverter, onboard charger, and high-voltage safety systems.

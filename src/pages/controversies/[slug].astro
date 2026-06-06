@@ -1,7 +1,8 @@
 ---
-import ArticleDiagram from '@components/ArticleDiagram.astro';
+import SourcedMediaPanel from '@components/SourcedMediaPanel.astro';
 import ArticleLayout from '@layouts/ArticleLayout.astro';
 import { entrySlug, getPublicEntries } from '@lib/collections';
+import { mediaForArchiveEntry } from '@lib/media';
 import { render } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -14,6 +15,15 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await render(entry);
+const slug = entrySlug(entry);
+const media = mediaForArchiveEntry({
+  collection: 'controversies',
+  slug,
+  title: entry.data.title,
+  dateRange: entry.data.dateRange,
+  affectedTechnologies: entry.data.affectedTechnologies,
+  relatedVehicles: entry.data.relatedVehicles,
+});
 ---
 
 <ArticleLayout
@@ -40,14 +50,23 @@ const { Content } = await render(entry);
     },
   ]}
 >
-  <ArticleDiagram
-    kind="controversy"
-    title={entry.data.title}
-    summary={entry.data.summary}
-    dateRange={entry.data.dateRange}
-    affectedTechnologies={entry.data.affectedTechnologies}
-    relatedVehicles={entry.data.relatedVehicles}
-    regulatoryContext={entry.data.regulatoryContext}
+  <SourcedMediaPanel
+    asset={media.asset}
+    eyebrow="Case-study reference image"
+    title={media.title}
+    description={media.description}
+    facts={[
+      { label: 'Date range', value: entry.data.dateRange },
+      {
+        label: 'Affected technologies',
+        value: String(entry.data.affectedTechnologies.length),
+      },
+      {
+        label: 'Related vehicles',
+        value: String(entry.data.relatedVehicles.length),
+      },
+    ]}
+    tags={media.tags}
   />
   <Content />
 </ArticleLayout>

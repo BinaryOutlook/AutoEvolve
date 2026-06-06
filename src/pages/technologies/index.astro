@@ -1,6 +1,6 @@
 ---
-import StaticDiagram from '@components/StaticDiagram.astro';
 import ContentCard from '@components/ContentCard.astro';
+import SourcedMediaPanel from '@components/SourcedMediaPanel.astro';
 import SystemFamilyCards from '@components/SystemFamilyCards.astro';
 import BaseLayout from '@layouts/BaseLayout.astro';
 import {
@@ -9,6 +9,7 @@ import {
   getPublicEntries,
   pathFor,
 } from '@lib/collections';
+import { mediaAssets } from '@lib/media';
 
 const technologies = await getPublicEntries('technologies');
 const groups = Map.groupBy(technologies, (entry) => entry.data.category);
@@ -28,13 +29,6 @@ const priorityTechnologySlugs = [
 const priorityTechnologies = priorityTechnologySlugs
   .map((slug) => technologyBySlug.get(slug))
   .filter((entry) => entry !== undefined);
-const technologyVisualItems = groupEntries
-  .slice(0, 4)
-  .map(([category, entries]) => ({
-    value: String(entries.length),
-    label: categoryLabel(category),
-    detail: 'System guides',
-  }));
 ---
 
 <BaseLayout
@@ -49,12 +43,20 @@ const technologyVisualItems = groupEntries
       drive, and vehicle software. Each page connects a component to historical
       context.
     </p>
-    <StaticDiagram
-      variant="technologies"
-      eyebrow="System visual"
-      title="Technology collection map"
-      description="A visual summary of the technology route, grouping published explainers by system category so readers can scan the archive structure before opening individual pages."
-      items={technologyVisualItems}
+    <SourcedMediaPanel
+      asset={mediaAssets.electricCutaway}
+      eyebrow="System reference"
+      title="Start with physical components"
+      description="The catalogue is organized around real powertrain, energy, emissions, driveline, and control systems rather than generic topic tiles."
+      facts={[
+        { label: 'Published guides', value: String(technologies.length) },
+        { label: 'System families', value: String(groupEntries.length) },
+        {
+          label: 'Priority audits',
+          value: String(priorityTechnologies.length),
+        },
+      ]}
+      tags={['EV motors', 'Fuel systems', 'Emissions', 'Driveline']}
     />
   </section>
   <div class="page-section">

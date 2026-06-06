@@ -1,38 +1,11 @@
 ---
-import StaticDiagram from '@components/StaticDiagram.astro';
 import ContentCard from '@components/ContentCard.astro';
+import SourcedMediaPanel from '@components/SourcedMediaPanel.astro';
 import BaseLayout from '@layouts/BaseLayout.astro';
 import { entrySlug, getPublicEntries, pathFor } from '@lib/collections';
+import { mediaAssets } from '@lib/media';
 
 const controversies = await getPublicEntries('controversies');
-const controversyVisualItems = [
-  {
-    value: String(controversies.length),
-    label: 'Case studies',
-    detail: 'Documented events',
-  },
-  {
-    value: String(
-      new Set(controversies.flatMap((entry) => entry.data.affectedTechnologies))
-        .size,
-    ),
-    label: 'Affected systems',
-    detail: 'Technical context',
-  },
-  {
-    value: String(
-      new Set(controversies.flatMap((entry) => entry.data.relatedVehicles))
-        .size,
-    ),
-    label: 'Vehicle links',
-    detail: 'Examples only',
-  },
-  {
-    value: 'Records',
-    label: 'Regulatory lens',
-    detail: 'Source-led framing',
-  },
-];
 ---
 
 <BaseLayout
@@ -46,12 +19,32 @@ const controversyVisualItems = [
       Controversy pages focus on documented events, technical background,
       regulatory context, and historical implications.
     </p>
-    <StaticDiagram
-      variant="controversies"
-      eyebrow="Case-study visual"
-      title="Controversy evidence flow"
-      description="A visual summary of how controversy pages connect documented events, affected technologies, vehicle examples, and regulatory records."
-      items={controversyVisualItems}
+    <SourcedMediaPanel
+      asset={mediaAssets.dieselCutaway}
+      eyebrow="Case-study reference"
+      title="Technical systems before blame narratives"
+      description="Controversy pages stay anchored to documented events, affected hardware or software, regulatory findings, and clearly separated source roles."
+      facts={[
+        { label: 'Case studies', value: String(controversies.length) },
+        {
+          label: 'Affected systems',
+          value: String(
+            new Set(
+              controversies.flatMap((entry) => entry.data.affectedTechnologies),
+            ).size,
+          ),
+        },
+        {
+          label: 'Vehicle links',
+          value: String(
+            new Set(
+              controversies.flatMap((entry) => entry.data.relatedVehicles),
+            ).size,
+          ),
+        },
+        { label: 'Lens', value: 'Regulatory records' },
+      ]}
+      tags={['Regulation', 'Software', 'Aftertreatment']}
     />
   </section>
   <section class="page-section content-grid" aria-label="Controversy list">

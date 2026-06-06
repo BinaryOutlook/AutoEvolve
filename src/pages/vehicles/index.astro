@@ -1,38 +1,11 @@
 ---
-import StaticDiagram from '@components/StaticDiagram.astro';
 import ContentCard from '@components/ContentCard.astro';
+import SourcedMediaPanel from '@components/SourcedMediaPanel.astro';
 import BaseLayout from '@layouts/BaseLayout.astro';
 import { entrySlug, getPublicEntries, pathFor } from '@lib/collections';
+import { mediaAssets, vehicleMediaBySlug } from '@lib/media';
 
 const vehicles = await getPublicEntries('vehicles');
-const vehicleVisualItems = [
-  {
-    value: String(vehicles.length),
-    label: 'Examples',
-    detail: 'Not reviews',
-  },
-  {
-    value: String(
-      new Set(vehicles.map((entry) => entry.data.manufacturer)).size,
-    ),
-    label: 'Makers',
-    detail: 'Context only',
-  },
-  {
-    value: String(
-      new Set(vehicles.flatMap((entry) => entry.data.relatedTechnologies)).size,
-    ),
-    label: 'Technology links',
-    detail: 'Systems illustrated',
-  },
-  {
-    value: String(
-      new Set(vehicles.flatMap((entry) => entry.data.relatedEras)).size,
-    ),
-    label: 'Era links',
-    detail: 'Chronology anchors',
-  },
-];
 ---
 
 <BaseLayout
@@ -46,25 +19,55 @@ const vehicleVisualItems = [
       These pages use selected models to explain technology history. They avoid
       rankings, purchasing advice, and subjective review language.
     </p>
-    <StaticDiagram
-      variant="vehicles"
-      eyebrow="Example visual"
-      title="Vehicle example coverage"
-      description="A visual summary showing that vehicle pages are evidence-backed examples connected to eras and technologies rather than rankings or buyer guidance."
-      items={vehicleVisualItems}
+    <SourcedMediaPanel
+      asset={mediaAssets.toyotaPrius}
+      eyebrow="Example reference"
+      title="Vehicles illustrate systems"
+      description="Vehicle pages use models as concrete case studies for broader technical changes. They are not reviews, buying guides, or brand rankings."
+      facts={[
+        { label: 'Examples', value: String(vehicles.length) },
+        {
+          label: 'Manufacturers',
+          value: String(
+            new Set(vehicles.map((entry) => entry.data.manufacturer)).size,
+          ),
+        },
+        {
+          label: 'Technology links',
+          value: String(
+            new Set(vehicles.flatMap((entry) => entry.data.relatedTechnologies))
+              .size,
+          ),
+        },
+        {
+          label: 'Era links',
+          value: String(
+            new Set(vehicles.flatMap((entry) => entry.data.relatedEras)).size,
+          ),
+        },
+      ]}
+      tags={['Examples', 'Neutrality', 'Systems First']}
     />
   </section>
   <section class="page-section content-grid" aria-label="Vehicle example list">
     {
-      vehicles.map((entry) => (
-        <ContentCard
-          href={pathFor('vehicles', entrySlug(entry))}
-          title={entry.data.title}
-          summary={entry.data.summary}
-          eyebrow={entry.data.manufacturer}
-          meta={entry.data.productionPeriod}
-        />
-      ))
+      vehicles.map((entry) => {
+        const slug = entrySlug(entry);
+        const media =
+          vehicleMediaBySlug[slug as keyof typeof vehicleMediaBySlug];
+
+        return (
+          <ContentCard
+            href={pathFor('vehicles', slug)}
+            title={entry.data.title}
+            summary={entry.data.summary}
+            eyebrow={entry.data.manufacturer}
+            meta={entry.data.productionPeriod}
+            imageSrc={media?.src}
+            imageAlt={media?.alt}
+          />
+        );
+      })
     }
   </section>
 </BaseLayout>

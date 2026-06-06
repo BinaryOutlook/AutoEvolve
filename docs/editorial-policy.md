@@ -21,6 +21,6 @@ Era pages should help readers understand chronology without flattening every reg
 
 ## Visuals and Figures
 
-Every page should include at least one meaningful visual artifact where practical. Prefer original AutoEvolve SVG diagrams generated from page metadata, content relationships, and cited-source context where present. These diagrams should state that they are original AutoEvolve work and do not need an external image license.
+Every page should include at least one meaningful visual artifact where practical. Prefer sourced reference images that clarify real systems, vehicles, chronology, or evidence context. Captions should identify source, reuse basis, and limits; images should not imply claims that the surrounding cited sources cannot support.
 
 Externally sourced images are optional. When used, include visible attribution, creator or rights holder, source link, license or reuse basis, caption, and alt text. Avoid stock-like filler, brand-advocacy imagery, misleading technical simplifications, or vehicle glamour shots that make an example page feel like a review.

@@ -1,7 +1,8 @@
 ---
-import ArticleDiagram from '@components/ArticleDiagram.astro';
+import SourcedMediaPanel from '@components/SourcedMediaPanel.astro';
 import ArticleLayout from '@layouts/ArticleLayout.astro';
 import { categoryLabel, entrySlug, getPublicEntries } from '@lib/collections';
+import { mediaForArchiveEntry } from '@lib/media';
 import { render } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -15,6 +16,14 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await render(entry);
 const slug = entrySlug(entry);
+const media = mediaForArchiveEntry({
+  collection: 'technologies',
+  slug,
+  title: entry.data.title,
+  category: entry.data.category,
+  relatedTechnologies: entry.data.relatedTechnologies,
+  relatedVehicles: entry.data.relatedVehicles,
+});
 ---
 
 <ArticleLayout
@@ -39,15 +48,27 @@ const slug = entrySlug(entry);
     },
   ]}
 >
-  <ArticleDiagram
-    kind="technology"
-    title={entry.data.title}
-    summary={entry.data.summary}
-    slug={slug}
-    category={entry.data.category}
-    eras={entry.data.eras}
-    relatedTechnologies={entry.data.relatedTechnologies}
-    relatedVehicles={entry.data.relatedVehicles}
+  <SourcedMediaPanel
+    asset={media.asset}
+    eyebrow="Article reference image"
+    title={media.title}
+    description={media.description}
+    facts={[
+      { label: 'Category', value: categoryLabel(entry.data.category) },
+      {
+        label: 'Related eras',
+        value: String(entry.data.eras.length),
+      },
+      {
+        label: 'Related technologies',
+        value: String(entry.data.relatedTechnologies.length),
+      },
+      {
+        label: 'Vehicle examples',
+        value: String(entry.data.relatedVehicles.length),
+      },
+    ]}
+    tags={media.tags}
   />
   <Content />
 </ArticleLayout>

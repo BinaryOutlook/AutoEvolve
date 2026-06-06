@@ -1,31 +1,10 @@
 ---
-import StaticDiagram from '@components/StaticDiagram.astro';
+import SourcedMediaPanel from '@components/SourcedMediaPanel.astro';
 import { sources } from '@data/sources';
 import BaseLayout from '@layouts/BaseLayout.astro';
+import { mediaAssets } from '@lib/media';
 
 const sourceTypes = new Set(sources.map((source) => source.type));
-const sourceVisualItems = [
-  {
-    value: String(sources.length),
-    label: 'Source records',
-    detail: 'Cited archive base',
-  },
-  {
-    value: String(sourceTypes.size),
-    label: 'Source types',
-    detail: 'Evidence hierarchy',
-  },
-  {
-    value: 'Primary',
-    label: 'Preferred support',
-    detail: 'Official and technical',
-  },
-  {
-    value: 'Limited',
-    label: 'Manufacturer use',
-    detail: 'Dates/specs/context',
-  },
-];
 ---
 
 <BaseLayout
@@ -40,12 +19,18 @@ const sourceVisualItems = [
       references. Manufacturer material may support dates or specifications, but
       marketing claims should not become independent conclusions.
     </p>
-    <StaticDiagram
-      variant="sources"
-      eyebrow="Evidence visual"
-      title="Source support map"
-      description="A visual summary of the source-library route, emphasizing record count, source-type diversity, and the preference for official or technical support."
-      items={sourceVisualItems}
+    <SourcedMediaPanel
+      asset={mediaAssets.dieselCutaway}
+      eyebrow="Evidence reference"
+      title="Every technical claim needs a role"
+      description="Sources are organized by what they can support: technical mechanisms, regulatory findings, historical chronology, image attribution, or manufacturer-stated specifications."
+      facts={[
+        { label: 'Source records', value: String(sources.length) },
+        { label: 'Source types', value: String(sourceTypes.size) },
+        { label: 'Preferred support', value: 'Official and technical' },
+        { label: 'Manufacturer use', value: 'Dates, specs, context' },
+      ]}
+      tags={['Evidence', 'Attribution', 'Source Roles']}
     />
   </section>
   <section class="page-section">
