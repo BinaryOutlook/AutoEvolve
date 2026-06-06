@@ -86,6 +86,7 @@ Use `npm run test:e2e` when routes, navigation, search behavior, or browser-visi
 | [src/data/](src/data/)                                 | Structured source and glossary data.                                                                                     |
 | [src/components/](src/components/)                     | Shared UI components for cards, headers, source lists, maps, metadata diagrams, and linked lists.                        |
 | [src/layouts/](src/layouts/)                           | Base and article layout shells.                                                                                          |
+| [public/images/systems/](public/images/systems/)       | Sourced AFDC cutaway images used by the interactive car systems atlas.                                                   |
 | [docs/](docs/)                                         | Current editorial, source, and contribution guidance.                                                                    |
 | [themes/](themes/)                                     | Visual theme references, including the Shrimp-derived v1 default theme.                                                  |
 | [scripts/](scripts/)                                   | Project validation scripts for content and language rules.                                                               |

@@ -153,9 +153,9 @@ function buildVisualModel(visualProps: Props): VisualModel {
       );
 
       return {
-        eyebrow: 'Vehicle example lens',
-        heading: `${visualProps.title} example card`,
-        description: `${visualProps.title} is shown as an example-first diagram connecting manufacturer, production period, market context, and the technologies the page uses it to illustrate. ${visualProps.summary}`,
+        eyebrow: 'Vehicle system record',
+        heading: `${visualProps.title} system context`,
+        description: `${visualProps.title} is shown as a neutral vehicle record connecting manufacturer, production period, market context, and the technologies the page uses it to illustrate. ${visualProps.summary}`,
         stages: [
           {
             label: visualProps.manufacturer,
@@ -364,10 +364,7 @@ const mobileViewBoxHeight = mobileGroundingY + mobileGroundingHeight + 24;
           rx="27"
         >
         </rect>
-        <text
-          x="500"
-          y={desktopGroundingY + 30}
-        >
+        <text x="500" y={desktopGroundingY + 30}>
           {
             desktopGroundingLines.map((line, lineIndex) => (
               <tspan x="500" dy={lineIndex === 0 ? 0 : 15}>
@@ -466,10 +463,7 @@ const mobileViewBoxHeight = mobileGroundingY + mobileGroundingHeight + 24;
           rx="24"
         >
         </rect>
-        <text
-          x="180"
-          y={mobileGroundingY + 31}
-        >
+        <text x="180" y={mobileGroundingY + 31}>
           {
             mobileGroundingLines.map((line, lineIndex) => (
               <tspan x="180" dy={lineIndex === 0 ? 0 : 15}>

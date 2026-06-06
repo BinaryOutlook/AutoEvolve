@@ -1075,14 +1075,14 @@ div {
   --shrimp-surface-warm: #fff7f4;
   --ae-bg: #ffffff;
   --ae-surface: var(--shrimp-surface);
-  --ae-surface-warm: var(--shrimp-surface-warm);
+  --ae-surface-warm: #fbf8f6;
   --ae-surface-muted: var(--shrimp-gray-100);
   --ae-text: var(--shrimp-charcoal);
   --ae-muted: var(--shrimp-gray-600);
   --ae-border: var(--shrimp-border);
-  --ae-action: var(--shrimp-orange-active);
-  --ae-action-hover: #9f2d08;
-  --ae-action-soft: var(--shrimp-orange-tint);
+  --ae-action: #b43a13;
+  --ae-action-hover: #8f2b0b;
+  --ae-action-soft: #f5e7e1;
   --ae-support: var(--shrimp-mint);
   --ae-support-soft: var(--shrimp-mint-surface);
   --ae-danger: #d93025;
@@ -1153,9 +1153,9 @@ a:hover {
 }
 
 .brand__mark {
-  background: var(--shrimp-orange);
+  background: var(--ae-text);
   border-radius: 6px;
-  color: var(--ae-text);
+  color: #fff;
   font-size: 0.82rem;
   font-weight: 900;
 }
@@ -1354,7 +1354,7 @@ a:hover {
 }
 
 .hero-ledger dd {
-  color: var(--shrimp-orange-soft);
+  color: #fff;
   font-size: 1.55rem;
   font-weight: 800;
   margin: 0;
@@ -1472,8 +1472,8 @@ a:hover {
 }
 
 .system-family-card[open] {
-  border-color: var(--shrimp-orange-soft);
-  box-shadow: var(--ae-shadow);
+  border-color: var(--ae-text);
+  box-shadow: none;
 }
 
 .system-family-card summary {
@@ -1501,15 +1501,15 @@ a:hover {
 
 .system-family-card__index {
   align-items: center;
-  background: var(--ae-action-soft);
-  border-radius: 999px;
-  color: var(--ae-action);
+  background: var(--ae-text);
+  border-radius: 4px;
+  color: #fff;
   display: inline-flex;
   font-size: 0.74rem;
   font-weight: 900;
-  height: 2rem;
+  height: 1.7rem;
   justify-content: center;
-  width: 2rem;
+  width: 2.2rem;
 }
 
 .system-family-card__body {
@@ -1576,163 +1576,118 @@ a:hover {
   margin: 0;
 }
 
+.car-explorer__tabs {
+  border-bottom: 1px solid var(--ae-border);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+}
+
+.car-explorer__tabs button {
+  background: #fff;
+  border: 1px solid var(--ae-border);
+  border-radius: 6px;
+  color: var(--ae-text);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.86rem;
+  font-weight: 800;
+  min-height: 44px;
+  padding: 0.45rem 0.75rem;
+}
+
+.car-explorer__tabs button[aria-selected='true'] {
+  background: var(--ae-text);
+  border-color: var(--ae-text);
+  color: #fff;
+}
+
 .car-explorer__workspace {
   display: grid;
   gap: 1rem;
-  grid-template-columns: minmax(0, 1.25fr) minmax(20rem, 0.75fr);
+  grid-template-columns: minmax(0, 1.35fr) minmax(20rem, 0.65fr);
 }
 
-.car-explorer__map {
-  background: var(--ae-surface-warm);
+.car-explorer__figure {
+  margin: 0;
+}
+
+.car-explorer__image-frame {
+  background: #f4f4f4;
   border: 1px solid var(--ae-border);
   border-radius: 8px;
-  min-height: 27rem;
   overflow: hidden;
   position: relative;
 }
 
-.car-explorer__body {
-  border: 3px solid var(--ae-text);
-  border-radius: 48% 52% 18% 18% / 42% 42% 22% 22%;
-  height: 42%;
-  left: 7%;
+.car-explorer__image-frame img {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+.car-explorer__hotspots {
+  inset: 0;
   position: absolute;
-  right: 7%;
-  top: 26%;
-}
-
-.car-explorer__cabin {
-  border: 3px solid var(--ae-text);
-  border-bottom: 0;
-  border-radius: 8px 8px 0 0;
-  height: 42%;
-  left: 36%;
-  position: absolute;
-  top: -42%;
-  width: 26%;
-}
-
-.car-explorer__hood {
-  background: var(--ae-action-soft);
-  border: 1px solid var(--shrimp-orange-soft);
-  border-radius: 6px;
-  height: 24%;
-  left: 12%;
-  position: absolute;
-  top: 28%;
-  width: 20%;
-}
-
-.car-explorer__wheel {
-  background: var(--ae-text);
-  border: 7px solid #fff;
-  border-radius: 50%;
-  bottom: -21%;
-  box-shadow: 0 0 0 2px var(--ae-text);
-  height: 5.4rem;
-  position: absolute;
-  width: 5.4rem;
-}
-
-.car-explorer__wheel--front {
-  left: 16%;
-}
-
-.car-explorer__wheel--rear {
-  right: 15%;
-}
-
-.car-explorer__rail {
-  background: var(--ae-support);
-  border-radius: 999px;
-  height: 4px;
-  left: 11%;
-  opacity: 0.7;
-  position: absolute;
-  right: 11%;
-}
-
-.car-explorer__rail--upper {
-  top: 34%;
-}
-
-.car-explorer__rail--lower {
-  bottom: 28%;
 }
 
 .car-hotspot {
   align-items: center;
-  background: #fff;
-  border: 1px solid var(--ae-border);
-  border-radius: 999px;
+  background: rgb(255 255 255 / 0.94);
+  border: 1px solid rgb(33 33 33 / 0.42);
+  border-radius: 4px;
+  box-shadow: 0 4px 16px rgb(33 33 33 / 0.16);
   color: var(--ae-text);
   cursor: pointer;
   display: inline-flex;
   font: inherit;
-  font-size: 0.76rem;
+  font-size: 0.72rem;
   font-weight: 800;
-  justify-content: center;
-  min-height: 44px;
-  min-width: 44px;
-  padding: 0.35rem 0.6rem;
+  gap: 0.35rem;
+  left: var(--hotspot-x);
+  min-height: 36px;
+  min-width: 36px;
+  padding: 0.25rem 0.45rem 0.25rem 0.25rem;
   position: absolute;
-  box-shadow: 0 4px 14px rgb(33 33 33 / 0.12);
+  top: var(--hotspot-y);
+  transform: translate(-50%, -50%);
+}
+
+.car-hotspot__number {
+  align-items: center;
+  background: var(--ae-text);
+  border-radius: 3px;
+  color: #fff;
+  display: inline-flex;
+  font-size: 0.66rem;
+  height: 1.45rem;
+  justify-content: center;
+  min-width: 1.45rem;
 }
 
 .car-hotspot[aria-pressed='true'] {
-  background: var(--ae-action);
-  border-color: var(--ae-action);
+  background: var(--ae-text);
+  border-color: var(--ae-text);
   color: #fff;
 }
 
-.car-hotspot--intake {
-  left: 12%;
-  top: 24%;
+.car-hotspot[aria-pressed='true'] .car-hotspot__number {
+  background: var(--ae-action);
 }
 
-.car-hotspot--fuel {
-  left: 15%;
-  bottom: 18%;
+.car-explorer__figure figcaption,
+.car-explorer__rights {
+  color: var(--ae-muted);
+  font-size: 0.82rem;
+  line-height: 1.45;
+  margin: 0.65rem 0 0;
 }
 
-.car-hotspot--engine {
-  left: 27%;
-  top: 38%;
-}
-
-.car-hotspot--transmission {
-  left: 42%;
-  top: 50%;
-}
-
-.car-hotspot--battery {
-  left: 47%;
-  bottom: 16%;
-}
-
-.car-hotspot--inverter {
-  right: 34%;
-  bottom: 31%;
-}
-
-.car-hotspot--motor {
-  right: 23%;
-  top: 45%;
-}
-
-.car-hotspot--exhaust {
-  right: 9%;
-  bottom: 27%;
-}
-
-.car-hotspot--thermal {
-  right: 18%;
-  top: 22%;
-}
-
-.car-hotspot--control {
-  left: 48%;
-  top: 18%;
+.car-explorer__rights {
+  border-top: 1px solid var(--ae-border);
+  padding-top: 0.75rem;
 }
 
 .car-explorer__panel {
@@ -2045,70 +2000,34 @@ a:hover {
     padding: 0.75rem;
   }
 
-  .car-explorer__map {
-    min-height: 35rem;
+  .car-explorer__tabs {
+    gap: 0.45rem;
   }
 
-  .car-explorer__body {
-    height: 22rem;
-    left: 9%;
-    right: 9%;
-    top: 7rem;
+  .car-explorer__tabs button {
+    flex: 1 1 9rem;
   }
 
   .car-hotspot {
     font-size: 0.72rem;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
   }
 
-  .car-hotspot--intake {
-    left: 8%;
-    top: 6%;
+  .car-explorer__hotspots {
+    background: #fff;
+    border-top: 1px solid var(--ae-border);
+    display: grid;
+    gap: 0.4rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 0.6rem;
+    position: static;
   }
 
-  .car-hotspot--fuel {
-    left: 10%;
-    bottom: 15%;
-  }
-
-  .car-hotspot--engine {
-    left: 17%;
-    top: 31%;
-  }
-
-  .car-hotspot--transmission {
-    left: 36%;
-    top: 48%;
-  }
-
-  .car-hotspot--battery {
-    left: 32%;
-    bottom: 5%;
-  }
-
-  .car-hotspot--inverter {
-    right: 25%;
-    bottom: 17%;
-  }
-
-  .car-hotspot--motor {
-    right: 8%;
-    top: 43%;
-  }
-
-  .car-hotspot--exhaust {
-    right: 8%;
-    bottom: 30%;
-  }
-
-  .car-hotspot--thermal {
-    right: 8%;
-    top: 13%;
-  }
-
-  .car-hotspot--control {
-    left: 42%;
-    top: 4%;
+  .car-hotspot {
+    justify-content: flex-start;
+    left: auto;
+    min-height: 44px;
+    position: static;
+    top: auto;
+    transform: none;
   }
 }

@@ -393,10 +393,10 @@ test('home page exposes the core archive navigation', async ({ page }) => {
   ).toBeVisible();
   await expect(
     page.getByRole('heading', {
-      name: /Vehicle systems fit together as flows/i,
+      name: /Real cutaway systems, inspected by powertrain/i,
     }),
   ).toBeVisible();
-  await page.getByRole('button', { name: 'Battery' }).click();
+  await page.getByRole('button', { name: 'Traction battery pack' }).click();
   await expect(
     page.getByRole('heading', { name: 'Traction battery pack' }),
   ).toBeVisible();

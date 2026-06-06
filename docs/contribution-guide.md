@@ -44,6 +44,9 @@ overflow before treating the change as complete.
 - Avoid review-style language.
 - Keep controversy pages chronological, technical, and regulatory.
 - Keep page visuals educational, captioned, and accessible; SVG figures need a title and description, while external images need alt text and attribution.
+- For downloaded system images, keep the local asset, visible source caption,
+  original source URL, and reuse basis together in the component or page where
+  the image appears.
 - Keep interactive diagrams static-first where practical. Prefer native HTML and
   Astro component scripts before adding a client framework.
 - Write inline equations as `$E = mc^2$` and block equations with `$$`
