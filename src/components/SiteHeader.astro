@@ -14,7 +14,10 @@ const navItems = [
   <div class="site-header__inner">
     <a class="brand" href="/" aria-label="AutoEvolve home">
       <span class="brand__mark" aria-hidden="true">AE</span>
-      <span class="brand__text">AutoEvolve</span>
+      <span class="brand__lockup">
+        <span class="brand__text">AutoEvolve</span>
+        <span class="brand__tagline">neutral vehicle systems archive</span>
+      </span>
     </a>
     <nav class="site-nav" aria-label="Primary navigation">
       {
@@ -29,7 +32,9 @@ const navItems = [
           </a>
         ))
       }
-      <a class="site-nav__search" href="/search/">Search</a>
+      <a class="site-nav__search" href="/search/" aria-label="Search archive">
+        Search
+      </a>
     </nav>
   </div>
 </header>

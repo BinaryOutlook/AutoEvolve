@@ -23,7 +23,10 @@ const { Content } = await render(entry);
   status={entry.data.status}
   lastReviewed={entry.data.lastReviewed}
   sourceIds={entry.data.sources}
-  metaItems={[entry.data.dateRange, entry.data.regulatoryContext]}
+  metaItems={[
+    { label: 'Date range', value: entry.data.dateRange },
+    { label: 'Regulatory context', value: entry.data.regulatoryContext },
+  ]}
   linkSections={[
     {
       title: 'Affected Technologies',

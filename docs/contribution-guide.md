@@ -25,6 +25,17 @@ npx playwright install
 npm run test:e2e
 ```
 
+For v1 UI work, also perform a browser pass on:
+
+- the homepage car systems explorer
+- the technologies catalogue
+- one technology detail page
+- one vehicle detail page
+- one controversy detail page
+
+Check keyboard focus, selected states, expanded cards, mobile wrapping, and page
+overflow before treating the change as complete.
+
 ## Content Checklist
 
 - Use the correct content collection and frontmatter fields.
@@ -33,6 +44,8 @@ npm run test:e2e
 - Avoid review-style language.
 - Keep controversy pages chronological, technical, and regulatory.
 - Keep page visuals educational, captioned, and accessible; SVG figures need a title and description, while external images need alt text and attribution.
+- Keep interactive diagrams static-first where practical. Prefer native HTML and
+  Astro component scripts before adding a client framework.
 - Write inline equations as `$E = mc^2$` and block equations with `$$`
   fences so Astro's Markdown math pipeline renders them through KaTeX.
 - Run `npm run test:e2e` after layout or math changes; the suite captures

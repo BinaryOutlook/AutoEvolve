@@ -6,6 +6,11 @@ The current release is `0.2`: an expanded MVP content release with broader techn
 
 The project follows the implementation brief in [start_brief.md](start_brief.md): neutral editorial tone, source-backed technical explanations, vehicle models as examples of broader systems, and architecture that remains friendly to free static hosting.
 
+The v1 redesign direction is captured in [v1alldetails.md](v1alldetails.md).
+It uses [themes/Shrimp-color-heavy.md](themes/Shrimp-color-heavy.md) as the
+default visual theme reference and centers the interface on interactive,
+system-first learning.
+
 ## Current Version
 
 | Field                | Value                                                                                                                            |
@@ -33,6 +38,8 @@ If source quality or navigability is low, the project is not ready just because 
 - Pagefind for generated static search.
 - Zod-backed schemas through Astro content collections.
 - Reusable accessible SVG figures for static-first visual explanations.
+- Accessible Astro component scripts for small static-first interactions, such
+  as the clickable car systems explorer.
 - Vitest and Playwright for verification.
 - ESLint, Prettier, and markdownlint for project hygiene.
 
@@ -80,20 +87,24 @@ Use `npm run test:e2e` when routes, navigation, search behavior, or browser-visi
 | [src/components/](src/components/)                     | Shared UI components for cards, headers, source lists, maps, metadata diagrams, and linked lists.                        |
 | [src/layouts/](src/layouts/)                           | Base and article layout shells.                                                                                          |
 | [docs/](docs/)                                         | Current editorial, source, and contribution guidance.                                                                    |
+| [themes/](themes/)                                     | Visual theme references, including the Shrimp-derived v1 default theme.                                                  |
 | [scripts/](scripts/)                                   | Project validation scripts for content and language rules.                                                               |
 | [tests/](tests/)                                       | Unit and end-to-end tests.                                                                                               |
+| [v1alldetails.md](v1alldetails.md)                     | Detailed v1 implementation, audit, source-gathering, subagent, and commit-cadence plan.                                  |
 | [refrence/Future Roadmap/](refrence/Future%20Roadmap/) | Imported reference workflow for roadmap-style documentation. Treat this as inspiration, not this project’s active queue. |
 
 ## Documentation Map
 
-| Document                                                 | Authority                                                                               |
-| -------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| [README.md](README.md)                                   | Current v0.2 overview, commands, status, structure, and maintenance wayfinding.         |
-| [AGENTS.md](AGENTS.md)                                   | Agent operating rules for documentation, implementation, and future planning.           |
-| [start_brief.md](start_brief.md)                         | Durable product brief for mission, scope, routes, content model, and editorial posture. |
-| [docs/editorial-policy.md](docs/editorial-policy.md)     | Editorial neutrality, vehicle-example boundaries, and tone.                             |
-| [docs/source-style-guide.md](docs/source-style-guide.md) | Source hierarchy, citation metadata, and support rules.                                 |
-| [docs/contribution-guide.md](docs/contribution-guide.md) | Local setup and pre-submission checks.                                                  |
+| Document                                                     | Authority                                                                               |
+| ------------------------------------------------------------ | --------------------------------------------------------------------------------------- |
+| [README.md](README.md)                                       | Current v0.2 overview, commands, status, structure, and maintenance wayfinding.         |
+| [AGENTS.md](AGENTS.md)                                       | Agent operating rules for documentation, implementation, and future planning.           |
+| [v1alldetails.md](v1alldetails.md)                           | Active v1 redesign plan and contractor-ready implementation guidance.                   |
+| [themes/Shrimp-color-heavy.md](themes/Shrimp-color-heavy.md) | Default v1 theme reference for color, type, spacing, cards, and interaction states.     |
+| [start_brief.md](start_brief.md)                             | Durable product brief for mission, scope, routes, content model, and editorial posture. |
+| [docs/editorial-policy.md](docs/editorial-policy.md)         | Editorial neutrality, vehicle-example boundaries, and tone.                             |
+| [docs/source-style-guide.md](docs/source-style-guide.md)     | Source hierarchy, citation metadata, and support rules.                                 |
+| [docs/contribution-guide.md](docs/contribution-guide.md)     | Local setup and pre-submission checks.                                                  |
 
 Keep documentation current in the same pass as code whenever a change affects commands, routes, content schemas, editorial rules, product scope, or architecture.
 

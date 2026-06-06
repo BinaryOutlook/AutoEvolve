@@ -1,0 +1,325 @@
+---
+type ExplorerLink = {
+  href: string;
+  label: string;
+};
+
+type SystemPart = {
+  id: string;
+  title: string;
+  shortLabel: string;
+  deck: string;
+  role: string;
+  flow: string;
+  powertrains: string;
+  links: ExplorerLink[];
+};
+
+const parts: SystemPart[] = [
+  {
+    id: 'intake',
+    title: 'Intake and air path',
+    shortLabel: 'Intake',
+    deck: 'Air is measured, filtered, compressed where fitted, and routed toward the cylinders or thermal systems.',
+    role: 'Feeds usable air to combustion systems and supports airflow measurement for control logic.',
+    flow: 'Filter -> throttle or compressor -> manifold -> cylinders',
+    powertrains: 'Gasoline, diesel, hybrid',
+    links: [
+      { href: '/technologies/turbocharger/', label: 'Turbocharger' },
+      {
+        href: '/technologies/mass-air-flow-sensor/',
+        label: 'Mass air flow sensor',
+      },
+    ],
+  },
+  {
+    id: 'fuel',
+    title: 'Fuel storage and delivery',
+    shortLabel: 'Fuel',
+    deck: 'Liquid fuel moves from storage through pumps, lines, metering hardware, and injectors.',
+    role: 'Stores chemical energy and meters it into the engine under controlled pressure and timing.',
+    flow: 'Tank -> pump -> line -> rail or injector -> combustion chamber',
+    powertrains: 'Gasoline, diesel, hybrid',
+    links: [
+      { href: '/technologies/fuel-injection/', label: 'Fuel injection' },
+      {
+        href: '/technologies/common-rail-diesel-injection/',
+        label: 'Common rail diesel injection',
+      },
+    ],
+  },
+  {
+    id: 'engine',
+    title: 'Engine block and combustion',
+    shortLabel: 'Engine',
+    deck: 'Pistons, valves, crankshaft, air, fuel, and ignition timing convert part of fuel energy into shaft work.',
+    role: 'Converts combustion pressure into rotating mechanical power.',
+    flow: 'Air and fuel -> compression -> combustion -> crankshaft torque',
+    powertrains: 'Gasoline, diesel, hybrid',
+    links: [
+      {
+        href: '/technologies/four-stroke-engine/',
+        label: 'Four-stroke engine',
+      },
+      { href: '/technologies/diesel-engine/', label: 'Diesel engine' },
+    ],
+  },
+  {
+    id: 'transmission',
+    title: 'Transmission and final drive',
+    shortLabel: 'Drive',
+    deck: 'Gearsets, clutches, converters, belts, or reduction gears match motor or engine speed to wheel demand.',
+    role: 'Adapts torque and speed before power reaches the driven wheels.',
+    flow: 'Prime mover -> ratio device -> final drive -> half shafts or driveshaft',
+    powertrains: 'Gasoline, diesel, hybrid, BEV',
+    links: [
+      {
+        href: '/technologies/automatic-transmission/',
+        label: 'Automatic transmission',
+      },
+      { href: '/technologies/differential/', label: 'Differential' },
+    ],
+  },
+  {
+    id: 'battery',
+    title: 'Traction battery pack',
+    shortLabel: 'Battery',
+    deck: 'Cells, modules, sensing, contactors, and cooling hardware store high-voltage energy for electric drive.',
+    role: 'Supplies and absorbs electrical energy for propulsion and regenerative braking.',
+    flow: 'Cells -> modules -> pack bus -> inverter or charger',
+    powertrains: 'Hybrid, plug-in hybrid, BEV',
+    links: [
+      {
+        href: '/technologies/lithium-ion-battery/',
+        label: 'Lithium-ion battery',
+      },
+      {
+        href: '/technologies/battery-management-system/',
+        label: 'Battery management system',
+      },
+    ],
+  },
+  {
+    id: 'inverter',
+    title: 'Inverter and power electronics',
+    shortLabel: 'Inverter',
+    deck: 'Switching electronics translate battery DC into controlled motor phases, then reverse the path during regen.',
+    role: 'Controls electric motor torque, speed, and regenerative energy flow.',
+    flow: 'Battery DC -> switching bridge -> AC phases -> motor torque',
+    powertrains: 'Hybrid, plug-in hybrid, BEV',
+    links: [
+      { href: '/technologies/power-inverter/', label: 'Power inverter' },
+      { href: '/technologies/onboard-charger/', label: 'Onboard charger' },
+    ],
+  },
+  {
+    id: 'motor',
+    title: 'Electric traction motor',
+    shortLabel: 'Motor',
+    deck: 'A rotor and stator convert controlled electromagnetic fields into wheel-driving torque.',
+    role: 'Turns electrical energy into mechanical torque and can act as a generator during braking.',
+    flow: 'AC phase current -> magnetic field -> rotor torque -> reduction gear',
+    powertrains: 'Hybrid, plug-in hybrid, BEV',
+    links: [
+      {
+        href: '/technologies/permanent-magnet-synchronous-motor/',
+        label: 'Permanent magnet synchronous motor',
+      },
+      { href: '/technologies/induction-motor/', label: 'Induction motor' },
+    ],
+  },
+  {
+    id: 'exhaust',
+    title: 'Exhaust and aftertreatment',
+    shortLabel: 'Exhaust',
+    deck: 'Hot gases pass through catalysts, filters, sensors, and aftertreatment hardware before leaving the vehicle.',
+    role: 'Routes combustion byproducts and supports emissions-control reactions and diagnostics.',
+    flow: 'Manifold -> catalyst or filter -> sensors -> tailpipe',
+    powertrains: 'Gasoline, diesel, hybrid',
+    links: [
+      {
+        href: '/technologies/three-way-catalyst/',
+        label: 'Three-way catalyst',
+      },
+      {
+        href: '/technologies/diesel-particulate-filter/',
+        label: 'Diesel particulate filter',
+      },
+    ],
+  },
+  {
+    id: 'thermal',
+    title: 'Cooling and thermal loops',
+    shortLabel: 'Thermal',
+    deck: 'Coolant, oil, refrigerant, pumps, valves, and heat exchangers keep components in workable temperature ranges.',
+    role: 'Moves heat away from engines, batteries, power electronics, motors, and cabins.',
+    flow: 'Heat source -> fluid loop -> exchanger -> controlled return',
+    powertrains: 'Gasoline, diesel, hybrid, BEV',
+    links: [
+      {
+        href: '/technologies/thermal-management-system/',
+        label: 'Thermal management',
+      },
+      { href: '/technologies/heat-pump/', label: 'Heat pump' },
+    ],
+  },
+  {
+    id: 'control',
+    title: 'Control network and sensors',
+    shortLabel: 'Control',
+    deck: 'Sensors, control modules, and vehicle networks coordinate combustion, torque, braking, diagnostics, and charging.',
+    role: 'Turns driver requests and sensor feedback into safe, testable component commands.',
+    flow: 'Sensors -> control module -> actuator request -> diagnostic feedback',
+    powertrains: 'Gasoline, diesel, hybrid, BEV',
+    links: [
+      {
+        href: '/technologies/controller-area-network/',
+        label: 'Controller area network',
+      },
+      {
+        href: '/technologies/on-board-diagnostics/',
+        label: 'On-board diagnostics',
+      },
+    ],
+  },
+];
+
+const initialPart = parts[0];
+const panelId = 'car-systems-panel';
+---
+
+<car-systems-explorer class="car-explorer">
+  <div class="car-explorer__header">
+    <div>
+      <p class="eyebrow">Interactive system atlas</p>
+      <h2>Vehicle systems fit together as flows</h2>
+    </div>
+    <p>
+      A composite map for common vehicle architectures. The selected component
+      explains role, flow, applicable powertrains, and linked archive pages.
+    </p>
+  </div>
+
+  <div class="car-explorer__workspace">
+    <div class="car-explorer__map" aria-label="Composite car system map">
+      <div class="car-explorer__body" aria-hidden="true">
+        <span class="car-explorer__cabin"></span>
+        <span class="car-explorer__hood"></span>
+        <span class="car-explorer__wheel car-explorer__wheel--front"></span>
+        <span class="car-explorer__wheel car-explorer__wheel--rear"></span>
+        <span class="car-explorer__rail car-explorer__rail--upper"></span>
+        <span class="car-explorer__rail car-explorer__rail--lower"></span>
+      </div>
+      {
+        parts.map((part, index) => (
+          <button
+            class={`car-hotspot car-hotspot--${part.id}`}
+            type="button"
+            data-system-part
+            data-title={part.title}
+            data-deck={part.deck}
+            data-role={part.role}
+            data-flow={part.flow}
+            data-powertrains={part.powertrains}
+            data-links={JSON.stringify(part.links)}
+            aria-controls={panelId}
+            aria-pressed={index === 0 ? 'true' : 'false'}
+          >
+            <span>{part.shortLabel}</span>
+          </button>
+        ))
+      }
+    </div>
+
+    <article class="car-explorer__panel" id={panelId} aria-live="polite">
+      <p class="eyebrow">Selected component</p>
+      <h3 data-panel-title>{initialPart.title}</h3>
+      <p data-panel-deck>{initialPart.deck}</p>
+      <dl>
+        <div>
+          <dt>System role</dt>
+          <dd data-panel-role>{initialPart.role}</dd>
+        </div>
+        <div>
+          <dt>Flow path</dt>
+          <dd data-panel-flow>{initialPart.flow}</dd>
+        </div>
+        <div>
+          <dt>Applies to</dt>
+          <dd data-panel-powertrains>{initialPart.powertrains}</dd>
+        </div>
+      </dl>
+      <div class="car-explorer__links">
+        <p class="eyebrow">Related guides</p>
+        <ul data-panel-links>
+          {
+            initialPart.links.map((link) => (
+              <li>
+                <a href={link.href}>{link.label}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </article>
+  </div>
+</car-systems-explorer>
+
+<script>
+  class CarSystemsExplorer extends HTMLElement {
+    connectedCallback() {
+      const buttons = Array.from(
+        this.querySelectorAll<HTMLButtonElement>('[data-system-part]'),
+      );
+      const title = this.querySelector<HTMLElement>('[data-panel-title]');
+      const deck = this.querySelector<HTMLElement>('[data-panel-deck]');
+      const role = this.querySelector<HTMLElement>('[data-panel-role]');
+      const flow = this.querySelector<HTMLElement>('[data-panel-flow]');
+      const powertrains = this.querySelector<HTMLElement>(
+        '[data-panel-powertrains]',
+      );
+      const links = this.querySelector<HTMLElement>('[data-panel-links]');
+
+      if (
+        buttons.length === 0 ||
+        title === null ||
+        deck === null ||
+        role === null ||
+        flow === null ||
+        powertrains === null ||
+        links === null
+      ) {
+        return;
+      }
+
+      const selectPart = (button: HTMLButtonElement) => {
+        buttons.forEach((candidate) => {
+          candidate.setAttribute('aria-pressed', String(candidate === button));
+        });
+
+        title.textContent = button.dataset.title ?? '';
+        deck.textContent = button.dataset.deck ?? '';
+        role.textContent = button.dataset.role ?? '';
+        flow.textContent = button.dataset.flow ?? '';
+        powertrains.textContent = button.dataset.powertrains ?? '';
+
+        const parsedLinks = JSON.parse(button.dataset.links ?? '[]') as {
+          href: string;
+          label: string;
+        }[];
+
+        links.innerHTML = parsedLinks
+          .map((link) => `<li><a href="${link.href}">${link.label}</a></li>`)
+          .join('');
+      };
+
+      buttons.forEach((button) => {
+        button.addEventListener('click', () => selectPart(button));
+      });
+    }
+  }
+
+  if (!customElements.get('car-systems-explorer')) {
+    customElements.define('car-systems-explorer', CarSystemsExplorer);
+  }
+</script>

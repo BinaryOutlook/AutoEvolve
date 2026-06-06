@@ -1,6 +1,7 @@
 ---
 import StaticDiagram from '@components/StaticDiagram.astro';
 import ContentCard from '@components/ContentCard.astro';
+import SystemFamilyCards from '@components/SystemFamilyCards.astro';
 import BaseLayout from '@layouts/BaseLayout.astro';
 import {
   categoryLabel,
@@ -56,6 +57,9 @@ const technologyVisualItems = groupEntries
       items={technologyVisualItems}
     />
   </section>
+  <div class="page-section">
+    <SystemFamilyCards />
+  </div>
   <nav class="technology-toc" aria-labelledby="technology-toc-title">
     <div>
       <p class="eyebrow">Jump nav</p>

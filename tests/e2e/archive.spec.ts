@@ -202,8 +202,9 @@ async function expectVisibleSvgTextFits(page: Page): Promise<void> {
       'figure.archive-visual, figure.powertrain-map',
     )) {
       const figureLabel =
-        figure.querySelector('h2, figcaption')?.textContent
-          ?.replace(/\s+/gu, ' ')
+        figure
+          .querySelector('h2, figcaption')
+          ?.textContent?.replace(/\s+/gu, ' ')
           .trim() ?? 'unlabeled figure';
 
       for (const svg of figure.querySelectorAll('svg')) {
@@ -387,15 +388,28 @@ test('home page exposes the core archive navigation', async ({ page }) => {
   await page.goto('/');
   await expect(
     page.getByRole('heading', {
-      name: /How vehicles became modern mobility systems/i,
+      name: 'AutoEvolve',
     }),
   ).toBeVisible();
-  await expect(page.locator('a[href="/timeline/"]')).toHaveCount(0);
   await expect(
-    page.getByRole('link', { name: 'Eras', exact: true }),
+    page.getByRole('heading', {
+      name: /Vehicle systems fit together as flows/i,
+    }),
+  ).toBeVisible();
+  await page.getByRole('button', { name: 'Battery' }).click();
+  await expect(
+    page.getByRole('heading', { name: 'Traction battery pack' }),
+  ).toBeVisible();
+  await expect(page.locator('a[href="/timeline/"]')).toHaveCount(0);
+  const primaryNavigation = page.getByLabel('Primary navigation');
+  await expect(
+    primaryNavigation.getByRole('link', { name: 'Eras', exact: true }),
   ).toBeVisible();
   await expect(
-    page.getByRole('link', { name: 'Technologies', exact: true }),
+    primaryNavigation.getByRole('link', {
+      name: 'Technologies',
+      exact: true,
+    }),
   ).toBeVisible();
 });
 
@@ -600,7 +614,11 @@ test('representative routes render accessible original visuals without page over
     for (const route of visualCoverageRoutes) {
       await page.goto(route);
       await waitForStableRendering(page);
-      await expectAccessibleOriginalVisual(page);
+      if (route === '/') {
+        await expect(page.locator('car-systems-explorer')).toBeVisible();
+      } else {
+        await expectAccessibleOriginalVisual(page);
+      }
       await expectNoPageHorizontalOverflow(page);
     }
   }

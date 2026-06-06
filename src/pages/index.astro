@@ -1,6 +1,7 @@
 ---
+import CarSystemsExplorer from '@components/CarSystemsExplorer.astro';
 import ContentCard from '@components/ContentCard.astro';
-import PowertrainMap from '@components/PowertrainMap.astro';
+import SystemFamilyCards from '@components/SystemFamilyCards.astro';
 import BaseLayout from '@layouts/BaseLayout.astro';
 import { entrySlug, getPublicEntries, pathFor } from '@lib/collections';
 
@@ -20,20 +21,55 @@ const featuredTechnologies = technologies.filter((entry) =>
 ---
 
 <BaseLayout title="AutoEvolve">
-  <section class="page-section page-hero">
-    <p class="eyebrow">Automotive technology history</p>
-    <h1>How vehicles became modern mobility systems.</h1>
-    <p>
-      AutoEvolve is a neutral educational archive for tracing engines, emissions
-      systems, hybrid architectures, batteries, software, and charging
-      infrastructure across automotive history.
-    </p>
-    <PowertrainMap />
+  <section class="page-section page-hero page-hero--v1">
+    <div class="page-hero__copy">
+      <p class="eyebrow">Automotive technology history</p>
+      <h1>AutoEvolve</h1>
+      <p>
+        A neutral archive for understanding how engines, transmissions, fuel
+        systems, EV motors, batteries, emissions hardware, and control networks
+        fit together across automotive history.
+      </p>
+      <div class="hero-actions" aria-label="Primary archive routes">
+        <a class="button button--primary" href="/technologies/">
+          Explore systems
+        </a>
+        <a class="button button--ghost" href="/eras/">Browse eras</a>
+      </div>
+    </div>
+    <div class="hero-ledger" aria-label="Archive counts">
+      <dl>
+        <div>
+          <dt>Eras</dt>
+          <dd>{eras.length}</dd>
+        </div>
+        <div>
+          <dt>Technologies</dt>
+          <dd>{technologies.length}</dd>
+        </div>
+        <div>
+          <dt>Vehicle examples</dt>
+          <dd>{vehicles.length}</dd>
+        </div>
+        <div>
+          <dt>Case studies</dt>
+          <dd>{controversies.length}</dd>
+        </div>
+      </dl>
+    </div>
   </section>
+
+  <section class="page-section">
+    <CarSystemsExplorer />
+  </section>
+
+  <div class="page-section">
+    <SystemFamilyCards />
+  </div>
 
   <section class="page-section" aria-labelledby="archive-overview">
     <div class="section-heading">
-      <h2 id="archive-overview">Archive Overview</h2>
+      <h2 id="archive-overview">Archive routes</h2>
     </div>
     <div class="content-grid">
       <ContentCard
@@ -63,7 +99,7 @@ const featuredTechnologies = technologies.filter((entry) =>
 
   <section class="page-section" aria-labelledby="starting-points">
     <div class="section-heading">
-      <h2 id="starting-points">Starting Points</h2>
+      <h2 id="starting-points">Mechanism starting points</h2>
       <a href="/eras/">Browse eras</a>
     </div>
     <div class="content-grid">

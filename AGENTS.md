@@ -90,6 +90,25 @@ A planning packet should capture:
 
 Do not treat unscoped ideas as active implementation work unless the user explicitly says to build them now.
 
+## v1 Redesign Workflow
+
+Use [v1alldetails.md](v1alldetails.md) as the active v1 implementation plan
+and [themes/Shrimp-color-heavy.md](themes/Shrimp-color-heavy.md) as the default
+theme reference for future UI work.
+
+For v1-sized work:
+
+- commit at suitable reviewable milestones rather than waiting for one large
+  final commit
+- deploy subagents for bounded source gathering, route audits, or isolated
+  implementation slices when the write scope is clear
+- keep subagent prompts specific, source-led, and explicit about whether files
+  may be edited
+- run `/audit` style checks repeatedly after major UI phases until only minor
+  or lower issues remain, or document the residual risk
+- keep the implementation static-first unless a concrete workflow justifies a
+  heavier dependency
+
 ## When To Update Which File
 
 Update `README.md` when:

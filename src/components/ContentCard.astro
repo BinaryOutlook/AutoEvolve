@@ -11,8 +11,15 @@ const { href, title, summary, eyebrow, meta } = Astro.props;
 ---
 
 <article class="content-card">
-  {eyebrow && <p class="eyebrow">{eyebrow}</p>}
-  <h3><a href={href}>{title}</a></h3>
-  <p>{summary}</p>
-  {meta && <p class="content-card__meta">{meta}</p>}
+  <div class="content-card__body">
+    {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+    <h3><a href={href}>{title}</a></h3>
+    <p>{summary}</p>
+  </div>
+  <footer class="content-card__footer">
+    {meta && <p class="content-card__meta">{meta}</p>}
+    <a class="content-card__action" href={href} aria-label={`Open ${title}`}>
+      Open
+    </a>
+  </footer>
 </article>

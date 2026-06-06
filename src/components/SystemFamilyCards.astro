@@ -1,0 +1,162 @@
+---
+type FamilyLink = {
+  href: string;
+  label: string;
+};
+
+type SystemFamily = {
+  title: string;
+  summary: string;
+  path: string[];
+  guardrail: string;
+  links: FamilyLink[];
+};
+
+const families: SystemFamily[] = [
+  {
+    title: 'Stages and piping',
+    summary:
+      'Fluid, gas, heat, and energy routes that make vehicle systems physically work together.',
+    path: [
+      'Source or reservoir',
+      'Pump, compressor, pressure, or voltage driver',
+      'Control point',
+      'Work, cooling, treatment, or storage',
+      'Return, exhaust, or diagnostic feedback',
+    ],
+    guardrail:
+      'Routing varies by architecture, packaging, duty cycle, and regulation; the archive avoids treating one layout as universal.',
+    links: [
+      { href: '/technologies/turbocharger/', label: 'Boost path' },
+      { href: '/technologies/exhaust-gas-recirculation/', label: 'EGR loop' },
+      {
+        href: '/technologies/thermal-management-system/',
+        label: 'Thermal loop',
+      },
+    ],
+  },
+  {
+    title: 'Engines and transmissions',
+    summary:
+      'Combustion cycles, torque production, ratio changes, clutches, converters, and final-drive behavior.',
+    path: [
+      'Air and fuel preparation',
+      'Combustion or torque generation',
+      'Crankshaft or motor output',
+      'Ratio selection',
+      'Final drive and wheel torque',
+    ],
+    guardrail:
+      'No engine or transmission type is ranked as universally best; context decides the tradeoff.',
+    links: [
+      {
+        href: '/technologies/four-stroke-engine/',
+        label: 'Four-stroke engine',
+      },
+      {
+        href: '/technologies/automatic-transmission/',
+        label: 'Automatic transmission',
+      },
+      {
+        href: '/technologies/dual-clutch-transmission/',
+        label: 'Dual-clutch transmission',
+      },
+    ],
+  },
+  {
+    title: 'EV motors',
+    summary:
+      'Battery energy, inverters, motor fields, reduction gearing, regeneration, and thermal constraints.',
+    path: [
+      'Battery DC bus',
+      'Power electronics switching',
+      'Controlled motor phases',
+      'Rotor torque',
+      'Reduction gear or e-axle output',
+    ],
+    guardrail:
+      'The archive distinguishes motor type, control strategy, materials, and lifecycle questions instead of treating EVs as a single mechanism.',
+    links: [
+      { href: '/technologies/power-inverter/', label: 'Power inverter' },
+      {
+        href: '/technologies/permanent-magnet-synchronous-motor/',
+        label: 'PMSM',
+      },
+      { href: '/technologies/induction-motor/', label: 'Induction motor' },
+    ],
+  },
+  {
+    title: 'Gasoline and diesel systems',
+    summary:
+      'Fuel delivery, air metering, ignition or compression ignition, emissions control, and diagnostics.',
+    path: [
+      'Fuel storage and metering',
+      'Air handling',
+      'Ignition or compression event',
+      'Work and heat',
+      'Aftertreatment and feedback sensing',
+    ],
+    guardrail:
+      'Gasoline and diesel comparisons stay technical and source-led; the site avoids simple winner/loser framing.',
+    links: [
+      {
+        href: '/technologies/petrol-gasoline-engine/',
+        label: 'Gasoline engine',
+      },
+      { href: '/technologies/diesel-engine/', label: 'Diesel engine' },
+      {
+        href: '/technologies/three-way-catalyst/',
+        label: 'Three-way catalyst',
+      },
+    ],
+  },
+];
+---
+
+<section class="system-families" aria-labelledby="system-families-title">
+  <div class="section-heading section-heading--compact">
+    <div>
+      <p class="eyebrow">Technology families</p>
+      <h2 id="system-families-title">How the archive groups car systems</h2>
+    </div>
+    <a href="/technologies/">Open technology catalogue</a>
+  </div>
+  <div class="system-family-grid">
+    {
+      families.map((family, index) => (
+        <details class="system-family-card" open={index === 0}>
+          <summary>
+            <span>
+              <span class="system-family-card__index">
+                {String(index + 1).padStart(2, '0')}
+              </span>
+              <strong>{family.title}</strong>
+            </span>
+            <span>{family.summary}</span>
+          </summary>
+          <div class="system-family-card__body">
+            <div>
+              <p class="eyebrow">Mechanism path</p>
+              <ol>
+                {family.path.map((step) => (
+                  <li>{step}</li>
+                ))}
+              </ol>
+            </div>
+            <div>
+              <p class="eyebrow">Neutrality guard</p>
+              <p>{family.guardrail}</p>
+              <ul class="system-family-card__links">
+                {family.links.map((link) => (
+                  <li>
+                    <a href={link.href}>{link.label}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </details>
+      ))
+    }
+  </div>
+</section>

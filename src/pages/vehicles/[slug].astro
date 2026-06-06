@@ -24,9 +24,9 @@ const { Content } = await render(entry);
   lastReviewed={entry.data.lastReviewed}
   sourceIds={entry.data.sources}
   metaItems={[
-    entry.data.manufacturer,
-    entry.data.productionPeriod,
-    entry.data.marketContext,
+    { label: 'Manufacturer', value: entry.data.manufacturer },
+    { label: 'Production period', value: entry.data.productionPeriod },
+    { label: 'Market context', value: entry.data.marketContext },
   ]}
   linkSections={[
     {

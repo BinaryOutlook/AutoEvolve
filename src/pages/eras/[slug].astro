@@ -23,7 +23,7 @@ const { Content } = await render(entry);
   status={entry.data.status}
   lastReviewed={entry.data.lastReviewed}
   sourceIds={entry.data.sources}
-  metaItems={[entry.data.dateRange]}
+  metaItems={[{ label: 'Date range', value: entry.data.dateRange }]}
   linkSections={[
     {
       title: 'Related Technologies',
