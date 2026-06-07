@@ -23,6 +23,8 @@ relatedTechnologies:
     'catalytic-converter',
     'three-way-catalyst',
     'diesel-particulate-filter',
+    'over-the-air-software-updates',
+    'vehicle-startup-shutdown-states',
   ]
 relatedVehicles: []
 ---

@@ -567,16 +567,14 @@ const panelId = 'car-systems-panel';
     </p>
   </div>
 
-  <div class="car-explorer__tabs" role="tablist" aria-label="Powertrain view">
+  <div class="car-explorer__tabs" aria-label="Powertrain view">
     {
       modes.map((mode, index) => (
         <button
           id={`atlas-tab-${mode.id}`}
           type="button"
-          role="tab"
           data-mode-tab={mode.id}
-          aria-controls="atlas-image-panel"
-          aria-selected={index === 0 ? 'true' : 'false'}
+          aria-pressed={index === 0 ? 'true' : 'false'}
         >
           {mode.label}
         </button>
@@ -585,12 +583,7 @@ const panelId = 'car-systems-panel';
   </div>
 
   <div class="car-explorer__workspace">
-    <figure
-      class="car-explorer__figure"
-      id="atlas-image-panel"
-      role="tabpanel"
-      aria-labelledby={`atlas-tab-${initialMode.id}`}
-    >
+    <figure class="car-explorer__figure" id="atlas-image-panel">
       <div class="car-explorer__image-frame">
         <img
           data-atlas-image
@@ -677,7 +670,6 @@ const panelId = 'car-systems-panel';
   class CarSystemsExplorer extends HTMLElement {
     connectedCallback() {
       const modeTabs = Array.from(this.querySelectorAll('[data-mode-tab]'));
-      const tabPanel = this.querySelector('#atlas-image-panel');
       const image = this.querySelector('[data-atlas-image]');
       const caption = this.querySelector('[data-atlas-caption]');
       const hotspotLayer = this.querySelector('[data-hotspot-layer]');
@@ -691,7 +683,6 @@ const panelId = 'car-systems-panel';
 
       if (
         modeTabs.length === 0 ||
-        tabPanel === null ||
         image === null ||
         caption === null ||
         hotspotLayer === null ||
@@ -806,11 +797,7 @@ const panelId = 'car-systems-panel';
 
         for (const tab of modeTabs) {
           const selected = tab.dataset.modeTab === activeMode.id;
-          tab.setAttribute('aria-selected', String(selected));
-
-          if (selected) {
-            tabPanel.setAttribute('aria-labelledby', tab.id);
-          }
+          tab.setAttribute('aria-pressed', String(selected));
         }
 
         renderHotspots();

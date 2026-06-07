@@ -1,0 +1,39 @@
+---
+import type { SystemFlow } from '@lib/system-flows';
+
+type Props = {
+  flow: SystemFlow;
+};
+
+const { flow } = Astro.props;
+const titleId = `system-flow-${flow.id}`;
+---
+
+<section class="system-flow" aria-labelledby={titleId}>
+  <div class="system-flow__intro">
+    <p class="eyebrow">Mechanism flow</p>
+    <h2 id={titleId}>{flow.title}</h2>
+    <p>{flow.summary}</p>
+  </div>
+  <ol class="system-flow__steps">
+    {
+      flow.steps.map((step, index) => (
+        <li>
+          <span class="system-flow__index" aria-hidden="true">
+            {String(index + 1).padStart(2, '0')}
+          </span>
+          <div>
+            <h3>{step.title}</h3>
+            <p>{step.body}</p>
+            {step.href && <a href={step.href}>Related guide</a>}
+          </div>
+        </li>
+      ))
+    }
+  </ol>
+  <p class="system-flow__note">
+    Original AutoEvolve mechanism diagram based on this article's cited sources.
+    The sequence simplifies variants and should not be read as a universal
+    vehicle layout.
+  </p>
+</section>

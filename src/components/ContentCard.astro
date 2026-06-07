@@ -6,11 +6,20 @@ type Props = {
   eyebrow?: string;
   meta?: string;
   imageAlt?: string;
+  imagePriority?: boolean;
   imageSrc?: string;
 };
 
-const { href, title, summary, eyebrow, meta, imageAlt, imageSrc } =
-  Astro.props;
+const {
+  href,
+  title,
+  summary,
+  eyebrow,
+  meta,
+  imageAlt,
+  imagePriority,
+  imageSrc,
+} = Astro.props;
 ---
 
 <article class="content-card">
@@ -27,8 +36,9 @@ const { href, title, summary, eyebrow, meta, imageAlt, imageSrc } =
           class="content-card__thumb"
           src={imageSrc}
           alt={imageAlt}
-          loading="eager"
-          decoding="sync"
+          loading={imagePriority ? 'eager' : 'lazy'}
+          decoding="async"
+          fetchpriority={imagePriority ? 'high' : 'auto'}
         />
       )
     }

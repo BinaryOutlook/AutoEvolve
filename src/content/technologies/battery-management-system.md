@@ -12,7 +12,15 @@ eras:
     'software-defined-connected-vehicles',
   ]
 relatedTechnologies:
-  ['lithium-ion-battery', 'ev-charging', 'battery-electric-vehicle']
+  [
+    'lithium-ion-battery',
+    'ev-charging',
+    'battery-electric-vehicle',
+    'charging-communication-protocols',
+    'high-voltage-safety-disconnects',
+    'cell-to-pack-structural-battery',
+    'battery-swapping',
+  ]
 relatedVehicles: ['chevrolet-volt', 'nissan-leaf']
 ---
 

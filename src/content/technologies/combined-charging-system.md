@@ -22,9 +22,11 @@ relatedTechnologies:
   [
     'ev-charging',
     'dc-fast-charging',
+    'charging-communication-protocols',
     'onboard-charger',
     'battery-electric-vehicle',
     'vehicle-to-grid',
+    'vehicle-cybersecurity',
   ]
 relatedVehicles: ['hyundai-ioniq-5']
 ---

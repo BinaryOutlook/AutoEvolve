@@ -4,8 +4,6 @@ const navItems = [
   { href: '/technologies/', label: 'Technologies' },
   { href: '/vehicles/', label: 'Vehicles' },
   { href: '/controversies/', label: 'Controversies' },
-  { href: '/glossary/', label: 'Glossary' },
-  { href: '/sources/', label: 'Sources' },
 ];
 ---
 
@@ -19,6 +17,28 @@ const navItems = [
         <span class="brand__tagline">neutral vehicle systems archive</span>
       </span>
     </a>
+    <div class="site-header__search" data-header-search>
+      <form class="header-search" role="search" data-header-search-form>
+        <label class="visually-hidden" for="site-search-input">
+          Search archive
+        </label>
+        <input
+          id="site-search-input"
+          type="search"
+          placeholder="Search archive"
+          autocomplete="off"
+          aria-controls="site-search-results"
+          data-header-search-input
+        />
+      </form>
+      <div
+        class="header-search__panel"
+        id="site-search-results"
+        data-header-search-results
+        hidden
+      >
+      </div>
+    </div>
     <nav class="site-nav" aria-label="Primary navigation">
       {
         navItems.map((item) => (
@@ -32,9 +52,175 @@ const navItems = [
           </a>
         ))
       }
-      <a class="site-nav__search" href="/search/" aria-label="Search archive">
-        Search
-      </a>
     </nav>
   </div>
 </header>
+
+<script is:inline>
+  (() => {
+    const root = document.querySelector('[data-header-search]');
+
+    if (root === null) {
+      return;
+    }
+
+    const form = root.querySelector('[data-header-search-form]');
+    const input = root.querySelector('[data-header-search-input]');
+    const panel = root.querySelector('[data-header-search-results]');
+
+    if (
+      !(form instanceof HTMLFormElement) ||
+      !(input instanceof HTMLInputElement) ||
+      !(panel instanceof HTMLElement)
+    ) {
+      return;
+    }
+
+    let debounceTimer = 0;
+    let requestId = 0;
+    let pagefindPromise;
+
+    const setPanelOpen = (isOpen) => {
+      panel.hidden = !isOpen;
+    };
+
+    const renderMessage = (message) => {
+      const paragraph = document.createElement('p');
+      paragraph.className = 'header-search__message';
+      paragraph.textContent = message;
+      panel.replaceChildren(paragraph);
+      setPanelOpen(true);
+    };
+
+    const renderAdvancedLink = (query) => {
+      const link = document.createElement('a');
+      link.className = 'header-search__advanced';
+      link.href = `/search/?q=${encodeURIComponent(query)}`;
+      link.textContent = 'Open advanced search';
+      return link;
+    };
+
+    const loadPagefind = () => {
+      pagefindPromise ??= import('/pagefind/pagefind.js').catch(() => null);
+      return pagefindPromise;
+    };
+
+    const textFromExcerpt = (excerpt) => {
+      const template = document.createElement('template');
+      template.innerHTML = excerpt;
+      return template.content.textContent?.replace(/\s+/gu, ' ').trim() ?? '';
+    };
+
+    const renderResults = async (query, currentRequestId) => {
+      const pagefind = await loadPagefind();
+
+      if (currentRequestId !== requestId) {
+        return;
+      }
+
+      if (pagefind === null) {
+        renderMessage(
+          'Search is available after the production index is built.',
+        );
+        panel.append(renderAdvancedLink(query));
+        return;
+      }
+
+      const search = await pagefind.search(query);
+
+      if (currentRequestId !== requestId) {
+        return;
+      }
+
+      const results = await Promise.all(
+        search.results.slice(0, 5).map((result) => result.data()),
+      );
+
+      if (currentRequestId !== requestId) {
+        return;
+      }
+
+      if (results.length === 0) {
+        renderMessage('No matching archive records yet.');
+        panel.append(renderAdvancedLink(query));
+        return;
+      }
+
+      const list = document.createElement('ol');
+      list.className = 'header-search__results';
+
+      for (const result of results) {
+        const item = document.createElement('li');
+        const link = document.createElement('a');
+        const title = document.createElement('span');
+        const excerpt = document.createElement('span');
+
+        link.href = result.url;
+        title.className = 'header-search__title';
+        title.textContent = result.meta?.title ?? result.url;
+        excerpt.className = 'header-search__excerpt';
+        excerpt.textContent = textFromExcerpt(result.excerpt);
+
+        link.append(title, excerpt);
+        item.append(link);
+        list.append(item);
+      }
+
+      panel.replaceChildren(list, renderAdvancedLink(query));
+      setPanelOpen(true);
+    };
+
+    const runSearch = () => {
+      const query = input.value.trim();
+      requestId += 1;
+
+      window.clearTimeout(debounceTimer);
+
+      if (query.length < 2) {
+        panel.replaceChildren();
+        setPanelOpen(false);
+        return;
+      }
+
+      const currentRequestId = requestId;
+      debounceTimer = window.setTimeout(() => {
+        renderMessage('Searching archive...');
+        void renderResults(query, currentRequestId);
+      }, 180);
+    };
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      runSearch();
+    });
+
+    input.addEventListener('input', runSearch);
+    input.addEventListener('focus', () => {
+      if (input.value.trim().length >= 2 && panel.childElementCount > 0) {
+        setPanelOpen(true);
+      }
+    });
+    input.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        input.value = '';
+        panel.replaceChildren();
+        setPanelOpen(false);
+      }
+
+      if (event.key === 'ArrowDown' && !panel.hidden) {
+        const firstLink = panel.querySelector('a');
+
+        if (firstLink instanceof HTMLAnchorElement) {
+          event.preventDefault();
+          firstLink.focus();
+        }
+      }
+    });
+
+    document.addEventListener('click', (event) => {
+      if (event.target instanceof Node && !root.contains(event.target)) {
+        setPanelOpen(false);
+      }
+    });
+  })();
+</script>

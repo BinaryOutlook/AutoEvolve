@@ -20,6 +20,9 @@ relatedTechnologies:
     'hybrid-electric-vehicle',
     'battery-electric-vehicle',
     'battery-management-system',
+    'power-inverter',
+    'brake-by-wire',
+    'high-voltage-safety-disconnects',
   ]
 relatedVehicles: ['toyota-prius', 'nissan-leaf']
 ---

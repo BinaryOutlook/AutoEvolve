@@ -18,6 +18,8 @@ relatedTechnologies:
     'electronic-stability-control',
     'controller-area-network',
     'engine-control-unit',
+    'adas-sensor-fusion',
+    'autonomous-driving-system-stack',
   ]
 relatedVehicles: []
 ---

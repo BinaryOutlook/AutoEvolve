@@ -10,12 +10,15 @@ sources:
     'nhtsa-fmvss-126-test-procedure-2011',
   ]
 category: 'chassis-safety'
-eras: ['emissions-and-electronic-control', 'software-defined-connected-vehicles']
+eras:
+  ['emissions-and-electronic-control', 'software-defined-connected-vehicles']
 relatedTechnologies:
   [
     'anti-lock-braking-system',
     'engine-control-unit',
     'controller-area-network',
+    'brake-by-wire',
+    'adas-sensor-fusion',
   ]
 relatedVehicles: []
 ---

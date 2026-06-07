@@ -29,7 +29,7 @@ These assumptions should guide implementation unless the project owner later rev
 
 ### 3.1 Mission Statement
 
-The website exists to document, explain, and contextualize the development of automotive technology from early self-propelled vehicles to modern electric-drive systems. It should make technical ideas understandable without stripping away the engineering details that make them historically important.
+The website exists to document, explain, and contextualize the development of automotive technology from early self-propelled vehicles to modern electric-drive, software, manufacturing, and supply systems. It should make technical ideas understandable without stripping away the engineering details that make them historically important.
 
 ### 3.2 Purpose
 
@@ -225,29 +225,30 @@ The main navigation should be simple and content-led:
 - Technologies
 - Vehicles as Examples
 - Controversies
-- Glossary
-- Sources
 - About
+
+Glossary, sources, and advanced search can live in footer utility navigation
+when header space is needed for quick search.
 
 ### 7.2 Route Map
 
 Recommended routes:
 
-| Route                    | Purpose                                                                           |
-| ------------------------ | --------------------------------------------------------------------------------- |
-| `/`                      | Overview, mission, featured era entry points, latest added pages.                 |
-| `/eras/`                 | Index of historical eras.                                                         |
-| `/eras/[slug]/`          | Era detail page.                                                                  |
-| `/technologies/`         | Technology index grouped by powertrain, chassis, safety, emissions, and software. |
-| `/technologies/[slug]/`  | Deep technical explainer for one technology or component.                         |
-| `/vehicles/`             | Index of example vehicles, filtered by era and technology.                        |
-| `/vehicles/[slug]/`      | Example page focused on what the vehicle illustrates.                             |
-| `/controversies/`        | Index of historical controversies and regulatory case studies.                    |
-| `/controversies/[slug]/` | Neutral case study, such as Dieselgate.                                           |
-| `/glossary/`             | Definitions of technical terms.                                                   |
-| `/sources/`              | Source library and citation policy.                                               |
-| `/about/`                | Mission, editorial policy, contribution policy, and project status.               |
-| `/search/`               | Search interface if search is not embedded in the header.                         |
+| Route                    | Purpose                                                                                                 |
+| ------------------------ | ------------------------------------------------------------------------------------------------------- |
+| `/`                      | Overview, mission, featured era entry points, latest added pages.                                       |
+| `/eras/`                 | Index of historical eras.                                                                               |
+| `/eras/[slug]/`          | Era detail page.                                                                                        |
+| `/technologies/`         | Technology index grouped by powertrain, chassis, safety, emissions, software, and manufacturing/supply. |
+| `/technologies/[slug]/`  | Deep technical explainer for one technology or component.                                               |
+| `/vehicles/`             | Index of example vehicles, filtered by era and technology.                                              |
+| `/vehicles/[slug]/`      | Example page focused on what the vehicle illustrates.                                                   |
+| `/controversies/`        | Index of historical controversies and regulatory case studies.                                          |
+| `/controversies/[slug]/` | Neutral case study, such as Dieselgate.                                                                 |
+| `/glossary/`             | Definitions of technical terms.                                                                         |
+| `/sources/`              | Source library and citation policy.                                                                     |
+| `/about/`                | Mission, editorial policy, contribution policy, and project status.                                     |
+| `/search/`               | Advanced search workspace complementing the embedded header search.                                     |
 
 ### 7.3 Home Page Requirements
 
@@ -768,7 +769,7 @@ The site should define these content types:
 | Content Type    | Description                                                                 |
 | --------------- | --------------------------------------------------------------------------- |
 | Era             | A period of automotive technology history.                                  |
-| Technology      | A specific system, component, process, or architecture.                     |
+| Technology      | A specific system, component, process, supply structure, or architecture.   |
 | Vehicle Example | A vehicle used to illustrate a technology or era.                           |
 | Controversy     | A structured case study involving technical, legal, or regulatory conflict. |
 | Glossary Term   | Short definition of a technical term.                                       |
@@ -917,6 +918,8 @@ The era chronology should be accessible without requiring pointer precision. Req
 The MVP should use static search:
 
 - Generate a Pagefind index after the production build.
+- Provide a compact header search that returns inline results without leaving
+  the current page.
 - Search title, summary, body, glossary terms, and tags.
 - Show content type labels in results.
 - Prioritize exact title matches and glossary matches where possible.

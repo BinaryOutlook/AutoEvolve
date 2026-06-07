@@ -11,7 +11,8 @@ sources:
     'nhtsa-cybersecurity-practices',
   ]
 category: 'software-diagnostics'
-eras: ['emissions-and-electronic-control', 'software-defined-connected-vehicles']
+eras:
+  ['emissions-and-electronic-control', 'software-defined-connected-vehicles']
 relatedTechnologies:
   [
     'engine-control-unit',
@@ -19,6 +20,10 @@ relatedTechnologies:
     'electronic-stability-control',
     'adaptive-cruise-control',
     'battery-management-system',
+    'zonal-electrical-architecture',
+    'software-defined-vehicle-architecture',
+    'over-the-air-software-updates',
+    'vehicle-cybersecurity',
   ]
 relatedVehicles: []
 ---

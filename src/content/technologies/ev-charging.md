@@ -26,6 +26,10 @@ relatedTechnologies:
     'battery-electric-vehicle',
     'plug-in-hybrid-electric-vehicle',
     'battery-management-system',
+    'charging-communication-protocols',
+    'dc-fast-charging',
+    'vehicle-to-grid',
+    'battery-swapping',
   ]
 relatedVehicles: ['chevrolet-volt', 'nissan-leaf']
 ---

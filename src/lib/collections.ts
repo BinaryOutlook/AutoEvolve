@@ -45,6 +45,10 @@ export function pathFor(collection: ArchiveCollection, slug: string) {
   return `/${collection}/${slug}/`;
 }
 
+const categoryLabels: Record<string, string> = {
+  'manufacturing-supply': 'Manufacturing and Supply',
+};
+
 export function categoryLabel(category: string) {
-  return titleFromSlug(category);
+  return categoryLabels[category] ?? titleFromSlug(category);
 }

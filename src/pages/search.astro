@@ -4,19 +4,22 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 import { mediaAssets } from '@lib/media';
 ---
 
-<BaseLayout title="Search" description="Search AutoEvolve content.">
+<BaseLayout
+  title="Advanced Search"
+  description="Run a full-page search across AutoEvolve content."
+>
   <section class="page-section page-hero">
     <p class="eyebrow">Find content</p>
-    <h1>Search</h1>
+    <h1>Advanced Search</h1>
     <p>
-      Search technology pages, eras, vehicle examples, controversies, glossary
-      terms, and source records.
+      Run a full-page search across technology pages, eras, vehicle examples,
+      controversies, glossary terms, and source records.
     </p>
     <SourcedMediaPanel
       asset={mediaAssets.hybridCutaway}
-      eyebrow="Search reference"
+      eyebrow="Advanced search reference"
       title="Search returns records, not recommendations"
-      description="The static index helps readers find technologies, eras, examples, controversies, terms, and source records without changing the archive into a ranking engine."
+      description="The static index helps readers find technologies, eras, examples, controversies, terms, and source records without changing the archive into a ranking engine. The header search covers quick lookups; this page is the fuller search workspace."
       facts={[
         { label: 'Index', value: 'Pagefind static files' },
         { label: 'Query', value: 'Browser-side search' },
@@ -27,7 +30,14 @@ import { mediaAssets } from '@lib/media';
   </section>
   <section class="page-section">
     <div class="search-shell">
-      <div id="search"></div>
+      <label
+        class="search-label"
+        id="advanced-search-label"
+        for="advanced-search-input"
+      >
+        Search archive
+      </label>
+      <div id="search" data-advanced-search></div>
       <noscript
         >Search requires JavaScript after the site is built. Browse eras or
         technologies if scripting is unavailable.</noscript
@@ -44,6 +54,42 @@ import { mediaAssets } from '@lib/media';
           showSubResults: true,
           showImages: false,
         });
+
+        const searchRoot = document.querySelector('[data-advanced-search]');
+
+        const attachSearchLabel = () => {
+          const searchInput = searchRoot?.querySelector(
+            'input[type="text"], input[type="search"]',
+          );
+
+          if (!(searchInput instanceof HTMLInputElement)) {
+            return false;
+          }
+
+          searchInput.id = 'advanced-search-input';
+          searchInput.setAttribute('aria-labelledby', 'advanced-search-label');
+          searchInput.setAttribute('autocomplete', 'off');
+
+          const initialQuery = new URLSearchParams(window.location.search).get(
+            'q',
+          );
+
+          if (initialQuery !== null && searchInput.value === '') {
+            searchInput.value = initialQuery;
+            searchInput.dispatchEvent(new Event('input', { bubbles: true }));
+          }
+
+          return true;
+        };
+
+        if (!attachSearchLabel() && searchRoot !== null) {
+          const observer = new MutationObserver(() => {
+            if (attachSearchLabel()) {
+              observer.disconnect();
+            }
+          });
+          observer.observe(searchRoot, { childList: true, subtree: true });
+        }
       }
     });
   </script>

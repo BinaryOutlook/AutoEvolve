@@ -47,6 +47,7 @@ const technologies = defineCollection({
       'chassis-safety',
       'electric-drive',
       'software-diagnostics',
+      'manufacturing-supply',
     ]),
     eras: stringListSchema,
     relatedTechnologies: stringListSchema,

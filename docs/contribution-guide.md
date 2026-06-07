@@ -28,6 +28,7 @@ npm run test:e2e
 For v1 UI work, also perform a browser pass on:
 
 - the homepage car systems explorer
+- header quick search and the advanced search page
 - the technologies catalogue
 - one technology detail page
 - one vehicle detail page
@@ -49,9 +50,11 @@ overflow before treating the change as complete.
   the image appears.
 - Keep interactive media static-first where practical. Prefer native HTML and
   Astro component scripts before adding a client framework.
-- Write inline equations as `$E = mc^2$` and block equations with `$$`
+- Write inline equations as `\( E=mc^2 \)` and block equations with `$$`
   fences so Astro's Markdown math pipeline renders them through KaTeX.
 - Run `npm run test:e2e` after layout or math changes; the suite captures
   desktop and mobile screenshots in ignored Playwright output directories and
   sweeps every generated route for page-level horizontal overflow, readable
-  figure captions, and sourced images with non-empty alt text and dimensions.
+  figure captions, sourced images with non-empty alt text and dimensions, and
+  axe coverage on representative home, search, era, technology, vehicle, and
+  controversy routes.

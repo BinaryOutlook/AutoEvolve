@@ -11,6 +11,7 @@ relatedTechnologies:
     'engine-control-unit',
     'electronic-throttle-control',
     'hybrid-electric-vehicle',
+    'vehicle-startup-shutdown-states',
   ]
 relatedVehicles: ['toyota-prius']
 ---

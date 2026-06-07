@@ -2107,6 +2107,195 @@ export const sources: Source[] = [
       'starter and battery wear considerations for idle reduction',
     ],
   },
+  {
+    id: 'unece-cyber-security-regulation',
+    title:
+      'UN Regulation No. 155 - Cyber Security and Cyber Security Management System',
+    organization: 'United Nations Economic Commission for Europe',
+    type: 'government',
+    url: 'https://unece.org/transport/documents/2021/03/standards/un-regulation-no-155-cyber-security-and-cyber-security',
+    accessedDate: '2026-06-07',
+    supports: [
+      'vehicle cybersecurity management-system context',
+      'cybersecurity risk management across vehicle lifecycle',
+    ],
+  },
+  {
+    id: 'bosch-brake-by-wire',
+    title: 'Brake-by-Wire',
+    organization: 'Bosch Mobility',
+    type: 'manufacturer',
+    url: 'https://www.bosch-mobility.com/en/solutions/driving-safety/brake-by-wire/',
+    accessedDate: '2026-06-07',
+    supports: [
+      'brake-by-wire operating principle',
+      'redundant brake actuator and ESP fallback context',
+      'brake blending and pedal signal framing',
+    ],
+    notes:
+      'Manufacturer source used for architecture and component description, not independent performance claims.',
+  },
+  {
+    id: 'bosch-zone-ecu',
+    title: 'Zone ECU',
+    organization: 'Bosch Mobility',
+    type: 'manufacturer',
+    url: 'https://www.bosch-mobility.com/en/solutions/control-units/zone-ecu/',
+    accessedDate: '2026-06-07',
+    supports: [
+      'zone-oriented electrical/electronic architecture context',
+      'zonal layer between central computers and distributed sensors or actuators',
+      'Ethernet, CAN, LIN, and power-output integration context',
+    ],
+    notes:
+      'Supplier source used for architecture explanation while avoiding product superiority claims.',
+  },
+  {
+    id: 'bosch-vehicle-computer',
+    title: 'Vehicle Computers Across All Domains',
+    organization: 'Bosch Mobility',
+    type: 'manufacturer',
+    url: 'https://www.bosch-mobility.com/en/mobility-topics/vehicle-computer/',
+    accessedDate: '2026-06-07',
+    supports: [
+      'centralized vehicle-computer architecture context',
+      'cross-domain software consolidation framing',
+      'software-defined vehicle architecture context',
+    ],
+    notes:
+      'Supplier source used for E/E architecture framing, not for market adoption claims.',
+  },
+  {
+    id: 'nio-power',
+    title: 'NIO Power',
+    organization: 'NIO',
+    type: 'manufacturer',
+    url: 'https://us.nio.com/nio-power',
+    accessedDate: '2026-06-07',
+    supports: [
+      'battery swapping as part of a charging and swap service network',
+      'vehicle and battery health-check context during swaps',
+    ],
+    notes:
+      'Manufacturer source used as a contemporary battery-swap example while preserving neutral analysis.',
+  },
+  {
+    id: 'nio-power-swap-station-4',
+    title: 'NIO Power Swap Station 4.0 Now Operational',
+    organization: 'NIO',
+    type: 'manufacturer',
+    url: 'https://www.nio.com/news/nio-pss-4.0',
+    accessedDate: '2026-06-07',
+    supports: [
+      'current power-swap station generation context',
+      'battery swapping, charging, high-voltage system, and smart-power integration example',
+    ],
+    notes:
+      'Manufacturer news source used for system example details, not for independent convenience or scale conclusions.',
+  },
+  {
+    id: 'nhtsa-fmvss-305a-final-rule-2024',
+    title:
+      'FMVSS No. 305a Electric-Powered Vehicles: Electric Powertrain Integrity',
+    organization:
+      'U.S. Department of Transportation / National Highway Traffic Safety Administration',
+    type: 'government',
+    url: 'https://www.transportation.gov/regulations/federal-register-documents/2024-28707',
+    accessedDate: '2026-06-07',
+    supports: [
+      'electric powertrain integrity regulatory context',
+      'normal-operation and post-crash electric-shock, fire, explosion, and gas-venting risk framing',
+    ],
+  },
+  {
+    id: 'nhtsa-electric-hybrid-vehicles-safety',
+    title: 'Electric and Hybrid Vehicles: Battery, Charging and Safety',
+    organization: 'National Highway Traffic Safety Administration',
+    type: 'government',
+    url: 'https://www.nhtsa.gov/vehicle-safety/electric-and-hybrid-vehicles',
+    accessedDate: '2026-06-07',
+    supports: [
+      'consumer-facing high-voltage electric and hybrid vehicle safety context',
+      'high-voltage service and emergency-response framing',
+    ],
+  },
+  {
+    id: 'doe-lightweight-materials-steel-aluminum',
+    title:
+      'Short-Term Lightweight Materials Research (Advanced High-Strength Steel and Aluminum)',
+    organization: 'U.S. Department of Energy Vehicle Technologies Office',
+    type: 'government',
+    url: 'https://www.energy.gov/eere/vehicles/short-term-lightweight-materials-research-advanced-high-strength-steel-and-aluminum',
+    accessedDate: '2026-06-07',
+    supports: [
+      'advanced high-strength steel and aluminum lightweighting context',
+      'joining, corrosion, repair, recycling, cost, and manufacturing barriers',
+    ],
+  },
+  {
+    id: 'doe-lightweight-aluminum-castings-2021',
+    title:
+      'New Technologies for High-Performance Lightweight Aluminum Castings',
+    organization: 'U.S. Department of Energy Vehicle Technologies Office',
+    type: 'government',
+    url: 'https://www.energy.gov/cmei/vehicles/articles/new-technologies-high-performance-lightweight-aluminum-castings',
+    accessedDate: '2026-06-07',
+    supports: [
+      'lightweight aluminum casting research context',
+      'high-performance automotive casting manufacturing context',
+    ],
+    notes:
+      'Presentation listing used for research-scope framing rather than production adoption claims.',
+  },
+  {
+    id: 'doe-lightweight-materials-timeline',
+    title: 'Timeline: A Path to Lightweight Materials in Cars and Trucks',
+    organization: 'U.S. Department of Energy',
+    type: 'government',
+    url: 'https://www.energy.gov/eere/articles/timeline-path-lightweight-materials-cars-and-trucks',
+    accessedDate: '2026-06-07',
+    supports: [
+      'historical lightweight materials milestones',
+      'magnesium die-casting and aluminum body manufacturing context',
+    ],
+  },
+  {
+    id: 'iatf-16949-about',
+    title: 'IATF 16949:2016 About',
+    organization: 'International Automotive Task Force',
+    type: 'technical-reference',
+    url: 'https://www.iatfglobaloversight.org/iatf-169492016/about/',
+    accessedDate: '2026-06-07',
+    supports: [
+      'automotive quality-management standard history',
+      'global supply-chain assessment and OEM-specific requirement context',
+    ],
+  },
+  {
+    id: 'doe-secure-sustainable-materials',
+    title: 'Secure Material Supply Chains',
+    organization:
+      'U.S. Department of Energy Advanced Materials and Manufacturing Technologies Office',
+    type: 'government',
+    url: 'https://www.energy.gov/eere/ammto/secure-and-sustainable-materials',
+    accessedDate: '2026-06-07',
+    supports: [
+      'material supply-chain resilience and lifecycle context',
+      'recovery, reuse, and recycling framing for manufacturing systems',
+    ],
+  },
+  {
+    id: 'doe-manufacturing-energy-supply-chains-office',
+    title: 'Office of Manufacturing and Energy Supply Chains',
+    organization: 'U.S. Department of Energy',
+    type: 'government',
+    url: 'https://www.energy.gov/mesc',
+    accessedDate: '2026-06-07',
+    supports: [
+      'manufacturing-capacity and supply-chain security context',
+      'energy manufacturing deployment framing',
+    ],
+  },
 ];
 
 export function getSourceById(id: string) {

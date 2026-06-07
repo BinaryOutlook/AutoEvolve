@@ -69,6 +69,16 @@ const visualCoverageRoutes = [
   '/controversies/dieselgate/',
 ] as const;
 
+const accessibilityAuditRoutes = [
+  '/',
+  '/search/',
+  '/eras/',
+  '/technologies/battery-electric-vehicle/',
+  '/technologies/large-structural-casting/',
+  '/vehicles/toyota-prius/',
+  '/controversies/dieselgate/',
+] as const;
+
 function collectGeneratedRoutes(directory: string): string[] {
   const routes: string[] = [];
   const entries = readdirSync(directory, { withFileTypes: true });
@@ -118,6 +128,11 @@ async function waitForRenderedMath(page: Page): Promise<void> {
       );
     }),
   );
+}
+
+async function waitForAdvancedSearch(page: Page): Promise<void> {
+  await expect(page.locator('#advanced-search-label')).toBeVisible();
+  await expect(page.locator('#advanced-search-input')).toBeVisible();
 }
 
 async function expectNoPageHorizontalOverflow(page: Page): Promise<void> {
@@ -170,25 +185,28 @@ async function expectAccessibleSourcedMedia(page: Page): Promise<void> {
     Array.from(document.querySelectorAll('figure'))
       .filter((figure) => figure.querySelector('img') !== null)
       .map((figure) => {
-      const captionText =
-        figure.querySelector('figcaption')?.textContent?.trim() ?? '';
+        const captionText =
+          figure.querySelector('figcaption')?.textContent?.trim() ?? '';
 
-      return {
-        captionText,
-        hasCaption: captionText.length > 0,
-        hasSourceLink: Array.from(figure.querySelectorAll('figcaption a')).some(
-          (link) => link.getAttribute('href')?.startsWith('https://') ?? false,
-        ),
-        imageMetrics: Array.from(figure.querySelectorAll('img')).map(
-          (image) => ({
-            alt: image.getAttribute('alt') ?? '',
-            complete: image.complete,
-            naturalHeight: image.naturalHeight,
-            naturalWidth: image.naturalWidth,
-          }),
-        ),
-      };
-    }),
+        return {
+          captionText,
+          hasCaption: captionText.length > 0,
+          hasSourceLink: Array.from(
+            figure.querySelectorAll('figcaption a'),
+          ).some(
+            (link) =>
+              link.getAttribute('href')?.startsWith('https://') ?? false,
+          ),
+          imageMetrics: Array.from(figure.querySelectorAll('img')).map(
+            (image) => ({
+              alt: image.getAttribute('alt') ?? '',
+              complete: image.complete,
+              naturalHeight: image.naturalHeight,
+              naturalWidth: image.naturalWidth,
+            }),
+          ),
+        };
+      }),
   );
 
   expect(figures.length).toBeGreaterThan(0);
@@ -247,6 +265,23 @@ test('home page exposes the core archive navigation', async ({ page }) => {
       exact: true,
     }),
   ).toBeVisible();
+});
+
+test('header search displays inline results without route navigation', async ({
+  page,
+}) => {
+  await page.goto('/');
+  const startPath = new URL(page.url()).pathname;
+  const search = page.getByRole('searchbox', { name: 'Search archive' });
+
+  await search.fill('battery');
+
+  const resultsPanel = page.locator('#site-search-results');
+  await expect(resultsPanel).toBeVisible();
+  await expect(
+    resultsPanel.locator('.header-search__results a').first(),
+  ).toBeVisible();
+  expect(new URL(page.url()).pathname).toBe(startPath);
 });
 
 test('standalone timeline route is not generated', async ({ page }) => {
@@ -571,8 +606,9 @@ test('representative visual audit pages have relevant labels, captions, and no o
         technology.alt,
       );
       await expect(firstFigure).toContainText(technology.source);
-      await expect(firstFigure.getByRole('link', { name: /DOE AFDC/i })).toBeVisible();
-
+      await expect(
+        firstFigure.getByRole('link', { name: /DOE AFDC/i }),
+      ).toBeVisible();
 
       await captureLayoutScreenshot(
         page,
@@ -616,14 +652,29 @@ test('technology pages render sources and related links', async ({ page }) => {
     page.getByRole('heading', { name: 'Sources and Further Reading' }),
   ).toBeVisible();
   await expect(
-    page.getByRole('link', { name: 'Lithium Ion Battery' }),
+    page
+      .getByLabel('Related archive paths')
+      .getByRole('link', { name: 'Lithium Ion Battery' }),
+  ).toBeVisible();
+  await expect(
+    page
+      .getByLabel('Related content')
+      .getByRole('link', { name: 'Lithium Ion Battery' }),
   ).toBeVisible();
 });
 
-test('home page has no automatically detectable accessibility violations', async ({
+test('representative routes have no automatically detectable accessibility violations', async ({
   page,
 }) => {
-  await page.goto('/');
-  const results = await new AxeBuilder({ page }).analyze();
-  expect(results.violations).toEqual([]);
+  for (const route of accessibilityAuditRoutes) {
+    await page.goto(route);
+    await waitForStableRendering(page);
+
+    if (route === '/search/') {
+      await waitForAdvancedSearch(page);
+    }
+
+    const results = await new AxeBuilder({ page }).analyze();
+    expect(results.violations).toEqual([]);
+  }
 });

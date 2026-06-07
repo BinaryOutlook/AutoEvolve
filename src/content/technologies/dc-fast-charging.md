@@ -23,6 +23,8 @@ relatedTechnologies:
     'battery-management-system',
     'onboard-charger',
     'combined-charging-system',
+    'charging-communication-protocols',
+    'high-voltage-safety-disconnects',
   ]
 relatedVehicles: ['hyundai-ioniq-5', 'tesla-model-s']
 ---

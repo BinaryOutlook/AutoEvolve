@@ -3,7 +3,8 @@ title: 'Battery Electric Vehicle'
 summary: 'A battery-electric propulsion architecture that stores energy in a rechargeable traction battery and uses electric motors for wheel torque.'
 status: 'published'
 lastReviewed: '2026-05-16'
-sources: ['doe-afdc-bev', 'doe-history-electric-car', 'epa-automotive-trends-2025']
+sources:
+  ['doe-afdc-bev', 'doe-history-electric-car', 'epa-automotive-trends-2025']
 category: 'electric-drive'
 eras: ['battery-electric-vehicles', 'software-defined-connected-vehicles']
 relatedTechnologies:
@@ -11,9 +12,14 @@ relatedTechnologies:
     'lithium-ion-battery',
     'battery-management-system',
     'ev-charging',
+    'charging-communication-protocols',
+    'high-voltage-safety-disconnects',
+    'cell-to-pack-structural-battery',
+    'battery-swapping',
     'regenerative-braking',
     'fuel-cell-electric-vehicle',
     'hybrid-electric-vehicle',
+    'software-defined-vehicle-architecture',
     'differential',
   ]
 relatedVehicles: ['nissan-leaf']

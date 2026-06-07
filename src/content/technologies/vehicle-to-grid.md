@@ -24,6 +24,8 @@ relatedTechnologies:
     'battery-management-system',
     'combined-charging-system',
     'onboard-charger',
+    'charging-communication-protocols',
+    'vehicle-cybersecurity',
   ]
 relatedVehicles: ['hyundai-ioniq-5']
 ---

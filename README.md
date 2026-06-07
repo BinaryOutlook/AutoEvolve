@@ -1,6 +1,6 @@
 # AutoEvolve
 
-AutoEvolve is a static-first educational website that documents the evolution of automotive technology: early self-propelled vehicles, internal-combustion systems, diesel and emissions controls, hybrids, plug-in hybrids, battery-electric platforms, and the software-defined vehicles now reshaping mobility.
+AutoEvolve is a static-first educational website that documents the evolution of automotive technology: early self-propelled vehicles, internal-combustion systems, diesel and emissions controls, hybrids, plug-in hybrids, battery-electric platforms, manufacturing and supply systems, and the software-defined vehicles now reshaping mobility.
 
 The current release is `0.2`: an expanded MVP content release with broader technology guides, controversy case studies, vehicle examples, sourced media panels, and eras as the chronological structure. The durable rule is simple: every meaningful update should keep the product, documentation, and maintenance workflow moving together instead of letting the code outrun the explanation.
 
@@ -35,9 +35,11 @@ If source quality or navigability is low, the project is not ready just because 
 
 - Astro with TypeScript for static-first rendering.
 - MDX and typed content collections for long-form articles.
-- Pagefind for generated static search.
+- Pagefind for generated static search, including quick header results and the
+  full advanced search route.
 - Zod-backed schemas through Astro content collections.
 - Reusable sourced media panels for attributed reference images.
+- Original mechanism-flow panels for selected complex technology explainers.
 - Accessible Astro component scripts for small static-first interactions, such
   as the clickable car systems explorer with sourced AFDC cutaway images.
 - Vitest and Playwright for verification.
@@ -54,17 +56,18 @@ The development server prints the local URL, usually `http://localhost:4321`.
 
 ## Commands
 
-| Command             | Action                                                                          |
-| ------------------- | ------------------------------------------------------------------------------- |
-| `npm run dev`       | Start the local development server.                                             |
-| `npm run build`     | Run Astro type/content checks, build the site, and generate the Pagefind index. |
-| `npm run preview`   | Preview the production build locally.                                           |
-| `npm run check`     | Run Astro checks without building.                                              |
-| `npm run typecheck` | Run Astro type and content checks without building.                             |
-| `npm run lint`      | Run ESLint and markdownlint.                                                    |
-| `npm run format`    | Format project files with Prettier.                                             |
-| `npm run test`      | Run unit tests.                                                                 |
-| `npm run test:e2e`  | Run Playwright end-to-end tests.                                                |
+| Command                 | Action                                                                          |
+| ----------------------- | ------------------------------------------------------------------------------- |
+| `npm run dev`           | Start the local development server.                                             |
+| `npm run build`         | Run Astro type/content checks, build the site, and generate the Pagefind index. |
+| `npm run preview`       | Preview the production build locally.                                           |
+| `npm run check`         | Run Astro checks without building.                                              |
+| `npm run typecheck`     | Run Astro type and content checks without building.                             |
+| `npm run check:content` | Validate source IDs and cross-content slug references.                          |
+| `npm run lint`          | Run ESLint and markdownlint.                                                    |
+| `npm run format`        | Format project files with Prettier.                                             |
+| `npm run test`          | Run unit tests.                                                                 |
+| `npm run test:e2e`      | Run Playwright end-to-end tests.                                                |
 
 Before submitting meaningful changes, run:
 
@@ -84,7 +87,7 @@ Use `npm run test:e2e` when routes, navigation, search behavior, or browser-visi
 | [src/pages/](src/pages/)                               | Astro routes for home, era-led chronology, technologies, vehicles, controversies, glossary, sources, about, and search.  |
 | [src/content/](src/content/)                           | Markdown and MDX content collections for eras, technologies, vehicles, and controversies.                                |
 | [src/data/](src/data/)                                 | Structured source and glossary data.                                                                                     |
-| [src/components/](src/components/)                     | Shared UI for record rows, sourced media panels, headers, source lists, atlas, and linked lists.                         |
+| [src/components/](src/components/)                     | Shared UI for record rows, sourced media panels, mechanism flows, headers, source lists, atlas, and linked lists.        |
 | [src/layouts/](src/layouts/)                           | Base and article layout shells.                                                                                          |
 | [public/images/systems/](public/images/systems/)       | Sourced AFDC cutaway images used by the interactive car systems atlas.                                                   |
 | [docs/](docs/)                                         | Current editorial, source, and contribution guidance.                                                                    |
@@ -111,7 +114,7 @@ Keep documentation current in the same pass as code whenever a change affects co
 
 ## Editorial Standard
 
-AutoEvolve should explain automotive systems before discussing vehicle examples. Vehicle pages are not reviews; they are case studies showing how a broader technology entered production, changed over time, or exposed tradeoffs.
+AutoEvolve should explain automotive systems and production processes before discussing vehicle examples. Vehicle pages are not reviews; they are case studies showing how a broader technology entered production, changed over time, or exposed tradeoffs.
 
 Use specific sources for specific claims. Regulatory records support regulatory history. Manufacturer material may support dates or specifications, but marketing claims need context. When a topic is recent or unsettled, mark it with a clear last-reviewed date. Visuals should be educational: sourced images require alt text, visible captioned attribution, source links, and reuse details.
 
@@ -143,6 +146,6 @@ Future versioned planning should preserve that scoped style and avoid treating l
 
 ## Project Status
 
-The repository is labeled `0.2` after the expanded MVP content pass. It now centers the chronology on eras, keeps static search and contribution guidance in place, carries source-backed coverage across technologies, controversies, and vehicle examples, and renders at least one attributed educational media artifact on each generated page.
+The repository is labeled `0.2` after the expanded MVP content pass. It now centers the chronology on eras, keeps static search and contribution guidance in place, carries source-backed coverage across technologies, manufacturing and supply topics, controversies, and vehicle examples, renders at least one attributed educational media artifact on each generated page, and provides quick header search with `/search/` retained as the advanced search workspace.
 
 Current docs are expected to describe the present state. If a feature, command, route, or workflow changes, update the relevant document before considering the work complete.
