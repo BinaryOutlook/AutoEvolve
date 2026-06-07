@@ -49,9 +49,15 @@ A three-way catalyst is powerful only inside its control envelope. Cold starts a
 
 The catalyst also ages. Thermal stress, contamination, misfire, oil consumption, and poor mixture control can reduce conversion efficiency. For that reason, modern systems use upstream and downstream oxygen sensors and onboard diagnostics to watch both the fuel-control loop and catalyst performance.
 
+Light-off strategy is a major design issue. Engineers may place catalysts close to the exhaust ports, adjust ignition timing after startup, manage idle speed, or use secondary-air strategies in some systems to raise catalyst temperature quickly. Those choices can reduce the cold-start window but may affect noise, fuel use, component temperature, and packaging. The catalyst is therefore part of a warmup plan, not only a steady-state chemistry device.
+
 ## Representative Uses
 
 Three-way catalysts became common on gasoline passenger vehicles with electronic fuel injection and oxygen-sensor feedback. A typical arrangement places an oxygen sensor before the catalyst for closed-loop mixture control and may place another after the catalyst for diagnostics. Later engines integrated close-coupled catalysts near the exhaust manifold to reduce warmup time.
+
+## Evidence Boundary
+
+The EPA, Volvo, and Bosch sources support the regulatory, fuel, lambda-sensor, and feedback-control context. They do not justify fixed conversion-efficiency numbers without a test cycle, catalyst age, fuel, temperature, and engine-control strategy.
 
 ## What It Teaches
 

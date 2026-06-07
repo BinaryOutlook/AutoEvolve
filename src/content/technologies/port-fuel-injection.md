@@ -33,17 +33,23 @@ A fuel pump supplies a rail, and electronically controlled injectors meter fuel 
 
 Because fuel is introduced before the cylinder, it has time to vaporize and mix with intake air. The intake valve and port surfaces can also influence evaporation, especially during cold start.
 
+The main components are not only the injector tips. A production system also depends on fuel-pressure control, injector targeting, intake-runner geometry, wiring, ECU drivers, and calibration tables that describe injector flow at different pulse widths and voltages. Small errors in those supporting pieces can affect idle quality, emissions, or catalyst heating even when the basic architecture is unchanged.
+
 ## Historical Context
 
 Port injection helped replace carburetors as emissions limits, drivability expectations, altitude compensation, and fuel-economy targets demanded more precise control. Oxygen-sensor feedback and three-way catalysts made that precision especially important because catalyst conversion depends on close air-fuel control in many gasoline operating modes.
 
 The U.S. regulatory baseline for later advanced-engine assessments often treats port-fuel-injected gasoline engines as a reference point before adding technologies such as direct injection, turbocharging, variable valve timing, and cooled EGR.
 
+That reference role is important. Port injection is often the comparison point used to explain later gasoline-engine efficiency packages, but it should not be treated as technically frozen. Sequential injection, better spray targeting, heated oxygen sensors, faster ECUs, and improved evaporative controls all changed how port-injected engines behaved over time.
+
 ## Tradeoffs and Constraints
 
 Port injection is mechanically less severe than gasoline direct injection because it does not require in-cylinder high-pressure injection. It also tends to produce a well-mixed charge. However, it gives less charge-cooling benefit inside the cylinder and less direct control over mixture placement near the spark plug.
 
 Cold-start wall wetting, fuel-film dynamics, injector targeting, and evaporative behavior still matter. Port injection is therefore precise compared with carburetion, but not simple in a calibration sense.
+
+Operating limits tend to show up during cold starts, rapid throttle changes, high load, very low pulse widths, or fuel-quality changes. The ECU can correct mixture once exhaust feedback is active, but the first seconds after start and sudden transients rely heavily on modeled fuel behavior.
 
 ## Representative Uses
 
@@ -52,6 +58,10 @@ Port fuel injection became a mainstream gasoline-engine technology during the em
 ## Common Misconceptions
 
 Port injection is not merely an old technology waiting to disappear. In some engines, it remains a deliberate choice because mixture preparation, cost, particulate behavior, intake-valve cleanliness, and system complexity all matter. It also differs from throttle-body injection, where fuel is sprayed centrally rather than at each intake port.
+
+## Neutral Reading
+
+The neutral interpretation is that port fuel injection solved a control problem for its era and still solves it well in some designs. Direct injection can add useful capability, but it also adds pressure, noise, particulate, and calibration issues. The meaningful comparison is system behavior, not a simple newer-versus-older label.
 
 ## Study Next
 

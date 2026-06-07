@@ -31,6 +31,8 @@ Discrete systems switch between two or more cam profiles. One cam lobe may provi
 
 In some gasoline engines, variable lift can help control engine load through the intake valves instead of relying entirely on a throttle plate. That matters because throttling creates a pressure drop that the pistons must pump against.
 
+The mechanism may involve rocker arms that lock together, eccentric shafts, intermediate levers, oil-control valves, position sensors, and ECU supervision. The visible valve motion is the final output of a chain of mechanical authority, hydraulic pressure or motor torque, and calibration decisions.
+
 ## Historical Context
 
 The historical problem is the same one faced by fixed valve timing: one cam profile cannot suit every speed and load. Honda's late-1980s VTEC production history is a representative example of discrete cam-profile switching. Toyota's later Valvematic release illustrates a continuous lift-and-timing path aimed at air-intake control.
@@ -43,6 +45,8 @@ Variable lift hardware can improve selected operating regions, but it adds valve
 
 The benefit depends on the rest of the engine. Variable lift paired with a simple fuel and ignition system cannot achieve the same behavior as variable lift coordinated with electronic throttle control, oxygen feedback, direct injection, turbocharging, and exhaust aftertreatment.
 
+Operating limits include actuator response time, oil temperature, lubrication cleanliness, valve-spring control, packaging space near the camshaft, and fallback behavior if the commanded lift cannot be reached. A system that works smoothly at steady cruise still has to survive cold oil, high engine speed, repeated transients, and diagnostic checks.
+
 ## Representative Uses
 
 Representative uses include cam-profile switching engines that combine low-speed drivability with high-speed breathing, and continuous-lift systems that reduce throttling losses during part-load operation. The technology is usually one part of a broader airflow-control package.
@@ -50,6 +54,10 @@ Representative uses include cam-profile switching engines that combine low-speed
 ## Common Misconceptions
 
 Variable valve lift does not always mean an engine has variable valve timing. Some systems vary lift, some vary timing, and some do both. A badge or acronym is therefore less informative than asking what mechanism actually moves and what the control system can command.
+
+## Neutral Reading
+
+Variable lift should be read as a way to widen the useful operating map of a fixed-displacement engine. It can reduce compromises, but it does not erase them. The historical lesson is that airflow control moved from one cam profile and one throttle plate toward a coordinated set of valve, throttle, fuel, and emissions commands.
 
 ## Study Next
 

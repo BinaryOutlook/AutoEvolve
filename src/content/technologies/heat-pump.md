@@ -49,6 +49,8 @@ A heat pump can reduce heating energy in mild or moderate cold, especially compa
 
 Some vehicles still use resistive heaters as backup or for rapid warmup. The practical design is often a hybrid thermal strategy rather than a heat pump alone.
 
+The system also competes for heat sources. Waste heat from motors, inverters, onboard chargers, batteries, or cabin exhaust air may be useful, but those sources are not always available when the driver wants cabin heat. Battery preconditioning can also conflict with immediate cabin comfort or charging preparation. Valves, pumps, and controls decide which loop receives priority, so the user-visible result depends on software as much as refrigerant hardware.
+
 ## Representative Uses
 
 Representative uses include BEV cabin heating, battery preconditioning, integrated thermal systems that move waste heat from motors or power electronics, and plug-in hybrids that heat the cabin while the engine remains off. In vehicles with fast charging, heat-pump hardware may be part of a larger thermal network that prepares the battery for charging and then removes heat during the session.
@@ -56,6 +58,10 @@ Representative uses include BEV cabin heating, battery preconditioning, integrat
 ## Common Misconceptions
 
 A heat pump does not create free heat. It moves heat using compressor work, and its advantage varies with ambient conditions. It also does not solve all winter range loss because batteries, tires, air density, road conditions, and driver behavior can change energy use at the same time.
+
+## Evidence Boundary
+
+The cited NREL and DOE sources support thermal-management and cold-ambient context. They do not establish a single cold-weather range effect for every EV, because vehicle mass, cabin size, battery chemistry, route, speed, humidity, and control strategy all matter.
 
 ## Study Next
 

@@ -11,6 +11,13 @@ sources:
     'tesla-software-updates',
     'hyundai-ioniq5-egmp',
     'mercedes-drive-pilot',
+    'bosch-can-history',
+    'can-cia-can-history',
+    'iso-11898-1-2024',
+    'nhtsa-automated-vehicle-safety',
+    'iihs-advanced-driver-assistance',
+    'iso-15118-1-2019',
+    'dot-fhwa-nevi-standards-final-rule-2023',
   ]
 dateRange: '2020s onward'
 order: 100
@@ -48,6 +55,14 @@ This era also changed the maintenance question. A mechanical repair once centere
 Manufacturers are moving from many isolated electronic control units toward domain or zonal architectures. That change can reduce duplicated wiring and make software integration easier, but it also concentrates responsibility in fewer controllers. Ethernet, high-speed gateways, and centralized compute platforms are becoming more important than the old mental model of separate boxes doing separate jobs.
 
 User interfaces are also changing. Large displays, app-style menus, voice control, phone keys, remote diagnostics, and connected services can make a vehicle feel less like a fixed appliance. Those choices create new design obligations: readable controls, long-term support, privacy protections, update transparency, and fallback behavior when connectivity fails.
+
+## Interfaces And Validation
+
+The software-defined era did not begin from nothing. Earlier CAN development, OBD requirements, engine control units, brake controllers, and airbag controllers already made the vehicle a networked machine. The newer change is scale: more functions depend on larger software stacks, faster networks, shared data, and update systems that may alter behavior after the vehicle has left the factory.
+
+Driver-assistance systems show why interface boundaries matter. A lane-centering or adaptive-cruise feature is not the same as an automated vehicle operating without human supervision. Neutral coverage should identify the operating domain, driver-monitoring requirement, sensor assumptions, fallback behavior, and the public agency or safety organization terminology being used.
+
+Charging communication adds a second interface layer. Standards such as ISO 15118 connect vehicles, supply equipment, identification, payment, cybersecurity, and load management. The vehicle is therefore part of a transportation network and an electrical network at the same time.
 
 ## Engineering Changes
 

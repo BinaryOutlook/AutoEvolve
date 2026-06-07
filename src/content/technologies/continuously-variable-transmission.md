@@ -61,9 +61,15 @@ The central benefit of a CVT is ratio flexibility. Its constraints are torque ca
 
 Some CVTs simulate stepped shifts even though they do not require them mechanically. That behavior is a calibration choice, often used to make acceleration sound and feel more familiar.
 
+A CVT also has to manage launch and low-speed maneuvering. Some designs use a torque converter, others use a clutch, and hybrid power-split systems can use electric machines to smooth the event. The transmission controller must choose ratio, clamping pressure, and engine speed while watching fluid temperature and belt load. Too little clamping can allow slip and damage; too much clamping wastes energy through hydraulic pressure and friction.
+
 ## Common Misconceptions
 
 A CVT is not gearless in the sense of having no ratio. It has a variable ratio. It also is not always a belt-and-pulley system; the term describes continuous ratio behavior, while the mechanism may be mechanical, electromechanical, or hybrid power-split.
+
+## Evidence Boundary
+
+The cited transmission and regulatory sources support CVTs as a recognized efficiency and drivetrain technology. They do not justify broad claims that all CVTs feel the same, fail the same way, or outperform stepped transmissions in every duty cycle.
 
 ## Study Next
 

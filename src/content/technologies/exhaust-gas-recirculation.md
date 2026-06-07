@@ -34,6 +34,8 @@ EGR lowers peak combustion temperature by increasing the heat capacity of the in
 
 Systems may use high-pressure EGR from the exhaust manifold to the intake manifold, low-pressure EGR from downstream exhaust plumbing back to the compressor inlet, or both. Coolers, valves, pressure sensors, temperature sensors, and ECU diagnostics control the flow.
 
+The system is metered rather than merely open or closed. The ECU may infer flow from pressure differences, valve position, temperature change, air-mass readings, oxygen sensing, or dedicated sensors. Cooled systems add a heat exchanger and sometimes bypass control so exhaust temperature can be matched to the operating condition.
+
 ## Historical Context
 
 EGR became important as emissions regulations forced engines to address NOx formation inside the combustion process, not only after exhaust left the engine. Diesel engines use EGR with fuel injection and aftertreatment strategies, while newer gasoline assessments discuss cooled EGR with turbocharging, direct injection, variable valve timing, and valve lift.
@@ -46,6 +48,8 @@ Too little EGR may leave NOx or knock constraints unresolved. Too much EGR can s
 
 EGR also interacts with aftertreatment. A diesel calibration that uses more EGR may lower engine-out NOx but increase soot or exhaust-temperature challenges. A different calibration may favor downstream SCR operation. The system has to be calibrated as a whole.
 
+Operating limits include cooler fouling, condensation, valve sticking, low-temperature deposits, transient response, and the effect of recirculated gas on turbocharger compressor flow. In gasoline engines, too much dilution can cause misfire; in diesel engines, the NOx-soot-temperature balance can become narrow.
+
 ## Representative Uses
 
 Representative uses include light-duty gasoline engines using cooled EGR to manage knock and efficiency, diesel engines using EGR to reduce engine-out NOx, and advanced boosted gasoline concepts where EGR helps support downsizing without relying on fuel enrichment at high load.
@@ -53,6 +57,10 @@ Representative uses include light-duty gasoline engines using cooled EGR to mana
 ## Common Misconceptions
 
 EGR does not mean feeding dirty exhaust back into an engine carelessly. A working EGR system meters, cools, and diagnoses flow within defined limits. Another misconception is that EGR and aftertreatment are substitutes. In many engines they are partners: EGR shapes engine-out emissions, while catalysts, filters, or SCR systems treat what remains.
+
+## Neutral Reading
+
+EGR is a compromise-management tool. It can lower combustion temperature and reduce NOx formation, but it can also complicate soot, response, deposits, and aftertreatment temperature. Its historical value is that it made emissions control part of combustion design rather than only tailpipe cleanup.
 
 ## Study Next
 

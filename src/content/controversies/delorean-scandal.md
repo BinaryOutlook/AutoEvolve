@@ -41,6 +41,12 @@ The Washington Post reported DeLorean's 1984 acquittal and the jury's rejection 
 
 The result was not a finding that the company was technically sound or unsound. It was a legal outcome in a criminal prosecution against the founder.
 
+## Vehicle Engineering Boundary
+
+The DMC-12 should not be reduced to the scandal, and the scandal should not be used as a proxy technical review. The vehicle's stainless-steel panels, gullwing doors, rear-engine layout, supplier relationships, emissions-era powertrain choices, and production quality questions belong to a separate engineering discussion.
+
+The scandal page therefore treats the car as context rather than evidence. Business collapse and criminal prosecution shaped the public memory of the company, but they do not prove that every design decision was misguided. Likewise, the car's visual distinctiveness does not answer the financial or governance questions.
+
 ## Consequences
 
 The scandal accelerated the collapse of public confidence around a company that was already fragile. It also became the dominant public memory of DeLorean for years, often overshadowing more ordinary manufacturing questions such as cost control, launch quality, dealer support, and production scale.

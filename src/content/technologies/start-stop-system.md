@@ -43,9 +43,15 @@ Start-stop reduces idle fuel use only when operating conditions allow engine-off
 
 There are emissions constraints too. A restart must preserve catalyst temperature and mixture control, and the system must avoid shutdowns that would compromise diagnostics or aftertreatment readiness. In some cases the engine stays running because emissions or thermal management is more important than saving a few seconds of idle fuel.
 
+Driver interface is another constraint. The system has to make engine-off behavior legible without turning every traffic stop into a surprise. Brake-pedal feel, restart delay, steering assist, accessory power, and cabin noise all shape acceptance. A start-stop calibration that is technically efficient but unpredictable can feel broken, so controls often include inhibit logic, status messages, and sometimes a driver-selectable disable switch depending on market and vehicle design.
+
 ## Representative Uses
 
 Start-stop appears in full hybrids, mild hybrids, and many non-hybrid combustion vehicles. Hybrid systems can often restart the engine with a larger electric machine, while non-hybrid systems may use enhanced starters, absorbed-glass-mat batteries, or belt starter-generators. In both cases, the visible behavior is simple: the engine turns off at a stop and returns when propulsion is requested.
+
+## Evidence Boundary
+
+The cited DOE and EPA sources support idle-reduction context and adoption framing. They do not establish a fixed fuel-saving value for every route, because stop duration, accessory load, temperature, traffic pattern, and vehicle hardware differ.
 
 ## What It Teaches
 

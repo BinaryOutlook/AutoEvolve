@@ -24,7 +24,7 @@ relatedTechnologies:
   ['petrol-gasoline-engine', 'manual-transmission', 'differential']
 ---
 
-## Why Included
+## Why It Is Included
 
 The Willys MB / Ford GPW is included because it shows how military requirements can force a vehicle into a tightly standardized engineering brief. The National Museum of the U.S. Air Force describes the Army Quartermaster General inviting bids in 1940 for a one-quarter-ton four-wheel-drive truck, followed by testing of American Bantam, Willys-Overland, and Ford submissions.
 
@@ -32,15 +32,27 @@ ASME records that more than 637,000 Jeep vehicles were produced by Willys-Overla
 
 ## Technologies Illustrated
 
-The MB / GPW illustrates a light 4WD utility layout: compact body, simple open construction, manual gearbox, transfer case, driven axles, and enough ground clearance for varied terrain. Four-wheel drive here is not a comfort feature. It is a mobility answer shaped by military reconnaissance, transport, towing, and field-service needs.
+The MB / GPW illustrates a light 4WD utility layout: compact body, simple open construction, manual gearbox, transfer case, driven axles, and enough ground clearance for varied terrain. Four-wheel drive here is not a comfort feature. It is a mobility answer shaped by military reconnaissance, transport, towing, communications, and field-service needs.
 
-It also illustrates the production meaning of standardization. Ford's GPW production supplemented Willys capacity while following the standardized wartime design. The educational point is that a useful military vehicle must fit spare-parts supply, field repair, shipping, training, and rapid procurement as well as mechanical performance.
+It also illustrates the production meaning of standardization. Ford's GPW production supplemented Willys capacity while following the standardized wartime design. The educational point is that a useful military vehicle must fit spare-parts supply, field repair, shipping, training, and rapid procurement as well as mechanical performance. The vehicle had to be simple enough to use and maintain under conditions far harsher than a showroom demonstration.
 
-## Historical Role
+The drivetrain is only one part of the lesson. Open bodywork, exposed service points, towing provisions, compact dimensions, and basic weather protection all reflected mission priorities. The MB / GPW therefore helps readers see military vehicle design as a requirements problem, not just a ruggedness image. It also shows why curb weight, approach angles, payload, and manufacturability can become equally important when the user is an organization rather than a private buyer.
+
+## Historical Context
 
 The MB / GPW's historical role extends beyond wartime service because its layout helped define a later civilian utility path. Jeep's own heritage material links later Jeep vehicles back to the original Willys MB, while ASME's landmark material connects the wartime vehicle to early postwar civilian Jeep development.
 
 This page should avoid romanticizing war machinery. The vehicle is included for technical and industrial reasons: a standardized light 4WD platform, produced under wartime pressure, later became a reference point for civilian utility and recreational four-wheel-drive vehicles.
+
+## System Boundary
+
+The MB / GPW should be studied through organizational use. Its user was not a single private owner choosing comfort and style; it was a military system that valued training speed, repairability, interchangeability, shipping, field recovery, and enough off-road capability for varied missions. Those demands explain design choices that would feel austere in a civilian passenger car.
+
+This boundary also clarifies the later civilian lineage. Postwar utility vehicles inherited some useful packaging ideas, but civilian safety, comfort, weather protection, emissions rules, and recreational branding changed the problem. The wartime Jeep is a reference point, not a complete explanation for all later 4x4 design.
+
+## Neutral Reading
+
+The MB / GPW should not be treated as the origin of every 4x4, nor as a general-purpose ideal for civilian vehicles. Its strengths came from a specific wartime brief: mobility, repairability, interchangeability, and production speed. Those choices brought compromises in comfort, refinement, weather sealing, safety, and long-distance civilian usability. The neutral lesson is that vehicle architecture follows mission requirements.
 
 ## Study Next
 

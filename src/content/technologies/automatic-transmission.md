@@ -59,9 +59,15 @@ Automatic transmissions can smooth launch and let calibration software coordinat
 
 More ratios can narrow the step between gears, but additional gearsets and friction elements add packaging and validation work. A transmission that shifts frequently may keep the engine in an efficient region, yet frequent shifts can also be distracting or thermally demanding if poorly calibrated.
 
+The hydraulic system is both actuator and cooling path. Line pressure has to be high enough to apply clutches reliably, but excess pressure consumes pump power. Fluid must provide friction behavior, lubrication, heat transfer, and cleanliness over many temperature cycles. Modern shift control therefore blends mechanical design with adaptive software that learns wear, estimates temperature, and coordinates torque reduction from the engine during shifts.
+
 ## Common Misconceptions
 
 Automatic transmission is not a single mechanism. A torque-converter automatic, dual-clutch transmission, automated manual, and CVT can all shift automatically, but their internal physics differ. The word automatic describes the control experience; it does not guarantee the same gear architecture.
+
+## Evidence Boundary
+
+The cited EPA, NHTSA, and Britannica sources support the technology category and main mechanisms. They do not prove that more ratios are always better, or that one automatic architecture fits every vehicle. Vehicle mass, engine torque curve, duty cycle, cost, calibration, and service conditions matter.
 
 ## Study Next
 

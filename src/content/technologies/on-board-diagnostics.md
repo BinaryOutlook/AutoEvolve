@@ -51,9 +51,15 @@ OBD improves visibility, but it must balance sensitivity, false detections, repa
 
 The system also teaches a limit of diagnostic codes: a code points to a circuit, performance condition, or monitor result, not automatically to a single failed part. A catalyst-efficiency code, for example, belongs in a broader diagnostic path involving oxygen sensors, fuel control, misfire history, exhaust leaks, and catalyst condition.
 
+Standardization is part of the value. A common connector, data conventions, readiness logic, and malfunction indicator lamp make the vehicle legible to inspection programs and service equipment. At the same time, OBD is focused on regulated and monitored functions, not every possible mechanical or comfort problem. A vehicle can have a drivability complaint without a stored emissions-related code, and a stored code can require careful troubleshooting rather than parts replacement by guesswork.
+
 ## Representative Uses
 
 OBD II is central to emissions inspection programs, where the inspection equipment communicates with the vehicle and checks stored faults, warning-lamp status, and readiness. It also supports repair technicians by preserving fault information and freeze-frame context. On diesel vehicles, OBD extends into aftertreatment monitoring for systems such as particulate filters and NOx controls.
+
+## Evidence Boundary
+
+The CARB and EPA sources support OBD II requirements, compliance framing, and in-use monitoring context. They do not make every diagnostic scan equivalent to a full engineering investigation.
 
 ## What It Teaches
 

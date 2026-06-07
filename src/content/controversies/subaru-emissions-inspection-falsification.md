@@ -39,6 +39,12 @@ Subaru issued public notices and investigation materials in 2017. The company de
 
 In 2018, Subaru published investigation findings on fuel-economy and emissions inspection conduct. The company acknowledged inappropriate measurement practice and described corrective actions. Because these are company disclosures, they are strongest for what Subaru stated and admitted; a full regulatory history would require reading the Japanese oversight record as well.
 
+## Evidence Boundaries
+
+This page should be read with a source-quality boundary in mind. The available English-language source set is strongest for Subaru's own chronology, admitted process failures, investigation framing, and stated countermeasures. It is weaker for independent regulator interpretation, detailed plant-by-plant verification, and long-term enforcement follow-up.
+
+That limitation does not make the case unimportant. It means the article should avoid overstating unverified technical consequences. The documented lesson is process integrity: completion inspection and emissions or fuel-economy sampling depend on qualified people, controlled methods, records, and management oversight.
+
 ## Consequences
 
 The immediate consequences included recalls or reinspection actions in Japan, production-process changes, and reputational damage. The broader consequence was a clearer recognition that completion inspection is a regulated system rather than a private factory ritual.

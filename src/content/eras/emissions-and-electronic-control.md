@@ -8,6 +8,13 @@ sources:
     'epa-clean-air-act-history',
     'epa-lead-catalytic-converter',
     'volvo-lambda-sensor',
+    'bosch-lambda-sensor-history',
+    'bosch-switching-lambda-sensor',
+    'bosch-gasoline-port-fuel-injection',
+    'carb-obd-ii-fact-sheet',
+    'epa-obd-final-rule-1998',
+    'carb-in-use-compliance-testing',
+    'sae-automotive-engine-control-sensor-1978',
   ]
 dateRange: '1970s-1990s'
 order: 50
@@ -63,6 +70,12 @@ $$
 $$
 
 Each step affected the next. A catalyst could not clean up every mistake upstream. A sensor could not help if the control unit was too slow or too crude. A calibration that passed a laboratory test still had to preserve drivability in cold weather, altitude, heat, traffic, and aging.
+
+## Diagnostics And Accountability
+
+On-board diagnostics changed emissions history because the vehicle could now report some failures through fault codes and warning lamps. OBD did not make emissions compliance automatic, but it gave regulators, technicians, and owners a shared diagnostic language for monitored systems. That language became important as catalysts, oxygen sensors, evaporative systems, and engine controls became too interdependent for simple visual inspection.
+
+In-use compliance also complicated the old factory-centered view of regulation. A vehicle may be certified when new but still needs durable sensors, stable calibration, serviceable components, and repair information to keep behaving as represented. That continuity is why this era connects directly to later diesel, hybrid, and software controversies.
 
 ## Why This Era Connects The Archive
 

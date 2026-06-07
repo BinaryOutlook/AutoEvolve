@@ -39,6 +39,12 @@ where $V$ is voltage, $I$ is current, and $\eta$ represents conversion efficienc
 
 The inverter is also a safety device. It must isolate faults, protect the battery from stray currents, coordinate with contactors and the battery management system, and shut down predictably during abnormal events.
 
+## Components and Control Boundaries
+
+A traction inverter commonly includes power semiconductor modules, gate drivers, a DC-link capacitor, current sensors, voltage sensing, bus bars, cooling plates, control processors, and isolation monitoring. The packaging has to keep high current paths short, remove heat, and prevent electrical noise from disturbing other vehicle systems.
+
+The control boundary is shared with the motor and battery. If the battery management system lowers the available current, the inverter must reduce torque even if the motor could accept more. If motor temperature rises, current commands may be limited. During regeneration, the inverter can only return energy that the battery and braking system can safely accept.
+
 ## Historical Context
 
 Early electric vehicles could use simpler DC motor controls. Modern hybrids and battery-electric vehicles shifted toward AC machines because they offer strong efficiency, speed range, packaging, and control advantages. That shift made the inverter central to vehicle behavior.
@@ -58,6 +64,10 @@ Power inverters are used in battery-electric vehicles, plug-in hybrids, full hyb
 ## Common Misconceptions
 
 An inverter is not just an electrical adapter. It is a motor controller, power converter, diagnostic node, and thermal-management challenge. It also does not create energy; it changes the form and timing of electrical power so the motor can produce useful torque.
+
+## Evidence Boundary
+
+The cited DOE sources support the role of power electronics in electric-drive systems and research priorities. They do not prove that any one semiconductor material, voltage class, or cooling strategy is the right fit for every vehicle.
 
 ## Study Next
 

@@ -49,6 +49,12 @@ An ISG can remove some duplicated hardware, restart the engine faster than a con
 
 The ISG also sits near several competing design priorities: engine vibration, accessory packaging, crash structure, service access, and cost. Its benefits depend on duty cycle and calibration, not just peak power.
 
+## Operating Limits and Evidence Boundary
+
+An ISG is bounded by electrical power, battery acceptance, mounting location, and thermal capacity. A belt unit may be excellent for restart and modest regeneration but limited by belt traction and accessory-drive layout. A crank or transmission unit can act more directly on the driveline, yet it adds packaging and validation work near the engine or gearbox.
+
+The cited hybrid, mild-hybrid, and SAE sources support the architecture-level role of starter-generators. They should not be read as proving that every ISG-equipped vehicle can drive electrically, recover large braking energy, or match a full hybrid's capability.
+
 ## Representative Uses
 
 ISGs are representative of mild hybrid passenger cars, start-stop combustion vehicles, and some commercial-vehicle hybrid concepts. A compact city car may use the system mainly for restart and accessory support; a larger 48 V vehicle may add torque fill during launch or gear changes.

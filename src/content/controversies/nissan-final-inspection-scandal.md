@@ -45,6 +45,12 @@ Nissan announced the inspection issue in 2017 and created a public information p
 
 Nissan recalled vehicles in Japan for reinspection and made changes to inspection procedures. In 2018, Nissan separately disclosed improper measurement of exhaust emissions and fuel economy at some plants. That later disclosure should not be conflated with the 2017 final-inspection issue, but together they illustrate a broader quality-governance challenge.
 
+## Evidence Boundaries
+
+The strongest sources here are Nissan's public issue page and investigation summary. They document the company's stated process failures and responses, but they should not be treated as a substitute for the full Japanese regulatory record. Where this page discusses regulatory trust, it is making a procedural inference from the disclosed facts, not adding a new legal finding.
+
+That boundary is important because procedural scandals often attract vague language. The issue was not that every affected vehicle was proven mechanically defective. The issue was that the final inspection gate could not be trusted in the required way until reinspection and process changes restored confidence.
+
 ## Consequences
 
 The immediate consequence was disruption of domestic production, shipments, and owner reinspection. The broader consequence was a loss of confidence in delegated inspection systems. Regulators rely on manufacturers to apply approved procedures consistently; when that trust is weakened, the manufacturer may face tighter oversight and more burdensome internal controls.

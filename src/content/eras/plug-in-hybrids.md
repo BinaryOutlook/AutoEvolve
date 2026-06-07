@@ -3,7 +3,17 @@ title: 'Plug-In Hybrids'
 summary: 'Plug-in hybrids expanded hybrid architecture with external charging, larger batteries, and electric-first operating strategies.'
 status: 'published'
 lastReviewed: '2026-05-16'
-sources: ['doe-afdc-phev', 'doe-chevrolet-volt-operation-data']
+sources:
+  [
+    'doe-afdc-phev',
+    'doe-chevrolet-volt-operation-data',
+    'doe-afdc-hybrid',
+    'doe-afdc-bev',
+    'doe-afdc-electricity-stations',
+    'doe-afdc-electric-batteries',
+    'doe-vto-electric-drive-systems',
+    'epa-automotive-trends-2025',
+  ]
 dateRange: 'Late 2000s-2020s'
 order: 80
 keyThemes:
@@ -44,6 +54,12 @@ This era also made the boundary between car and infrastructure more visible. A c
 Manufacturers had to decide whether the engine would mechanically drive the wheels often, rarely, or only under specific conditions. They also had to size the battery around cost, mass, cargo space, electric range, and charging time. A larger battery could displace more gasoline on short trips, but it increased cost and weight.
 
 The architecture required an onboard charger, charge port, high-voltage contactors, isolation monitoring, battery thermal management, additional crash protection, and control software for charge-depleting and charge-sustaining modes. Packaging became a careful negotiation: battery modules could intrude into cargo space, fuel tanks still needed room, and exhaust systems still had to meet heat and emissions requirements.
+
+## Use-Pattern Sensitivity
+
+Plug-in hybrids are unusually dependent on behavior outside the vehicle. Charging frequency, trip length, access to overnight charging, climate-control demand, highway speed, and local electricity availability can change the result more dramatically than they would in a conventional hybrid. That does not make the category invalid; it means the technology should be explained as conditional.
+
+Official test values can also be difficult for readers to interpret because charge-depleting and charge-sustaining operation are combined through assumptions about utility factor or expected electric use. A neutral account should avoid treating one certified number as the whole story. The same model can displace substantial fuel in short, regularly charged use and much less fuel when driven mostly uncharged.
 
 ## Engineering Changes
 

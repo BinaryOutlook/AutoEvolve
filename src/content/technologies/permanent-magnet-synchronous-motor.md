@@ -38,6 +38,12 @@ $$
 
 where $\Phi$ is magnetic flux and $I$ is stator current. Real motor control is more complex because current is split into direct-axis and quadrature-axis components, especially during high-speed flux weakening.
 
+## Control and Operating Limits
+
+The inverter does not merely turn the motor on. It commands current vectors, monitors temperature and speed, and limits torque when the motor, magnets, bearings, or power electronics approach their envelopes. At high speed, field-weakening control can reduce the effective magnetic field so the motor continues operating beyond its base speed, but this can increase losses and thermal stress.
+
+Permanent magnets also make fault handling important. A spinning rotor can induce voltage even when propulsion is not requested. The vehicle therefore needs coordinated inverter, contactor, isolation, and service logic so the permanent field remains manageable during towing, shutdown, or abnormal electrical conditions.
+
 ## Historical Context
 
 Permanent-magnet machines became attractive as hybrid and electric vehicles needed compact motors with high efficiency over broad operating ranges. The architecture matched the packaging pressure of front-wheel-drive hybrid transaxles, dedicated EV drive units, and compact rear e-axles.
@@ -57,6 +63,10 @@ Permanent-magnet synchronous motors are common in hybrids, plug-in hybrids, and 
 ## Common Misconceptions
 
 Permanent magnets do not make a motor run by themselves. They provide rotor magnetic flux; the inverter and stator current still supply controlled electromagnetic interaction. Nor are PMSMs automatically the right answer for every vehicle. Cost, supply chain, thermal design, acoustic behavior, and duty cycle can favor other machines.
+
+## Evidence Boundary
+
+The DOE sources support electric-drive system roles and research priorities, not a universal motor ranking. Claims about efficiency, rare-earth content, or torque density need a named design, cooling method, duty cycle, and test basis.
 
 ## Study Next
 

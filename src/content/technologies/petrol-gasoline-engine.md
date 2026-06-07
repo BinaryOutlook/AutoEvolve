@@ -66,9 +66,15 @@ Gasoline evaporates readily enough to support mixture formation, but that volati
 
 Modern gasoline engines often use direct injection, turbocharging, variable valve timing, exhaust-gas recirculation, and close-coupled catalysts to manage those constraints. Each technology shifts the engineering problem rather than removing it.
 
+The operating envelope is a compromise among torque, temperature, fuel consumption, emissions, noise, and durability. Advancing spark timing can improve torque until knock, pressure rise, or component temperature becomes limiting. Rich mixtures may protect hardware under some high-load conditions but can raise fuel use and aftertreatment burden. Lean or stratified operation can change efficiency potential but also changes NOx and catalyst requirements. The same engine therefore behaves differently across cold start, idle, cruise, acceleration, and high-load operation.
+
 ## Common Misconceptions
 
 Gasoline engine does not mean carbureted engine. Carburetors were historically important, but electronic fuel injection and engine controls became central to modern gasoline operation. Gasoline engine also does not mean the same thing as four-stroke engine; many gasoline road engines use the four-stroke cycle, but the cycle and the fuel/ignition method are separate concepts.
+
+## Evidence Boundary
+
+The sources support gasoline-vehicle component context, broad advanced-engine comparison, and an early vehicle example. They do not establish one ideal gasoline-engine layout. Detailed claims need a named engine, emissions system, fuel, test condition, and era.
 
 ## Study Next
 

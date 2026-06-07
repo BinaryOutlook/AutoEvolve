@@ -25,7 +25,7 @@ relatedVehicles: []
 
 ## Definition
 
-Lean-burn combustion uses less fuel per unit of air than a stoichiometric mixture. For gasoline, stoichiometric operation is near an air-fuel mass ratio of about $14.7:1$, though real fuels vary. A lean mixture has excess oxygen after combustion.
+Lean-burn combustion uses less fuel per unit of air than a stoichiometric mixture. For gasoline, stoichiometric operation is near an air-fuel mass ratio of about \(14.7:1\), though real fuels vary. A lean mixture has excess oxygen after combustion.
 
 The mixture relationship is often expressed with lambda:
 
@@ -33,13 +33,15 @@ $$
 \lambda = \frac{(A/F)_\text{actual}}{(A/F)_\text{stoich}}
 $$
 
-Lean operation has $\lambda > 1$.
+Lean operation has \(\lambda > 1\).
 
 ## Mechanism
 
 At light load, a lean or highly diluted mixture can reduce throttling losses because the engine can admit more air while using less fuel. Direct injection can help place fuel near the spark plug in some stratified-charge strategies, while exhaust gas recirculation can dilute the charge with inert exhaust gases.
 
 Combustion stability becomes the central problem. If the mixture is too lean or too diluted near the spark, flame speed drops and misfire risk rises. The control system must manage turbulence, injection timing, spark energy, residual gas, temperature, and aftertreatment state.
+
+The hardware package can include direct injectors, tumble or swirl-generating ports, precise throttle and EGR control, wideband oxygen sensing, NOx sensing or estimation, and aftertreatment capable of working in oxygen-rich exhaust. Lean combustion is therefore a system strategy rather than a single fuel-map setting.
 
 ## Historical Context
 
@@ -53,6 +55,8 @@ Lean combustion can reduce pumping losses and improve efficiency in selected reg
 
 The practical question is not whether lean burn can work in a laboratory cycle. It is whether the complete vehicle can meet emissions rules, durability requirements, cost targets, drivability needs, and real-world operating conditions.
 
+Operating limits include mixture distribution, spark-plug location, combustion-chamber temperature, fuel quality, catalyst temperature, and the transition between lean and stoichiometric modes. A strategy that is efficient during steady light load may be unavailable during cold start, acceleration, catalyst regeneration, or high-load operation.
+
 ## Representative Uses
 
 Representative uses include stratified-charge gasoline direct-injection concepts, dilute-burn research engines, and compression-ignition engines that normally operate with excess air. Some production gasoline systems use lean operation only in restricted conditions because aftertreatment and calibration boundaries are narrow.
@@ -60,6 +64,10 @@ Representative uses include stratified-charge gasoline direct-injection concepts
 ## Common Misconceptions
 
 Lean burn is not simply running an engine with less fuel. It requires stable ignition, controlled flame development, and an emissions system suited to oxygen-rich exhaust. It also is not automatically cleaner; lower fuel use can coexist with higher NOx-control difficulty.
+
+## Neutral Reading
+
+The neutral interpretation is that lean burn attacks a real efficiency loss but moves difficulty into combustion stability and NOx control. It is historically important because it shows why engine efficiency and emissions cannot be judged from fuel consumption alone.
 
 ## Study Next
 

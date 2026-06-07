@@ -59,9 +59,15 @@ Electric motors can deliver torque from very low speed, reducing the need for mu
 
 Tailpipe emissions are absent during operation, but lifecycle impact depends on electricity generation, battery production, vehicle efficiency, and end-of-life handling. A source-backed archive should treat those as system questions rather than slogans.
 
+Packaging is a core engineering tradeoff. A floor-mounted pack can lower the center of gravity and free engine-bay volume, but it also affects crash structures, underbody protection, seating height, service procedures, and repair cost. A high-voltage vehicle also needs isolation monitoring, contactors, fuses, orange-cable service conventions, and emergency shutdown strategies. These details are less visible than range or acceleration, yet they define the practical BEV architecture.
+
 ## Common Misconceptions
 
 Battery electric propulsion does not remove all mechanical systems. Bearings, gears, half-shafts, tires, brakes, coolant loops, and structural crash protection remain central. Another misconception is that charger power alone determines charging time. Vehicle voltage, battery temperature, state of charge, cell limits, and station capability all matter.
+
+## Evidence Boundary
+
+The DOE and EPA sources support BEV component flow, historical context, and adoption trends. They do not establish a universal lifecycle-emissions value, charging time, or ownership cost for every region and vehicle.
 
 ## Study Next
 

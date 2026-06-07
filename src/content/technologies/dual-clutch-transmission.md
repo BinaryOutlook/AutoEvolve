@@ -47,9 +47,15 @@ A DCT can shift quickly when the next gear is predicted correctly. It can also f
 
 The system is software-intensive. Predicting the next gear is straightforward during steady acceleration and harder when the driver suddenly asks for braking, kickdown, or a turn. Good behavior depends on integration among engine controls, clutch actuation, gear selection, and driveline damping.
 
+Wet and dry clutch designs create different compromises. Wet clutches can handle heat through oil cooling, but they add pumping and drag losses. Dry clutches can reduce some losses and simplify fluid circuits, yet they may have less thermal margin during repeated creeping, launch, or hill maneuvers. Both designs need careful wear compensation and protection logic so shift quality does not depend on a single new-component calibration.
+
 ## Common Misconceptions
 
 A DCT is not simply an automatic transmission with a different shift lever. It is also not just two manual transmissions bolted together. The architecture includes two torque paths, but the control system, actuators, cooling, and safety logic are central to making it usable in traffic.
+
+## Evidence Boundary
+
+The cited EPA and NHTSA sources support DCTs as part of the transmission-technology landscape. They do not prove universal smoothness, efficiency, or durability. Those judgments need the specific clutch type, torque rating, vehicle mass, software calibration, and driving cycle.
 
 ## Study Next
 

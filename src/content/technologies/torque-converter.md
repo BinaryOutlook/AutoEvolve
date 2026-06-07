@@ -55,9 +55,15 @@ Slip helps smooth launch and absorb vibration, but slip also produces heat. Lock
 
 Torque multiplication is also conditional. A converter does not multiply torque equally at all speeds. Its behavior depends on pump-turbine speed difference, stator action, fluid design, and lockup state.
 
+The converter also interacts with shift quality. During a gear change, controlled converter slip can cushion torque disturbances, while lockup can improve efficiency once the vehicle is moving steadily. Modern calibrations may use partial lockup, controlled slip, or early lockup depending on engine torque, vibration, transmission temperature, and driver demand. These strategies make the converter part of a software-controlled driveline, not merely a sealed fluid device.
+
 ## Common Misconceptions
 
 A torque converter is not the same thing as an automatic transmission. It is one major coupling device within many automatic layouts. The gear ratios, shift elements, hydraulic controls, and electronic scheduling are separate parts of the complete transmission.
+
+## Evidence Boundary
+
+The cited transmission and fluid-coupling sources support the mechanism and historical context. They do not justify claims that torque converters are always less efficient, smoother, or more durable than clutch launch systems. Those comparisons depend on lockup strategy, fluid cooling, vehicle mass, gearing, duty cycle, and calibration.
 
 ## Study Next
 

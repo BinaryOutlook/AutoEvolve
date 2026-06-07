@@ -37,7 +37,9 @@ $$
 s = \frac{n_s - n_r}{n_s}
 $$
 
-where $s$ is slip, $n_s$ is synchronous speed, and $n_r$ is rotor speed. If there were no speed difference under load, there would be little induced rotor current and therefore little torque.
+where \(s\) is slip, \(n_s\) is synchronous speed, and \(n_r\) is rotor speed. If there were no speed difference under load, there would be little induced rotor current and therefore little torque.
+
+The main components are the stator windings, laminated steel core, rotor cage or conductors, bearings, housing, cooling path, sensors, and inverter controls. In a vehicle, the motor is inseparable from the inverter because frequency, current, and voltage determine torque, speed, regeneration, and heat.
 
 ## Historical Context
 
@@ -51,6 +53,8 @@ Induction motors can provide high starting torque, good reliability, and freedom
 
 At light loads, the inverter may reduce magnetizing current to improve efficiency, but the machine still needs careful control. Thermal management must handle stator and rotor heating, especially during sustained high power.
 
+Operating limits include inverter current, DC-link voltage, rotor temperature, stator insulation temperature, bearing speed, acoustic noise, and available cooling. Because rotor heat is not always easy to measure directly, control software often estimates temperature from models and recent operating history.
+
 ## Representative Uses
 
 Induction motors have appeared in battery-electric passenger cars, commercial electric-drive systems, and auxiliary or secondary drive units. Some vehicles use induction machines on one axle and permanent-magnet machines on another, choosing the active motor based on speed, load, traction, and efficiency.
@@ -58,6 +62,10 @@ Induction motors have appeared in battery-electric passenger cars, commercial el
 ## Common Misconceptions
 
 An induction motor is not old-fashioned simply because the principle is mature. Its behavior in an electric vehicle depends on modern inverter control, cooling, packaging, and software. At the same time, magnet-free construction is not automatically cheaper or more efficient once the full system is counted.
+
+## Neutral Reading
+
+The neutral comparison with permanent-magnet motors is system-specific. Induction machines avoid rotor magnets and can be robust, but they trade against rotor losses, magnetizing current, and power density. Their importance lies in offering a different engineering balance rather than a universal answer.
 
 ## Study Next
 

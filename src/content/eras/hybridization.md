@@ -3,7 +3,16 @@ title: 'Hybridization'
 summary: 'Hybrid vehicles linked combustion engines, electric machines, batteries, regenerative braking, and control software into integrated powertrains.'
 status: 'published'
 lastReviewed: '2026-05-16'
-sources: ['doe-afdc-hybrid', 'toyota-prius-launch']
+sources:
+  [
+    'doe-afdc-hybrid',
+    'toyota-prius-launch',
+    'doe-vto-batteries',
+    'doe-afdc-electric-batteries',
+    'doe-vto-electric-drive-systems',
+    'epa-2022-2025-ldv-ghg-tsd-mild-hybrids',
+    'sae-bisg-mild-hybrid-2014',
+  ]
 dateRange: 'Late 1990s-2010s'
 order: 70
 keyThemes:
@@ -39,6 +48,12 @@ Hybridization also changed how manufacturers explained efficiency. Instead of re
 Manufacturers made different choices about how tightly the electric machine was integrated with the drivetrain. Mild hybrids used smaller machines and batteries for assist and restart. Full hybrids used larger electric machines and could move the vehicle at low speed under electric power in some conditions. Power-split systems used planetary gearing and motor-generators to blend engine and electric operation without a conventional stepped gearbox in the usual sense.
 
 Battery packaging was conservative compared with later plug-in vehicles. Packs were sized for buffering and power, not long electric range. Nickel-metal hydride chemistry was common in early mass-market hybrids because it offered durability and power capability for repeated charge and discharge cycles.
+
+## Hybrid Taxonomy
+
+"Hybrid" covers several architectures. Belt-integrated starter-generator systems may provide restart and limited assist. Mild hybrids may support accessories, recapture some braking energy, and reduce engine load without offering sustained electric driving. Full hybrids can use larger motor-generators and battery buffers to move the vehicle electrically in limited conditions. Power-split hybrids use gearing and control software to blend engine and electric operation in a way that can feel unlike either a conventional automatic transmission or a simple motor assist.
+
+That taxonomy matters because a single label can hide very different technical systems. Neutral pages should identify the motor location, voltage level, battery role, transmission relationship, regenerative-braking capability, and whether the system can propel the vehicle without the engine under any normal conditions.
 
 ## Engineering Changes
 

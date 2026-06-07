@@ -35,6 +35,8 @@ A high-pressure pump feeds injectors mounted in the cylinder head. Injection tim
 
 The engine control unit may command one or multiple injections per cycle. It must balance torque, knock resistance, cold start, catalyst heating, wall wetting, particulate formation, and fuel economy.
 
+The system also needs a low-pressure supply side, high-pressure pump drive, pressure sensor, fuel rail, injector sealing, and combustion-chamber geometry that suits the spray. The injector is exposed to heat, pressure, deposits, and combustion noise in a way a port injector is not.
+
 ## Historical Context
 
 Gasoline direct injection has older precedents, including notable mid-century mechanical systems, but broad modern light-duty adoption depended on electronic controls, high-pressure injectors, emissions strategies, and manufacturing scale. A U.S. Department of Energy fact of the week, using EPA Automotive Trends data, reported that GDI appeared on 55 percent of U.S. light-duty vehicles produced in 2020.
@@ -47,6 +49,8 @@ Direct injection can improve charge cooling and mixture control, but it introduc
 
 Some engines combine port and direct injection to use the strengths of both layouts. That solution adds parts, cost, and control complexity, so it is not a universal answer.
 
+Operating limits appear during cold starts, high boost, very short injection windows, catalyst heating, and transient load changes. Injection too early can increase wall wetting; injection too late can compromise mixing. The calibration must also respect fuel pressure, injector temperature, noise, and emissions-monitoring constraints.
+
 ## Representative Uses
 
 Modern turbocharged gasoline engines often use direct injection because in-cylinder charge cooling helps manage knock under boost. Naturally aspirated engines may use it for compression-ratio, cold-start, and efficiency strategies. Lean or stratified operation is possible in principle, but emissions requirements and aftertreatment needs strongly shape where it is used.
@@ -54,6 +58,10 @@ Modern turbocharged gasoline engines often use direct injection because in-cylin
 ## Common Misconceptions
 
 Direct injection is not the same thing as diesel injection. Diesel engines inject fuel into hot compressed air and rely on compression ignition. Petrol direct injection still usually uses spark ignition and a gasoline fuel-air mixture. Another misconception is that direct injection always runs lean; many production gasoline direct-injection engines operate stoichiometrically for three-way catalyst compatibility.
+
+## Neutral Reading
+
+Gasoline direct injection should be understood as added authority over mixture formation, not as a guaranteed efficiency label. It can support downsizing, boost, and charge cooling, but it can also create particulate and calibration challenges. The relevant question is how the full air, fuel, spark, and aftertreatment system behaves.
 
 ## Study Next
 

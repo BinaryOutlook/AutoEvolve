@@ -55,6 +55,12 @@ The compression and combustion differences also shape efficiency and emissions. 
 
 The two engine families still share many building blocks: pistons, crankshafts, valves, lubrication systems, cooling systems, turbochargers, exhaust gas recirculation, fuel injection, engine control units, sensors, and diagnostics. The important distinction is how those parts are sized, timed, protected, and calibrated for the fuel and combustion process.
 
+## Operating and Evidence Boundaries
+
+The comparison changes with era and application. A mechanically injected prewar diesel, a turbocharged common-rail passenger-car diesel, a carbureted gasoline engine, and a direct-injected turbo gasoline engine do not represent one fixed pair of technologies. Regulations, fuel quality, vehicle mass, gearing, climate, maintenance, and duty cycle all alter the practical outcome.
+
+The cited sources support broad differences between advanced gasoline and diesel systems plus AFDC component context. They are not enough to declare one fuel universally cleaner, cheaper, more reliable, or more suitable. Those claims need a market, time period, test cycle, aftertreatment design, and real-world operating evidence.
+
 ## Common Misconceptions
 
 Diesel does not simply mean truck engine, and petrol does not simply mean passenger-car engine. Both have appeared across vehicle classes and markets. Another misconception is that one fuel automatically determines the complete emissions outcome. Real-world results depend on combustion design, calibration, maintenance, aftertreatment, test procedure, duty cycle, and regulation.

@@ -35,7 +35,7 @@ $$
 \dot{m}_\text{fuel} \approx \frac{\dot{m}_\text{air}}{\text{target air-fuel ratio}}
 $$
 
-where $\dot{m}$ denotes mass flow rate. Real ECUs add corrections for transient airflow, fuel film behavior, injector characterization, oxygen-sensor feedback, temperature, and diagnostic limits.
+where \(\dot{m}\) denotes mass flow rate. Real ECUs add corrections for transient airflow, fuel film behavior, injector characterization, oxygen-sensor feedback, temperature, and diagnostic limits.
 
 ## Historical Context
 
@@ -49,10 +49,18 @@ A MAF sensor gives useful load information, but it is exposed to intake pulsatio
 
 Some engines use manifold absolute pressure and speed-density calculations instead of, or alongside, MAF sensing. Neither strategy is universally simpler; the choice depends on cost, packaging, turbocharging, exhaust-gas recirculation, calibration goals, and diagnostic requirements.
 
+Operating limits include sensor range, response time, flow reversal, intake leaks downstream of the sensor, and contamination from oil mist or over-oiled filters. Because the sensor measures air before combustion, the ECU still needs exhaust feedback and fault logic to catch errors that appear after fueling or ignition.
+
 ## Representative Uses
 
 MAF sensors are common in gasoline port-injection, gasoline direct-injection, diesel, and natural-gas engine-management systems. They are especially useful where the ECU needs an intake-air estimate independent of throttle angle, manifold pressure alone, or assumed volumetric efficiency.
 
+In turbocharged engines, MAF data can help coordinate boost, EGR, and air-fuel control, but placement becomes more sensitive because compressor flow, recirculation valves, and pulsation can disturb the signal. Some systems blend MAF and pressure-based models to improve robustness.
+
 ## What It Teaches
 
 The MAF sensor teaches why modern engine control is measurement-heavy. Emissions and drivability targets depend on knowing what enters the engine, not only what leaves it. It also shows the layered nature of control: feedforward fueling can begin from measured air mass, while oxygen sensors and OBD monitors check whether the resulting exhaust behavior makes sense.
+
+## Neutral Reading
+
+A MAF sensor is useful because it reduces guesswork about load, but it is not a perfect truth source. Its signal must be filtered, checked, and interpreted against other sensors. The lesson is measured confidence, not measurement without uncertainty.

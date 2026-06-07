@@ -31,7 +31,9 @@ $$
 P = V I
 $$
 
-where $V$ is pack voltage and $I$ is current. A NiMH pack sized for a hybrid can provide torque assist and regenerative braking without being large enough for long electric-only range.
+where \(V\) is pack voltage and \(I\) is current. A NiMH pack sized for a hybrid can provide torque assist and regenerative braking without being large enough for long electric-only range.
+
+Pack hardware usually includes modules, bus bars, current sensing, voltage sensing by block or module group, temperature sensors, relays, fusing, ventilation or cooling, and battery-control software. Chemistry choice matters, but the operating window is defined by the whole pack.
 
 ## Historical Context
 
@@ -45,6 +47,8 @@ NiMH is generally robust and tolerant of hybrid cycling, but it has lower specif
 
 Cost, packaging, cooling, recycling pathways, and supplier experience all affected its adoption. A hybrid pack is a system, not just a chemistry label.
 
+Operating limits include heat generation during charge and discharge, state-of-charge imbalance, memory-related behavior in some usage patterns, self-discharge, and aging under high temperature. Hybrid control systems protect the pack by avoiding full charge and full depletion during normal use.
+
 ## Representative Uses
 
 NiMH batteries were widely used in non-plug-in hybrids, including early Prius generations and other hybrid cars. They also appeared in some early electric-vehicle and industrial applications. In the archive, NiMH is useful as a case study in how hybrids matured before lithium-ion became the default reference point for plug-in vehicles.
@@ -52,6 +56,10 @@ NiMH batteries were widely used in non-plug-in hybrids, including early Prius ge
 ## Common Misconceptions
 
 NiMH was not simply a temporary placeholder. It matched the needs of many early hybrids: shallow cycling, regenerative-braking acceptance, and long service life. It also was not enough by itself to create a hybrid vehicle. Power electronics, control software, motor design, cooling, and mechanical integration were equally important.
+
+## Neutral Reading
+
+NiMH belongs in automotive history because it fit the hybrid problem before long-range plug-in vehicles became the dominant battery reference. Its lower energy density is real, but so is its record as a durable power buffer in shallow-cycle hybrid service.
 
 ## Study Next
 

@@ -29,9 +29,11 @@ An oxygen sensor, often called a lambda sensor in emissions-control history, mea
 
 ## Mechanism
 
-A switching oxygen sensor changes output sharply as the exhaust mixture crosses the stoichiometric point. The ECU reads that switching behavior, trims fuel delivery, and continually steers the mixture around $\lambda = 1$. Wideband oxygen sensors broaden the measurement range, allowing richer and leaner mixture control strategies to be measured more directly.
+A switching oxygen sensor changes output sharply as the exhaust mixture crosses the stoichiometric point. The ECU reads that switching behavior, trims fuel delivery, and continually steers the mixture around \(\lambda = 1\). Wideband oxygen sensors broaden the measurement range, allowing richer and leaner mixture control strategies to be measured more directly.
 
 Placement matters. An upstream sensor supports closed-loop fuel control before the catalyst. A downstream sensor can help the OBD system compare post-catalyst oxygen behavior with upstream behavior and infer catalyst oxygen-storage and conversion performance.
+
+The sensor package usually includes a ceramic sensing element, protective shell, heater circuit, wiring, and connector. The heater is not a convenience item: feedback control cannot begin until the element reaches a useful operating temperature, so warm-up speed affects cold-start emissions strategy.
 
 ## Historical Context
 
@@ -45,6 +47,8 @@ Oxygen sensors operate in a harsh environment: heat, water vapor, chemical expos
 
 The sensor does not directly identify every cause of a mixture error. Air leaks, fuel pressure problems, injector faults, misfire, exhaust leaks, or aging catalysts can all affect the signals seen by the ECU and OBD monitors. Good diagnostics therefore interpret oxygen-sensor data as part of a wider system.
 
+Operating limits include contamination from oil, coolant, fuel additives, silicone, or leaded fuels; wiring faults; exhaust leaks; and sensor aging. A slow sensor can still produce a signal, but delayed switching may reduce control precision and can complicate catalyst monitoring.
+
 ## Representative Uses
 
 Modern gasoline vehicles commonly use oxygen sensors upstream and downstream of the catalyst. The upstream sensor supports mixture control; the downstream sensor supports catalyst monitoring. Diesel and lean-burn applications may use wideband oxygen sensing alongside NOx, particulate, temperature, and pressure sensors depending on aftertreatment design.
@@ -52,3 +56,7 @@ Modern gasoline vehicles commonly use oxygen sensors upstream and downstream of 
 ## What It Teaches
 
 The oxygen sensor teaches the central idea of closed-loop emissions control. The vehicle measures the result of combustion, compares that result with a target, and adjusts fuel or air commands. That pattern appears across later systems: catalyst diagnostics, particulate-filter management, knock control, electronic throttle control, and battery management all depend on feedback rather than fixed mechanical settings.
+
+## Neutral Reading
+
+The oxygen sensor is powerful because it gives the exhaust a voice in engine control. It is not a complete emissions solution by itself. Its value depends on fuel metering, catalyst chemistry, diagnostic logic, sensor placement, and how quickly the whole system reaches controlled operation.

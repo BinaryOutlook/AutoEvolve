@@ -33,6 +33,8 @@ A typical system includes an accelerator-pedal module, redundant pedal-position 
 
 This architecture changes the meaning of the pedal. The pedal no longer directly sets throttle angle. It requests a result, and the control system chooses a throttle angle that fits the current operating state.
 
+The throttle body itself usually contains a motor, return spring, throttle plate, gear train, and position sensors. The pedal module similarly uses multiple sensor tracks so the ECU can compare signals for plausibility. The system is built around disagreement detection as much as normal command following.
+
 ## Historical Context
 
 Electronic throttle control developed alongside broader electronic engine management. SAE papers from the early 1990s discussed electronic throttle concepts for traction control, comfort, economy, and engine-management integration. As ECUs gained more authority over fuel, ignition, idle, and emissions behavior, throttle actuation became another controlled path for managing engine torque.
@@ -45,6 +47,8 @@ ETC gives the controller more ways to coordinate torque, but it raises functiona
 
 The tradeoff is not cable versus electronics in a simple hierarchy. Mechanical cables have friction, wear, routing, and idle-control compromises. ETC adds software authority and failure modes that must be managed through redundancy, monitoring, and calibration.
 
+Operating limits include actuator speed, icing or deposits around the throttle plate, sensor drift, electrical noise, low battery voltage, and driver expectations during tip-in or lift-off. The calibrated pedal map can make two vehicles with similar hardware feel quite different.
+
 ## Representative Uses
 
 ETC is common on modern gasoline engines, many diesel engines, hybrids, and vehicles with stability or traction systems that request engine-torque changes. It can smooth idle shutdown, help coordinate start-stop restarts, reduce torque during gear changes, and let active safety systems request torque reductions without separate mechanical devices.
@@ -52,3 +56,7 @@ ETC is common on modern gasoline engines, many diesel engines, hybrids, and vehi
 ## What It Teaches
 
 Electronic throttle control teaches how vehicle controls moved from direct mechanical command to interpreted torque request. That shift is central to modern powertrains: the driver's input, emissions constraints, traction interventions, and diagnostic safeguards are mediated through software. ETC is therefore a small component with a large systems lesson.
+
+## Neutral Reading
+
+ETC should be read neither as an automatic safety problem nor as a simple modernization story. It expands control authority and makes hybrid, stability, cruise, idle, and emissions coordination easier, but it also makes verification, fault handling, and transparent diagnostics more important.

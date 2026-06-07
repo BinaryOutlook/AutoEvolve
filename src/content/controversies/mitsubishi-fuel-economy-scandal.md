@@ -49,6 +49,12 @@ Mitsubishi's annual reporting for the period described financial impacts, custom
 
 Because much of the primary regulatory and investigation record is in Japanese, this page relies primarily on Mitsubishi's English disclosures for chronology and financial consequences while using the Japanese company investigation record only with limited scope. That limitation matters: company records do not replace the full Japanese regulatory file.
 
+## Evidence Boundaries
+
+The source set is strongest for what Mitsubishi disclosed, what its special investigation described, and what the company reported as financial or business consequences. It is weaker for a complete independent reconstruction of Ministry of Land, Infrastructure, Transport and Tourism actions. Future expansion should add regulator records or contemporary Japanese reporting where available.
+
+Until that stronger source layer is added, the neutral position is narrow: Mitsubishi acknowledged improper fuel-consumption testing methods and investigation findings. The article should not use that admission to make unsupported claims about unrelated vehicle safety, every Mitsubishi model, or the motives of individual engineers beyond what the cited investigation supports.
+
 ## Consequences
 
 The consequences included revised fuel-economy values, compensation costs, reputational damage, production and sales disruption, and a broader restructuring of trust between Mitsubishi and Nissan. The scandal also contributed to industry-wide attention in Japan to fuel-consumption certification procedures.

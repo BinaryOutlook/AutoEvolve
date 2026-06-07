@@ -26,6 +26,8 @@ Most production knock sensors use a piezoelectric element mounted to the engine 
 
 Knock control is therefore a selective feedback loop. The controller tries to keep combustion timing efficient while leaving a margin against damaging pressure oscillations.
 
+The sensor is usually bolted to a carefully chosen point on the block so vibration from several cylinders can reach it. Some engines use more than one sensor. The ECU listens during crank-angle windows when knock from a particular cylinder would be expected, which helps separate combustion knock from general mechanical noise.
+
 ## Historical Context
 
 Knock sensing became prominent as electronic engine control made adaptive ignition and boost strategies practical. Turbocharged gasoline engines made the value especially clear because boost, charge temperature, fuel octane, and spark timing strongly affect knock margin. SAE work in the early 1980s documented knock-detection systems used to control maximum charge pressure in turbocharged engines, while later papers treated sensor selection and calibration as production concerns.
@@ -38,6 +40,8 @@ A knock sensor must separate harmful combustion vibration from normal engine noi
 
 Knock control also exposes a tradeoff between efficiency and protection. Advancing ignition timing can improve combustion phasing up to a point, but operation too close to the knock limit reduces robustness. Modern ECUs use learned corrections and safety margins because fuel quality, deposits, temperature, and aging can change the real limit.
 
+Operating limits include sensor bandwidth, mounting torque, block stiffness, engine noise, fuel octane variation, intake temperature, and cylinder-to-cylinder differences. A knock strategy that works on a new engine may need margins for deposits, worn mounts, or altered combustion noise later in life.
+
 ## Representative Uses
 
 Knock sensors are widely used on spark-ignition engines, including naturally aspirated, turbocharged, direct-injection, and flexible-fuel designs. A representative historical use is knock-controlled boost management on turbocharged gasoline engines, where the controller could reduce charge pressure when knock was detected.
@@ -45,3 +49,7 @@ Knock sensors are widely used on spark-ignition engines, including naturally asp
 ## What It Teaches
 
 The knock sensor teaches that modern engine control is not only about emissions hardware. It is also about protecting combustion inside the cylinder while meeting torque, fuel, and regulatory demands. The sensor turns a destructive acoustic phenomenon into a signal that software can interpret, but the decision remains probabilistic and calibration-dependent.
+
+## Neutral Reading
+
+Knock sensing enables more adaptive engines, but it is not permission to run without mechanical margin. The technology works as one layer among combustion-chamber design, cooling, fuel quality assumptions, boost control, spark calibration, and durability testing.

@@ -49,6 +49,8 @@ Axial-flux machines can offer high torque density and a thin package. They may s
 
 Permanent-magnet axial-flux designs also share magnet-material tradeoffs with other PMSMs. Reduced mass does not remove rare-earth supply, cost, or demagnetization concerns.
 
+Operating speed deserves careful treatment. A large effective radius can help torque, but rotor stress and peripheral speed rise with diameter and rotational speed. Disc-shaped parts must remain flat enough to preserve the air gap while also surviving vibration, thermal expansion, and manufacturing tolerance stackups. Cooling can be attractive if large surfaces are available, yet heat still has to leave windings, magnets, resin, bearings, and power electronics under real duty cycles.
+
 ## Representative Uses
 
 Representative uses include prototype and limited-production traction drives, compact hybrid modules, aerospace-adjacent electric propulsion, and motors proposed for high-torque EV drive units. In passenger cars, axial-flux technology should be described carefully: it is present in selected applications and supplier programs, but broad adoption remains more limited than conventional radial-flux machines.
@@ -56,6 +58,10 @@ Representative uses include prototype and limited-production traction drives, co
 ## Common Misconceptions
 
 Axial flux is not a magic geometry. The layout changes the engineering problem; it does not cancel the need for inverter control, cooling, mechanical durability, acoustic tuning, and scalable production. Claims about high power density should be read with operating speed, duty cycle, cooling assumptions, and cost in view.
+
+## Evidence Boundary
+
+The cited ORNL and DOE material supports comparison and research framing. It should not be stretched into a prediction that axial-flux machines will replace radial-flux motors across the market.
 
 ## Study Next
 

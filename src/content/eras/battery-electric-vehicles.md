@@ -8,6 +8,14 @@ sources:
     'doe-afdc-bev',
     'nissan-leaf-heritage-2010',
     'tesla-roadster-production-2008',
+    'doe-afdc-electric-batteries',
+    'doe-vto-batteries',
+    'doe-vto-electric-drive-systems',
+    'doe-vto-power-electronics-rd',
+    'doe-vto-electric-motors-rd',
+    'nrel-edv-thermal-management',
+    'doe-afdc-electricity-stations',
+    'iea-global-ev-outlook-2025-batteries',
   ]
 dateRange: 'Late 2000s onward'
 order: 90
@@ -50,6 +58,12 @@ BEVs also changed what counted as normal vehicle design. A floor-mounted battery
 Manufacturers had to decide whether to adapt existing combustion platforms or build dedicated electric platforms. Adaptations could reduce development cost, but dedicated platforms allowed cleaner battery packaging, different crash structures, more flexible cabin layouts, and better routing for high-voltage cables and thermal systems.
 
 Battery cooling became a major design choice. Air-cooled packs reduced complexity but could limit temperature control. Liquid-cooled packs added pumps, plates, hoses, and controls but could support more consistent performance and charging behavior. Charging interface placement also mattered because driver habits, parking orientation, and fast-charger layouts affected daily usability.
+
+## Infrastructure And Materials Layer
+
+Modern BEVs made the battery pack a vehicle component, a manufacturing challenge, and a supply-chain question at once. Cell chemistry, module design, pack enclosure, crash structure, battery management, cooling, and service strategy all affect the vehicle's usable energy and long-term trust. Materials sourcing and recycling questions should be treated as part of the era rather than an external political footnote.
+
+Charging infrastructure also belongs in the technology story. Home charging, workplace charging, depot charging, and public DC fast charging solve different problems. A BEV with excellent onboard hardware can still be difficult to use if charging access is poor; a strong charging site can still be limited by vehicle temperature, state of charge, connector compatibility, or grid capacity.
 
 ## Engineering Changes
 

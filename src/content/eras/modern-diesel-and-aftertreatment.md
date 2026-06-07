@@ -3,7 +3,18 @@ title: 'Modern Diesel and Emissions Aftertreatment'
 summary: 'Turbocharging, high-pressure injection, particulate filters, SCR, and emissions compliance reshaped diesel passenger and commercial vehicles.'
 status: 'published'
 lastReviewed: '2026-05-16'
-sources: ['bosch-common-rail-history', 'epa-vw-settlement', 'epa-vw-violations']
+sources:
+  [
+    'bosch-common-rail-history',
+    'epa-vw-settlement',
+    'epa-vw-violations',
+    'doe-afdc-diesel-vehicle',
+    'epa-dpf-operation-maintenance',
+    'doe-vto-emission-control',
+    'doe-vto-energy-recovery-exhaust-materials',
+    'icct-vw-real-world-emissions-2014',
+    'carb-in-use-compliance-testing',
+  ]
 dateRange: '1990s-2010s'
 order: 60
 keyThemes:
@@ -44,6 +55,12 @@ The result was a powertrain that looked mechanical from the outside but depended
 Manufacturers paired smaller turbocharged engines with high-pressure injection to improve low-speed torque and reduce fuel consumption. Multiple injection events per combustion cycle became important for noise, emissions, and combustion shaping. Exhaust-gas recirculation lowered peak combustion temperatures in some operating regions, while particulate filters captured soot that had to be burned off through regeneration strategies.
 
 Aftertreatment created new packaging choices. Diesel particulate filters needed temperature management. SCR systems required urea solution storage and dosing. Lean NOx traps needed regeneration events and careful fuel control. These systems were not optional decorations around the engine; they reshaped exhaust routing, control software, service needs, and dashboard warnings.
+
+## Aftertreatment Stack
+
+A modern diesel exhaust path can include oxidation catalyst, particulate filter, NOx storage catalyst or selective catalytic reduction, ammonia management, temperature sensors, pressure sensors, NOx sensors, and onboard diagnostics. The pieces are staged because diesel exhaust contains different pollutants under different temperature and load conditions.
+
+Particulate filters illustrate the maintenance boundary. They trap soot but must regenerate, and ash can accumulate over time. SCR illustrates the operating-boundary problem: the system needs reductant, temperature, dosing control, and sensor feedback. These details matter because the public claim is not merely "diesel has aftertreatment"; the question is whether the aftertreatment works across real operating conditions.
 
 ## Engineering Changes
 

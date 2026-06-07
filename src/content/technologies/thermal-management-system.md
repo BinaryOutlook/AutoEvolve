@@ -37,7 +37,9 @@ $$
 Q_\text{in} - Q_\text{out} = \Delta U
 $$
 
-where $Q$ is heat transfer and $\Delta U$ is change in internal energy. The vehicle challenge is routing heat quickly, quietly, safely, and efficiently across changing weather and duty cycles.
+where \(Q\) is heat transfer and \(\Delta U\) is change in internal energy. The vehicle challenge is routing heat quickly, quietly, safely, and efficiently across changing weather and duty cycles.
+
+Sensors and controls make the plumbing useful. Temperature sensors, pressure sensors, valve positions, compressor speed, pump speed, fan speed, and battery state all feed the controller. The same hardware may be asked to cool a battery after highway driving, warm it before fast charging, and heat the cabin during a low-temperature commute.
 
 ## Historical Context
 
@@ -51,6 +53,8 @@ A well-integrated thermal system can improve range, charging consistency, compon
 
 Cold weather is especially revealing. Cabin heat, battery warmup, rolling resistance, and reduced electrochemical performance can all reduce usable range. Preconditioning and heat pumps can help, but they do not eliminate extreme-temperature penalties.
 
+Hot weather exposes another set of limits. Fast charging, repeated acceleration, towing, climbing, or high cabin cooling load can force the system to prioritize battery protection over peak charging or propulsion power. Thermal management is therefore part of the vehicle's performance envelope, not just a background comfort system.
+
 ## Representative Uses
 
 Representative uses include liquid-cooled battery packs in plug-in vehicles, integrated motor-inverter coolant loops, refrigerant-based battery chillers, cabin heat pumps, and preconditioning routines before fast charging. Hybrids may also use thermal management to warm engines and catalysts quickly while protecting high-voltage components.
@@ -58,6 +62,10 @@ Representative uses include liquid-cooled battery packs in plug-in vehicles, int
 ## Common Misconceptions
 
 Thermal management is not only about preventing overheating. In an electric vehicle, heating can be as important as cooling. Nor is it a secondary comfort feature: battery temperature can limit charging, power output, regeneration, and aging rate.
+
+## Neutral Reading
+
+An integrated thermal system can make an electrified vehicle feel more consistent, but it is not free energy. It moves heat, spends electrical power, adds components, and depends on calibration. The historical shift is from a waste-heat-rich engine bay toward a managed network of batteries, electronics, motors, cabin loads, and charging constraints.
 
 ## Study Next
 
