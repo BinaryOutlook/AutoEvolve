@@ -23,10 +23,18 @@ For controversies, keep source roles distinct: regulator findings, court finding
 
 ## Visual Source and Attribution Rules
 
-Current v1 pages use sourced reference images and original mechanism-flow diagrams. The shared registry in `src/lib/media.ts` records local image paths, alt text, captions, source URLs, original-file URLs where available, and reuse notes. Original flow diagrams live in `src/lib/system-flows.ts` and should describe only relationships supported by the article's cited sources.
+Current v1 pages use sourced reference images, AI-generated explanatory plates,
+and original mechanism-flow diagrams. The shared registry in `src/lib/media.ts`
+records local image paths, alt text, captions, source URLs, original-file URLs
+where available, and reuse notes. AI-generated explainers live in
+`src/lib/generated-media.ts` and must record image path, alt text, caption,
+model/tool, generation date, prompt summary, editing notes, and a clear
+statement that the image is illustrative rather than source evidence. Original
+flow diagrams live in `src/lib/system-flows.ts` and should describe only
+relationships supported by the article's cited sources.
 
 Technology detail pages should show an appropriate system reference image based on the article's category, slug, and related systems. When a page needs a more specific image than the registry can infer, add a sourced asset to `src/lib/media.ts` rather than reviving metadata-generated diagrams or silently using decorative imagery.
 
-When adding an original diagram, keep the sequence simple, caption it as an AutoEvolve diagram, and state when it simplifies real-world variants. If an AI-generated image is ever used for an explanatory visual, cite it visibly with the model, generation date, editing notes, and a statement that it is illustrative rather than source evidence.
+When adding an original diagram, keep the sequence simple, caption it as an AutoEvolve diagram, and state when it simplifies real-world variants. If an AI-generated image is used for an explanatory visual, cite it visibly with the model or tool, generation date, prompt or prompt summary, editing notes, and a statement that it is illustrative rather than source evidence. Prefer generated images for conceptual plates, not for specific historical evidence, vehicle authenticity, or regulatory proof.
 
 If an externally sourced image or figure is added, record the creator or rights holder, source URL, license or reuse basis, caption, and alt text near the content that uses it. Add a matching source record when the image is part of a page's source list. Do not use an image to imply a claim that the listed sources do not support.

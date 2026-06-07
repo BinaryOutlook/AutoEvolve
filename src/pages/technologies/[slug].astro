@@ -1,8 +1,10 @@
 ---
+import GeneratedMediaPanel from '@components/GeneratedMediaPanel.astro';
 import SourcedMediaPanel from '@components/SourcedMediaPanel.astro';
 import SystemFlowPanel from '@components/SystemFlowPanel.astro';
 import ArticleLayout from '@layouts/ArticleLayout.astro';
 import { categoryLabel, entrySlug, getPublicEntries } from '@lib/collections';
+import { generatedMediaForSlug } from '@lib/generated-media';
 import { mediaForArchiveEntry } from '@lib/media';
 import { getSystemFlow } from '@lib/system-flows';
 import { render } from 'astro:content';
@@ -18,6 +20,7 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await render(entry);
 const slug = entrySlug(entry);
+const generatedMedia = generatedMediaForSlug(slug);
 const systemFlow = getSystemFlow(slug);
 const media = mediaForArchiveEntry({
   collection: 'technologies',
@@ -73,6 +76,7 @@ const media = mediaForArchiveEntry({
     ]}
     tags={media.tags}
   />
+  {generatedMedia && <GeneratedMediaPanel asset={generatedMedia} />}
   {systemFlow && <SystemFlowPanel flow={systemFlow} />}
   <Content />
 </ArticleLayout>

@@ -45,6 +45,10 @@ overflow before treating the change as complete.
 - Avoid review-style language.
 - Keep controversy pages chronological, technical, and regulatory.
 - Keep page visuals educational, captioned, and accessible; sourced images need alt text, visible attribution, a source link, and reuse notes.
+- Use AI-generated explanatory images only when they clarify an abstract system
+  better than a sourced reference photo or HTML mechanism flow. Save final
+  project-bound assets under `public/images/generated/`, register them in
+  `src/lib/generated-media.ts`, and keep exact factual claims in cited prose.
 - For downloaded system images, keep the local asset, visible source caption,
   original source URL, and reuse basis together in the component or page where
   the image appears.

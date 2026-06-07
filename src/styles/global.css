@@ -1031,6 +1031,86 @@ div {
   padding: 0.25rem 0.55rem;
 }
 
+.generated-media {
+  background:
+    linear-gradient(135deg, rgb(0 143 125 / 0.08), rgb(190 89 57 / 0.08)),
+    var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  display: grid;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  overflow: hidden;
+  padding: clamp(1rem, 3vw, 1.25rem);
+}
+
+.generated-media__copy h2 {
+  border-top: 0;
+  font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+  line-height: 1.15;
+  margin: 0;
+  padding-top: 0;
+}
+
+.generated-media__copy p:not(.eyebrow) {
+  color: var(--color-muted);
+  margin: 0.65rem 0 0;
+}
+
+.generated-media__image {
+  background: var(--color-surface-strong);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.generated-media__image img {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+.generated-media figcaption {
+  border-top: 1px solid var(--color-border);
+  color: var(--color-muted);
+  display: grid;
+  font-size: 0.9rem;
+  gap: 0.35rem;
+  line-height: 1.45;
+  padding-top: 0.85rem;
+}
+
+.generated-media__metadata {
+  background: rgb(255 255 255 / 0.72);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  color: var(--color-muted);
+  padding: 0.75rem;
+}
+
+.generated-media__metadata summary {
+  color: var(--color-text);
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.generated-media__metadata dl {
+  display: grid;
+  gap: 0.65rem;
+  margin: 0.75rem 0 0;
+}
+
+.generated-media__metadata dt {
+  color: var(--color-muted);
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.generated-media__metadata dd {
+  margin: 0.15rem 0 0;
+}
+
 .glossary-list {
   display: grid;
   gap: 0.8rem;
@@ -1969,6 +2049,7 @@ a:hover {
 }
 
 .technology-toc,
+.generated-media,
 .sourced-media,
 .search-shell,
 .glossary-term {
@@ -2017,13 +2098,19 @@ a:hover {
 }
 
 .sourced-media__copy h2,
+.generated-media__copy h2,
 .technology-toc h2,
 .era-moment h2 {
   font-family: var(--font-sans);
 }
 
+.generated-media__image,
 .sourced-media__image {
   background: var(--ae-surface-warm);
+  border-color: var(--ae-border);
+}
+
+.generated-media__metadata {
   border-color: var(--ae-border);
 }
 

@@ -2,6 +2,10 @@ import { existsSync } from 'node:fs';
 import path from 'node:path';
 import { describe, expect, it } from 'vitest';
 import {
+  generatedMediaAssets,
+  generatedMediaForSlug,
+} from '../../src/lib/generated-media';
+import {
   mediaAssets,
   mediaForArchiveEntry,
   vehicleMediaBySlug,
@@ -61,5 +65,39 @@ describe('sourced media registry', () => {
         relatedTechnologies: ['hybrid-electric-vehicle'],
       }).asset,
     ).toBe(mediaAssets.toyotaPrius);
+  });
+});
+
+describe('generated explainer media registry', () => {
+  it('keeps every generated image project-local and visibly bounded', () => {
+    for (const asset of Object.values(generatedMediaAssets)) {
+      expect(asset.id).toMatch(/^generated-[a-z0-9-]+$/u);
+      expect(asset.src).toMatch(
+        /^\/images\/generated\/.+\.(jpg|jpeg|png|webp)$/iu,
+      );
+      expect(existsSync(path.join('public', asset.src.slice(1)))).toBe(true);
+      expect(asset.alt.length).toBeGreaterThan(60);
+      expect(asset.caption.length).toBeGreaterThan(60);
+      expect(asset.generatedDate).toMatch(/^\d{4}-\d{2}-\d{2}$/u);
+      expect(asset.methodUrl).toMatch(/^https:\/\//u);
+      expect(asset.promptSummary.length).toBeGreaterThan(80);
+      expect(asset.editingNotes).toMatch(/Generated as PNG/u);
+      expect(asset.usageNote).toMatch(/not source evidence/i);
+    }
+  });
+
+  it('maps abstract technology pages to suitable generated explainers', () => {
+    expect(generatedMediaForSlug('software-defined-vehicle-architecture')).toBe(
+      generatedMediaAssets.softwareDefinedVehicleArchitecture,
+    );
+    expect(generatedMediaForSlug('zonal-electrical-architecture')).toBe(
+      generatedMediaAssets.zonalElectricalArchitecture,
+    );
+    expect(generatedMediaForSlug('charging-communication-protocols')).toBe(
+      generatedMediaAssets.chargingCommunicationProtocols,
+    );
+    expect(generatedMediaForSlug('large-structural-casting')).toBe(
+      generatedMediaAssets.largeStructuralCasting,
+    );
   });
 });

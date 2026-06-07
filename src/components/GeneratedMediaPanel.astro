@@ -1,0 +1,44 @@
+---
+import type { GeneratedMediaAsset } from '@lib/generated-media';
+
+type Props = {
+  asset: GeneratedMediaAsset;
+};
+
+const { asset } = Astro.props;
+---
+
+<figure class="generated-media">
+  <div class="generated-media__copy">
+    <p class="eyebrow">Generated explainer image</p>
+    <h2>{asset.title}</h2>
+    <p>{asset.caption}</p>
+  </div>
+  <div class="generated-media__image">
+    <img src={asset.src} alt={asset.alt} loading="lazy" decoding="async" />
+  </div>
+  <figcaption>
+    <span>{asset.caption}</span>
+    <span>
+      Generated with <a href={asset.methodUrl}>{asset.methodLabel}</a> on
+      {asset.generatedDate}. {asset.usageNote}
+    </span>
+  </figcaption>
+  <details class="generated-media__metadata">
+    <summary>Generation metadata</summary>
+    <dl>
+      <div>
+        <dt>Model / tool</dt>
+        <dd>{asset.model}</dd>
+      </div>
+      <div>
+        <dt>Prompt summary</dt>
+        <dd>{asset.promptSummary}</dd>
+      </div>
+      <div>
+        <dt>Editing notes</dt>
+        <dd>{asset.editingNotes}</dd>
+      </div>
+    </dl>
+  </details>
+</figure>

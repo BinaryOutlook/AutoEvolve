@@ -24,3 +24,9 @@ Era pages should help readers understand chronology without flattening every reg
 Every page should include at least one meaningful visual artifact where practical. Prefer sourced reference images that clarify real systems, vehicles, chronology, or evidence context. Captions should identify source, reuse basis, and limits; images should not imply claims that the surrounding cited sources cannot support.
 
 Externally sourced images are optional. When used, include visible attribution, creator or rights holder, source link, license or reuse basis, caption, and alt text. Avoid stock-like filler, brand-advocacy imagery, misleading technical simplifications, or vehicle glamour shots that make an example page feel like a review.
+
+AI-generated explanatory images may be used for abstract mechanisms, software
+architecture, infrastructure flows, or manufacturing processes that lack a
+suitable sourced reference image. They must be visibly labeled as illustrative,
+must not be used as source evidence, and should avoid readable in-image text so
+the exact explanation remains in HTML, captions, and cited prose.

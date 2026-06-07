@@ -39,6 +39,9 @@ If source quality or navigability is low, the project is not ready just because 
   full advanced search route.
 - Zod-backed schemas through Astro content collections.
 - Reusable sourced media panels for attributed reference images.
+- AI-generated explanatory image panels for abstract systems, stored with
+  visible model, prompt-summary, generation-date, and "not source evidence"
+  metadata.
 - Original mechanism-flow panels for selected complex technology explainers.
 - Accessible Astro component scripts for small static-first interactions, such
   as the clickable car systems explorer with sourced AFDC cutaway images.
@@ -89,6 +92,7 @@ Use `npm run test:e2e` when routes, navigation, search behavior, or browser-visi
 | [src/data/](src/data/)                                 | Structured source and glossary data.                                                                                     |
 | [src/components/](src/components/)                     | Shared UI for record rows, sourced media panels, mechanism flows, headers, source lists, atlas, and linked lists.        |
 | [src/layouts/](src/layouts/)                           | Base and article layout shells.                                                                                          |
+| [public/images/generated/](public/images/generated/)   | AI-generated explanatory image assets copied into the project after visual inspection.                                   |
 | [public/images/systems/](public/images/systems/)       | Sourced AFDC cutaway images used by the interactive car systems atlas.                                                   |
 | [docs/](docs/)                                         | Current editorial, source, and contribution guidance.                                                                    |
 | [themes/](themes/)                                     | Visual theme references, including the Shrimp-derived v1 default theme.                                                  |

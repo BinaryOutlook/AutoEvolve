@@ -33,6 +33,9 @@ without turning AutoEvolve into an unsourced bulk-content generator.
 - Representative new pages now have original mechanism-flow panels for charging
   negotiation, OTA updates, battery swapping, high-voltage isolation, zonal
   routing, and large structural casting.
+- Suitable abstract technology pages now have AI-generated explanatory image
+  plates registered in `src/lib/generated-media.ts`; each is visibly labeled as
+  illustrative and not source evidence.
 
 ## Content Expansion Scope
 

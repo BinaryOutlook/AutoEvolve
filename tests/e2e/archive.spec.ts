@@ -663,6 +663,29 @@ test('technology pages render sources and related links', async ({ page }) => {
   ).toBeVisible();
 });
 
+test('generated explainer images render with attribution metadata', async ({
+  page,
+}) => {
+  await page.goto('/technologies/zonal-electrical-architecture/');
+  await expect(
+    page.getByRole('heading', {
+      name: 'Zonal Electrical Architecture',
+      exact: true,
+    }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole('heading', {
+      name: 'Zonal electrical architecture explainer',
+    }),
+  ).toBeVisible();
+  await expect(
+    page.getByAltText(/four zone controllers, a central vehicle computer/i),
+  ).toBeVisible();
+  await expect(page.getByText(/not source evidence/i).first()).toBeVisible();
+  await page.getByText('Generation metadata').click();
+  await expect(page.getByText(/Prompt summary/i)).toBeVisible();
+});
+
 test('representative routes have no automatically detectable accessibility violations', async ({
   page,
 }) => {
