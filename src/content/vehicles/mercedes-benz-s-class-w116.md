@@ -3,7 +3,7 @@ title: 'Mercedes-Benz S-Class W116'
 summary: 'A premium-sedan example of safety engineering, electronic ABS, diesel luxury experimentation, and advanced systems moving toward wider practice.'
 status: 'published'
 lastReviewed: '2026-05-16'
-sources: ['mercedes-benz-publicarchive-w116']
+sources: ['mercedes-benz-publicarchive-w116', 'bosch-abs-history']
 manufacturer: 'Mercedes-Benz'
 productionPeriod: '1972-1980'
 marketContext: '1970s premium-sedan engineering under safety, emissions, and fuel-consumption pressure'
@@ -30,6 +30,8 @@ The same archive record identifies two later developments central to this page: 
 The W116 illustrates vehicle safety as an engineered structure rather than a single device. A reinforced passenger cell, deformation zones, protected fuel tank placement, lighting visibility, and interior impact protection all belong to the system boundary.
 
 It also illustrates the early public arrival of electronic ABS in a production premium sedan. ABS depends on wheel-speed sensing, hydraulic modulation, and control logic. That makes it a useful bridge between mechanical braking systems and later electronic chassis-control systems. The driver still commands braking, but the vehicle begins intervening in the pressure pattern to preserve steerability under some conditions.
+
+The Bosch source supports the ABS development and mechanism context, while the Mercedes-Benz archive supports the W116 production marker. Keeping those source roles separate matters because supplier history can explain the system pathway without becoming independent proof that a specific vehicle was safer in every real-world condition.
 
 The 300 SD adds a different powertrain lesson. A diesel luxury sedan was not simply a taxi engine in a more expensive body. It required refinement work, transmission matching, emissions compliance, cooling capacity, and market-specific reasoning. Mercedes-Benz frames the variant around the USA and Canada and fleet fuel consumption, so the page treats it as a regulatory and strategy case.
 

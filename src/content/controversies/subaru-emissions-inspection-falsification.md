@@ -56,3 +56,5 @@ For emissions and fuel-economy trust, the case echoed a wider pattern: official 
 Subaru's case teaches that quality assurance is not only about catching a defective part. It is about preserving a verified chain from design approval to production inspection to regulatory representation.
 
 It also reinforces a core archival rule: procedural controversies should not be overstated as technical failures without evidence. The documented issue was inspection and measurement integrity. That is serious, but it should be described in its own terms.
+
+For future review, the strongest upgrade would be a regulator-side source set that can test Subaru's company disclosures against oversight actions and recall records. Until then, this page should stay careful about consequences that the cited investigation materials do not directly establish.

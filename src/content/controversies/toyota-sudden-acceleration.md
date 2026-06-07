@@ -58,3 +58,7 @@ For vehicle technology, the investigations made electronic throttle control more
 The Toyota investigations teach that neutral analysis must keep multiple hypotheses alive until evidence narrows them. A public label such as "sudden acceleration" can contain distinct mechanisms. Regulators, engineers, courts, and news accounts may therefore describe different parts of the same controversy.
 
 The case also teaches that technical exoneration on one hypothesis does not erase responsibility for other known defects or for inaccurate public communication.
+
+For AutoEvolve, the page is a reminder to distinguish defect mechanism from disclosure conduct. The NASA/NHTSA review is strongest for the electronic-throttle question; the DOJ agreement is strongest for communication and concealment allegations around known mechanical issues.
+
+Those source roles should remain explicit in later revisions.

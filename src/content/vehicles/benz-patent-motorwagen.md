@@ -3,7 +3,8 @@ title: 'Benz Patent-Motorwagen'
 summary: 'An example of early gasoline automobile packaging, combining engine, frame, steering, and drivetrain into a self-propelled road vehicle.'
 status: 'published'
 lastReviewed: '2026-05-16'
-sources: ['mercedes-benz-patent-motorwagen']
+sources:
+  ['mercedes-benz-patent-motorwagen', 'smithsonian-technological-choices']
 manufacturer: 'Benz & Cie.'
 productionPeriod: '1880s'
 marketContext: 'Early European automobile experimentation'
@@ -33,6 +34,8 @@ In modern terms, the vehicle is primitive, but primitive should not be confused 
 ## Historical Context
 
 The Patent-Motorwagen sits inside late nineteenth-century experimentation with engines and mobility. The technical challenge was not only whether combustion could produce enough power. Engineers also had to decide how to mount the engine, how to transmit torque, how to stop, how to steer, and how to make the machine sufficiently repeatable for public demonstration.
+
+The Smithsonian source helps keep that chronology from becoming too narrow. It places early automobiles inside a field of competing steam, electric, and combustion choices, so the Motorwagen should be read as one practical gasoline integration path rather than as the whole origin of automotive technology.
 
 For this archive, that makes the vehicle a bridge between engine history and vehicle architecture. A four-stroke engine only becomes automotive technology when it is integrated with a chassis, controls, and a duty cycle. The Patent-Motorwagen therefore helps readers understand why automotive history should not be told as a list of separate inventions. The vehicle-level arrangement is the point.
 

@@ -58,3 +58,5 @@ Regulators gained a clearer example of why supplier oversight matters. An airbag
 The Takata recalls teach that safety-critical components need lifetime evidence, not only launch validation. Materials can change with age and environment. Test data must remain auditable. Recall systems must be able to locate not just a vehicle model, but the exact component population within that model.
 
 The broader lesson is that a supplier defect can become a whole-industry governance problem when a common component is distributed through many vehicle programs.
+
+This page should continue to separate three evidence streams: NHTSA remedy coordination, DOJ criminal findings, and manufacturer owner-notification activity. They describe connected parts of the same crisis, but they do not answer the same question about chemistry, legal conduct, or repair logistics.
