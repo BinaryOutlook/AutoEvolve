@@ -68,6 +68,7 @@ The development server prints the local URL, usually `http://localhost:4321`.
 | `npm run typecheck`     | Run Astro type and content checks without building.                             |
 | `npm run check:content` | Validate source IDs and cross-content slug references.                          |
 | `npm run lint`          | Run ESLint and markdownlint.                                                    |
+| `npm run audit:quality` | Report encyclopedia-quality risks across article depth, sources, and review.    |
 | `npm run format`        | Format project files with Prettier.                                             |
 | `npm run test`          | Run unit tests.                                                                 |
 | `npm run test:e2e`      | Run Playwright end-to-end tests.                                                |
@@ -95,6 +96,7 @@ Use `npm run test:e2e` when routes, navigation, search behavior, or browser-visi
 | [public/images/generated/](public/images/generated/)   | AI-generated explanatory image assets copied into the project after visual inspection.                                   |
 | [public/images/systems/](public/images/systems/)       | Sourced AFDC cutaway images used by the interactive car systems atlas.                                                   |
 | [docs/](docs/)                                         | Current editorial, source, and contribution guidance.                                                                    |
+| [docs/templates/](docs/templates/)                     | Topic proposal and source packet templates for encyclopedia-quality expansion.                                           |
 | [themes/](themes/)                                     | Visual theme references, including the Shrimp-derived v1 default theme.                                                  |
 | [scripts/](scripts/)                                   | Project validation scripts for content and language rules.                                                               |
 | [tests/](tests/)                                       | Unit and end-to-end tests.                                                                                               |
@@ -103,16 +105,17 @@ Use `npm run test:e2e` when routes, navigation, search behavior, or browser-visi
 
 ## Documentation Map
 
-| Document                                                     | Authority                                                                               |
-| ------------------------------------------------------------ | --------------------------------------------------------------------------------------- |
-| [README.md](README.md)                                       | Current v0.2 overview, commands, status, structure, and maintenance wayfinding.         |
-| [AGENTS.md](AGENTS.md)                                       | Agent operating rules for documentation, implementation, and future planning.           |
-| [v1alldetails.md](v1alldetails.md)                           | Active v1 redesign plan and contractor-ready implementation guidance.                   |
-| [themes/Shrimp-color-heavy.md](themes/Shrimp-color-heavy.md) | Default v1 theme reference for color, type, spacing, cards, and interaction states.     |
-| [start_brief.md](start_brief.md)                             | Durable product brief for mission, scope, routes, content model, and editorial posture. |
-| [docs/editorial-policy.md](docs/editorial-policy.md)         | Editorial neutrality, vehicle-example boundaries, and tone.                             |
-| [docs/source-style-guide.md](docs/source-style-guide.md)     | Source hierarchy, citation metadata, and support rules.                                 |
-| [docs/contribution-guide.md](docs/contribution-guide.md)     | Local setup and pre-submission checks.                                                  |
+| Document                                                                                         | Authority                                                                               |
+| ------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------- |
+| [README.md](README.md)                                                                           | Current v0.2 overview, commands, status, structure, and maintenance wayfinding.         |
+| [AGENTS.md](AGENTS.md)                                                                           | Agent operating rules for documentation, implementation, and future planning.           |
+| [v1alldetails.md](v1alldetails.md)                                                               | Active v1 redesign plan and contractor-ready implementation guidance.                   |
+| [themes/Shrimp-color-heavy.md](themes/Shrimp-color-heavy.md)                                     | Default v1 theme reference for color, type, spacing, cards, and interaction states.     |
+| [start_brief.md](start_brief.md)                                                                 | Durable product brief for mission, scope, routes, content model, and editorial posture. |
+| [docs/professional-encyclopedia-gap-analysis.md](docs/professional-encyclopedia-gap-analysis.md) | Gap analysis and bridge plan for professional encyclopedia quality.                     |
+| [docs/editorial-policy.md](docs/editorial-policy.md)                                             | Editorial neutrality, vehicle-example boundaries, and tone.                             |
+| [docs/source-style-guide.md](docs/source-style-guide.md)                                         | Source hierarchy, citation metadata, and support rules.                                 |
+| [docs/contribution-guide.md](docs/contribution-guide.md)                                         | Local setup and pre-submission checks.                                                  |
 
 Keep documentation current in the same pass as code whenever a change affects commands, routes, content schemas, editorial rules, product scope, or architecture.
 

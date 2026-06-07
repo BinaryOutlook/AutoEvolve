@@ -16,6 +16,7 @@
     "typecheck": "astro check",
     "check:content": "node scripts/validate-content.mjs",
     "check:language": "node scripts/check-language.mjs",
+    "audit:quality": "node scripts/audit-encyclopedia-quality.mjs",
     "lint": "eslint . && markdownlint-cli2 && npm run check:content && npm run check:language",
     "format": "prettier --write .",
     "test": "vitest run",

@@ -24,6 +24,8 @@ The main documentation layers are:
 - `README.md`: current overview, version status, commands, project structure, MVP direction, and documentation map.
 - `AGENTS.md`: agent behavior, documentation maintenance rules, and planning workflow.
 - `start_brief.md`: durable product brief and content architecture baseline.
+- `docs/professional-encyclopedia-gap-analysis.md`: gap analysis and bridge
+  plan for professional encyclopedia quality.
 - `docs/editorial-policy.md`: neutrality rules, tone, and vehicle-example boundaries.
 - `docs/source-style-guide.md`: source hierarchy, citation metadata, and source-use rules.
 - `docs/contribution-guide.md`: local setup and verification expectations.
@@ -174,6 +176,8 @@ Before completing work, choose verification based on risk:
 - Content or schema changes: run `npm run lint`, `npm run test`, and `npm run build`.
 - Route, layout, navigation, or search changes: also run `npm run test:e2e` when practical.
 - Build, CI, or dependency changes: run the most complete local check set available.
+- Broad content expansion or encyclopedia-quality maintenance: also run
+  `npm run audit:quality` and use the output to capture scoped follow-up work.
 
 If a check cannot be run, state that clearly in the final response.
 

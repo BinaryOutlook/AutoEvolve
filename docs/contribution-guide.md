@@ -25,6 +25,17 @@ npx playwright install
 npm run test:e2e
 ```
 
+For encyclopedia-quality maintenance, run:
+
+```bash
+npm run audit:quality
+```
+
+This audit is advisory by default. It reports article counts, source density,
+least-sourced pages, short pages, public review queues, stale pages, and likely
+section gaps. Use `npm run audit:quality -- --strict` only when intentionally
+checking against floor-level publication risks.
+
 For v1 UI work, also perform a browser pass on:
 
 - the homepage car systems explorer
@@ -41,9 +52,20 @@ overflow before treating the change as complete.
 
 - Use the correct content collection and frontmatter fields.
 - Add source identifiers for factual claims.
+- Check the professional quality bridge plan in
+  [professional-encyclopedia-gap-analysis.md](professional-encyclopedia-gap-analysis.md)
+  when expanding topic coverage, article depth, source governance, or route
+  families.
+- Use [topic-proposal.md](templates/topic-proposal.md) for broad or high-risk
+  new topics, and [source-packet.md](templates/source-packet.md) before drafting
+  pages with significant historical, technical, legal, regulatory, or numerical
+  claims.
 - Link vehicle examples to technologies and eras.
 - Avoid review-style language.
 - Keep controversy pages chronological, technical, and regulatory.
+- Prefer source packets before drafting broad or high-risk pages.
+- Treat one-source vehicle pages, short public pages, and stale pages as review
+  queue items even when they render successfully.
 - Keep page visuals educational, captioned, and accessible; sourced images need alt text, visible attribution, a source link, and reuse notes.
 - Use AI-generated explanatory images only when they clarify an abstract system
   better than a sourced reference photo or HTML mechanism flow. Save final
